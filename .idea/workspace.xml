@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681300371133</updated>
       <workItem from="1681300378070" duration="48000" />
-      <workItem from="1681301269610" duration="2060000" />
+      <workItem from="1681301269610" duration="2876000" />
     </task>
     <servers />
   </component>
