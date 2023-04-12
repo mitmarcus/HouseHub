@@ -1,8 +1,6 @@
 package View;
 
-
 import ViewModel.ViewModel;
-import Fxml.*;
 import ViewModel.ViewModelFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,7 +33,7 @@ public class ViewHandler
     switch (id)
     {
       case "showRooms":
-        showRoomsViewController = loadViewController("RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
+        showRoomsViewController = loadViewController("/Design/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
         break;
      /* case "menu":
         menuViewController = loadViewController("MenuView.fxml",menuViewController, viewModelFactory.getMenuViewModel());
