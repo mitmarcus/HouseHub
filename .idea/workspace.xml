@@ -1,91 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="7d14e3e2-b09c-4399-9a88-cb161677b617" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="65580ae9-a735-44fe-8189-79c3f2e025f8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Design/RoomListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Design/cosmetics/Montserrat-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Design/cosmetics/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/RoomListView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" beforeDir="false" />
-=======
-    <list default="true" id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
->>>>>>> main
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Design/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Design/cosmetics/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2OKDQk9oIBpkYMAxeR1ewsjk3ha" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-<<<<<<< HEAD
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ricardo/Documents/GitHub/HouseHub/Client/src/View&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/markg/Desktop/VIA/2 Semester/SEP/HouseHub/Client/src/Fxml/cosmetics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> main
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml\cosmetics" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml\cosmetics" />
-      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml" />
-    </key>
-  </component>
-<<<<<<< HEAD
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApplication" />
       <module name="Client" />
@@ -102,27 +32,23 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApplication" />
         <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ClientApplication" />
       </list>
     </recent_temporary>
   </component>
-=======
->>>>>>> main
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="" />
-      <created>1681300371133</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1681300371133</updated>
-      <workItem from="1681300378070" duration="48000" />
-      <workItem from="1681301269610" duration="2876000" />
-    </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
