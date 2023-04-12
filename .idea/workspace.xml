@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/markg/Desktop/VIA/2 Semester/SEP/HouseHub/Client/src/Fxml/cosmetics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,7 +47,11 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml\cosmetics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml\cosmetics" />
       <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml" />
     </key>
   </component>
@@ -57,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1681300371133</updated>
       <workItem from="1681300378070" duration="48000" />
-      <workItem from="1681301269610" duration="796000" />
+      <workItem from="1681301269610" duration="1809000" />
     </task>
     <servers />
   </component>
