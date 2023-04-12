@@ -10,7 +10,7 @@ import javafx.scene.layout.Region;
 
 public class ShowRoomsViewController extends ViewController
 {
-  @FXML private ListView roomListView;
+  @FXML private ListView<String> roomListView;
 
   private ShowRoomsViewModel viewModel;
   @Override
@@ -20,7 +20,7 @@ public class ShowRoomsViewController extends ViewController
     this.viewHandler = viewHandler;
     this.viewModel = (ShowRoomsViewModel) viewModel;
     this.root = root;
-
+    roomListView.setItems(((ShowRoomsViewModel) viewModel).getList());
   }
 
   @Override public void reset()
