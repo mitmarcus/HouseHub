@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65580ae9-a735-44fe-8189-79c3f2e025f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/test_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/test_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Design/RoomListView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Design/cosmetics/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Design/cosmetics/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681305386525</updated>
-      <workItem from="1681309787037" duration="2904000" />
+      <workItem from="1681309787037" duration="3145000" />
     </task>
     <servers />
   </component>
