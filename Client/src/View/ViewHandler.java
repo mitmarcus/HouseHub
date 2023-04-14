@@ -33,7 +33,7 @@ public class ViewHandler
     switch (id)
     {
       case "showRooms":
-        showRoomsViewController = loadViewController("/Design/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
+        showRoomsViewController = loadViewController("/Fxml/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
         break;
      /* case "menu":
         menuViewController = loadViewController("MenuView.fxml",menuViewController, viewModelFactory.getMenuViewModel());

@@ -1,0 +1,44 @@
+@font-face {
+    -fx-font-family: 'Montserrat';
+    src: url('FontMontserrat/Montserrat-SemiBold.ttf');
+}
+
+
+.root{
+    -fx-background-color: #F6F7FB;
+}
+
+#title-box {
+    -fx-background-color: #d6d6d6;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 0 100 100 0px;
+    -fx-padding: 10px 10px 10px 10px;
+}
+
+.title-label {
+    -fx-font-family: 'Montserrat SemiBold';
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.subtitle-label {
+    -fx-font-size: 20px;
+    -fx-font-style: italic;
+    -fx-text-fill: #666666;
+    -fx-padding: 0 0 20 0;
+}
+
+.menu-button {
+    -fx-background-color: #5D5D5D;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.footer-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #999999;
+    -fx-padding: 20px 0 0 0;
+}

@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-Medium.ttf');
+    -fx-font-family: 'Montserrat';
+    src: url('FontMontserrat/Montserrat-SemiBold.ttf');
 }
 
 .root {
@@ -10,7 +10,7 @@
 
 .label {
     -fx-font-size: 24px;
-    -fx-font-family: 'Montserrat', sans-serif;
+    -fx-font-family: 'Montserrat SemiBold';
 }
 
 .list-view {
