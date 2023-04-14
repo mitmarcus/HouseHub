@@ -45,7 +45,7 @@ public class ViewHandler
     }
     currentScene.setRoot(root);
 
-    String title = "";
+    String title = "HouseHub";
     if (root.getUserData() != null)
     {
       title += root.getUserData();
