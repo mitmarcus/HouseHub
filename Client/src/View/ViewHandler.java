@@ -4,6 +4,7 @@ import ViewModel.ViewModel;
 import ViewModel.ViewModelFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
@@ -53,6 +54,7 @@ public class ViewHandler
     primaryStage.setTitle(title);
     primaryStage.setResizable(false);
     primaryStage.setScene(currentScene);
+    primaryStage.getIcons().add(new Image("/Fxml/logo.png"));
     primaryStage.setWidth(root.getPrefWidth());
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
