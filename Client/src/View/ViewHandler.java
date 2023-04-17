@@ -1,17 +1,9 @@
 package View;
-
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 import ViewModel.ViewModel;
 import ViewModel.ViewModelFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-<<<<<<< HEAD
-=======
 import javafx.scene.image.Image;
->>>>>>> main
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
@@ -41,11 +33,7 @@ public class ViewHandler
     switch (id)
     {
       case "showRooms":
-<<<<<<< HEAD
-        showRoomsViewController = loadViewController("./Fxml/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
-=======
         showRoomsViewController = loadViewController("/Fxml/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
->>>>>>> main
         break;
      /* case "menu":
         menuViewController = loadViewController("MenuView.fxml",menuViewController, viewModelFactory.getMenuViewModel());
@@ -57,28 +45,20 @@ public class ViewHandler
     }
     currentScene.setRoot(root);
 
-<<<<<<< HEAD
-    String title = "";
-=======
+
     String title = "HouseHub";
->>>>>>> main
+
     if (root.getUserData() != null)
     {
       title += root.getUserData();
     }
     primaryStage.setTitle(title);
-<<<<<<< HEAD
+
     primaryStage.setResizable(false);
     primaryStage.setScene(currentScene);
-<<<<<<< Updated upstream
-=======
-    primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
->>>>>>> Stashed changes
-=======
+    //primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
     primaryStage.setResizable(true);
     primaryStage.setScene(currentScene);
-    primaryStage.getIcons().add(new Image("/Resources/logo.png"));
->>>>>>> main
     primaryStage.setWidth(root.getPrefWidth());
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
