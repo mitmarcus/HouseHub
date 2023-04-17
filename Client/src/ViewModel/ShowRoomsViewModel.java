@@ -12,7 +12,7 @@ public class ShowRoomsViewModel extends ViewModel
 
   public ShowRoomsViewModel(ModelClient model,ViewState viewState)
   {
-    this.model =model;
+    this.model = model;
     this.viewState = viewState;
     list = FXCollections.observableArrayList();
     list.add("Room in horsens close to the city center");
