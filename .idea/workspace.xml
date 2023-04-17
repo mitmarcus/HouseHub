@@ -4,41 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65580ae9-a735-44fe-8189-79c3f2e025f8" name="Changes" comment="">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-BlackItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-ExtraBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLight.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-ExtraLight.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-ExtraLightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-SemiBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Thin.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-ThinItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-ThinItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/test_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/test_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/logo.png" beforeDir="false" />
-=======
+    <list default="true" id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> Stashed changes
+<<<<<<< Updated upstream
+=======
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/fonts/Montserrat-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,81 +32,47 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2OKNbgMqB7rtgXu36GRYBvf9B16" />
+  <component name="ProjectId" id="2OKDQk9oIBpkYMAxeR1ewsjk3ha" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Ricardo/Documents/GitHub/HouseHub/Client/src/Fxml",
-    "settings.editor.selected.configurable": "vcs.Git"
-=======
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ricardo/Documents/GitHub/HouseHub/Client/src/Fxml&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
->>>>>>> Stashed changes
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Ricardo\Documents\GitHub\HouseHub\Client\src\Fxml" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\markg\Desktop\VIA\2_Semester\SEP\HouseHub\Client\src\Resources" />
-      <recent name="C:\Users\markg\Desktop\VIA\2_Semester\SEP\HouseHub\Client\src\Fxml\FontMontserrat" />
-      <recent name="C:\Users\markg\Desktop\VIA\2_Semester\SEP\HouseHub\Client\src\resources" />
+      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml" />
     </key>
-  </component>
-  <component name="RunManager" selected="Application.ClientApplication">
-    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientApplication" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientMain" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ClientApplication" />
-        <item itemvalue="Application.ClientMain" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="65580ae9-a735-44fe-8189-79c3f2e025f8" name="Changes" comment="" />
-      <created>1681305386525</created>
+      <changelist id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="" />
+      <created>1681300371133</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1681305386525</updated>
+      <updated>1681300371133</updated>
+      <workItem from="1681300378070" duration="48000" />
+<<<<<<< Updated upstream
+      <workItem from="1681301269610" duration="796000" />
+=======
+      <workItem from="1681301269610" duration="3456000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
