@@ -2,14 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Client/src/networking/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/networking/RemoteModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/ModelServer/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/ModelServer/RoomList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/ModelServer/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/ModelServer/UserList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/networking/RemoteModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/src/networking/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Fxml/RoomListView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ClientApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ClientApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Model_Client/ModelClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ModelClient/ModelClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Model_Client/ModelManagerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ModelClient/ModelManagerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,7 +48,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ClientApplication">
+  <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApplication" />
       <module name="Client" />
@@ -45,8 +65,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ClientApplication" />
         <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ClientApplication" />
       </list>
     </recent_temporary>
   </component>

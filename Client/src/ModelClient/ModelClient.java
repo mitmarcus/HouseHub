@@ -1,4 +1,4 @@
-package Model_Client;
+package ModelClient;
 
 public interface ModelClient
 {

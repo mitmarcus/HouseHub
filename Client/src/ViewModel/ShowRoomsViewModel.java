@@ -1,6 +1,6 @@
 package ViewModel;
 
-import Model_Client.ModelClient;
+import ModelClient.ModelClient;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

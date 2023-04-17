@@ -1,5 +1,5 @@
-import Model_Client.ModelClient;
-import Model_Client.ModelManagerClient;
+import ModelClient.ModelClient;
+import ModelClient.ModelManagerClient;
 import View.ViewHandler;
 import ViewModel.ViewModelFactory;
 import javafx.application.Application;
