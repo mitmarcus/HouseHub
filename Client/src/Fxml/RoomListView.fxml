@@ -8,12 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<<<<<<< Updated upstream
-<VBox prefHeight="400.0" prefWidth="600.0" spacing="10" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.RoomListView">
 
-    <Label text="Room List" />
-    <ListView fx:id="roomListView" />
-=======
 <VBox prefHeight="400.0" prefWidth="600.0" spacing="10" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ShowRoomsViewController">
    <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="482.0">
       <children>
@@ -35,6 +30,5 @@
          <Button mnemonicParsing="false" text="My reservations" />
       </children>
    </HBox>
->>>>>>> Stashed changes
 
 </VBox>
