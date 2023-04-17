@@ -56,7 +56,7 @@ public class ViewHandler
 
     primaryStage.setResizable(false);
     primaryStage.setScene(currentScene);
-    //primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
+    primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
     primaryStage.setResizable(true);
     primaryStage.setScene(currentScene);
     primaryStage.setWidth(root.getPrefWidth());
