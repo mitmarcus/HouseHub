@@ -1,0 +1,21 @@
+<<<<<<< Updated upstream:Client/src/Fxml/style.css
+=======
+@font-face {
+    -font-family: 'Montserrat';
+    -src: url('Montserrat-Medium.ttf');
+}
+
+>>>>>>> Stashed changes:Client/src/Fxml/cosmetics/style.css
+.root {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 10px;
+}
+
+.label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.list-view {
+    -fx-font-size: 18px;
+}
