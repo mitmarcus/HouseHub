@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/MainMenu.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/RoomListView.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/test_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Model_Client/ModelClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Model_Client/ModelManagerClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ShowRoomsViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ShowRoomsViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewModelFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewState.class" beforeDir="false" />
-    </list>
+    <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,12 +18,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApplication" />
