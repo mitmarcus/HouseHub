@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="">
+    <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-=======
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/fonts/Montserrat-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/Montserrat-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/FilesCSS/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ClientMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/MainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/RoomListView.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/FontMontserrat/Montserrat-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/cosmetics/test_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Model_Client/ModelClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Model_Client/ModelManagerClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ShowRoomsViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ShowRoomsViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewModelFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ViewModel/ViewState.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,47 +53,59 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2OKDQk9oIBpkYMAxeR1ewsjk3ha" />
+  <component name="ProjectId" id="2OYKAb0mc5IGHnpqOdrQJ3Rtn7j" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\markg\Desktop\VIA\2 Semester\SEP\HouseHub\Client\src\Fxml" />
-    </key>
+  <component name="RunManager" selected="Application.ClientMain">
+    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientApplication" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientMain" />
+      <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ClientMain" />
+        <item itemvalue="Application.ClientApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d18a14d6-48f4-4f97-b855-8fd4c5166b15" name="Changes" comment="" />
-      <created>1681300371133</created>
+      <changelist id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="" />
+      <created>1681731490086</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1681300371133</updated>
-      <workItem from="1681300378070" duration="48000" />
-<<<<<<< Updated upstream
-      <workItem from="1681301269610" duration="796000" />
-=======
-      <workItem from="1681301269610" duration="3456000" />
->>>>>>> Stashed changes
+      <updated>1681731490086</updated>
     </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
