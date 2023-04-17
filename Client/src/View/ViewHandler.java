@@ -54,6 +54,10 @@ public class ViewHandler
     primaryStage.setTitle(title);
     primaryStage.setResizable(false);
     primaryStage.setScene(currentScene);
+<<<<<<< Updated upstream
+=======
+    primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
+>>>>>>> Stashed changes
     primaryStage.setWidth(root.getPrefWidth());
     primaryStage.setHeight(root.getPrefHeight());
     primaryStage.show();
