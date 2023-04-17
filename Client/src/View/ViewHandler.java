@@ -15,6 +15,7 @@ public class ViewHandler
   private Scene currentScene;
   private ViewModelFactory viewModelFactory;
   private ViewController showRoomsViewController;
+  private ViewController mainMenuViewController;
 
   public ViewHandler(ViewModelFactory viewModelFactory) {
     this.viewModelFactory = viewModelFactory;
@@ -22,7 +23,7 @@ public class ViewHandler
   }
   public void start(Stage primaryStage) {
     this.primaryStage = primaryStage;
-    openView("showRooms");
+    openView("mainMenu");
   }
 
   public void closeView() {
@@ -35,13 +36,13 @@ public class ViewHandler
       case "showRooms":
         showRoomsViewController = loadViewController("/Fxml/RoomListView.fxml",showRoomsViewController,viewModelFactory.getShowRoomsViewModel());
         break;
-     /* case "menu":
-        menuViewController = loadViewController("MenuView.fxml",menuViewController, viewModelFactory.getMenuViewModel());
+      case "mainMenu":
+        mainMenuViewController = loadViewController("/Fxml/MainMenu.fxml",mainMenuViewController, viewModelFactory.getMainMenuViewModel());
         break;
-      case "chess":
+      /*case "chess":
         chessViewController = loadViewController("ChessBoard.fxml",chessViewController, viewModelFactory.getChessViewModel());
-        break;
-        */
+        break;*/
+
     }
     currentScene.setRoot(root);
 
