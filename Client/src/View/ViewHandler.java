@@ -52,7 +52,7 @@ public class ViewHandler
       title += root.getUserData();
     }
     primaryStage.setTitle(title);
-    primaryStage.setResizable(false);
+    primaryStage.setResizable(true);
     primaryStage.setScene(currentScene);
     primaryStage.getIcons().add(new Image("/Resources/logo.png"));
     primaryStage.setWidth(root.getPrefWidth());
