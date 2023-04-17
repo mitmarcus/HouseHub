@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="65580ae9-a735-44fe-8189-79c3f2e025f8" name="Changes" comment="">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/Fxml/cosmetics/FontMontserrat/Montserrat-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Resources/FontMontserrat/Montserrat-Black.ttf" afterDir="false" />
@@ -34,6 +35,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 >>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/Fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -60,12 +70,17 @@
     "last_opened_file_path": "C:/Users/Ricardo/Documents/GitHub/HouseHub/Client/src/Fxml",
     "settings.editor.selected.configurable": "vcs.Git"
 =======
+=======
+>>>>>>> Stashed changes
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Ricardo/Documents/GitHub/HouseHub/Client/src/Fxml&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   }
 }</component>
