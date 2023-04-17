@@ -2,7 +2,10 @@ package View;
 
 import ViewModel.ViewModel;
 import ViewModel.ShowRoomsViewModel;
+<<<<<<< HEAD
 import javafx.event.ActionEvent;
+=======
+>>>>>>> main
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
@@ -28,8 +31,11 @@ public class ShowRoomsViewController extends ViewController
   {
     viewModel.clear();
   }
+<<<<<<< HEAD
 
    // public void handleImageButton(ActionEvent actionEvent) {
     //goback
     //}
+=======
+>>>>>>> main
 }
