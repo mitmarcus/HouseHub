@@ -4,6 +4,7 @@ import ViewModel.ViewModel;
 import ViewModel.ShowRoomsViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 
@@ -32,5 +33,9 @@ public class ShowRoomsViewController extends ViewController
 
   public void handleImageButton(ActionEvent actionEvent) {
 
-    }
+  }
+  @FXML
+  public void detailsButtonPressed(ActionEvent actionEvent){
+    viewHandler.openView("details");
+  }
 }

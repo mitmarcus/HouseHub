@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DetailsViewController">
+    <TableView fx:id="propertyTable" layoutX="41.0" layoutY="50.0" prefHeight="300.0" prefWidth="520.0">
+        <columns>
+            <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price" />
+            <TableColumn fx:id="addressColumn" prefWidth="200.0" text="Address" />
+            <TableColumn fx:id="sizeColumn" prefWidth="82.6666259765625" text="Size" />
+            <TableColumn fx:id="bedroomsColumn" prefWidth="137.3333740234375" text="Number of Bedrooms" />
+        </columns>
+    </TableView>
+    <Label layoutX="41.0" layoutY="14.0" text="Room Details">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+</AnchorPane>
