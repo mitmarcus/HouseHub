@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client/src/Fxml/Details.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/ModelClient/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/View/DetailsViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/ViewModel/DetailsViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client/src/ModelClient/RoomList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/RoomListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ShowRoomsViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/View/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/View/MainMenuViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/View/MainMenuViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/View/ViewHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

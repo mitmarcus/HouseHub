@@ -41,7 +41,7 @@ public class ViewHandler {
                 mainMenuViewController = loadViewController("/Fxml/MainMenu.fxml", mainMenuViewController, viewModelFactory.getMainMenuViewModel());
                 break;
             case "details":
-                detailsViewController = loadViewController("Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
+                detailsViewController = loadViewController("/Fxml/Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
                 break;
 
         }
