@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@FilesCSS/test_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
+<VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@test_style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
    <HBox prefHeight="100.0" prefWidth="200.0">
       <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="431.0" spacing="10.0">
          <VBox alignment="CENTER" prefHeight="150.0" prefWidth="247.0" spacing="10.0">
-            <Label styleClass="title-label" text="Welcome to "/>
-            <Label styleClass="title-label" text="HouseHub"/>
+            <Label styleClass="title-label" text="Welcome to " />
+            <Label styleClass="title-label" text="HouseHub" />
          </VBox>
          <ImageView fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@../Resources/Logo.png"/>
+            <Image url="@../Resources/Logo.png" />
          </ImageView>
       </HBox>
    </HBox>

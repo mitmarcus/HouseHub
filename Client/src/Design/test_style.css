@@ -1,8 +1,7 @@
 @font-face {
     -fx-font-family: 'Montserrat';
-    src: url('Resources/FontMontserrat/Montserrat-SemiBold.ttf');
+    src: url('/Design/FontMontserrat/Montserrat-SemiBold.ttf');
 }
-
 
 .root{
     -fx-background-color: #F6F7FB;
@@ -35,10 +34,4 @@
     -fx-padding: 10px 20px;
     -fx-border-radius: 5px;
     -fx-cursor: hand;
-}
-
-.footer-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #999999;
-    -fx-padding: 20px 0 0 0;
 }

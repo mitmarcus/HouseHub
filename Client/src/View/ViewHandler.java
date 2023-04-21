@@ -35,13 +35,13 @@ public class ViewHandler {
     public void openView(String id) {
         switch (id) {
             case "showRooms":
-                showRoomsViewController = loadViewController("/Fxml/RoomListView.fxml", showRoomsViewController, viewModelFactory.getShowRoomsViewModel());
+                showRoomsViewController = loadViewController("/Design/RoomListView.fxml", showRoomsViewController, viewModelFactory.getShowRoomsViewModel());
                 break;
             case "mainMenu":
-                mainMenuViewController = loadViewController("/Fxml/MainMenu.fxml", mainMenuViewController, viewModelFactory.getMainMenuViewModel());
+                mainMenuViewController = loadViewController("/Design/MainMenu.fxml", mainMenuViewController, viewModelFactory.getMainMenuViewModel());
                 break;
             case "details":
-                detailsViewController = loadViewController("/Fxml/Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
+                detailsViewController = loadViewController("/Design/Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
                 break;
 
         }

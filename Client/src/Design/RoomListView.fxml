@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" spacing="10" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ShowRoomsViewController">
+<VBox prefHeight="400.0" prefWidth="600.0" spacing="10" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ShowRoomsViewController">
     <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="482.0" spacing="10.0">
         <Button graphicTextGap="10" onAction="#handleImageButton" prefHeight="26.0" prefWidth="22.0">
             <graphic>
