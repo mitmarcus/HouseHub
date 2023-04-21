@@ -4,109 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ViewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ViewState.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/Details.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/Details.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/networking/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Networking/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/networking/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Networking/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/networking/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Networking/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/src/networking/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Networking/Server.java" afterDir="false" />
->>>>>>> Stashed changes
-    </list>
+    <list default="true" id="48dcbda4-6cfb-4f80-83a4-cd08622131eb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="FxmlFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2OYKAb0mc5IGHnpqOdrQJ3Rtn7j" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ClientMain">
-    <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientApplication" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ClientMain" />
-      <module name="Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.ClientMain" />
-        <item itemvalue="Application.ClientApplication" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="" />
-      <created>1681731490086</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1681731490086</updated>
-      <workItem from="1682063743916" duration="375000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
