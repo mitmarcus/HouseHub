@@ -5,9 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9162962-0752-421b-92aa-8849afce478d" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ShowRoomsViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/ViewModel/ViewState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ViewModel/ViewState.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/Details.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/Details.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Fxml/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/networking/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Networking/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/networking/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/Networking/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/networking/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Networking/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/src/networking/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/Networking/Server.java" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +43,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.ClientMain">
     <configuration name="ClientApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClientApplication" />
@@ -74,8 +91,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1681731490086</updated>
+      <workItem from="1682063743916" duration="375000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
