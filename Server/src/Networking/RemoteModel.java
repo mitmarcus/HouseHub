@@ -1,6 +1,5 @@
-package networking;
+package Networking;
 
 public interface RemoteModel
 {
-
 }

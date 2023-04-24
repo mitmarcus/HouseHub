@@ -8,25 +8,16 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@FilesCSS/test_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
-   <HBox prefHeight="100.0" prefWidth="200.0">
-      <children>
-         <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="431.0" spacing="10.0">
-            <children>
-               <VBox alignment="CENTER" prefHeight="150.0" prefWidth="247.0" spacing="10.0">
-                  <children>
-                  
-                      <Label styleClass="title-label" text="Welcome to " />
-                     <Label styleClass="title-label" text="HouseHub" />
-                  </children>
-               </VBox>
-               <ImageView fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../Resources/Logo.png" />
-                  </image>
-               </ImageView>
-            </children>
-         </HBox>
-      </children>
+   <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@FilesCSS/test_style.css">
+      <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="431.0" spacing="10.0">
+         <VBox alignment="CENTER" prefHeight="150.0" prefWidth="247.0" spacing="10.0">
+            <Label styleClass="title-label" text="Welcome to " />
+            <Label styleClass="title-label" text="HouseHub" />
+         </VBox>
+         <ImageView fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../Resources/Logo.png" />
+         </ImageView>
+      </HBox>
    </HBox>
 
     <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
