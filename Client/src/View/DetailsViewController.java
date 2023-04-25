@@ -1,14 +1,9 @@
 package View;
 
-import ModelClient.Room;
 import ViewModel.ViewModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
@@ -21,13 +16,15 @@ public class DetailsViewController extends ViewController {
     private ImageView cancelButton;
 
     @FXML
-    private Text roomPrice;
+    private TextField price;
 
     @FXML
     private TextField roomSize;
 
     @FXML
     private TextField roomAddress;
+    @FXML
+    private TextField numberOfRooms;
 
     @FXML
     private Button reserveButton;
@@ -37,11 +34,16 @@ public class DetailsViewController extends ViewController {
         this.viewHandler = viewHandler;
         this.viewModel = (DetailsViewModel) viewModel;
         this.root = root;
+        this.price.textProperty().bind(((DetailsViewModel) viewModel).getPriceProperty());
+        this.numberOfRooms.textProperty().bind(((DetailsViewModel) viewModel).getNumberOfRoomsProperty());
+        this.roomAddress.textProperty().bind(((DetailsViewModel) viewModel).getRoomAddressProperty());
+        this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
+        viewModel.clear();
     }
 
     @FXML
-    private void handleImageButton() {
-        // TODO: handle the image button click event
+    private void goBack() {
+        viewHandler.openView("showRooms");
     }
 
     @FXML

@@ -20,13 +20,12 @@ public class ShowRoomsViewModel extends ViewModel
   {
     this.model = model;
     this.viewState = viewState;
-    list = FXCollections.observableArrayList();
+    this.list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
-    list.add("Room 1");
-    list.add("Room 2");
-    list.add("Room 3");
-    list.add("Room 4");
-    list.add("Room 5");
+    for (int i = 0; i < model.getAllRooms().size();i++)
+    {
+      list.add(model.getAllRooms().get(i).getAnnouncement());
+    }
   }
 
   @Override public void clear()
@@ -45,6 +44,18 @@ public class ShowRoomsViewModel extends ViewModel
   public void setId(String id)
   {
     viewState.setId(id);
+  }
+
+  public void roomDetails() {
+    if (selectedObject.get() != null){
+      try{
+        viewState.setId(selectedObject.get());
+      }
+      catch (Exception e)
+      {
+        System.out.println("Error on showRoomVIEWMODEL");
+      }
+    }
   }
 
 

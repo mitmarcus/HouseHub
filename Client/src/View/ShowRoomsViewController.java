@@ -21,8 +21,9 @@ public class ShowRoomsViewController extends ViewController
   {
     this.viewHandler = viewHandler;
     this.viewModel = (ShowRoomsViewModel) viewModel;
+    this.roomListView.setItems(((ShowRoomsViewModel) viewModel).getList());
     this.root = root;
-    roomListView.setItems(((ShowRoomsViewModel) viewModel).getList());
+
   }
 
   @Override public void reset()
@@ -30,14 +31,21 @@ public class ShowRoomsViewController extends ViewController
     viewModel.clear();
   }
 
-  public void handleImageButton(ActionEvent actionEvent) {
-
+  @FXML
+  public void goBack() {
+    viewHandler.openView("main");
   }
   @FXML
-  public void detailsButtonPressed(ActionEvent actionEvent){
-    int numberOfSelectedRows = roomListView.getSelectionModel().getSelectedItems().size();
-    if (numberOfSelectedRows == 1) {
+  public void detailsButtonPressed(){
+   // int numberOfSelectedRows = roomListView.getSelectionModel().getSelectedItems().size();
+   // if (numberOfSelectedRows == 1) {
+      viewModel.setSelectedObject(roomListView.getSelectionModel().getSelectedItem());
+      viewModel.roomDetails();
       viewHandler.openView("details");
     }
+    @FXML public void reservationsButtonPressed()
+    {
+      viewHandler.openView("main");
+    }
   }
-}
+

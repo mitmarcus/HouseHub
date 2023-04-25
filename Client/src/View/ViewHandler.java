@@ -25,7 +25,7 @@ public class ViewHandler {
 
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        openView("mainMenu");
+        openView("main");
     }
 
     public void closeView() {
@@ -37,7 +37,7 @@ public class ViewHandler {
             case "showRooms":
                 showRoomsViewController = loadViewController("/Fxml/RoomListView.fxml", showRoomsViewController, viewModelFactory.getShowRoomsViewModel());
                 break;
-            case "mainMenu":
+            case "main":
                 mainMenuViewController = loadViewController("/Fxml/MainMenu.fxml", mainMenuViewController, viewModelFactory.getMainMenuViewModel());
                 break;
             case "details":
@@ -66,22 +66,18 @@ public class ViewHandler {
     }
 
     private ViewController loadViewController(String fxmlFile, ViewController viewController, ViewModel viewModel) {
-        if (viewController == null) {
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource(fxmlFile));
-                this.root = loader.load();
-                viewController = loader.getController();
-                viewController
-                        .init(this, viewModel, this.root);
-                viewController.reset();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            viewController.reset();
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(fxmlFile));
+            this.root = loader.load();
+            viewController = loader.getController();
+            viewController
+                .init(this, viewModel, this.root);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return viewController;
+        }
     }
 
-}
+

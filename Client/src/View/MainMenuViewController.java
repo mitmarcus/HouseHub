@@ -11,6 +11,7 @@ import javafx.scene.layout.Region;
 
 public class MainMenuViewController extends ViewController {
     private MainMenuViewModel viewModel;
+    private ViewHandler viewHandler;
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel, Region root) {

@@ -3,10 +3,10 @@ public class Room {
     private String announcement;
     private String price;
     private String address;
-    private int size;
-    private int bedrooms;
+    private String size;
+    private String bedrooms;
 
-    public Room(String announcement,String price, String address, int size, int bedrooms) {
+    public Room(String announcement,String price, String address, String size, String bedrooms) {
         this.announcement = announcement;
         this.price = price;
         this.address = address;
@@ -32,19 +32,19 @@ public class Room {
         this.address = address;
     }
 
-    public int getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public int getBedrooms() {
+    public String getBedrooms() {
         return bedrooms;
     }
 
-    public void setBedrooms(int bedrooms) {
+    public void setBedrooms(String bedrooms) {
         this.bedrooms = bedrooms;
     }
 
