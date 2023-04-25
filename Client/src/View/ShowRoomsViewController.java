@@ -4,11 +4,13 @@ import ViewModel.ViewModel;
 import ViewModel.ShowRoomsViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 
-
+import java.util.Optional;
 
 public class ShowRoomsViewController extends ViewController
 {
@@ -36,13 +38,23 @@ public class ShowRoomsViewController extends ViewController
     viewHandler.openView("main");
   }
   @FXML
-  public void detailsButtonPressed(){
-   // int numberOfSelectedRows = roomListView.getSelectionModel().getSelectedItems().size();
-   // if (numberOfSelectedRows == 1) {
-      viewModel.setSelectedObject(roomListView.getSelectionModel().getSelectedItem());
+  public void detailsButtonPressed()
+  {
+    int numberOfSelectedRows = roomListView.getSelectionModel().getSelectedItems().size();
+    if (numberOfSelectedRows == 1) {
+      viewModel.setSelectedObject(
+          roomListView.getSelectionModel().getSelectedItem());
       viewModel.roomDetails();
       viewHandler.openView("details");
     }
+    else{
+      Alert alert= new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("ERROR");
+      alert.setHeaderText("Please select an announcement");
+      Optional<ButtonType> result = alert.showAndWait();
+    }
+
+  }
     @FXML public void reservationsButtonPressed()
     {
       viewHandler.openView("main");

@@ -50,7 +50,6 @@ public class DetailsViewModel extends ViewModel{
         this.roomSize.setValue(room.getSize());
         this.numberOfRooms.setValue(room.getBedrooms());
         this.roomAddress.setValue(room.getAddress());
-
     }
 
 }
