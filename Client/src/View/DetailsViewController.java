@@ -2,42 +2,51 @@ package View;
 
 import ModelClient.Room;
 import ViewModel.ViewModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
+import javafx.scene.text.Text;
 
 public class DetailsViewController extends ViewController {
-    private DetailsViewModel model;
+    private DetailsViewModel viewModel;
 
     @FXML
-    private TableView<Room> roomTable;
+    private ImageView cancelButton;
 
     @FXML
-    private TableColumn<Room, String> priceColumn;
+    private Text roomPrice;
 
     @FXML
-    private TableColumn<Room, String> addressColumn;
+    private TextField roomSize;
 
     @FXML
-    private TableColumn<Room, Integer> sizeColumn;
+    private TextField roomAddress;
 
     @FXML
-    private TableColumn<Room, Integer> bedroomsColumn;
+    private Button reserveButton;
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel, Region root) {
         this.viewHandler = viewHandler;
-        this.model = (DetailsViewModel) viewModel;
+        this.viewModel = (DetailsViewModel) viewModel;
         this.root = root;
-        this.roomTable.setItems(((DetailsViewModel) viewModel).getList());
+    }
 
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
-        addressColumn.setCellValueFactory(new PropertyValueFactory<>("address"));
-        sizeColumn.setCellValueFactory(new PropertyValueFactory<>("size"));
-        bedroomsColumn.setCellValueFactory(new PropertyValueFactory<>("bedrooms"));
+    @FXML
+    private void handleImageButton() {
+        // TODO: handle the image button click event
+    }
+
+    @FXML
+    private void reserveButtonPressed() {
+        // TODO: handle the reserve button click event
     }
 
     @Override
@@ -45,3 +54,4 @@ public class DetailsViewController extends ViewController {
 
     }
 }
+

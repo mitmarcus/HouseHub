@@ -1,17 +1,21 @@
 package ModelClient;
 public class Room {
+    private String announcement;
     private String price;
     private String address;
     private int size;
     private int bedrooms;
 
-    public Room(String price, String address, int size, int bedrooms) {
+    public Room(String announcement,String price, String address, int size, int bedrooms) {
+        this.announcement = announcement;
         this.price = price;
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
     }
-
+    public String getAnnouncement(){
+        return announcement;
+    }
     public String getPrice() {
         return price;
     }

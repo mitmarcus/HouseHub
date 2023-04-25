@@ -30,12 +30,14 @@ public class ShowRoomsViewController extends ViewController
     viewModel.clear();
   }
 
-
   public void handleImageButton(ActionEvent actionEvent) {
 
   }
   @FXML
   public void detailsButtonPressed(ActionEvent actionEvent){
-    viewHandler.openView("details");
+    int numberOfSelectedRows = roomListView.getSelectionModel().getSelectedItems().size();
+    if (numberOfSelectedRows == 1) {
+      viewHandler.openView("details");
+    }
   }
 }

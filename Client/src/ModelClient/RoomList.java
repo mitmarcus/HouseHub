@@ -9,6 +9,14 @@ public class RoomList {
         this.list = new ArrayList<>();
     }
 
+    public Room getRoomByAnnouncement(String announcement){
+        for (int i =0; i< list.size(); i++){
+            if (list.get(i).getAnnouncement().equals(announcement)){
+                return list.get(i);
+            }
+        }
+        return null;
+    }
     public void addRoom(Room room){
         list.add(room);
     }

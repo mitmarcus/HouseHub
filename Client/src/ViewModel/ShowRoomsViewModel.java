@@ -22,15 +22,16 @@ public class ShowRoomsViewModel extends ViewModel
     this.viewState = viewState;
     list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
-    list.add("Room in horsens close to the city center");
-    list.add("Room in horsens close to via university collegue");
-    list.add("Apartment for 2 next to lovbjerg");
-    list.add("Room for cheap price close to fitnessX");
+    list.add("Room 1");
+    list.add("Room 2");
+    list.add("Room 3");
+    list.add("Room 4");
+    list.add("Room 5");
   }
 
   @Override public void clear()
   {
-
+    list.clear();
   }
   public ObservableList<String> getList()
   {

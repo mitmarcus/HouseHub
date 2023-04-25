@@ -15,9 +15,9 @@ public class DetailsViewModel extends ViewModel{
         this.model = model;
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
-        this.list.add(new Room("$300,000", "123 Main St", 200, 3));
-        this.list.add(new Room("$500,000", "456 Elm St", 300, 2));
-        this.list.add(new Room("$700,000", "789 Oak St", 120, 1));
+        this.list.add(new Room("Room next Lovbjerg.","$300,000", "123 Main St", 200, 3));
+        this.list.add(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", 300, 2));
+        this.list.add(new Room("Available room close to city center","$700,000", "789 Oak St", 120, 1));
     }
 
     @Override
