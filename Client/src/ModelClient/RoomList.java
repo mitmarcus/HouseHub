@@ -33,6 +33,9 @@ public class RoomList {
 
     }
     public void removeRoom(Room room){
+        if (list.size() == 0){
+            throw  new IllegalStateException();
+        }
         list.remove(room);
     }
     public ArrayList<Room> getAllRooms(){
