@@ -17,20 +17,20 @@ public class RoomList {
         }
         return null;
     }
+    public Room getRoomAtIndex(int index)
+    {
+        return list.get(index);
+    }
     public void addRoom(Room room){
-        try{
-            if (room.getAddress()!=null||
-            room.getBedrooms()!=null||
-            room.getSize()!=null||
+
+            if (room.getAddress()!=null&&
+            room.getBedrooms()!=null&&
+            room.getSize()!=null&&
             room.getPrice()!=null)
                 list.add(room);
             else
-                System.out.println("Add room");
-        }
-        catch (IllegalArgumentException e)
-        {
-            e.printStackTrace();
-        }
+                throw new IllegalArgumentException();
+
     }
     public void removeRoom(Room room){
         list.remove(room);
