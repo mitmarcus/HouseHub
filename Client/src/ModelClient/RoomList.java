@@ -18,7 +18,19 @@ public class RoomList {
         return null;
     }
     public void addRoom(Room room){
-        list.add(room);
+        try{
+            if (room.getAddress()!=null||
+            room.getBedrooms()!=null||
+            room.getSize()!=null||
+            room.getPrice()!=null)
+                list.add(room);
+            else
+                System.out.println("Add room");
+        }
+        catch (IllegalArgumentException e)
+        {
+            e.printStackTrace();
+        }
     }
     public void removeRoom(Room room){
         list.remove(room);

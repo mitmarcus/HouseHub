@@ -66,16 +66,22 @@ public class ViewHandler {
     }
 
     private ViewController loadViewController(String fxmlFile, ViewController viewController, ViewModel viewModel) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(fxmlFile));
-            this.root = loader.load();
-            viewController = loader.getController();
-            viewController
-                .init(this, viewModel, this.root);
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (viewController==null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(fxmlFile));
+                this.root = loader.load();
+                viewController = loader.getController();
+                viewController.init(this, viewModel, this.root);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
         }
+        root=viewController.getRoot();
         return viewController;
         }
     }

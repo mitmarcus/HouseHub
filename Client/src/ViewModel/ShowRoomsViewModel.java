@@ -47,15 +47,7 @@ public class ShowRoomsViewModel extends ViewModel
   }
 
   public void roomDetails() {
-    if (selectedObject.get() != null){
-      try{
-        viewState.setId(selectedObject.get());
-      }
-      catch (Exception e)
-      {
-        System.out.println("Error on showRoomVIEWMODEL");
-      }
-    }
+    viewState.setId(selectedObject.get());
   }
 
 
