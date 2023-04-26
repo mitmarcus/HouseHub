@@ -15,10 +15,13 @@ class RoomListTest {
   /*
   Z = add a room in a empty list;
   O= add a room in a one element list;
+  O = add a room that aleady exist in the list should throw exception
   M = add one or more rooms in a list with elements;
   B = there is no upper limit for this room list;
   E = add a room with null values should throw an exception;
+
    */
+
 
   @Test public void addRoomInEmpty(){
     Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3");
@@ -30,6 +33,13 @@ class RoomListTest {
     Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3");
     list.addRoom(room);
     assertEquals(room,list.getRoomAtIndex(1));
+  }
+  @Test public void addARoomThatAlreadyExist(){
+    list.addRoom(new Room("Room next Lovbjergasdasdasd.","$500", "123 Main St", "200", "3"));
+    Room room =new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
+    Room room2 = new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
+    list.addRoom(room);
+    assertThrows(IllegalArgumentException.class,()->list.addRoom(room2));
   }
   @Test public void addRoomInListWithMany(){
     list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
@@ -116,4 +126,29 @@ class RoomListTest {
     @Test public void getRoomException(){
         // already handled in B
     }
+    /*
+    Z - return an empty list should throw an exception
+    O - return an list with one element
+    M - return a list with many elements
+    B - already done in Z
+    E - already done is Z
+     */
+
+    @Test public void returnEmptyList(){
+      assertThrows(IllegalStateException.class, ()->list.getAllRooms());
+    }
+    @Test public void returnListWithOne(){
+      Room room = new Room("bb","6.66","Horsens", "143", "3");
+      list.addRoom(room);
+      assertDoesNotThrow(()->list.getAllRooms());
+    }
+    @Test public void returnListWithMany(){
+      list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
+      list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
+      list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+      assertDoesNotThrow(()-> list.getAllRooms());
+    }
+
+
+
 }
