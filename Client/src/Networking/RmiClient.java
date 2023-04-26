@@ -17,18 +17,14 @@ public class RmiClient implements RemoteModel, RemoteListener // with Callback
     private PropertyChangeSupport property;
     public RmiClient(){
         this.property=new PropertyChangeSupport(this);
-    }
-
-    @Override
-    public boolean connectToServer(String host, int port) {
         try {
             UnicastRemoteObject.exportObject(this, 0);
-            server = (RemoteModel) Naming.lookup("rmi://"+host+":1099/SERVER");
+            server = (RemoteModel) Naming.lookup("rmi://localhost:1099/SERVER");
         } catch (Exception e){
             e.printStackTrace();
         }
-        return true;
     }
+
 
     @Override
     public Room getRoomByAnnouncement(String announcement) throws RemoteException {
