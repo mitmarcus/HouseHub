@@ -17,12 +17,10 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Label text="Announcements" />
+        <Label text="My reservations" />
     </HBox>
-    <ListView fx:id="roomListView" prefHeight="364.0" prefWidth="579.0" />
+    <ListView fx:id="roomListView" orientation="HORIZONTAL" prefHeight="364.0" prefWidth="579.0" />
     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
-        <Button fx:id="detailsButtonPressed" mnemonicParsing="false" onAction="#detailsButtonPressed" styleClass="detailsbtn" text="Details" HBox.hgrow="NEVER" />
-        <HBox prefHeight="26.0" prefWidth="140.0" HBox.hgrow="ALWAYS" />
-        <Button mnemonicParsing="false" onAction="#reservationsButtonPressed" styleClass="myreservationsbtn" text="My reservations" HBox.hgrow="NEVER" />
+        <Button mnemonicParsing="false" onAction="#reservationsButtonPressed" styleClass="removebtn" text="Remove" HBox.hgrow="NEVER" />
     </HBox>
 </VBox>

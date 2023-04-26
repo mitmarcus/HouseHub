@@ -20,8 +20,8 @@
       </HBox>
    </HBox>
 
-    <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
+                <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
     <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
-    <Button onAction="#handleManageBookings" styleClass="menu-button" text="Manage Bookings" />
+    <Button onAction="#handleManageBookings" styleClass="menu-button" text="Manage Profile" />
 
 </VBox>

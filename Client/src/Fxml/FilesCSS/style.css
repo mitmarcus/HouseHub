@@ -17,7 +17,7 @@
     -fx-font-size: 18px;
 }
 
-.button.details {
+.button.detailsbtn {
     -fx-background-color: #5aa2dd;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
@@ -26,8 +26,26 @@
     -fx-font-family: "Montserrat";
 }
 
-.button.reservations {
+.button.myreservationsbtn {
     -fx-background-color: #5aa2dd;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Montserrat";
+}
+
+.button.reservationsbtn {
+    -fx-background-color: #6f9940;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Montserrat";
+}
+
+.button.removebtn {
+    -fx-background-color: red;
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
     -fx-text-fill: white;

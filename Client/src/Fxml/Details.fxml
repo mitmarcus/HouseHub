@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400.0" prefWidth="600.0" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.DetailsViewController">
@@ -28,9 +31,9 @@
       <children>
          <VBox alignment="BOTTOM_CENTER" prefHeight="312.0" prefWidth="274.0" stylesheets="@FilesCSS/style.css">
             <children>
-               <VBox alignment="BOTTOM_CENTER" prefHeight="185.0" prefWidth="271.0">
+               <VBox alignment="BOTTOM_CENTER" prefHeight="194.0" prefWidth="271.0">
                   <children>
-                     <VBox prefHeight="66.0" prefWidth="271.0">
+                     <VBox prefHeight="58.0" prefWidth="271.0">
                         <children>
                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
                            <TextField fx:id="roomAddress" alignment="CENTER" prefHeight="26.0" prefWidth="223.0" />
@@ -56,9 +59,41 @@
                      </HBox>
                   </children>
                </VBox>
-               <VBox alignment="BOTTOM_CENTER" prefHeight="98.0" prefWidth="271.0">
+               <VBox prefHeight="23.0" prefWidth="271.0" />
+               <VBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" />
+               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="271.0">
                   <children>
-                     <Button fx:id="reserveButton" alignment="CENTER" mnemonicParsing="false" onAction="#reserveButtonPressed" styleClass="reservations" text="Reserve" />
+                     <Line endX="150.0" startX="-100.0">
+                        <VBox.margin>
+                           <Insets bottom="10.0" />
+                        </VBox.margin>
+                     </Line>
+                     <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                        <children>
+                           <VBox alignment="CENTER" prefHeight="51.0" prefWidth="169.0">
+                              <children>
+                                 <HBox alignment="CENTER" prefHeight="26.0" prefWidth="120.0">
+                                    <children>
+                                       <DatePicker prefHeight="26.0" prefWidth="169.0" promptText="From" />
+                                    </children>
+                                 </HBox>
+                                 <HBox alignment="CENTER" prefHeight="26.0" prefWidth="123.0">
+                                    <children>
+                                       <DatePicker prefHeight="26.0" prefWidth="177.0" promptText="To" />
+                                    </children>
+                                 </HBox>
+                              </children>
+                           </VBox>
+                           <VBox alignment="CENTER" prefHeight="56.0" prefWidth="100.0">
+                              <children>
+                                 <Button fx:id="reserveButton" alignment="CENTER" mnemonicParsing="false" onAction="#reserveButtonPressed" styleClass="reservationsbtn" text="Reserve" />
+                              </children>
+                           </VBox>
+                        </children>
+                        <VBox.margin>
+                           <Insets bottom="5.0" />
+                        </VBox.margin>
+                     </HBox>
                   </children>
                </VBox>
             </children>

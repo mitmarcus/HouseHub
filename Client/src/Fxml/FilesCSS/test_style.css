@@ -1,7 +1,7 @@
-@font-face {
-    -fx-font-family: 'Montserrat';
-    src: url('/Resources/FontMontserrat/Montserrat-SemiBold.ttf');
-}
+/*@font-face {*/
+/*    -fx-font-family: 'Montserrat';*/
+/*    src: url('/Resources/FontMontserrat/Montserrat-SemiBold.ttf');*/
+/*}*/
 
 .root{
     -fx-background-color: #F6F7FB;
