@@ -1,4 +1,7 @@
 package ModelClient;
+
+import java.util.Objects;
+
 public class Room {
     private String announcement;
     private String price;
@@ -47,6 +50,15 @@ public class Room {
     public void setBedrooms(String bedrooms) {
         this.bedrooms = bedrooms;
     }
+
+    @Override public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof Room room)) return false;
+        return Objects.equals(announcement, room.announcement) && Objects.equals(price, room.price) &&
+            Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
+    }
+
 
     @Override
     public String toString() {
