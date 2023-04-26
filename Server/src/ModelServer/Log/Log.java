@@ -1,4 +1,4 @@
-package Log;
+package ModelServer.Log;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

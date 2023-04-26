@@ -1,4 +1,4 @@
-package Log;
+package ModelServer.Log;
 
 public class LogLine {
     private DateTime dateTime;

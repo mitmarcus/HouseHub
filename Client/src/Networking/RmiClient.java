@@ -4,6 +4,7 @@ import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.RemoteListener;
 
+import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -51,18 +52,21 @@ public class RmiClient implements RemoteModel, RemoteListener // with Callback
 
 
     @Override
-    public void propertyChange(ObserverEvent event) throws RemoteException {
-
+    public void propertyChange(ObserverEvent evt) throws RemoteException {
+        String name = evt.getPropertyName();
+        property.firePropertyChange(name, evt.getValue1(), evt.getValue2());
     }
 
     @Override
     public boolean addListener(GeneralListener listener, String... propertyNames) throws RemoteException {
-        return false;
+        property.addPropertyChangeListener((PropertyChangeListener) listener);
+        return true;
     }
 
     @Override
     public boolean removeListener(GeneralListener listener, String... propertyNames) throws RemoteException {
-        return false;
+        property.removePropertyChangeListener((PropertyChangeListener) listener);
+        return true;
     }
 }
 
