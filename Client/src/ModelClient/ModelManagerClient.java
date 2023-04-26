@@ -15,10 +15,11 @@ public class ModelManagerClient implements ModelClient
         this.list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
     }
 
-    @Override
-    public boolean connectToServer(String host, int port) {
-        return false;
-    }
+    ///SHOULD IT BE HERE???
+//    @Override
+//    public boolean connectToServer(String host, int port) {
+//        return false;
+//    }
 
     @Override
     public void addRoom(Room room) {
