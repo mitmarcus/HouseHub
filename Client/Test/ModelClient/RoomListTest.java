@@ -78,4 +78,42 @@ class RoomListTest {
         // already handled in B
     }
 
+    /* GET ROOM AT INDEX
+  Z = get a room from index zero;
+  O = get a room from index 1 ;
+  M = add 2 rooms and get them ;
+  B = get a room from index -1;
+  E = already handled in B;
+   */
+
+    @Test public void getRoomIndexZero(){
+        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        list.addRoom(room);
+        assertDoesNotThrow(()-> list.getRoomAtIndex(0));
+    }
+    @Test public void getRoomIndexOne(){
+        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        list.addRoom(room);
+        list.addRoom(room1);
+        assertDoesNotThrow(()-> list.getRoomAtIndex(1));
+    }
+    @Test public void getManyRooms(){
+        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        list.addRoom(room);
+        list.addRoom(room1);
+        assertDoesNotThrow(()-> list.getRoomAtIndex(0));
+        assertDoesNotThrow(()-> list.getRoomAtIndex(1));
+    }
+    @Test public void getRoomFromInvalidIndex(){
+        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        list.addRoom(room);
+        list.addRoom(room1);
+        assertThrows(ArrayIndexOutOfBoundsException.class, ()-> list.getRoomAtIndex(-1));
+    }
+    @Test public void getRoomException(){
+        // already handled in B
+    }
 }

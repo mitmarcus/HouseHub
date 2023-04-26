@@ -19,7 +19,10 @@ public class RoomList {
     }
     public Room getRoomAtIndex(int index)
     {
-        return list.get(index);
+        if (index < 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else return list.get(index);
     }
     public void addRoom(Room room){
 
