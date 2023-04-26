@@ -36,7 +36,10 @@ class RoomListTest {
   }
   @Test public void addARoomThatAlreadyExist(){
     list.addRoom(new Room("Room next Lovbjergasdasdasd.","$500", "123 Main St", "200", "3"));
-    assertThrows(IllegalArgumentException.class,()->list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2")));
+    Room room =new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
+    Room room2 = new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
+    list.addRoom(room);
+    assertThrows(IllegalArgumentException.class,()->list.addRoom(room2));
   }
   @Test public void addRoomInListWithMany(){
     list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
@@ -85,7 +88,6 @@ class RoomListTest {
         // already handled in B
     }
 
-<<<<<<< Updated upstream
     /* GET ROOM AT INDEX
   Z = get a room from index zero;
   O = get a room from index 1 ;
@@ -124,7 +126,6 @@ class RoomListTest {
     @Test public void getRoomException(){
         // already handled in B
     }
-=======
     /*
     Z - return an empty list should throw an exception
     O - return an list with one element
@@ -136,10 +137,18 @@ class RoomListTest {
     @Test public void returnEmptyList(){
       assertThrows(IllegalStateException.class, ()->list.getAllRooms());
     }
+    @Test public void returnListWithOne(){
+      Room room = new Room("bb","6.66","Horsens", "143", "3");
+      list.addRoom(room);
+      assertDoesNotThrow(()->list.getAllRooms());
+    }
+    @Test public void returnListWithMany(){
+      list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
+      list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
+      list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+      assertDoesNotThrow(()-> list.getAllRooms());
+    }
 
 
 
-
-
->>>>>>> Stashed changes
 }
