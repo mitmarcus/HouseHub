@@ -7,6 +7,7 @@ public class ModelManagerServer implements ModelServer
 {
     private RoomList rooms;
     private ReservationList reservations;
+    private UserList users;
 
     public ModelManagerServer()
     {
@@ -43,6 +44,21 @@ public class ModelManagerServer implements ModelServer
     @Override
     public void removeReservation(Date startDate, Date endDate, Room room) {
         reservations.removeReservation(startDate,endDate, room);
+    }
+
+    @Override
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
+        users.addUser(firstName,lastName, username, password, phoneNumber);
+    }
+
+    @Override
+    public void removeUserByUsername(String username) {
+        users.removeUserByUsername(username);
+    }
+
+    @Override
+    public void removeUserByPhoneNumber(String phoneNumber) {
+        users.removeUserByPhoneNumber(phoneNumber);
     }
 
 }

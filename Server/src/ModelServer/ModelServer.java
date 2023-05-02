@@ -11,5 +11,8 @@ public interface ModelServer
   ArrayList<Room> getAllRooms();
   void addReservation(Date startDate, Date endDate, Room room);
   void removeReservation(Date startDate, Date endDate, Room room);
+  void addUser(String firstName, String lastName, String username, String password, String phoneNumber);
+  void removeUserByUsername(String username);
+  void removeUserByPhoneNumber(String phoneNumber);
 
 }
