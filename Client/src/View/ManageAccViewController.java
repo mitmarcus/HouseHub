@@ -25,7 +25,7 @@ public class ManageAccViewController extends ViewController{
         viewModel.clear();
     }
 
-    public void goBack(ActionEvent actionEvent) {
+    @FXML public void goBack(ActionEvent actionEvent) {
         viewHandler.openView("main");
     }
 }
