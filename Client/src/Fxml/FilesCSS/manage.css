@@ -1,23 +1,16 @@
 /*@font-face {*/
 /*    -fx-font-family: 'Montserrat';*/
-/*    src: url('/Resources/FontMontserrat/Montserrat-SemiBold.ttf');*/
+/*    src: url('/Design/FontMontserrat/Montserrat-SemiBold.ttf');*/
 /*}*/
 
-.root{
-    -fx-background-color: #F6F7FB;
+.root {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 10px;
 }
 
-#title-box {
-    -fx-background-color: #d6d6d6;
-    -fx-border-radius: 10px;
-    -fx-background-radius: 0 100 100 0px;
-    -fx-padding: 10px 10px 10px 10px;
-}
-
-.title-label {
+.label {
+    -fx-font-size: 24px;
     -fx-font-family: 'Montserrat SemiBold';
-    -fx-font-size: 32px;
-    -fx-font-weight: bold;
 }
 
 .details {
@@ -43,11 +36,3 @@
 .action-button:pressed {
     -fx-background-color: #6f9940;
 }
-
-.focus-indicator {
-    -fx-border-width: 0;
-    -fx-border-color: none;
-    -fx-focus-color: transparent;
-    -fx-faint-focus-color: transparent;
-}
-

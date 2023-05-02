@@ -38,7 +38,6 @@ public class MainMenuViewController extends ViewController {
 
     @FXML
     public void handleManageProfile(ActionEvent actionEvent) {
-        //For Test Purposes Only
-        viewHandler.openView("login");
+        viewHandler.openView("manageAcc");
     }
 }

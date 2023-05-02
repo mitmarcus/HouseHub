@@ -7,10 +7,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
-   <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@FilesCSS/mainMenu.css">
-      <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="431.0" spacing="10.0">
-         <VBox alignment="CENTER" prefHeight="150.0" prefWidth="247.0" spacing="10.0">
+<VBox maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
+   <HBox stylesheets="@FilesCSS/mainMenu.css">
+      <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="451.0">
+         <VBox alignment="CENTER">
             <Label styleClass="title-label" text="Welcome to " />
             <Label styleClass="title-label" text="HouseHub" />
          </VBox>
@@ -20,8 +20,9 @@
       </HBox>
    </HBox>
 
-    <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
-    <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
-    <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
-
+   <VBox styleClass="buttonBox">
+      <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
+      <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
+      <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
+   </VBox>
 </VBox>
