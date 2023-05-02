@@ -2,9 +2,7 @@ package ViewModel;
 
 import ModelClient.Room;
 import ModelClient.ModelClient;
-import javafx.beans.property.Property;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,8 +19,8 @@ public class DetailsViewModel extends ViewModel {
     private StringProperty roomSize;
     private StringProperty roomAddress;
     private StringProperty numberOfRooms;
-    private DatePicker startDate;
-    private DatePicker endDate;
+    private ObjectProperty<LocalDate> startDate;
+    private ObjectProperty<LocalDate> endDate;
 
 
     public DetailsViewModel(ModelClient model, ViewState viewState) {
@@ -32,8 +30,8 @@ public class DetailsViewModel extends ViewModel {
         this.roomAddress = new SimpleStringProperty();
         this.roomSize = new SimpleStringProperty();
         this.numberOfRooms = new SimpleStringProperty();
-        this.startDate = new DatePicker();
-        this.endDate = new DatePicker();
+        this.startDate = new SimpleObjectProperty<>();
+        this.endDate = new SimpleObjectProperty<>();
     }
 
     public StringProperty getPriceProperty() {
@@ -52,16 +50,19 @@ public class DetailsViewModel extends ViewModel {
         return numberOfRooms;
     }
 
-    public DatePicker getStartDate() {
+    public ObjectProperty<LocalDate> getStartDate() {
         return startDate;
     }
 
-    public DatePicker getEndDate() {
+    public ObjectProperty<LocalDate> getEndDate() {
         return endDate;
     }
 
-    public void addReservation(LocalDate startDate, LocalDate endDate) {
+    public boolean addReservation(LocalDate startDate, LocalDate endDate) {
         model.addReservation(startDate, endDate);
+        Room room = model.getRoomByAnnouncement(viewState.getId());
+        model.removeRoom(room);
+            return true;
     }
 
     @Override

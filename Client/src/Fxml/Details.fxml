@@ -74,12 +74,12 @@
                               <children>
                                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="120.0">
                                     <children>
-                                       <DatePicker prefHeight="26.0" prefWidth="169.0" promptText="From" />
+                                       <DatePicker fx:id="fromDate" prefHeight="26.0" prefWidth="169.0" promptText="From" />
                                     </children>
                                  </HBox>
                                  <HBox alignment="CENTER" prefHeight="26.0" prefWidth="123.0">
                                     <children>
-                                       <DatePicker prefHeight="26.0" prefWidth="177.0" promptText="To" />
+                                       <DatePicker fx:id="toDate" prefHeight="26.0" prefWidth="177.0" promptText="To" />
                                     </children>
                                  </HBox>
                               </children>

@@ -2,6 +2,7 @@ package View;
 
 import ModelClient.Reservation;
 import ViewModel.ViewModel;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -16,10 +17,10 @@ import java.util.Optional;
 public class DetailsViewController extends ViewController {
     private DetailsViewModel viewModel;
     @FXML
-    private DatePicker fromDate;
+    private DatePicker fromDate = new DatePicker();
 
     @FXML
-    private DatePicker toDate;
+    private DatePicker toDate = new DatePicker();
 
     @FXML
     private ImageView cancelButton;
@@ -47,8 +48,10 @@ public class DetailsViewController extends ViewController {
         this.numberOfRooms.textProperty().bind(((DetailsViewModel) viewModel).getNumberOfRoomsProperty());
         this.roomAddress.textProperty().bind(((DetailsViewModel) viewModel).getRoomAddressProperty());
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
-        this.toDate = new DatePicker();
-        this.fromDate = new DatePicker();
+        this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
+        this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
+
+
         viewModel.clear();
     }
 
@@ -59,7 +62,6 @@ public class DetailsViewController extends ViewController {
 
     @FXML
     private void reserveButtonPressed() {
-
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle("Confirmation");
         confirmationAlert.setHeaderText("Are you sure you want to reserve from " + fromDate.getValue() + " to " + this.toDate.getValue() + "?");
