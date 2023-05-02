@@ -40,4 +40,10 @@ public class MainMenuViewController extends ViewController {
     public void handleManageProfile(ActionEvent actionEvent) {
         viewHandler.openView("manageAcc");
     }
+
+    @FXML
+    public void handleMyReservation(ActionEvent actionEvent)
+    {
+        viewHandler.openView("myReservations");
+    }
 }
