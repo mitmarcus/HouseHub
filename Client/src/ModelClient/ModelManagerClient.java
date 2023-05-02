@@ -14,9 +14,9 @@ public class ModelManagerClient implements ModelClient
     {
         this.rooms = new RoomList();
         this.reservations = new ReservationList();
-        this.rooms.addRoom(new Room("Room next Lovbjerg.","$300", "123 Main St", "200", "3"));
-        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+        this.rooms.addRoom(new Room("Room next Lovbjerg.","$300", "123 Main St", "200", "3",false));
+        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
+        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
     }
     @Override
     public void addRoom(Room room) {
