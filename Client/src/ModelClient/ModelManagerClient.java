@@ -1,11 +1,8 @@
 package ModelClient;
 
-import javafx.scene.control.DatePicker;
-
 import java.beans.PropertyChangeListener;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ModelManagerClient implements ModelClient
 {
@@ -42,13 +39,14 @@ public class ModelManagerClient implements ModelClient
     }
 
     @Override
-    public void addReservation(LocalDate startDate, LocalDate endDate) {
-        reservations.addReservation(startDate, endDate);
+    public void addReservation(LocalDate startDate, LocalDate endDate,
+        Room room) {
+        reservations.addReservation(startDate, endDate, room);
     }
 
     @Override
-    public void removeReservation(LocalDate startDate, LocalDate endDate) {
-        reservations.removeReservation(startDate,endDate);
+    public void removeReservation(LocalDate startDate, LocalDate endDate, Room room) {
+        reservations.removeReservation(startDate,endDate, room);
     }
 
     @Override

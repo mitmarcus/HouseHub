@@ -12,13 +12,15 @@ public class ReservationList {
     public ReservationList(){
         this.list= new ArrayList<>();
     }
-    public void addReservation(LocalDate startDate, LocalDate endDate){
-        Reservation reservation = new Reservation(startDate, endDate);
+    public void addReservation(LocalDate startDate, LocalDate endDate, Room room){
+        Reservation reservation = new Reservation(startDate, endDate, room);
         list.add(reservation);
+        room.setReserved(true);
     }
-    public void removeReservation(LocalDate startDate, LocalDate endDate){
-        Reservation reservation = new Reservation(startDate, endDate);
+    public void removeReservation(LocalDate startDate, LocalDate endDate, Room room){
+        Reservation reservation = new Reservation(startDate, endDate, room);
         list.remove(reservation);
+        room.setReserved(false);
     }
 
     @Override

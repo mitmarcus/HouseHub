@@ -9,12 +9,14 @@ import java.util.Objects;
 public class Reservation {
     private LocalDate startDate;
     private LocalDate endDate;
+    private Room room;
 
     /// in the future we will have private User
 
-    public Reservation(Object startDate, Object endDate){
+    public Reservation(Object startDate, Object endDate, Room room){
         this.startDate = (LocalDate) startDate;
         this.endDate = (LocalDate) endDate;
+        this.room = room;
     }
 
     public LocalDate getStartDate() {
@@ -23,6 +25,11 @@ public class Reservation {
 
     public LocalDate getEndDate() {
         return endDate;
+    }
+
+    public Room getRoom()
+    {
+        return room;
     }
 
     public String toString(){
