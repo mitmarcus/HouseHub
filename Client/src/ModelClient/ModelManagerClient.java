@@ -1,5 +1,7 @@
 package ModelClient;
 
+import javafx.scene.control.DatePicker;
+
 import java.beans.PropertyChangeListener;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,9 +12,11 @@ public class ModelManagerClient implements ModelClient
     private RoomList rooms;
     private ReservationList reservations;
 
+
     public ModelManagerClient ()
     {
         this.rooms = new RoomList();
+        this.reservations = new ReservationList();
         this.rooms.addRoom(new Room("Room next Lovbjerg.","$300", "123 Main St", "200", "3"));
         this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
         this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
