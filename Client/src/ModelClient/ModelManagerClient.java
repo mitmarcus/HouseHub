@@ -1,37 +1,50 @@
 package ModelClient;
 
 import java.beans.PropertyChangeListener;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ModelManagerClient implements ModelClient
 {
-    private RoomList list;
+    private RoomList rooms;
+    private ReservationList reservations;
 
     public ModelManagerClient ()
     {
-        this.list = new RoomList();
-        this.list.addRoom(new Room("Room next Lovbjerg.","$300", "123 Main St", "200", "3"));
-        this.list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-        this.list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+        this.rooms = new RoomList();
+        this.rooms.addRoom(new Room("Room next Lovbjerg.","$300", "123 Main St", "200", "3"));
+        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
+        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
     }
     @Override
     public void addRoom(Room room) {
-        list.addRoom(room);
+        rooms.addRoom(room);
     }
 
     @Override
     public void removeRoom(Room room) {
-        list.removeRoom(room);
+        rooms.removeRoom(room);
     }
 
     @Override
     public Room getRoomByAnnouncement(String announcement) {
-        return list.getRoomByAnnouncement(announcement);
+        return rooms.getRoomByAnnouncement(announcement);
     }
 
     @Override
     public ArrayList<Room> getAllRooms() {
-        return list.getAllRooms();
+        return rooms.getAllRooms();
+    }
+
+    @Override
+    public void addReservation(LocalDate startDate, LocalDate endDate) {
+        reservations.addReservation(startDate, endDate);
+    }
+
+    @Override
+    public void removeReservation(LocalDate startDate, LocalDate endDate) {
+        reservations.removeReservation(startDate,endDate);
     }
 
     @Override
