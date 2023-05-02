@@ -8,6 +8,7 @@ public class Room {
     private String address;
     private String size;
     private String bedrooms;
+    private boolean isReserved;
 
     public Room(String announcement,String price, String address, String size, String bedrooms) {
         this.announcement = announcement;
@@ -15,6 +16,7 @@ public class Room {
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
+        isReserved = false;
     }
     public String getAnnouncement(){
         return announcement;
@@ -57,6 +59,16 @@ public class Room {
         if (!(o instanceof Room room)) return false;
         return Objects.equals(announcement, room.announcement) && Objects.equals(price, room.price) &&
             Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
+    }
+
+    public boolean isReserved()
+    {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved) //true or false
+    {
+        isReserved = reserved;
     }
 
 
