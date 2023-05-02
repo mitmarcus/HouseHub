@@ -69,12 +69,18 @@ public class DetailsViewModel extends ViewModel {
 
     @Override
     public void clear() {
+        price.setValue("");
+        roomAddress.setValue("");
+        numberOfRooms.setValue("");
+        roomSize.setValue("");
         Room room = model.getRoomByAnnouncement(viewState.getId());
 
         this.price.setValue(room.getPrice());
         this.roomSize.setValue(room.getSize());
         this.numberOfRooms.setValue(room.getBedrooms());
         this.roomAddress.setValue(room.getAddress());
+        this.startDate.setValue(null);
+        this.endDate.setValue(null);
     }
 
 }

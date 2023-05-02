@@ -1,17 +1,14 @@
 package View;
 
-import ViewModel.MainMenuViewModel;
 import ViewModel.ViewModel;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.Region;
-
 import ViewModel.ManageAccViewModel;
+
 
 
 public class ManageAccViewController extends ViewController{
     private ManageAccViewModel viewModel;
-    private ViewHandler viewHandler;
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel, Region root) {
@@ -25,7 +22,7 @@ public class ManageAccViewController extends ViewController{
         viewModel.clear();
     }
 
-    @FXML public void goBack(ActionEvent actionEvent) {
+  @FXML public void goBack(){
         viewHandler.openView("main");
-    }
+  }
 }

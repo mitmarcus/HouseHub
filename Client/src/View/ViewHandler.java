@@ -49,7 +49,7 @@ public class ViewHandler {
                 loginViewController = loadViewController("/Fxml/Login.fxml", loginViewController, viewModelFactory.getLoginViewModel());
                 break;
             case "manageAcc":
-                mainMenuViewController = loadViewController("/Fxml/ManageAcc.fxml", manageAccViewController, viewModelFactory.getManageAccViewModel());
+                manageAccViewController = loadViewController("/Fxml/ManageAcc.fxml", manageAccViewController, viewModelFactory.getManageAccViewModel());
                 break;
         }
         currentScene.setRoot(root);
@@ -82,7 +82,8 @@ public class ViewHandler {
                 this.root = loader.load();
                 viewController = loader.getController();
                 viewController.init(this, viewModel, this.root);
-                viewController.reset();
+                 viewController.reset();
+
 
             }
             catch (Exception e)
@@ -91,6 +92,7 @@ public class ViewHandler {
             }
         }
         root=viewController.getRoot();
+        viewController.reset();
         return viewController;
         }
     }
