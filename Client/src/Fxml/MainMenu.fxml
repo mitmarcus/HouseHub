@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@FilesCSS/test_style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
-   <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@FilesCSS/test_style.css">
+<VBox prefHeight="400.0" prefWidth="531.0" spacing="20" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
+   <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@FilesCSS/mainMenu.css">
       <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="431.0" spacing="10.0">
          <VBox alignment="CENTER" prefHeight="150.0" prefWidth="247.0" spacing="10.0">
             <Label styleClass="title-label" text="Welcome to " />
@@ -20,8 +20,8 @@
       </HBox>
    </HBox>
 
-                <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
+    <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
     <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
-    <Button onAction="#handleManageBookings" styleClass="menu-button" text="Manage Profile" />
+    <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
 
 </VBox>

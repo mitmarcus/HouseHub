@@ -17,6 +17,7 @@ public class ViewHandler {
     private ViewController showRoomsViewController;
     private ViewController mainMenuViewController;
     private ViewController detailsViewController;
+    private ViewController loginViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -43,7 +44,9 @@ public class ViewHandler {
             case "details":
                 detailsViewController = loadViewController("/Fxml/Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
                 break;
-
+            case "login":
+                loginViewController = loadViewController("/Fxml/Login.fxml", loginViewController, viewModelFactory.getLoginViewModel());
+                break;
         }
         currentScene.setRoot(root);
 

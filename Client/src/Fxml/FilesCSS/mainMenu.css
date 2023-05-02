@@ -20,15 +20,17 @@
     -fx-font-weight: bold;
 }
 
-.subtitle-label {
-    -fx-font-size: 20px;
-    -fx-font-style: italic;
-    -fx-text-fill: #666666;
-    -fx-padding: 0 0 20 0;
-}
-
 .menu-button {
     -fx-background-color: #5D5D5D;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: #ffa032;
     -fx-text-fill: white;
     -fx-font-size: 18px;
     -fx-padding: 10px 20px;
