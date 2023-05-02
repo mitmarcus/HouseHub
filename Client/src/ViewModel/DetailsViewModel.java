@@ -2,6 +2,7 @@ package ViewModel;
 
 import ModelClient.Room;
 import ModelClient.ModelClient;
+import ModelClient.Reservation;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -60,7 +61,8 @@ public class DetailsViewModel extends ViewModel {
 
     public boolean addReservation(LocalDate startDate, LocalDate endDate) {
         Room room = model.getRoomByAnnouncement(viewState.getId());
-        model.addReservation(startDate, endDate, room);
+        Reservation reservation = new Reservation(startDate,endDate,room);
+        model.addReservation(reservation);
         model.removeRoom(room);
             return true;
     }

@@ -39,14 +39,13 @@ public class ModelManagerClient implements ModelClient
     }
 
     @Override
-    public void addReservation(LocalDate startDate, LocalDate endDate,
-        Room room) {
-        reservations.addReservation(startDate, endDate, room);
+    public void addReservation(Reservation reservation) {
+        reservations.addReservation(reservation);
     }
 
     @Override
-    public void removeReservation(LocalDate startDate, LocalDate endDate, Room room) {
-        reservations.removeReservation(startDate,endDate, room);
+    public void removeReservation(Reservation reservation) {
+        reservations.removeReservation(reservation);
     }
 
     @Override

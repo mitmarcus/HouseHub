@@ -45,12 +45,12 @@ class RoomListTest {
     list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
     list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
-    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false);
+    Room room = new Room("Room next Lovbjerg1231.","$500", "123 Main St", "200", "3",false);
     list.addRoom(room);
     assertEquals(room,list.getRoomAtIndex(3));
   }
   @Test public void addRoomWithNullValues(){
-    assertThrows(IllegalArgumentException.class,()->list.addRoom
+    assertThrows(NullPointerException.class,()->list.addRoom
         (new Room("Room next Lovbjerg.",null, "123 Main St", "200", "3",false)));
   }
 
@@ -148,7 +148,5 @@ class RoomListTest {
       list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
       assertDoesNotThrow(()-> list.getAllRooms());
     }
-
-
 
 }

@@ -65,7 +65,7 @@ public class Room {
 
     @Override public boolean equals(Object o)
     {
-        if (o.equals(null))
+        if (o==(null))
             throw new NullPointerException();
         if (this == o) return true;
         if (!(o instanceof Room room)) return false;

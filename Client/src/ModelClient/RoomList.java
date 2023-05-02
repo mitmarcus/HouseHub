@@ -48,6 +48,8 @@ public class RoomList {
     }
 
     public ArrayList<Room> getAllRooms() {
+        if (list.size()==0)
+            throw new IllegalStateException();
         return list;
     }
 }
