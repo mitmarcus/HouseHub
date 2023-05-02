@@ -6,6 +6,7 @@ public class Room {
     private String address;
     private String size;
     private String bedrooms;
+    private boolean isReserved;
 
     public Room(String announcement,String price, String address, String size, String bedrooms) {
         this.announcement = announcement;
@@ -13,6 +14,7 @@ public class Room {
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
+        isReserved = false;
     }
     public String getAnnouncement(){
         return announcement;
@@ -47,6 +49,16 @@ public class Room {
 
     public void setBedrooms(String bedrooms) {
         this.bedrooms = bedrooms;
+    }
+
+    public boolean isReserved()
+    {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved)
+    {
+        isReserved = reserved;
     }
 
     @Override
