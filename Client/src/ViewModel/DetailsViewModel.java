@@ -59,8 +59,8 @@ public class DetailsViewModel extends ViewModel {
     }
 
     public boolean addReservation(LocalDate startDate, LocalDate endDate) {
-        model.addReservation(startDate, endDate);
         Room room = model.getRoomByAnnouncement(viewState.getId());
+        model.addReservation(startDate, endDate, room);
         model.removeRoom(room);
             return true;
     }
