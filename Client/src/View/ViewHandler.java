@@ -75,6 +75,8 @@ public class ViewHandler {
                 this.root = loader.load();
                 viewController = loader.getController();
                 viewController.init(this, viewModel, this.root);
+                viewController.reset();
+
             }
             catch (Exception e)
             {

@@ -22,15 +22,16 @@ public class ShowRoomsViewModel extends ViewModel
     this.viewState = viewState;
     this.list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
-    clear();
-  }
-
-  @Override public void clear()
-  {
     for (int i = 0; i < model.getAllRooms().size();i++)
     {
       list.add(model.getAllRooms().get(i).getAnnouncement());
     }
+
+  }
+
+  @Override public void clear()
+  {
+    //
   }
   public ObservableList<String> getList()
   {

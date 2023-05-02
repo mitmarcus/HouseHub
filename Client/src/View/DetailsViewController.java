@@ -51,8 +51,6 @@ public class DetailsViewController extends ViewController {
         this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
         this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
 
-
-        viewModel.clear();
     }
 
     @FXML
@@ -79,7 +77,7 @@ public class DetailsViewController extends ViewController {
 
     @Override
     public void reset() {
-
+        viewModel.clear();
     }
 }
 
