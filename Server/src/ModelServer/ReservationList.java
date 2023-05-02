@@ -9,12 +9,12 @@ public class ReservationList {
     public ReservationList(){
         this.list= new ArrayList<>();
     }
-    public void addReservation(Date startDate, Date endDate){
-        Reservation reservation = new Reservation(startDate, endDate);
+    public void addReservation(Date startDate, Date endDate, Room room){
+        Reservation reservation = new Reservation(startDate, endDate, room);
         list.add(reservation);
     }
-    public void removeReservation(Date startDate, Date endDate){
-        Reservation reservation = new Reservation(startDate, endDate);
+    public void removeReservation(Date startDate, Date endDate, Room room){
+        Reservation reservation = new Reservation(startDate, endDate, room);
         list.remove(reservation);
     }
     @Override

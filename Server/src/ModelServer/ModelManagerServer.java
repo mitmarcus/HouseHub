@@ -36,13 +36,13 @@ public class ModelManagerServer implements ModelServer
         return rooms.getAllRooms();
     }
     @Override
-    public void addReservation(Date startDate, Date endDate) {
-        reservations.addReservation(startDate, endDate);
+    public void addReservation(Date startDate, Date endDate, Room room) {
+        reservations.addReservation(startDate, endDate, room);
     }
 
     @Override
-    public void removeReservation(Date startDate, Date endDate) {
-        reservations.removeReservation(startDate,endDate);
+    public void removeReservation(Date startDate, Date endDate, Room room) {
+        reservations.removeReservation(startDate,endDate, room);
     }
 
 }
