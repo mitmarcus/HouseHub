@@ -1,13 +1,16 @@
 package ModelClient;
 
 import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ModelManagerClient implements ModelClient
 {
+    private PropertyChangeSupport property;
     private RoomList rooms;
     private ReservationList reservations;
+    private UserList users;
 
 
     public ModelManagerClient ()
@@ -50,9 +53,26 @@ public class ModelManagerClient implements ModelClient
     }
 
     @Override
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
+        users.addUser(firstName, lastName, username, password, phoneNumber);
+    }
+
+    @Override
+    public void removeUserByUsername(String username) {
+        users.removeUserByUsername(username);
+    }
+
+    @Override
+    public void removeUserByPhoneNumber(String phoneNumber) {
+        users.removeUserByPhoneNumber(phoneNumber);
+    }
+
+    @Override
     public void addListener(PropertyChangeListener listener) {
+        property.addPropertyChangeListener(listener);
     }
     @Override
     public void removeListener(PropertyChangeListener listener) {
+        property.removePropertyChangeListener(listener);
     }
 }
