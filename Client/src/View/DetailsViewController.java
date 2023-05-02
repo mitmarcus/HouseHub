@@ -47,8 +47,8 @@ public class DetailsViewController extends ViewController {
         this.numberOfRooms.textProperty().bind(((DetailsViewModel) viewModel).getNumberOfRoomsProperty());
         this.roomAddress.textProperty().bind(((DetailsViewModel) viewModel).getRoomAddressProperty());
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
-        this.fromDate.dayCellFactoryProperty().bind(((DetailsViewModel) viewModel).getStartDate().dayCellFactoryProperty());
-        this.toDate.dayCellFactoryProperty().bind(((DetailsViewModel) viewModel).getEndDate().dayCellFactoryProperty());
+        this.toDate = new DatePicker();
+        this.fromDate = new DatePicker();
         viewModel.clear();
     }
 
@@ -59,19 +59,17 @@ public class DetailsViewController extends ViewController {
 
     @FXML
     private void reserveButtonPressed() {
-        LocalDate startDate = fromDate.getValue();
-        LocalDate endDate = toDate.getValue();
 
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle("Confirmation");
-        confirmationAlert.setHeaderText("Are you sure you want to reserve from " + startDate + " to " + endDate + "?");
+        confirmationAlert.setHeaderText("Are you sure you want to reserve from " + fromDate.getValue() + " to " + this.toDate.getValue() + "?");
         Optional<ButtonType> result = confirmationAlert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            viewModel.addReservation(startDate, endDate);
+            viewModel.addReservation(fromDate.getValue(),toDate.getValue());
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Reservation Successful");
-            successAlert.setHeaderText("Your reservation from " + startDate + " to " + endDate + " has been made successfully.");
+            successAlert.setHeaderText("Your reservation from " + fromDate.getValue() + " to " + toDate.getValue() + " has been made successfully.");
             successAlert.showAndWait();
         }
         viewHandler.openView("showRooms");
