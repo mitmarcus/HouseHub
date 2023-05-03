@@ -5,9 +5,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import ModelClient.ModelClient;
-import ModelClient.Reservation;
-import ModelClient.ReservationList;
+import Model.ModelClient;
+import Model.Reservation;
+import Model.ReservationList;
 
 
 public class MyReservationsViewModel extends ViewModel {
