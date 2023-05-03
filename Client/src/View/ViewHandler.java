@@ -53,8 +53,6 @@ public class ViewHandler {
                 break;
         }
         currentScene.setRoot(root);
-
-
         String title = "HouseHub";
 
         if (root.getUserData() != null) {
