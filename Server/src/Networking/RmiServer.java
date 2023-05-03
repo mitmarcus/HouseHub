@@ -77,4 +77,9 @@ public class RmiServer implements RemoteModel
         return true;
     }
 
+    @Override
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException {
+        System.out.println("Added User");
+        model.addUser(firstName, lastName, username, password, phoneNumber);
+    }
 }
