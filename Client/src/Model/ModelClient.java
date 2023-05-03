@@ -15,6 +15,7 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   ArrayList<Reservation> getAllReservations();
 
   Reservation getReservationAtIndex();
+  Reservation getReservationAtIndex(int index);
   void removeReservation(Reservation reservation);
   void addUser(String firstName, String lastName, String username, String password, String phoneNumber);
   void removeUserByUsername(String username);
