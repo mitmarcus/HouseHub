@@ -56,7 +56,7 @@ public class MyReservationsViewModel extends ViewModel {
     public void removeReservation()
     {
         viewState.setId(selectedObject.get());
-        Reservation reservation = model.getReservationAtIndex(viewState.getId());
+        Reservation reservation = model.getReservationAtIndex();
         model.removeReservation(reservation);
     }
 

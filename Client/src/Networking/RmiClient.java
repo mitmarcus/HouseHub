@@ -104,6 +104,21 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 
     }
 
+    @Override
+    public ArrayList<Reservation> getAllReservations() {
+        return null;
+    }
+
+    @Override
+    public Reservation getReservationAtIndex() {
+        return null;
+    }
+
+    @Override
+    public Reservation getReservationAtIndex(int index) {
+        return null;
+    }
+
     @Override public void addListener(PropertyChangeListener listener)
     {
         property.addPropertyChangeListener(listener);
