@@ -9,11 +9,12 @@
 
 <VBox maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
    <HBox stylesheets="@FilesCSS/mainMenu.css">
-      <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="451.0">
+      <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="417.0">
          <VBox alignment="CENTER">
             <Label styleClass="title-label" text="Welcome to " />
             <Label styleClass="title-label" text="HouseHub" />
          </VBox>
+         <HBox prefHeight="151.0" prefWidth="38.0" />
          <ImageView fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@../Resources/Logo.png" />
          </ImageView>
