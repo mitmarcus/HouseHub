@@ -19,12 +19,17 @@ public class ReservationList {
         if (list.size() == 0)
             throw  new IllegalStateException();
 
-
         reservation.getRoom().setReserved(false);
         list.remove(reservation);
     }
     public Reservation getReservationAtIndex(int index){
         return list.get(index);
+    }
+    public ArrayList<Reservation> getAllReservations()
+    {
+        /* if (list.size()==0)
+            throw new IllegalStateException(); */
+        return list;
     }
 
     @Override

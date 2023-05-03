@@ -40,6 +40,11 @@ public class ModelManagerServer implements ModelServer
         reservations.addReservation(reservation);
     }
 
+    @Override public ArrayList<Reservation> getAllReservations()
+    {
+        return reservations.getAllReservations();
+    }
+
     @Override
     public void removeReservation(Reservation reservation) {
         reservations.removeReservation(reservation);

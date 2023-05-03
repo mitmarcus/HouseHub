@@ -40,4 +40,5 @@ public class MainMenuViewController extends ViewController {
     public void handleManageProfile(ActionEvent actionEvent) {
         viewHandler.openView("manageAcc");
     }
+
 }
