@@ -18,6 +18,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         try {
             UnicastRemoteObject.exportObject(this, 0);
             server = (RemoteModel) Naming.lookup("rmi://localhost:1099/SERVER");
+            server.addListener(this);
         } catch (Exception e){
             e.printStackTrace();
         }
