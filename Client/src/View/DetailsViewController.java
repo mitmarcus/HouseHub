@@ -60,18 +60,47 @@ public class DetailsViewController extends ViewController {
 
     @FXML
     private void reserveButtonPressed() {
+        LocalDate fromDateValue = fromDate.getValue();
+        LocalDate toDateValue = toDate.getValue();
+
+        if (fromDateValue == null || toDateValue == null) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("Please select both the 'From' and 'To' dates.");
+            errorAlert.showAndWait();
+            return;
+        }
+
+        LocalDate today = LocalDate.now();
+        if (fromDateValue.isBefore(today)) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("Reservation can't start from yesterday or earlier.");
+            errorAlert.showAndWait();
+            return;
+        }
+
+        if (toDateValue.isBefore(fromDateValue)) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("'From' date should be before 'To' date.");
+            errorAlert.showAndWait();
+            return;
+        }
+
         Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle("Confirmation");
-        confirmationAlert.setHeaderText("Are you sure you want to reserve from " + fromDate.getValue() + " to " + this.toDate.getValue() + "?");
+        confirmationAlert.setHeaderText("Are you sure you want to reserve from " + fromDateValue + " to " + toDateValue + "?");
         Optional<ButtonType> result = confirmationAlert.showAndWait();
 
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            viewModel.addReservation(fromDate.getValue(),toDate.getValue());
+            viewModel.addReservation(fromDateValue, toDateValue);
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Reservation Successful");
-            successAlert.setHeaderText("Your reservation from " + fromDate.getValue() + " to " + toDate.getValue() + " has been made successfully.");
+            successAlert.setHeaderText("Your reservation from " + fromDateValue + " to " + toDateValue + " has been made successfully.");
             successAlert.showAndWait();
         }
+
         viewHandler.openView("showRooms");
     }
 
