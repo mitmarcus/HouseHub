@@ -1,25 +1,26 @@
 package ModelServer;
-
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Reservation {
-    private Date startDate;
-    private Date endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Room room;
 
     /// in the future we will have private User
 
-    public Reservation(Date startDate, Date endDate, Room room){
-        this.startDate = startDate;
-        this.endDate = endDate;
+    public Reservation(Object startDate, Object endDate, Room room){
+        if (startDate == null || endDate == null || room == null)
+            throw new IllegalArgumentException();
+        this.startDate = (LocalDate) startDate;
+        this.endDate = (LocalDate) endDate;
         this.room = room;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
@@ -27,7 +28,6 @@ public class Reservation {
     {
         return room;
     }
-
 
     public String toString(){
         return "Reservation: " + "\n From: " + startDate + ", Until: " + endDate;
