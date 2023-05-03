@@ -1,9 +1,10 @@
-package ModelClient;
+package Model;
+
+import Networking.RmiClient;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ModelManagerClient implements ModelClient,PropertyChangeListener
@@ -15,6 +16,8 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     public ModelManagerClient ()
     {
         this.property = new PropertyChangeSupport(this);
+        this.client = new RmiClient();
+        this.client.addListener(this);
     }
     @Override
     public void addRoom(Room room) {

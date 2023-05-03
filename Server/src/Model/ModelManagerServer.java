@@ -1,7 +1,6 @@
-package ModelServer;
+package Model;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ModelManagerServer implements ModelServer
 {
@@ -12,9 +11,9 @@ public class ModelManagerServer implements ModelServer
     public ModelManagerServer()
     {
         this.rooms = new RoomList();
-        this.rooms.addRoom(new Room("Room next Lovbjerg.",null, "123 Main St", "200", "3"));
-        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+        this.rooms.addRoom(new Room("Room next Lovbjerg.","300", "123 Main St", "200", "3",false));
+        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
+        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
     }
 
     @Override
@@ -37,13 +36,13 @@ public class ModelManagerServer implements ModelServer
         return rooms.getAllRooms();
     }
     @Override
-    public void addReservation(Date startDate, Date endDate, Room room) {
-        reservations.addReservation(startDate, endDate, room);
+    public void addReservation(Reservation reservation) {
+        reservations.addReservation(reservation);
     }
 
     @Override
-    public void removeReservation(Date startDate, Date endDate, Room room) {
-        reservations.removeReservation(startDate,endDate, room);
+    public void removeReservation(Reservation reservation) {
+        reservations.removeReservation(reservation);
     }
 
     @Override

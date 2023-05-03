@@ -1,5 +1,5 @@
 package Networking;
-import ModelClient.*;
+import Model.*;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.RemoteListener;
 import java.beans.PropertyChangeListener;

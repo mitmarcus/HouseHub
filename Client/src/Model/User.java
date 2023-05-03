@@ -1,4 +1,4 @@
-package ModelClient;
+package Model;
 
 public class User {
     private String firstName;

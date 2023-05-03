@@ -1,8 +1,10 @@
-package ModelServer;
+package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReservationList {
+public class ReservationList implements Serializable
+{
     private ArrayList<Reservation> list;
 
     public ReservationList(){

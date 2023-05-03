@@ -1,4 +1,4 @@
-package ModelServer;
+package Model;
 
 import java.util.ArrayList;
 

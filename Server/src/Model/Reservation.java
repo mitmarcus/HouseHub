@@ -1,7 +1,9 @@
-package ModelServer;
+package Model;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Reservation {
+public class Reservation implements Serializable
+{
     private LocalDate startDate;
     private LocalDate endDate;
     private Room room;

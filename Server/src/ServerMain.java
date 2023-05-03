@@ -1,19 +1,15 @@
+import Model.ModelServer;
 import Networking.RemoteModel;
 import Networking.RmiServer;
-
-import java.net.MalformedURLException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
+import Model.*;
 
 public class ServerMain
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
-        try {
-            RemoteModel server = new RmiServer();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        ModelServer model = new ModelManagerServer();
+        RemoteModel server = new RmiServer(model);
+
+
     }
 }

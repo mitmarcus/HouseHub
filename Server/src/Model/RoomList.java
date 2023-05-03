@@ -1,8 +1,10 @@
-package ModelClient;
+package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class RoomList {
+public class RoomList implements Serializable
+{
     private ArrayList<Room> list;
 
     public RoomList() {
@@ -35,8 +37,8 @@ public class RoomList {
                 room.getSize() != null &&
                 room.getPrice() != null)
             list.add(room);
-        else
-            throw new IllegalArgumentException();
+       // else
+            //throw new IllegalArgumentException();
 
     }
 
