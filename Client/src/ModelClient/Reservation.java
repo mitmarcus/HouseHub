@@ -32,4 +32,9 @@ public class Reservation {
     public String toString(){
         return "Reservation: " + "\n From: " + startDate + ", Until: " + endDate;
     }
+
+  public String getResAnnouncement()
+  {
+      return room.getAnnouncement();
+  }
 }

@@ -41,9 +41,4 @@ public class MainMenuViewController extends ViewController {
         viewHandler.openView("manageAcc");
     }
 
-    @FXML
-    public void handleMyReservation(ActionEvent actionEvent)
-    {
-        viewHandler.openView("myReservations");
-    }
 }

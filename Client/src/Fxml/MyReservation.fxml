@@ -19,7 +19,7 @@
         </Button>
         <Label text="My reservations" />
     </HBox>
-    <ListView fx:id="roomListView" orientation="HORIZONTAL" prefHeight="364.0" prefWidth="579.0" />
+    <ListView fx:id="reservedRoomListView" orientation="HORIZONTAL" prefHeight="364.0" prefWidth="579.0" />
     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
         <Button mnemonicParsing="false" onAction="#removeButtonPressed" styleClass="removebtn" text="Remove" HBox.hgrow="NEVER" />
     </HBox>

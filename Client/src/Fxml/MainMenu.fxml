@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <VBox maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
    <HBox stylesheets="@FilesCSS/mainMenu.css">
@@ -22,10 +21,5 @@
       <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
       <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
       <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
-      <Button onAction="#handleMyReservation" styleClass="menu-button" text="My Reservations">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Button>
    </VBox>
 </VBox>

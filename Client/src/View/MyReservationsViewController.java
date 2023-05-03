@@ -40,8 +40,8 @@ public class MyReservationsViewController extends ViewController {
         if (numberOfSelectedRows == 1) {
             viewModel.setSelectedObject(
                     reservedRoomListView.getSelectionModel().getSelectedItem());
-            viewModel.roomDetails();
-            viewHandler.openView("details");
+
+            viewModel.removeReservation();
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR");

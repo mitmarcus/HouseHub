@@ -6,6 +6,9 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import ModelClient.ModelClient;
+import ModelClient.Reservation;
+import ModelClient.ReservationList;
+
 
 public class MyReservationsViewModel extends ViewModel {
     private ViewState viewState;
@@ -20,9 +23,9 @@ public class MyReservationsViewModel extends ViewModel {
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
         this.selectedObject = new SimpleStringProperty();
-        for (int i = 0; i < model.getAllRooms().size();i++)
+        for (int i = 0; i < model.getAllReservations().size();i++)
         {
-            list.add(model.getAllRooms().get(i).getAnnouncement());/* change */
+            list.add(model.getAllReservations().get(i).getResAnnouncement());
         }
     }
 
@@ -47,5 +50,14 @@ public class MyReservationsViewModel extends ViewModel {
     public void roomDetails() {
         viewState.setId(selectedObject.get());
     }
+
+    public void removeReservation()
+    {
+        viewState.setId(selectedObject.get());
+        Reservation reservation = model.getReservationAtIndex(viewState.getId());
+        model.removeReservation(reservation);
+    }
+
+
 
 }
