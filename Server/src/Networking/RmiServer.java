@@ -4,6 +4,7 @@ import ModelServer.ModelServer;
 import ModelServer.Room;
 import ModelServer.RoomList;
 import utility.observer.listener.GeneralListener;
+import utility.observer.listener.RemoteListener;
 import utility.observer.subject.PropertyChangeHandler;
 
 
@@ -14,14 +15,15 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import ModelServer.ModelManagerServer;
 
 public class RmiServer implements RemoteModel
 {
     private ModelServer model;
     private PropertyChangeHandler property;
 
-    public RmiServer(ModelServer model) throws Exception {
-        this.model = model;
+    public RmiServer() throws Exception {
+        this.model = new ModelManagerServer();
         this.property = new PropertyChangeHandler(this);
         startRegistry();
         startServer();
@@ -77,4 +79,5 @@ public class RmiServer implements RemoteModel
         property.removeListener(listener,propertyNames);
         return true;
     }
+
 }

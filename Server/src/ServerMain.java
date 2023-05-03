@@ -1,3 +1,4 @@
+import Networking.RemoteModel;
 import Networking.RmiServer;
 
 import java.net.MalformedURLException;
@@ -9,6 +10,10 @@ public class ServerMain
 {
     public static void main(String[] args)
     {
-
+        try {
+            RemoteModel server = new RmiServer();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
