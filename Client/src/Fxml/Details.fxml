@@ -61,7 +61,7 @@
                </VBox>
                <VBox prefHeight="23.0" prefWidth="271.0" />
                <VBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" />
-               <VBox alignment="CENTER" prefHeight="58.0" prefWidth="271.0">
+               <VBox alignment="CENTER" prefHeight="68.0" prefWidth="266.0">
                   <children>
                      <Line endX="150.0" startX="-100.0">
                         <VBox.margin>
@@ -95,6 +95,9 @@
                         </VBox.margin>
                      </HBox>
                   </children>
+                  <padding>
+                     <Insets left="5.0" />
+                  </padding>
                </VBox>
             </children>
          </VBox>

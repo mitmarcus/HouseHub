@@ -1,10 +1,5 @@
 package ModelClient;
-
-import javafx.scene.control.DatePicker;
-
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Objects;
 
 public class Reservation {
     private LocalDate startDate;
@@ -14,6 +9,8 @@ public class Reservation {
     /// in the future we will have private User
 
     public Reservation(Object startDate, Object endDate, Room room){
+        if (startDate == null || endDate == null || room == null)
+            throw new IllegalArgumentException();
         this.startDate = (LocalDate) startDate;
         this.endDate = (LocalDate) endDate;
         this.room = room;

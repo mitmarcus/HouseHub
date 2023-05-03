@@ -1,17 +1,11 @@
 package View;
 
-import ModelClient.Reservation;
 import ViewModel.ViewModel;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
-import javafx.scene.text.Text;
-
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Optional;
 
 public class DetailsViewController extends ViewController {
@@ -50,7 +44,6 @@ public class DetailsViewController extends ViewController {
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
         this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
         this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
-
     }
 
     @FXML

@@ -24,34 +24,34 @@ class RoomListTest {
 
 
   @Test public void addRoomInEmpty(){
-    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3");
+    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false);
     list.addRoom(room);
     assertEquals(room,list.getRoomAtIndex(0));
   }
   @Test public void addRoomInOneElementList(){
-    list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3");
+    list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
+    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false);
     list.addRoom(room);
     assertEquals(room,list.getRoomAtIndex(1));
   }
   @Test public void addARoomThatAlreadyExist(){
-    list.addRoom(new Room("Room next Lovbjergasdasdasd.","$500", "123 Main St", "200", "3"));
-    Room room =new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
-    Room room2 = new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2");
+    list.addRoom(new Room("Room next Lovbjergasdasdasd.","$500", "123 Main St", "200", "3",false));
+    Room room =new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false);
+    Room room2 = new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false);
     list.addRoom(room);
     assertThrows(IllegalArgumentException.class,()->list.addRoom(room2));
   }
   @Test public void addRoomInListWithMany(){
-    list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
-    list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-    list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
-    Room room = new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3");
+    list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
+    list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
+    list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
+    Room room = new Room("Room next Lovbjerg1231.","$500", "123 Main St", "200", "3",false);
     list.addRoom(room);
     assertEquals(room,list.getRoomAtIndex(3));
   }
   @Test public void addRoomWithNullValues(){
-    assertThrows(IllegalArgumentException.class,()->list.addRoom
-        (new Room("Room next Lovbjerg.",null, "123 Main St", "200", "3")));
+    assertThrows(NullPointerException.class,()->list.addRoom
+        (new Room("Room next Lovbjerg.",null, "123 Main St", "200", "3",false)));
   }
 
     /*
@@ -63,14 +63,14 @@ class RoomListTest {
    */
 
     @Test public void removeRoom(){
-        Room room = new Room("bb","6.66","Horsens", "123", "3");
+        Room room = new Room("bb","6.66","Horsens", "123", "3",false);
         list.addRoom(room);
         assertDoesNotThrow(()->list.removeRoom(room));
     }
     @Test public void removeManyRooms(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
-        Room room1 = new Room("bb","6.66","Horsens", "123", "3");
-        Room room2 = new Room("bb","6.66","Horsens", "133", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+        Room room1 = new Room("bb","6.66","Horsens", "123", "3",false);
+        Room room2 = new Room("bb","6.66","Horsens", "133", "3",false);
         list.addRoom(room);
         list.addRoom(room1);
         list.addRoom(room2);
@@ -79,10 +79,10 @@ class RoomListTest {
         assertDoesNotThrow(()->list.removeRoom(room2));
     }
     @Test public void removeFromEmptyList(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
         list.addRoom(room);
         list.removeRoom(room);
-        assertThrows(IllegalStateException.class, () -> list.removeRoom(new Room("bb","6.66","Horsens", "143", "3")));
+        assertThrows(IllegalStateException.class, () -> list.removeRoom(new Room("bb","6.66","Horsens", "143", "3",false)));
     }
     @Test public void removeException(){
         // already handled in B
@@ -97,28 +97,28 @@ class RoomListTest {
    */
 
     @Test public void getRoomIndexZero(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
         list.addRoom(room);
         assertDoesNotThrow(()-> list.getRoomAtIndex(0));
     }
     @Test public void getRoomIndexOne(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
-        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3",false);
         list.addRoom(room);
         list.addRoom(room1);
         assertDoesNotThrow(()-> list.getRoomAtIndex(1));
     }
     @Test public void getManyRooms(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
-        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3",false);
         list.addRoom(room);
         list.addRoom(room1);
         assertDoesNotThrow(()-> list.getRoomAtIndex(0));
         assertDoesNotThrow(()-> list.getRoomAtIndex(1));
     }
     @Test public void getRoomFromInvalidIndex(){
-        Room room = new Room("bb","6.66","Horsens", "143", "3");
-        Room room1 = new Room("bb","6.16","Horsens", "143", "3");
+        Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+        Room room1 = new Room("bb","6.16","Horsens", "143", "3",false);
         list.addRoom(room);
         list.addRoom(room1);
         assertThrows(ArrayIndexOutOfBoundsException.class, ()-> list.getRoomAtIndex(-1));
@@ -138,17 +138,15 @@ class RoomListTest {
       assertThrows(IllegalStateException.class, ()->list.getAllRooms());
     }
     @Test public void returnListWithOne(){
-      Room room = new Room("bb","6.66","Horsens", "143", "3");
+      Room room = new Room("bb","6.66","Horsens", "143", "3",false);
       list.addRoom(room);
       assertDoesNotThrow(()->list.getAllRooms());
     }
     @Test public void returnListWithMany(){
-      list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3"));
-      list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2"));
-      list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1"));
+      list.addRoom(new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
+      list.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
+      list.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
       assertDoesNotThrow(()-> list.getAllRooms());
     }
-
-
 
 }

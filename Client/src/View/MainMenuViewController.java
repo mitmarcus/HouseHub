@@ -37,6 +37,7 @@ public class MainMenuViewController extends ViewController {
     }
 
     @FXML
-    public void handleManageBookings(ActionEvent actionEvent) {
+    public void handleManageProfile(ActionEvent actionEvent) {
+        viewHandler.openView("manageAcc");
     }
 }

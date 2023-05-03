@@ -17,6 +17,8 @@ public class ViewHandler {
     private ViewController showRoomsViewController;
     private ViewController mainMenuViewController;
     private ViewController detailsViewController;
+    private ViewController loginViewController;
+    private ViewController manageAccViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -25,7 +27,7 @@ public class ViewHandler {
 
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        openView("main");
+        openView("login");
     }
 
     public void closeView() {
@@ -43,7 +45,12 @@ public class ViewHandler {
             case "details":
                 detailsViewController = loadViewController("/Fxml/Details.fxml", detailsViewController, viewModelFactory.getDetailsViewModel());
                 break;
-
+            case "login":
+                loginViewController = loadViewController("/Fxml/Login.fxml", loginViewController, viewModelFactory.getLoginViewModel());
+                break;
+            case "manageAcc":
+                manageAccViewController = loadViewController("/Fxml/ManageAcc.fxml", manageAccViewController, viewModelFactory.getManageAccViewModel());
+                break;
         }
         currentScene.setRoot(root);
 
@@ -58,7 +65,7 @@ public class ViewHandler {
         primaryStage.setResizable(false);
         primaryStage.setScene(currentScene);
         primaryStage.getIcons().add(new Image("/Resources/Logo.png"));
-        primaryStage.setResizable(true);
+        primaryStage.setResizable(false);
         primaryStage.setScene(currentScene);
         primaryStage.setWidth(root.getPrefWidth());
         primaryStage.setHeight(root.getPrefHeight());
@@ -75,7 +82,8 @@ public class ViewHandler {
                 this.root = loader.load();
                 viewController = loader.getController();
                 viewController.init(this, viewModel, this.root);
-                viewController.reset();
+                 viewController.reset();
+
 
             }
             catch (Exception e)
@@ -84,6 +92,7 @@ public class ViewHandler {
             }
         }
         root=viewController.getRoot();
+        viewController.reset();
         return viewController;
         }
     }

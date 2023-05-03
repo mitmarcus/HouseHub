@@ -10,22 +10,26 @@ public class Room {
     private String bedrooms;
     private boolean isReserved;
 
-    public Room(String announcement,String price, String address, String size, String bedrooms) {
+    public Room(String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
-        isReserved = false;
+        this.isReserved = isReserved;
+        if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
+            throw new NullPointerException();
     }
     public String getAnnouncement(){
         return announcement;
     }
     public String getPrice() {
-        return price;
+       return price;
     }
 
     public void setPrice(String price) {
+        if (price == null| price == "")
+            throw  new IllegalArgumentException();
         this.price = price;
     }
 
@@ -34,6 +38,8 @@ public class Room {
     }
 
     public void setAddress(String address) {
+        if (address == null || address == "")
+            throw new IllegalArgumentException();
         this.address = address;
     }
 
@@ -42,6 +48,8 @@ public class Room {
     }
 
     public void setSize(String size) {
+        if (size==null|| size =="")
+            throw new IllegalArgumentException();
         this.size = size;
     }
 
@@ -50,11 +58,15 @@ public class Room {
     }
 
     public void setBedrooms(String bedrooms) {
+        if (bedrooms == null|| bedrooms == "")
+            throw new IllegalArgumentException();
         this.bedrooms = bedrooms;
     }
 
     @Override public boolean equals(Object o)
     {
+        if (o==(null))
+            throw new NullPointerException();
         if (this == o) return true;
         if (!(o instanceof Room room)) return false;
         return Objects.equals(announcement, room.announcement) && Objects.equals(price, room.price) &&

@@ -1,0 +1,38 @@
+/*@font-face {*/
+/*    -fx-font-family: 'Montserrat';*/
+/*    src: url('/Design/FontMontserrat/Montserrat-SemiBold.ttf');*/
+/*}*/
+
+.root {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 10px;
+}
+
+.label {
+    -fx-font-size: 24px;
+    -fx-font-family: 'Montserrat SemiBold';
+}
+
+.details {
+    -fx-border-color: grey;
+    -fx-border-insets: 5;
+    -fx-border-width: 1;
+    -fx-padding: 3px 3px 3px 3px;
+}
+
+.action-button {
+    -fx-background-color: #5D5D5D;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Montserrat";
+}
+
+.action-button:hover {
+    -fx-background-color: #f7931e;
+}
+
+.action-button:pressed {
+    -fx-background-color: #6f9940;
+}
