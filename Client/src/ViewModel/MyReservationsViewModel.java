@@ -1,14 +1,11 @@
 package ViewModel;
 
-import Model.Room;
-import View.MyReservationsViewController;
+import Model.Reservation;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Model.ModelClient;
-import Model.Reservation;
-import Model.ReservationList;
 
 
 public class MyReservationsViewModel extends ViewModel {
@@ -24,10 +21,15 @@ public class MyReservationsViewModel extends ViewModel {
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
         this.selectedObject = new SimpleStringProperty();
-        for (Room room : model.getAllRooms()){
-            if (room.isReserved()){
-                list.add(room.getAnnouncement());
+
+        try{
+            for (Reservation reservation : model.getAllReservations()) {
+                list.add(reservation.toString());
             }
+        }
+        catch (NullPointerException e)
+        {
+            e.getMessage();
         }
     }
 

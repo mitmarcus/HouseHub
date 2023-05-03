@@ -29,6 +29,10 @@ public class ReservationList implements Serializable
         return list.get(index);
     }
 
+    public ArrayList<Reservation> getAllReservations(){
+        return list;
+    }
+
     @Override
     public String toString() {
         return "Reservations: {"+ list +

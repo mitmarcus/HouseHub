@@ -1,5 +1,6 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ModelManagerServer implements ModelServer
@@ -11,9 +12,15 @@ public class ModelManagerServer implements ModelServer
     public ModelManagerServer()
     {
         this.rooms = new RoomList();
+        this.reservations = new ReservationList();
         this.rooms.addRoom(new Room("Room next Lovbjerg.","300", "123 Main St", "200", "3",false));
         this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
         this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
+        LocalDate start = LocalDate.of(2022, 7, 15);
+        LocalDate end =  LocalDate.of(2022, 7, 30);
+        Reservation reservation = new Reservation(start,end,new Room("Room next Lovbjerg.","700", "123 Main St", "200", "3",true));
+        this.reservations.addReservation(reservation);
+
     }
 
     @Override
@@ -38,6 +45,11 @@ public class ModelManagerServer implements ModelServer
     @Override
     public void addReservation(Reservation reservation) {
         reservations.addReservation(reservation);
+    }
+
+    @Override
+    public ArrayList<Reservation> getAllReservations() {
+        return reservations.getAllReservations();
     }
 
     @Override

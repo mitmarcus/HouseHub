@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ReservationList {
+public class ReservationList implements Serializable {
     private ArrayList<Reservation> list;
 
     public ReservationList(){
@@ -25,10 +26,8 @@ public class ReservationList {
     public Reservation getReservationAtIndex(int index){
         return list.get(index);
     }
-    public ArrayList<Reservation> getAllReservations()
-    {
-        /* if (list.size()==0)
-            throw new IllegalStateException(); */
+
+    public ArrayList<Reservation> getAllReservations(){
         return list;
     }
 

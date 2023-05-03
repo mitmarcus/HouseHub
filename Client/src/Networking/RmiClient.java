@@ -106,6 +106,11 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 
     @Override
     public ArrayList<Reservation> getAllReservations() {
+        try {
+            return server.getAllReservations();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

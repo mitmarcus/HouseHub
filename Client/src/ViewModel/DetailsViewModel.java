@@ -1,8 +1,7 @@
 package ViewModel;
 
-import Model.Room;
+import Model.*;
 import Model.ModelClient;
-import Model.Reservation;
 import javafx.beans.property.*;
 
 import java.time.LocalDate;

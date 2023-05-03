@@ -1,7 +1,9 @@
 package Model;
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Reservation {
+public class Reservation implements Serializable
+{
     private LocalDate startDate;
     private LocalDate endDate;
     private Room room;
@@ -32,9 +34,4 @@ public class Reservation {
     public String toString(){
         return "Reservation: " + "\n From: " + startDate + ", Until: " + endDate;
     }
-
-  public String getResAnnouncement()
-  {
-      return room.getAnnouncement();
-  }
 }

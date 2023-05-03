@@ -1,6 +1,7 @@
 package Networking;
 
 import Model.ModelServer;
+import Model.Reservation;
 import Model.Room;
 import utility.observer.listener.GeneralListener;
 import utility.observer.subject.PropertyChangeHandler;
@@ -62,6 +63,11 @@ public class RmiServer implements RemoteModel
     @Override public ArrayList<Room> getAllRooms() throws RemoteException {
         System.out.println("Got All Rooms");
         return model.getAllRooms();
+    }
+
+    @Override
+    public ArrayList<Reservation> getAllReservations() throws RemoteException {
+        return model.getAllReservations();
     }
 
 

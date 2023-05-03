@@ -46,7 +46,7 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
 
     @Override public ArrayList<Reservation> getAllReservations()
     {
-        return null;
+        return client.getAllReservations();
     }
 
     @Override public Reservation getReservationAtIndex()
