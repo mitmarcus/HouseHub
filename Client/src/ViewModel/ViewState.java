@@ -10,7 +10,7 @@ public class ViewState
         this.id = "";
         this.remove = false;
     }
-    public String getId()
+    public int getId()
     {
         return id;
     }

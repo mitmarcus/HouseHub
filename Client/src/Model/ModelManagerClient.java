@@ -44,6 +44,21 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         client.addReservation(reservation);
     }
 
+    @Override public ArrayList<Reservation> getAllReservations()
+    {
+        return null;
+    }
+
+    @Override public Reservation getReservationAtIndex()
+    {
+        return null;
+    }
+
+    @Override public Reservation getReservationAtIndex(int index)
+    {
+        return null;
+    }
+
     @Override
     public void removeReservation(Reservation reservation) {
         client.removeReservation(reservation);
