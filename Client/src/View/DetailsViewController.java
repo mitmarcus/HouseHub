@@ -6,6 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
+
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class DetailsViewController extends ViewController {
