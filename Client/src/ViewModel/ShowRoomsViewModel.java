@@ -21,9 +21,11 @@ public class ShowRoomsViewModel extends ViewModel
     this.list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
 
-    for (Room room : model.getAllRooms() )
-      list.add(room.getAnnouncement());
-
+    for (Room room : model.getAllRooms()){
+      if (!room.isReserved()){
+        list.add(room.getAnnouncement());
+      }
+    }
   }
 
   @Override public void clear()
