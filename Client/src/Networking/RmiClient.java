@@ -116,6 +116,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         property.firePropertyChange(event.getPropertyName(),event.getValue1(),event.getValue2() );
 
     }
+
 }
 
 
