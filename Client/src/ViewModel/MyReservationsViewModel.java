@@ -1,5 +1,6 @@
 package ViewModel;
 
+import Model.Room;
 import View.MyReservationsViewController;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -23,9 +24,10 @@ public class MyReservationsViewModel extends ViewModel {
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
         this.selectedObject = new SimpleStringProperty();
-        for (int i = 0; i < model.getAllReservations().size();i++)
-        {
-            list.add(model.getAllReservations().get(i).getResAnnouncement());
+        for (Room room : model.getAllRooms()){
+            if (room.isReserved()){
+                list.add(room.getAnnouncement());
+            }
         }
     }
 
