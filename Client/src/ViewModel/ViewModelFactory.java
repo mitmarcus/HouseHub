@@ -11,6 +11,8 @@ public class ViewModelFactory
   private ManageAccViewModel manageAccViewModel;
   private ViewState viewState;
 
+  private MyReservationsViewModel myReservationsViewModel;
+
 
   public ViewModelFactory (ModelClient model)
   {
@@ -20,6 +22,7 @@ public class ViewModelFactory
     this.detailsViewModel = new DetailsViewModel(model, viewState);
     this.loginViewModel = new LoginViewModel(model, viewState);
     this.manageAccViewModel = new ManageAccViewModel(model, viewState);
+    this.myReservationsViewModel = new MyReservationsViewModel(model, viewState);
   }
 
   public ShowRoomsViewModel getShowRoomsViewModel()
@@ -36,4 +39,8 @@ public class ViewModelFactory
 
   public LoginViewModel getLoginViewModel() {return loginViewModel;}
   public ManageAccViewModel getManageAccViewModel() {return manageAccViewModel;}
+
+  public MyReservationsViewModel getMyReservationsViewModel() {
+    return myReservationsViewModel;
+  }
 }

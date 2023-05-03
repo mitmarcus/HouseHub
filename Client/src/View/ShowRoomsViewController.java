@@ -2,6 +2,7 @@ package View;
 
 import ViewModel.ViewModel;
 import ViewModel.ShowRoomsViewModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -23,7 +24,6 @@ public class ShowRoomsViewController extends ViewController
     this.viewModel = (ShowRoomsViewModel) viewModel;
     this.roomListView.setItems(((ShowRoomsViewModel) viewModel).getList());
     this.root = root;
-
   }
 
   @Override public void reset()
@@ -53,9 +53,10 @@ public class ShowRoomsViewController extends ViewController
     }
 
   }
-    @FXML public void reservationsButtonPressed()
-    {
-      viewHandler.openView("main");
-    }
+  @FXML
+  public void reservationsButtonPressed(ActionEvent actionEvent)
+  {
+    viewHandler.openView("myReservations");
+  }
   }
 
