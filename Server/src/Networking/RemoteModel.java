@@ -1,6 +1,6 @@
 package Networking;
 
-import ModelServer.Room;
+import Model.Room;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;

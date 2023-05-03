@@ -1,8 +1,10 @@
-package ModelClient;
+package Model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Room {
+public class Room implements Serializable
+{
     private String announcement;
     private String price;
     private String address;
@@ -17,8 +19,8 @@ public class Room {
         this.size = size;
         this.bedrooms = bedrooms;
         this.isReserved = isReserved;
-        if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
-            throw new NullPointerException();
+       // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
+         //   throw new NullPointerException();
     }
     public String getAnnouncement(){
         return announcement;

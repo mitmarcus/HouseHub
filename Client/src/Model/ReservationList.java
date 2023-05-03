@@ -1,10 +1,6 @@
-package ModelClient;
+package Model;
 
-import javafx.scene.control.DatePicker;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class ReservationList {
     private ArrayList<Reservation> list;

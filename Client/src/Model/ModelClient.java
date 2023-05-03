@@ -1,16 +1,17 @@
-package ModelServer;
+package Model;
+
+import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.util.ArrayList;
-import java.util.Date;
 
-public interface ModelServer
+public interface ModelClient extends UnnamedPropertyChangeSubject
 {
   void addRoom(Room room);
   void removeRoom(Room room);
   Room getRoomByAnnouncement(String announcement);
   ArrayList<Room> getAllRooms();
-  void addReservation(Date startDate, Date endDate, Room room);
-  void removeReservation(Date startDate, Date endDate, Room room);
+  void addReservation(Reservation reservation);
+  void removeReservation(Reservation reservation);
   void addUser(String firstName, String lastName, String username, String password, String phoneNumber);
   void removeUserByUsername(String username);
   void removeUserByPhoneNumber(String phoneNumber);

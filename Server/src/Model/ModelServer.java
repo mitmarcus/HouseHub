@@ -1,13 +1,8 @@
-package ModelClient;
+package Model;
 
-import javafx.scene.control.DatePicker;
-import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
-public interface ModelClient extends UnnamedPropertyChangeSubject
+public interface ModelServer
 {
   void addRoom(Room room);
   void removeRoom(Room room);

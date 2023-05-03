@@ -1,17 +1,11 @@
 package ViewModel;
 
-import ModelClient.Room;
-import ModelClient.ModelClient;
-import ModelClient.Reservation;
+import Model.Room;
+import Model.ModelClient;
+import Model.Reservation;
 import javafx.beans.property.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class DetailsViewModel extends ViewModel {
     private ViewState viewState;

@@ -1,13 +1,11 @@
 package ViewModel;
 
-import ModelClient.ModelClient;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
+import Model.ModelClient;
+import Model.Room;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import ModelClient.Room;
 
 public class ShowRoomsViewModel extends ViewModel
 {
@@ -22,10 +20,9 @@ public class ShowRoomsViewModel extends ViewModel
     this.viewState = viewState;
     this.list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
-    for (int i = 0; i < model.getAllRooms().size();i++)
-    {
-      list.add(model.getAllRooms().get(i).getAnnouncement());
-    }
+
+    for (Room room : model.getAllRooms() )
+      list.add(room.getAnnouncement());
 
   }
 

@@ -1,9 +1,9 @@
-package ModelServer.ModelServer;
+package Model;
 
 import java.util.ArrayList;
 
 public class UserList {
-    private ArrayList<ModelServer.User> users;
+    private ArrayList<User> users;
 
     public UserList(){
         this.users = new ArrayList<>();

@@ -1,4 +1,4 @@
-package ModelServer.Log;
+package Model.Log;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

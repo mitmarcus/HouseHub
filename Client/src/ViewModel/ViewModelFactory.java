@@ -1,6 +1,6 @@
 package ViewModel;
 
-import ModelClient.ModelClient;
+import Model.ModelClient;
 
 public class ViewModelFactory
 {

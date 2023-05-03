@@ -1,4 +1,4 @@
-package ModelClient;
+package Model;
 import java.time.LocalDate;
 
 public class Reservation {

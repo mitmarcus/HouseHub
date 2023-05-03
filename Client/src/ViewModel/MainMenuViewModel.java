@@ -1,6 +1,6 @@
 package ViewModel;
 
-import ModelClient.ModelClient;
+import Model.ModelClient;
 
 public class MainMenuViewModel extends ViewModel{
     private ModelClient model;
