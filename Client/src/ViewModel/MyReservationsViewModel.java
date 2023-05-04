@@ -25,6 +25,7 @@ public class MyReservationsViewModel extends ViewModel {
         try{
             for (Reservation reservation : model.getAllReservations()) {
                 list.add(reservation.toString());
+                System.out.println(model.getAllReservations().size());
             }
         }
         catch (NullPointerException e)

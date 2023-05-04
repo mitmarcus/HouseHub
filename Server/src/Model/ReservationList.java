@@ -30,6 +30,7 @@ public class ReservationList implements Serializable
     }
 
     public ArrayList<Reservation> getAllReservations(){
+
         return list;
     }
 

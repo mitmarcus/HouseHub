@@ -70,6 +70,11 @@ public class RmiServer implements RemoteModel
         return model.getAllReservations();
     }
 
+    @Override
+    public void addReservation(Reservation reservation) throws RemoteException {
+        model.addReservation(reservation);
+    }
+
 
     @Override
     public boolean addListener(GeneralListener listener, String... propertyNames) throws RemoteException {

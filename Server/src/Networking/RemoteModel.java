@@ -13,5 +13,6 @@ public interface RemoteModel extends RemoteSubject {
     void removeRoom(Room room) throws RemoteException;
     ArrayList<Room> getAllRooms() throws RemoteException;
     public ArrayList<Reservation> getAllReservations() throws RemoteException;
+    void addReservation(Reservation reservation) throws  RemoteException;
     void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException;
 }
