@@ -45,6 +45,12 @@ public class UserList {
             }
         }
     }
+    public User getUserByIndex(int index){
+        if (index<0) {
+            throw  new IndexOutOfBoundsException();
+        }
+        return users.get(index);
+    }
     @Override
     public String toString(){
         return "Users: " + users;

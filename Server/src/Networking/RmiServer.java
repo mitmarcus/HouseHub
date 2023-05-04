@@ -3,6 +3,7 @@ package Networking;
 import Model.ModelServer;
 import Model.Reservation;
 import Model.Room;
+import Model.User;
 import utility.observer.listener.GeneralListener;
 import utility.observer.subject.PropertyChangeHandler;
 
@@ -89,8 +90,8 @@ public class RmiServer implements RemoteModel
     }
 
     @Override
-    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException {
+    public void addUser(User user) throws RemoteException {
         System.out.println("Added User");
-        model.addUser(firstName, lastName, username, password, phoneNumber);
+        model.addUser(user);
     }
 }
