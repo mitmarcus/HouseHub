@@ -53,7 +53,7 @@ public class LoginViewController extends ViewController{
     @FXML
     public void signUpPressed(ActionEvent actionEvent) {
 
-
+        viewModel.addUser();
         System.out.println("User added");
         viewHandler.openView("main");
     }

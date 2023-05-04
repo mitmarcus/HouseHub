@@ -1,6 +1,7 @@
 package ViewModel;
 
 import Model.ModelClient;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class LoginViewModel extends ViewModel{
@@ -18,13 +19,13 @@ public class LoginViewModel extends ViewModel{
     public LoginViewModel(ModelClient model, ViewState viewState){
         this.model = model;
         this.viewState = viewState;
-        this.logInUsername = logInUsername;
-        this.logInPassword = logInPassword;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
+        this.logInUsername = new SimpleStringProperty();
+        this.logInPassword = new SimpleStringProperty();;
+        this.username = new SimpleStringProperty();;
+        this.password = new SimpleStringProperty();;
+        this.firstName = new SimpleStringProperty();;
+        this.lastName = new SimpleStringProperty();;
+        this.phoneNumber = new SimpleStringProperty();;
     }
 
     public StringProperty getLogInUsernameProperty() {
