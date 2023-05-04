@@ -13,6 +13,7 @@ public class LoginViewController extends ViewController{
     private LoginViewModel viewModel;
     private ViewHandler viewHandler;
 
+
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel, Region root) {
         this.viewHandler = viewHandler;
