@@ -72,4 +72,9 @@ public class ModelManagerServer implements ModelServer
         users.removeUserByPhoneNumber(phoneNumber);
     }
 
+    @Override public Reservation getReservationById(String id)
+    {
+        return reservations.getReservationById(id);
+    }
+
 }

@@ -38,10 +38,20 @@ public class MyReservationsViewController extends ViewController {
     public void removeButtonPressed() {
         int numberOfSelectedRows = reservedRoomListView.getSelectionModel().getSelectedItems().size();
         if (numberOfSelectedRows == 1) {
-            viewModel.setSelectedObject(
-                    reservedRoomListView.getSelectionModel().getSelectedItem());
+            Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
+            confirmationAlert.setTitle("Confirmation");
+            confirmationAlert.setHeaderText("Are you sure you want to remove this reservation? ");
+            Optional<ButtonType> result = confirmationAlert.showAndWait();
 
-            viewModel.removeReservation();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
+                viewModel.removeReservation(reservedRoomListView.getSelectionModel().getSelectedItem());
+                Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                successAlert.setTitle(" Successful");
+                successAlert.setHeaderText("Your reservation from as been removed" );
+                successAlert.showAndWait();
+            }
+
+
         } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR");

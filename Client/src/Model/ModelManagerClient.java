@@ -59,6 +59,7 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return null;
     }
 
+
     @Override
     public void removeReservation(Reservation reservation) {
         client.removeReservation(reservation);
@@ -79,6 +80,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
 
     }
 
+    @Override public Reservation getReservationById(String id)
+    {
+        return client.getReservationById(id);
+    }
+
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);
@@ -90,6 +96,6 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
 
     @Override public void propertyChange(PropertyChangeEvent evt)
     {
-        property.firePropertyChange(evt);
+        property.firePropertyChange(evt.getPropertyName(),evt.getOldValue(),evt.getNewValue());
     }
 }

@@ -1,14 +1,19 @@
 package ViewModel;
 
 import Model.Reservation;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Model.ModelClient;
 
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-public class MyReservationsViewModel extends ViewModel {
+public class MyReservationsViewModel extends ViewModel implements
+    PropertyChangeListener
+{
     private ViewState viewState;
     private ModelClient model;
     private ObservableList<String> list;
@@ -21,22 +26,23 @@ public class MyReservationsViewModel extends ViewModel {
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
         this.selectedObject = new SimpleStringProperty();
+        this.model.addListener(this);
+        clear();
 
-        try{
-            for (Reservation reservation : model.getAllReservations()) {
-                list.add(reservation.toString());
-                System.out.println(model.getAllReservations().size());
-            }
-        }
-        catch (NullPointerException e)
-        {
-            e.getMessage();
-        }
     }
 
     @Override public void clear()
     {
-        //
+        list.clear();
+        try{
+        for (Reservation reservation : model.getAllReservations()) {
+            list.add(reservation.toString());
+        }
+    }
+    catch (NullPointerException e)
+    {
+        e.getMessage();
+    }
     }
     public ObservableList<String> getList()
     {
@@ -56,13 +62,26 @@ public class MyReservationsViewModel extends ViewModel {
         viewState.setId(selectedObject.get());
     }
 
-    public void removeReservation()
+    public void removeReservation(String id)
     {
-        viewState.setId(selectedObject.get());
-        Reservation reservation = model.getReservationAtIndex();
+        Reservation reservation = model.getReservationById(id);
+        System.out.println(reservation.getRoom().getAnnouncement());
         model.removeReservation(reservation);
+        System.out.println(reservation);
     }
 
+    @Override public void propertyChange(PropertyChangeEvent evt)
+    {
+        if (evt.getPropertyName().equals("reserve")) {
+            Reservation reservation = (Reservation) evt.getNewValue();
+            list.add(reservation.toString());
+        }
+        if (evt.getPropertyName().equals("removereservation"))
+        Platform.runLater(()->{
+                clear();
+        });
 
 
+
+    }
 }

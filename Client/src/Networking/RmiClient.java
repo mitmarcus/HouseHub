@@ -94,9 +94,29 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 
     }
 
+    @Override public Reservation getReservationById(String id)
+    {
+        try
+        {
+            return server.getReservationById(id);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override public void removeReservation(Reservation reservation)
     {
-
+        try
+        {
+            server.removedReservation(reservation);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override public void addReservation(Reservation reservation)

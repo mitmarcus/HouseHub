@@ -57,7 +57,7 @@ public class RmiServer implements RemoteModel
     @Override public void removeRoom(Room room) throws RemoteException {
         System.out.println("Removed Room");
         model.removeRoom(room);
-        property.firePropertyChange("RemoveRoom", null, room);
+        property.firePropertyChange("RemoveRoom", null, model.getAllRooms());
     }
 
     @Override public ArrayList<Room> getAllRooms() throws RemoteException {
@@ -73,6 +73,7 @@ public class RmiServer implements RemoteModel
     @Override
     public void addReservation(Reservation reservation) throws RemoteException {
         model.addReservation(reservation);
+        property.firePropertyChange("reserve",null,reservation);
     }
 
 
@@ -92,5 +93,18 @@ public class RmiServer implements RemoteModel
     public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException {
         System.out.println("Added User");
         model.addUser(firstName, lastName, username, password, phoneNumber);
+    }
+
+    @Override public Reservation getReservationById(String id)
+        throws RemoteException
+    {
+        return model.getReservationById(id);
+    }
+
+    @Override public void removedReservation(Reservation reservation)
+        throws RemoteException
+    {
+        model.removeReservation(reservation);
+        property.firePropertyChange("removereservation", null ,reservation.toString());
     }
 }

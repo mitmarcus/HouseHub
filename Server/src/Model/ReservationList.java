@@ -18,12 +18,13 @@ public class ReservationList implements Serializable
         reservation.getRoom().setReserved(true);
     }
     public void removeReservation(Reservation reservation){
+        System.out.println(reservation.toString());
         if (list.size() == 0)
             throw  new IllegalStateException();
-
-
+        Reservation reservation1 = getReservationById(reservation.toString());
         reservation.getRoom().setReserved(false);
-        list.remove(reservation);
+        list.remove(reservation1);
+        System.out.println("reservation size " + list.size());
     }
     public Reservation getReservationAtIndex(int index){
         return list.get(index);
@@ -32,6 +33,14 @@ public class ReservationList implements Serializable
     public ArrayList<Reservation> getAllReservations(){
 
         return list;
+    }
+    public Reservation getReservationById(String id){
+        for (Reservation reservation : list)
+        {
+            if (reservation.toString().equals(id))
+                return reservation;
+        }
+        return null;
     }
 
     @Override

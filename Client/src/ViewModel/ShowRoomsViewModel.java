@@ -7,7 +7,10 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class ShowRoomsViewModel extends ViewModel
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListener
 {
   private ViewState viewState;
   private ModelClient model;
@@ -20,17 +23,19 @@ public class ShowRoomsViewModel extends ViewModel
     this.viewState = viewState;
     this.list = FXCollections.observableArrayList();
     this.selectedObject = new SimpleStringProperty();
+    this.model.addListener(this);
+    clear();
 
+  }
+
+  @Override public void clear()
+  {
+    list.clear();
     for (Room room : model.getAllRooms()){
       if (!room.isReserved()){
         list.add(room.getAnnouncement());
       }
     }
-  }
-
-  @Override public void clear()
-  {
-    //
   }
   public ObservableList<String> getList()
   {
@@ -50,5 +55,9 @@ public class ShowRoomsViewModel extends ViewModel
     viewState.setId(selectedObject.get());
   }
 
-
+  @Override public void propertyChange(PropertyChangeEvent evt)
+  {
+    if (evt.getPropertyName().equals("RemoveRoom"))
+      clear();
+  }
 }
