@@ -74,11 +74,10 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
-    @Override public void addUser(String firstName, String lastName,
-        String username, String password, String phoneNumber)
+    @Override public void addUser(User user)
     {
         try {
-            server.addUser(firstName, lastName, username, password, phoneNumber);
+            server.addUser(user);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

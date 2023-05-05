@@ -13,9 +13,9 @@ class RoomListTest {
     }
 
   /*
-  Z = add a room in a empty list;
+  Z = add a room in an empty list;
   O= add a room in a one element list;
-  O = add a room that aleady exist in the list should throw exception
+  O = add a room that already exist in the list should throw exception
   M = add one or more rooms in a list with elements;
   B = there is no upper limit for this room list;
   E = add a room with null values should throw an exception;

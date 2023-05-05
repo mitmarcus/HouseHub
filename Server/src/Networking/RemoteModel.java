@@ -2,6 +2,7 @@ package Networking;
 
 import Model.Reservation;
 import Model.Room;
+import Model.User;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
@@ -17,4 +18,6 @@ public interface RemoteModel extends RemoteSubject {
     void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException;
     Reservation getReservationById(String id) throws  RemoteException;
     void removedReservation(Reservation reservation) throws RemoteException;
+    void addUser(User user) throws RemoteException;
+
 }

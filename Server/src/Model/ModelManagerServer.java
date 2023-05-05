@@ -58,8 +58,8 @@ public class ModelManagerServer implements ModelServer
     }
 
     @Override
-    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
-        users.addUser(firstName,lastName, username, password, phoneNumber);
+    public void addUser(User user) {
+        users.addUser(user);
     }
 
     @Override
