@@ -16,7 +16,6 @@ public class LoginViewController extends ViewController{
 
     @FXML
     private TextField loginUsername;
-
     @FXML
     private TextField loginPassword;
 
@@ -52,10 +51,7 @@ public class LoginViewController extends ViewController{
 
     @FXML
     public void signUpPressed(ActionEvent actionEvent) {
-
-        viewModel.addUser();
-        System.out.println("User added");
-        viewHandler.openView("main");
+        
     }
 
     public void logInPressed(ActionEvent actionEvent) {
