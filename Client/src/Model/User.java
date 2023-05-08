@@ -16,7 +16,7 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        if (firstName == null || lastName == null|| username == null|| password == null || phoneNumber == null){
+        if (firstName == null || lastName == null || username == null|| password == null || phoneNumber == null){
             throw new NullPointerException();
         }
     }
@@ -46,51 +46,36 @@ public class User implements Serializable {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3 || firstName == "") {
+        if (firstName.length() < 3) {
             throw new IllegalArgumentException();
-        }
-        if (firstName == null){
-            throw new NullPointerException();
         }
         this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        if (lastName.length() < 3 || lastName == "") {
+        if (lastName.length() < 3) {
             throw new IllegalArgumentException();
-        }
-        if (lastName == null ){
-            throw new NullPointerException();
         }
         this.lastName = lastName;
     }
 
     public void setUsername(String username) {
-        if (username.length() < 3 || username == "") {
+        if (username.length() < 3) {
             throw new IllegalArgumentException();
-        }
-        if (username == null ){
-            throw new NullPointerException();
         }
         this.username = username;
     }
 
     public void setPassword(String password) {
-        if (password.length() < 6 || password == "") {
+        if (password.length() < 6) {
             throw new IllegalArgumentException();
-        }
-        if (password == null ){
-            throw new NullPointerException();
         }
         this.password = password;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() < 8 || phoneNumber == "") {
+        if (phoneNumber.length() < 8) {
             throw new IllegalArgumentException();
-        }
-        if (phoneNumber == null ){
-            throw new NullPointerException();
         }
         this.phoneNumber = phoneNumber;
     }
