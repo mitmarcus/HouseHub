@@ -115,11 +115,6 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
-    @Override
-    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
-        
-    }
-
     @Override public void removeReservation(Reservation reservation)
     {
         try

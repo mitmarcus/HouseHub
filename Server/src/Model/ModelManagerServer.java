@@ -62,6 +62,7 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void addUser(User user) {
+        System.out.println(user.toString());
         users.addUser(user);
     }
 
@@ -84,10 +85,4 @@ public class ModelManagerServer implements ModelServer
     {
         return reservations.getReservationById(id);
     }
-
-    @Override
-    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
-        users.addUser(firstName,lastName,username,password,phoneNumber);
-    }
-
 }

@@ -1,6 +1,7 @@
 package ViewModel;
 
 import Model.ModelClient;
+import Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -57,7 +58,8 @@ public class LoginViewModel extends ViewModel{
     }
 
     public boolean addUser(){
-        model.addUser(firstName.get(),lastName.get(),username.get(),password.get(),phoneNumber.get());
+        User user  = new User(firstName.get(),lastName.get(), username.get(), password.get(), phoneNumber.get());
+        model.addUser(user);
         return true;
     }
     @Override

@@ -90,11 +90,6 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     }
 
     @Override
-    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
-        client.addUser(firstName,lastName,username,password,phoneNumber);
-    }
-
-    @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);
     }

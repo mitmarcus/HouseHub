@@ -4,13 +4,17 @@ import ViewModel.MainMenuViewModel;
 import ViewModel.ViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 
 import ViewModel.LoginViewModel;
 
+import java.util.Optional;
 
-public class LoginViewController extends ViewController{
+
+public class LoginViewController extends ViewController {
     private LoginViewModel viewModel;
     private ViewHandler viewHandler;
 
@@ -51,7 +55,18 @@ public class LoginViewController extends ViewController{
 
     @FXML
     public void signUpPressed(ActionEvent actionEvent) {
-        viewModel.se
+        if (viewModel.addUser()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Successful Sign up");
+            alert.setHeaderText("You're automatically signed in");
+            Optional<ButtonType> result = alert.showAndWait();
+            viewHandler.openView("main");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Please Try again");
+            Optional<ButtonType> result = alert.showAndWait();
+        }
     }
 
     public void logInPressed(ActionEvent actionEvent) {
