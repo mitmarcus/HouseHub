@@ -12,6 +12,7 @@ public class ModelManagerServer implements ModelServer
 
     public ModelManagerServer()
     {
+        this.users = new UserList();
         this.rooms = new RoomList();
         this.reservations = new ReservationList();
         this.rooms.addRoom(new Room("Room next Lovbjerg.","300", "123 Main St", "200", "3",false));
@@ -62,7 +63,6 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void addUser(User user) {
-        System.out.println(user.toString());
         users.addUser(user);
     }
 
