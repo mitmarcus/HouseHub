@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.ModelClient;
 import Model.Room;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -58,6 +59,9 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
   @Override public void propertyChange(PropertyChangeEvent evt)
   {
     if (evt.getPropertyName().equals("RemoveRoom"))
-      clear();
+      Platform.runLater(()->{
+        clear();
+      });
+
   }
 }

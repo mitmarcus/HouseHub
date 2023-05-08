@@ -19,7 +19,7 @@
 <VBox prefHeight="300.0" prefWidth="350.0" spacing="10.0" stylesheets="@FilesCSS/login.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.LoginViewController">
    <TabPane prefHeight="300.0" prefWidth="350.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
      <tabs>
-       <Tab fx:id="loginOption" onSelectionChanged="#loginOptionSelected" text="Login">
+       <Tab fx:id="loginOption"  text="Login">
          <content>
                <VBox spacing="20.0">
                   <children>
@@ -66,7 +66,7 @@
                </VBox>
          </content>
        </Tab>
-       <Tab fx:id="registerOption" onSelectionChanged="#registerOptionSelected" text="Register">
+       <Tab fx:id="registerOption"  text="Register">
          <content>
                <VBox alignment="CENTER">
                   <children>

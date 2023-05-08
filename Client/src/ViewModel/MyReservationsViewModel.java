@@ -72,10 +72,14 @@ public class MyReservationsViewModel extends ViewModel implements
 
     @Override public void propertyChange(PropertyChangeEvent evt)
     {
-        if (evt.getPropertyName().equals("reserve")) {
-            Reservation reservation = (Reservation) evt.getNewValue();
-            list.add(reservation.toString());
-        }
+        Platform.runLater(()->{
+            if (evt.getPropertyName().equals("reserve"))
+            {
+                Reservation reservation = (Reservation) evt.getNewValue();
+                list.add(reservation.toString());
+            }
+        });
+
         if (evt.getPropertyName().equals("removereservation"))
         Platform.runLater(()->{
                 clear();

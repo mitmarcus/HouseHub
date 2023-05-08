@@ -77,6 +77,12 @@ public class RmiServer implements RemoteModel
         property.firePropertyChange("reserve",null,reservation);
     }
 
+    @Override public void addUser(String firstName, String lastName,
+        String username, String password, String phoneNumber)
+        throws RemoteException
+    {
+
+    }
 
     @Override
     public boolean addListener(GeneralListener listener, String... propertyNames) throws RemoteException {
