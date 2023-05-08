@@ -11,14 +11,11 @@ public class User implements Serializable {
     private String phoneNumber;
 
     public User(String firstName, String lastName, String username, String password,String phoneNumber){
-        if (firstName == null || lastName == null || username == null || password == null || phoneNumber == null)
-            throw new NullPointerException();
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setUsername(username);
+        setPassword(password);
+        setPhoneNumber(phoneNumber);
     }
 
     public String getFirstName() {

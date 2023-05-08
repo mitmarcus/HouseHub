@@ -51,7 +51,7 @@ public class LoginViewController extends ViewController{
 
     @FXML
     public void signUpPressed(ActionEvent actionEvent) {
-        
+        viewModel.se
     }
 
     public void logInPressed(ActionEvent actionEvent) {
