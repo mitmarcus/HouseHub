@@ -82,6 +82,5 @@ public class LoginViewController extends ViewController {
             alert.setHeaderText("Please Try again");
             Optional<ButtonType> result = alert.showAndWait();
         }
-        viewHandler.openView("main");
     }
 }
