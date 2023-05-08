@@ -66,7 +66,7 @@
                            <children>
                               <VBox alignment="CENTER" prefHeight="56.0" prefWidth="100.0">
                                  <children>
-                                    <Button fx:id="reserveButton" alignment="CENTER" mnemonicParsing="false" onAction="#reserveButtonPressed" styleClass="detailsbtn" text="Post" />
+                                    <Button fx:id="postButton" alignment="CENTER" mnemonicParsing="false" onAction="#postButtonPressed" styleClass="detailsbtn" text="Post" />
                                  </children>
                               </VBox>
                            </children>
