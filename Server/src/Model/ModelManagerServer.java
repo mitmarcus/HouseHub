@@ -20,7 +20,9 @@ public class ModelManagerServer implements ModelServer
         this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
         LocalDate start = LocalDate.of(2022, 7, 15);
         LocalDate end =  LocalDate.of(2022, 7, 30);
-        User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+        User user = new User("Nuri", "Hasan", "nuriSexyBoy", "nuriSexyBoy", "00000007");
+
+        users.addUser(user);
 
         Reservation reservation = new Reservation(user,start,end,new Room("Room next Lovbjerg.","700", "123 Main St", "200", "3",true));
         this.reservations.addReservation(reservation);
