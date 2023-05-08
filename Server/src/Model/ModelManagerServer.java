@@ -85,4 +85,7 @@ public class ModelManagerServer implements ModelServer
     {
         return reservations.getReservationById(id);
     }
+    public User getUser(String username, String password) {
+        return users.getUser(username,password);
+    }
 }

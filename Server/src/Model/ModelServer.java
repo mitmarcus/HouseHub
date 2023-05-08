@@ -16,4 +16,5 @@ public interface ModelServer
   void removeUserByUsername(String username);
   void removeUserByPhoneNumber(String phoneNumber);
   Reservation getReservationById(String id);
+  User getUser(String username, String password);
 }

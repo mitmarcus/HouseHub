@@ -70,6 +70,18 @@ public class LoginViewController extends ViewController {
     }
 
     public void logInPressed(ActionEvent actionEvent) {
+        if (viewModel.logIn()) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Successful Signed in");
+            alert.setHeaderText("You're signed in");
+            Optional<ButtonType> result = alert.showAndWait();
+            viewHandler.openView("main");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Please Try again");
+            Optional<ButtonType> result = alert.showAndWait();
+        }
         viewHandler.openView("main");
     }
 }

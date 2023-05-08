@@ -115,6 +115,11 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
+    @Override
+    public User getUser(String username, String password) {
+        return server.getUser(username, password);
+    }
+
     @Override public void removeReservation(Reservation reservation)
     {
         try

@@ -62,6 +62,15 @@ public class LoginViewModel extends ViewModel{
         model.addUser(user);
         return true;
     }
+
+    public boolean logIn(){
+        User user = model.getUser(logInUsername.get(), logInPassword.get());
+        if(user == null){
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void clear() {
 
