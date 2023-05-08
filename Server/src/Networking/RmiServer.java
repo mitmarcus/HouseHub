@@ -93,6 +93,7 @@ public class RmiServer implements RemoteModel
 
     @Override
     public void addUser(User user) throws RemoteException {
+        System.out.println(user.toString());
         model.addUser(user);
     }
 
