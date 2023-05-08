@@ -102,6 +102,11 @@ public class RmiServer implements RemoteModel
         model.addUser(user);
     }
 
+    @Override
+    public User getUserByUsername(String username) throws RemoteException {
+        return model.getUserByUsername(username);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {

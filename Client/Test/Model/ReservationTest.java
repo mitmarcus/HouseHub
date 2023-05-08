@@ -17,7 +17,7 @@ class ReservationTest
    */
 
   @Test public void constructor(){
-    assertThrows(IllegalArgumentException.class,()->new Reservation(null,null,null));
+    assertThrows(IllegalArgumentException.class,()->new Reservation(null,null,null,null));
   }
   /*
   getStartDate()

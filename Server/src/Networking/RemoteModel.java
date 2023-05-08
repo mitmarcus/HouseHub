@@ -19,5 +19,6 @@ public interface RemoteModel extends RemoteSubject {
     Reservation getReservationById(String id) throws  RemoteException;
     void removedReservation(Reservation reservation) throws RemoteException;
     void addUser(User user) throws RemoteException;
+    User getUserByUsername(String username) throws RemoteException;
 
 }

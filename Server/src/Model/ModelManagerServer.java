@@ -18,7 +18,9 @@ public class ModelManagerServer implements ModelServer
         this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
         LocalDate start = LocalDate.of(2022, 7, 15);
         LocalDate end =  LocalDate.of(2022, 7, 30);
-        Reservation reservation = new Reservation(start,end,new Room("Room next Lovbjerg.","700", "123 Main St", "200", "3",true));
+        User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+        Reservation reservation = new Reservation(user,start,end,new Room("Room next Lovbjerg.","700", "123 Main St", "200", "3",true));
         this.reservations.addReservation(reservation);
 
     }
@@ -60,6 +62,11 @@ public class ModelManagerServer implements ModelServer
     @Override
     public void addUser(User user) {
         users.addUser(user);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return users.getUserByUsername(username);
     }
 
     @Override

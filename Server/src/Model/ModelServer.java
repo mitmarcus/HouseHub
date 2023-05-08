@@ -12,6 +12,7 @@ public interface ModelServer
   ArrayList<Reservation> getAllReservations();
   void removeReservation(Reservation reservation);
   void addUser(User user);
+  User getUserByUsername(String username);
   void removeUserByUsername(String username);
   void removeUserByPhoneNumber(String phoneNumber);
   Reservation getReservationById(String id);

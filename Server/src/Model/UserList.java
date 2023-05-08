@@ -16,6 +16,17 @@ public class UserList {
         }
         users.add(user);
     }
+    public User getUserByUsername(String username){
+        if (username == null){
+            throw new NullPointerException();
+        }
+        for (int i = 0; i<users.size(); i++){
+            if (users.get(i).getUsername().equals(username)){
+                return users.get(i);
+            }
+        }
+        return null;
+    }
     public void removeUser(User user){
         if (users.size() == 0){
             throw  new IllegalStateException();

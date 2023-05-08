@@ -71,6 +71,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     }
 
     @Override
+    public User getUserByUsername(String username) {
+        return client.getUserByUsername(username);
+    }
+
+    @Override
     public void removeUserByUsername(String username) {
         client.removeUserByUsername(username);
     }

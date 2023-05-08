@@ -32,9 +32,10 @@ class ReservationListTest
    */
 
   @Test void addReservationInEmpty(){
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end =  LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start,end,
+    Reservation reservation = new Reservation(user,start,end,
         new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addReservation(reservation);
     assertEquals(reservation,list.getReservationAtIndex(0));
@@ -43,13 +44,16 @@ class ReservationListTest
   @Test void addReservationInOneElementList(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end =  LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start,end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start,end,
         new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addReservation(reservation);
 
     LocalDate start1 = LocalDate.of(2022, 6, 15);
     LocalDate end1 =  LocalDate.of(2022, 6, 30);
-    Reservation reservation1 = new Reservation(start1,end1,
+
+    Reservation reservation1 = new Reservation(user,start1,end1,
         new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addReservation(reservation1);
     assertEquals(reservation1,list.getReservationAtIndex(1));
@@ -57,7 +61,9 @@ class ReservationListTest
   @Test void addReservationThatAlreadyExists(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end =  LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start,end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start,end,
         new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addReservation(reservation);
 
@@ -75,7 +81,9 @@ class ReservationListTest
   @Test void removeFromEmpty(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end =  LocalDate.of(2022, 7, 30);
-      assertThrows(IllegalStateException.class, ()-> list.removeReservation(new Reservation(start,end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    assertThrows(IllegalStateException.class, ()-> list.removeReservation(new Reservation(user,start,end,
           new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false))));
   }
   @Test void  removeFromOneElement(){
@@ -83,7 +91,9 @@ class ReservationListTest
     //Removing a element from the list
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end =  LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start,end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start,end,
         new Room("Room next Lovbjerg.","$500", "123 Main St", "200", "3",false));
     list.addReservation(reservation);
     assertDoesNotThrow(()-> list.removeReservation(reservation));
@@ -93,12 +103,14 @@ class ReservationListTest
   {
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end = LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start, end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation);
     LocalDate start1 = LocalDate.of(2022, 7, 15);
     LocalDate end1 = LocalDate.of(2022, 7, 30);
-    Reservation reservation1 = new Reservation(start, end,
+    Reservation reservation1 = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation1);
     assertDoesNotThrow(() -> list.removeReservation(reservation1));
@@ -116,7 +128,9 @@ class ReservationListTest
   @Test void getReservationAtIndex0(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end = LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start, end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation);
 
@@ -127,12 +141,15 @@ class ReservationListTest
   @Test void getReservationAtIndex1(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end = LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start, end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation);
     LocalDate start1 = LocalDate.of(2022, 7, 15);
     LocalDate end1 = LocalDate.of(2022, 7, 30);
-    Reservation reservation1 = new Reservation(start, end,
+
+    Reservation reservation1 = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation1);
 
@@ -142,17 +159,19 @@ class ReservationListTest
   @Test void getReservationAtIndex2(){
     LocalDate start = LocalDate.of(2022, 7, 15);
     LocalDate end = LocalDate.of(2022, 7, 30);
-    Reservation reservation = new Reservation(start, end,
+    User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+
+    Reservation reservation = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation);
     LocalDate start1 = LocalDate.of(2022, 7, 15);
     LocalDate end1 = LocalDate.of(2022, 7, 30);
-    Reservation reservation1 = new Reservation(start, end,
+    Reservation reservation1 = new Reservation(user, start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation1);
     LocalDate start3 = LocalDate.of(2022, 3, 15);
     LocalDate end3 = LocalDate.of(2022, 3, 30);
-    Reservation reservation3 = new Reservation(start, end,
+    Reservation reservation3 = new Reservation(user,start, end,
         new Room("Room next Lovbjerg.", "$500", "123 Main St", "200", "3", false));
     list.addReservation(reservation3);
 

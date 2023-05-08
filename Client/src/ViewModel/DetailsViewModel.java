@@ -54,7 +54,8 @@ public class DetailsViewModel extends ViewModel {
 
     public boolean addReservation(LocalDate startDate, LocalDate endDate) {
         Room room = model.getRoomByAnnouncement(viewState.getId());
-        Reservation reservation = new Reservation(startDate,endDate,room);
+        User user = new User("Nuri", "Hasan", "nuriHasan", "nuriSexyBoy", "00000007");
+        Reservation reservation = new Reservation(user,startDate,endDate,room);
         model.addReservation(reservation);
         model.removeRoom(room);
             return true;

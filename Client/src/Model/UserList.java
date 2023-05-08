@@ -45,6 +45,17 @@ public class UserList {
             }
         }
     }
+    public User getUserByUsername(String username){
+        if (username == null){
+            throw new NullPointerException();
+        }
+        for (int i = 0; i<users.size(); i++){
+            if (users.get(i).getUsername().equals(username)){
+                return users.get(i);
+            }
+        }
+        return null;
+    }
     public User getUserByIndex(int index){
         if (index<0) {
             throw  new IndexOutOfBoundsException();

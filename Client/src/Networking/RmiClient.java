@@ -83,6 +83,15 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
+    @Override
+    public User getUserByUsername(String username) {
+        try {
+            return server.getUserByUsername(username);
+        } catch (RemoteException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @Override public void removeUserByUsername(String username)
     {
 
