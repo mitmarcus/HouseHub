@@ -12,7 +12,6 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     private PropertyChangeSupport property;
     private ModelClient client;
 
-
     public ModelManagerClient ()
     {
         this.property = new PropertyChangeSupport(this);
@@ -88,6 +87,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     @Override public Reservation getReservationById(String id)
     {
         return client.getReservationById(id);
+    }
+
+    @Override
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
+        client.addUser(firstName,lastName,username,password,phoneNumber);
     }
 
     @Override

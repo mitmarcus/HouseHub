@@ -59,4 +59,7 @@ public class UserList {
     public String toString(){
         return "Users: " + users;
     }
+
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
+    }
 }

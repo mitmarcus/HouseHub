@@ -1,5 +1,6 @@
 package Model;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -82,6 +83,11 @@ public class ModelManagerServer implements ModelServer
     @Override public Reservation getReservationById(String id)
     {
         return reservations.getReservationById(id);
+    }
+
+    @Override
+    public void addUser(String firstName, String lastName, String username, String password, String phoneNumber) {
+        users.addUser(firstName,lastName,username,password,phoneNumber);
     }
 
 }
