@@ -33,7 +33,7 @@ public class MainMenuViewController extends ViewController {
 
     @FXML
     public void handleListYourRoom(ActionEvent actionEvent) {
-
+        viewHandler.openView("listYourRoom");
     }
 
     @FXML
