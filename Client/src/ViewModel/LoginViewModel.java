@@ -68,6 +68,7 @@ public class LoginViewModel extends ViewModel{
         if(user == null){
             return false;
         }
+        viewState.setUsername(logInUsername.get());
         return true;
     }
 

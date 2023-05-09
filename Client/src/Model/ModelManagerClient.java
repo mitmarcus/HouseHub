@@ -89,6 +89,18 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getReservationById(id);
     }
 
+    @Override public boolean setRoomReserved(Room room)
+    {
+        client.setRoomReserved(room);
+        return true;
+    }
+
+    @Override public boolean setRoomFree(Room room)
+    {
+        client.setRoomFree(room);
+        return true;
+    }
+
     @Override
     public User getUser(String username, String password) {
         return client.getUser(username,password);

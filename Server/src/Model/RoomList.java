@@ -2,6 +2,7 @@ package Model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class RoomList implements Serializable
 {
@@ -53,5 +54,20 @@ public class RoomList implements Serializable
         if (list.size()==0)
             throw new IllegalStateException();
         return list;
+    }
+    public boolean setRoomReserved(Room room){
+       for (int i = 0 ; i<list.size(); i++)
+       {
+           if (list.get(i).equals(room))
+               list.get(i).setReserved(true);
+       }
+        return true;
+    }
+    public boolean setRoomFree(Room room){
+        for (int i = 0 ; i<list.size();i++){
+            if (list.get(i).equals(room))
+                list.get(i).setReserved(false);
+        }
+        return true;
     }
 }

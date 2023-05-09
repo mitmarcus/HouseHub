@@ -3,12 +3,14 @@ package ViewModel;
 public class ViewState
 {
     private String id;
+    private String username;
     private boolean remove;
 
     public ViewState()
     {
         this.id = "";
         this.remove = false;
+        this.username = "";
     }
     public String getId()
     {
@@ -17,6 +19,13 @@ public class ViewState
     public void setId(String id)
     {
         this.id = id;
+    }
+    public String getUsername(){
+        return username;
+    }
+    public void setUsername(String username)
+    {
+        this.username = username;
     }
     public void removeId()
     {

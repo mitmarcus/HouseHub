@@ -1,6 +1,7 @@
 package ViewModel;
 
 import Model.Reservation;
+import Model.Room;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -65,7 +66,8 @@ public class MyReservationsViewModel extends ViewModel implements
     public void removeReservation(String id)
     {
         Reservation reservation = model.getReservationById(id);
-        System.out.println(reservation.getRoom().getAnnouncement());
+        Room room = reservation.getRoom();
+        model.setRoomFree(room);
         model.removeReservation(reservation);
         System.out.println(reservation);
     }
@@ -80,8 +82,9 @@ public class MyReservationsViewModel extends ViewModel implements
             }
         });
 
-        if (evt.getPropertyName().equals("removereservation"))
+        if (evt.getPropertyName().equals("removeReservation"))
         Platform.runLater(()->{
+            System.out.println("hello");
                 clear();
         });
 

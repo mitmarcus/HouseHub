@@ -1,6 +1,7 @@
 package Model;
 
 import java.nio.file.attribute.UserPrincipal;
+import java.rmi.RemoteException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -18,14 +19,9 @@ public class ModelManagerServer implements ModelServer
         this.rooms.addRoom(new Room("Room next Lovbjerg.","300", "123 Main St", "200", "3",false));
         this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
         this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
-        LocalDate start = LocalDate.of(2022, 7, 15);
-        LocalDate end =  LocalDate.of(2022, 7, 30);
         User user = new User("Nuri", "Hasan", "nuriSexyBoy", "nuriSexyBoy", "00000007");
-
         users.addUser(user);
 
-        Reservation reservation = new Reservation(user,start,end,new Room("Room next Lovbjerg.","700", "123 Main St", "200", "3",true));
-        this.reservations.addReservation(reservation);
 
     }
 
@@ -87,6 +83,19 @@ public class ModelManagerServer implements ModelServer
     {
         return reservations.getReservationById(id);
     }
+
+    @Override public boolean setRoomReserved(Room room) throws RemoteException
+    {
+        rooms.setRoomReserved(room);
+        return true;
+    }
+
+    @Override public boolean setRoomFree(Room room)
+    {
+        rooms.setRoomFree(room);
+        return true;
+    }
+
     public User getUser(String username, String password) {
         return users.getUser(username,password);
     }
