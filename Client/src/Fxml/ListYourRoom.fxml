@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.ListYourRoom">
+<VBox prefHeight="400.0" prefWidth="600.0" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ListYourRoomViewController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="482.0" spacing="10.0">
          <children>
@@ -31,7 +31,7 @@
             <VBox alignment="BOTTOM_CENTER" prefHeight="312.0" prefWidth="274.0" stylesheets="@FilesCSS/style.css">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Announcement title" />
-                  <TextField />
+                  <TextField fx:id="announcement" />
                   <VBox prefHeight="34.0" prefWidth="271.0" />
                   <VBox alignment="BOTTOM_CENTER" prefHeight="164.0" prefWidth="271.0">
                      <children>
@@ -82,13 +82,15 @@
                   </VBox>
                </children>
             </VBox>
-            <VBox alignment="CENTER" prefHeight="345.0" prefWidth="312.0">
+            <VBox alignment="CENTER" prefHeight="345.0" prefWidth="312.0" spacing="10.0">
                <children>
+                  <Label text="Select an Image:" />
                   <ImageView fitHeight="195.0" fitWidth="367.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/placeholder.jpg" />
                      </image>
                   </ImageView>
+                  <Button fx:id="button" onAction="#browseForFile" text="Upload image" />
                </children>
             </VBox>
          </children>

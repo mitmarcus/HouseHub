@@ -14,16 +14,10 @@ public class ReservationList implements Serializable {
             if (reservation1.equals(reservation))
                 throw new IllegalStateException();
         list.add(reservation);
-        reservation.getRoom().setReserved(true);
     }
     public void removeReservation(Reservation reservation){
-        if (list.size() == 0)
-            throw  new IllegalStateException();
-        System.out.println(reservation);
-
-      reservation.getRoom().setReserved(false);
+        reservation.getRoom().setReserved(false);
         list.remove(reservation);
-        System.out.println("REservationlist size : " + list.size());
     }
     public Reservation getReservationAtIndex(int index){
         return list.get(index);

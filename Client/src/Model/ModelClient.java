@@ -22,6 +22,7 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   void removeUserByUsername(String username);
   void removeUserByPhoneNumber(String phoneNumber);
   Reservation getReservationById(String id);
-
+  boolean setRoomReserved(Room room);
+  boolean setRoomFree(Room room);
   User getUser(String username, String password);
 }

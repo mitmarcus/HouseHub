@@ -12,6 +12,7 @@ public class Room implements Serializable
     private String bedrooms;
     private boolean isReserved;
 
+
     public Room(String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;
@@ -92,7 +93,7 @@ public class Room implements Serializable
                 "price='" + price + '\'' +
                 ", address='" + address + '\'' +
                 ", size='" + size + '\'' +
-                ", bedrooms='" + bedrooms + '\'' +
+                ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
                 '}';
     }
 }

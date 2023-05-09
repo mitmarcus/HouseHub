@@ -88,12 +88,12 @@ public class Room implements Serializable
 
     @Override
     public String toString() {
-        return "Room{" +
-                "price='" + price + '\'' +
-                ", address='" + address + '\'' +
-                ", size='" + size + '\'' +
-                ", bedrooms='" + bedrooms + '\'' +
-                '}';
+       return  "Room{" +
+            "price='" + price + '\'' +
+            ", address='" + address + '\'' +
+            ", size='" + size + '\'' +
+            ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
+            '}';
     }
 }
 

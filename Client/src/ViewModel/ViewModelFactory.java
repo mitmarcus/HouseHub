@@ -12,11 +12,13 @@ public class ViewModelFactory
   private ViewState viewState;
 
   private MyReservationsViewModel myReservationsViewModel;
+  private ListYourRoomViewModel listYourRoomViewModel;
 
 
   public ViewModelFactory (ModelClient model)
   {
     this.viewState = new ViewState();
+    this.listYourRoomViewModel = new ListYourRoomViewModel(model,viewState);
     this.showRoomsViewModel = new ShowRoomsViewModel(model,viewState);
     this.mainMenuViewModel = new MainMenuViewModel(model, viewState);
     this.detailsViewModel = new DetailsViewModel(model, viewState);
@@ -42,5 +44,8 @@ public class ViewModelFactory
 
   public MyReservationsViewModel getMyReservationsViewModel() {
     return myReservationsViewModel;
+  }
+  public ListYourRoomViewModel getListYourRoomViewModel(){
+    return listYourRoomViewModel;
   }
 }

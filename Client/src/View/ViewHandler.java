@@ -20,6 +20,7 @@ public class ViewHandler {
     private ViewController loginViewController;
     private ViewController manageAccViewController;
     private ViewController myReservationsViewController;
+    private ViewController listYourRoomViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -55,6 +56,9 @@ public class ViewHandler {
             case "myReservations" :
                 myReservationsViewController = loadViewController("/Fxml/MyReservation.fxml", myReservationsViewController, viewModelFactory.getMyReservationsViewModel());
                 break;
+            case "listYourRoom" :
+                listYourRoomViewController = loadViewController("/Fxml/ListYourRoom.fxml", listYourRoomViewController,viewModelFactory.getListYourRoomViewModel());
+
         }
         currentScene.setRoot(root);
         String title = "HouseHub";
