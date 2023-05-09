@@ -19,6 +19,8 @@ public interface RemoteModel extends RemoteSubject {
     void removedReservation(Reservation reservation) throws RemoteException;
     void addUser(User user) throws RemoteException;
     User getUserByUsername(String username) throws RemoteException;
+    boolean setRoomReserved(Room room) throws RemoteException;
+    boolean setRoomFree(Room room) throws RemoteException;
 
     User getUser(String username, String password) throws RemoteException;
 }

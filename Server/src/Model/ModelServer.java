@@ -1,5 +1,6 @@
 package Model;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public interface ModelServer
@@ -16,5 +17,7 @@ public interface ModelServer
   void removeUserByUsername(String username);
   void removeUserByPhoneNumber(String phoneNumber);
   Reservation getReservationById(String id);
+  boolean setRoomReserved(Room room) throws RemoteException;
+  boolean setRoomFree(Room room);
   User getUser(String username, String password);
 }

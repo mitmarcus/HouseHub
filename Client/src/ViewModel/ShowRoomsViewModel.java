@@ -62,6 +62,11 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
       Platform.runLater(()->{
         clear();
       });
+    if (evt.getPropertyName().equals("roomReserved"))
+      Platform.runLater(()->{
+        clear();
+      });
+
 
   }
 }

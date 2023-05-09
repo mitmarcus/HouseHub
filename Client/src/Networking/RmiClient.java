@@ -115,6 +115,32 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
+    @Override public boolean setRoomReserved(Room room)
+    {
+        try
+        {
+            server.setRoomReserved(room);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    @Override public boolean setRoomFree(Room room)
+    {
+        try
+        {
+            server.setRoomFree(room);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+                }
+        return  true;
+    }
+
     @Override
     public User getUser(String username, String password) {
         try {

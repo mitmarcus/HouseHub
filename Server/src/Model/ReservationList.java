@@ -18,13 +18,7 @@ public class ReservationList implements Serializable
         reservation.getRoom().setReserved(true);
     }
     public void removeReservation(Reservation reservation){
-        System.out.println(reservation.toString());
-        if (list.size() == 0)
-            throw  new IllegalStateException();
-        Reservation reservation1 = getReservationById(reservation.toString());
-        reservation.getRoom().setReserved(false);
-        list.remove(reservation1);
-        System.out.println("reservation size " + list.size());
+        list.remove(reservation);
     }
     public Reservation getReservationAtIndex(int index){
         return list.get(index);

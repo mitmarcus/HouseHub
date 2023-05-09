@@ -45,24 +45,20 @@ public class RmiServer implements RemoteModel
     }
 
     @Override public Room getRoomByAnnouncement(String announcement) throws RemoteException{
-        System.out.println("Got Room by announcement");
         return model.getRoomByAnnouncement(announcement);
     }
 
     @Override public void addRoom(Room room) throws RemoteException {
-        System.out.println("Added Room");
         model.addRoom(room);
         property.firePropertyChange("AddRoom", null, room);
     }
 
     @Override public void removeRoom(Room room) throws RemoteException {
-        System.out.println("Removed Room");
         model.removeRoom(room);
         property.firePropertyChange("RemoveRoom", null, model.getAllRooms());
     }
 
     @Override public ArrayList<Room> getAllRooms() throws RemoteException {
-        System.out.println("Got All Rooms");
         return model.getAllRooms();
     }
 
@@ -93,13 +89,25 @@ public class RmiServer implements RemoteModel
 
     @Override
     public void addUser(User user) throws RemoteException {
-        System.out.println(user.toString());
         model.addUser(user);
     }
 
     @Override
     public User getUserByUsername(String username) throws RemoteException {
         return model.getUserByUsername(username);
+    }
+
+    @Override public boolean setRoomReserved(Room room) throws RemoteException
+    {
+        model.setRoomReserved(room);
+        property.firePropertyChange("roomReserved", null,room);
+        return true;
+    }
+
+    @Override public boolean setRoomFree(Room room) throws RemoteException
+    {
+        model.setRoomFree(room);
+        return true;
     }
 
     @Override
@@ -114,9 +122,8 @@ public class RmiServer implements RemoteModel
     }
 
     @Override public void removedReservation(Reservation reservation)
-        throws RemoteException
-    {
+        throws RemoteException {
         model.removeReservation(reservation);
-        property.firePropertyChange("removereservation", null ,reservation.toString());
+        property.firePropertyChange("removeReservation", null ,reservation.toString());
     }
 }

@@ -1,6 +1,7 @@
 package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Reservation implements Serializable
 {
@@ -15,6 +16,7 @@ public class Reservation implements Serializable
         this.startDate = (LocalDate) startDate;
         this.endDate = (LocalDate) endDate;
         this.room = room;
+        this.user = user;
     }
 
     public LocalDate getStartDate() {
@@ -28,6 +30,17 @@ public class Reservation implements Serializable
     public Room getRoom()
     {
         return room;
+    }
+    @Override public boolean equals(Object o){
+        if(o == null){
+            throw new NullPointerException();
+        }
+        if (this == o){
+            return true;
+        }
+        if (!(o instanceof Reservation reservation)) return false;
+        return Objects.equals(user, reservation.user) && Objects.equals(startDate,reservation.startDate) &&
+            Objects.equals(endDate,reservation.endDate) && Objects.equals(room,(reservation.room));
     }
 
     public String toString(){
