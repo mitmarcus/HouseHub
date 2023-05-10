@@ -1,19 +1,22 @@
 package Database;
 
+import Database.reservation.ReservationDAO;
+import Database.room.RoomDAO;
+import Database.user.UserDAO;
 import Model.Room;
 import Model.User;
 
 import java.sql.*;
 import java.util.List;
 
-public class DatabaseImpl implements DatabaseInterface{
+public class Database implements DatabaseInterface{
     private Connection conn;
-    private EmployeeService employeeService;
-    private ProjectService projectService;
-    private TaskService taskService;
+    private ReservationDAO reservationDAO;
+    private RoomDAO roomDAO;
+    private UserDAO userDAO;
     private DatabaseManager databaseManager;
 
-    public DatabaseImpl(Connection conn) {
+    public Database(Connection conn) {
         connect();
         this.employeeService = new EmployeeService(conn);
         this.projectService = new ProjectService(conn);
@@ -28,6 +31,9 @@ public class DatabaseImpl implements DatabaseInterface{
 
         try {
             Connection conn = DriverManager.getConnection(url, username, password);
+            String query = "SET SCHEMA 'company';";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.executeQuery();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -42,7 +48,6 @@ public class DatabaseImpl implements DatabaseInterface{
         }
     }
 
-    @Override
     public void addUser(User user) {
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(
