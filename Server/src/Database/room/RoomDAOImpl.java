@@ -12,7 +12,7 @@ public class RoomDAOImpl implements RoomDAO {
     RoomList list;
 
     private RoomDAOImpl() throws  SQLException{
-        DriverManager.registerDriver(new org.postgresql.Driver());
+
     }
 
     public static RoomDAOImpl getInstance() throws SQLException {

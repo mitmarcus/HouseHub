@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import Database.DBconnection;
 
 public class DatabaseManager {
 
@@ -18,8 +19,15 @@ public class DatabaseManager {
         //addDummyDataReservations();
     }
     public void clearAllTables() throws SQLException {
-        String query = "DELETE FROM users cascade; DELETE FROM room cascade; DELETE FROM reservation cascade;";
-        PreparedStatement st = conn.prepareStatement(query);
-        st.executeUpdate();
+        DBconnection db = new DBconnection();
+        Connection conn = db.getConnection();
+        try {
+            String query = "DELETE FROM users cascade; DELETE FROM room cascade; DELETE FROM reservation cascade;";
+            PreparedStatement st = conn.prepareStatement(query);
+            st.executeUpdate();
+        }
+        finally {
+            db.disconnect();
+        }
     }
 }

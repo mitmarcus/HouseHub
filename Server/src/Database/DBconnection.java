@@ -13,7 +13,7 @@ public class DBconnection {
     private static Connection conn;
 
 
-    private DBconnection() throws SQLException {
+    public DBconnection() throws SQLException {
         DriverManager.registerDriver(new org.postgresql.Driver());
     }
 

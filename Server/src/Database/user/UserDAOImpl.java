@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class UserDAOImpl implements UserDAO{
-    private  static UserDAOImpl instance;
+    private static UserDAOImpl instance;
     private UserDAOImpl() throws SQLException {
-        DriverManager.registerDriver(new org.postgresql.Driver());
+
     }
 
     public static UserDAOImpl getInstance() throws SQLException {

@@ -10,7 +10,7 @@ public class ReservationDAOImpl implements ReservationDAO {
     private static ReservationDAOImpl instance;
 
     private ReservationDAOImpl() throws SQLException {
-        DriverManager.registerDriver(new org.postgresql.Driver());
+        
     }
 
     public static ReservationDAOImpl getInstance() throws SQLException {
