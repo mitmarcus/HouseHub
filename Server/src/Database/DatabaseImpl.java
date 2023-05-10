@@ -4,19 +4,48 @@ import Model.Room;
 import Model.User;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseImpl implements DatabaseInterface{
-    private Connection connection;
+    private Connection conn;
+    private EmployeeService employeeService;
+    private ProjectService projectService;
+    private TaskService taskService;
+    private DatabaseManager databaseManager;
 
-    public DatabaseImpl(Connection connection) {
-        this.connection = connection;
+    public DatabaseImpl(Connection conn) {
+        connect();
+        this.employeeService = new EmployeeService(conn);
+        this.projectService = new ProjectService(conn);
+        this.taskService = new TaskService(conn);
+        this.databaseManager = new DatabaseManager(conn);
     }
+
+    public void connect() {
+        String url = "jdbc:postgresql://dumbo.db.elephantsql.com/jkmijtst";
+        String username = "jkmijtst";
+        String password = "9L2w3_NQTBeo0gJWOCyf04p-fbcUSGmS";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, username, password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void disconnect() {
+        try {
+            conn.close();
+            System.out.println("Disconnected from the PostgreSQL server successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     @Override
     public void addUser(User user) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(
+            PreparedStatement preparedStatement = conn.prepareStatement(
                     "INSERT INTO users (username, password, first_name, last_name, phone_number) VALUES (?, ?, ?, ?, ?)");
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
@@ -34,7 +63,7 @@ public class DatabaseImpl implements DatabaseInterface{
     public User getUser(String username) {
         User user = null;
         try {
-            PreparedStatement preparedStatement = connection
+            PreparedStatement preparedStatement = conn
                     .prepareStatement("SELECT * FROM users WHERE username = ?");
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -82,18 +111,12 @@ public class DatabaseImpl implements DatabaseInterface{
         }
         return rooms;
     }*/
-    public Connection getConnection() throws SQLException {
-        String url = "jdbc:postgresql://localhost:5432/house_hub";
-        String username = "postgres";
-        String password = "331425";
-        Connection conn = DriverManager.getConnection(url, username, password);
-        return conn;
-    }
+
     @Override
     public void addRoom(Room room) {
         String sql = "INSERT INTO room (announcement, price, address, number_bedrooms, reserved) " +
                 "VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = getConnection();
+        try (Connection conn = getDb();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, room.getAnnouncement());

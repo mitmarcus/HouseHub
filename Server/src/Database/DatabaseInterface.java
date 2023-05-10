@@ -4,22 +4,23 @@ import Model.Room;
 import Model.User;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.List;
 
 public interface DatabaseInterface {
-    public void addUser(User user);
+    void addUser(User user) throws SQLException;
 
-    public User getUser(String username);
+    User getUser(String username) throws SQLException;
 
-    public List<Room> getAllRooms();
+    List<Room> getAllRooms() throws SQLException;
 
-    public void addRoom(Room room);
+    void addRoom(Room room) throws SQLException;
 
-    public void deleteRoom(int roomId);
+    void deleteRoom(int roomId) throws SQLException;
 
-    public void makeReservation(String username, int roomId, Date startDate, Date endDate);
+    void makeReservation(String username, int roomId, Date startDate, Date endDate) throws SQLException;
 
-    public List<Room> getReservedRooms(String username);
+    List<Room> getReservedRooms(String username) throws SQLException;
 
-    public List<Room> getAvailableRooms();
+    List<Room> getAvailableRooms() throws SQLException;
 }
