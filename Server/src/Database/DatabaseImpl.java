@@ -39,7 +39,7 @@ public class DatabaseImpl implements DatabaseInterface{
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                user = new User();
+                //user = new User();
                 user.setUsername(resultSet.getString("username"));
                 user.setPassword(resultSet.getString("password"));
                 user.setFirstName(resultSet.getString("first_name"));
@@ -56,6 +56,11 @@ public class DatabaseImpl implements DatabaseInterface{
     }
 
     @Override
+    public List<Room> getAllRooms() {
+        return null;
+    }
+
+    /*@Override
     public List<Room> getAllRooms() {
         List<Room> rooms = new ArrayList<>();
         try {
@@ -76,7 +81,7 @@ public class DatabaseImpl implements DatabaseInterface{
             System.out.println("Error getting all rooms: " + e.getMessage());
         }
         return rooms;
-    }
+    }*/
     public Connection getConnection() throws SQLException {
         String url = "jdbc:postgresql://localhost:5432/house_hub";
         String username = "postgres";
