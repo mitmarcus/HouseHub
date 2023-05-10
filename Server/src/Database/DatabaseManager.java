@@ -19,7 +19,7 @@ public class DatabaseManager {
         //addDummyDataReservations();
     }
     public void clearAllTables() throws SQLException {
-        DBconnection db = new DBconnection();
+        DBconnection db = DBconnection.getInstance();
         Connection conn = db.getConnection();
         try {
             String query = "DELETE FROM users cascade; DELETE FROM room cascade; DELETE FROM reservation cascade;";
