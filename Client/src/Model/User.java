@@ -43,10 +43,15 @@ public class User implements Serializable {
     }
 
     public void setFirstName(String firstName) {
-        if (firstName.length() < 3) {
-            throw new IllegalArgumentException();
+        try
+        {
+            if (firstName.length() < 3) {
+                throw new IllegalArgumentException();
+            }
+            this.firstName = firstName;
         }
-        this.firstName = firstName;
+        catch (IllegalArgumentException e)
+        {}
     }
 
     public void setLastName(String lastName) {

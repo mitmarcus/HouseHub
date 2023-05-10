@@ -19,5 +19,6 @@ public interface ModelServer
   Reservation getReservationById(String id);
   boolean setRoomReserved(Room room) throws RemoteException;
   boolean setRoomFree(Room room);
+  boolean setUserInfo(User user) ;
   User getUser(String username, String password);
 }
