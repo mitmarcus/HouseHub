@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBconnection {
-    private final static String url = "jdbc:postgresql://dumbo.db.elephantsql.com/jkmijtst";
+    private final static String url = "jdbc:postgresql://dumbo.db.elephantsql.com/jkmijtst?currentSchema=house_hub";
     private final static String username = "jkmijtst";
     private final static String password = "9L2w3_NQTBeo0gJWOCyf04p-fbcUSGmS";
 
