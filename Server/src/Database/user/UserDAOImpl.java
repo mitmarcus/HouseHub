@@ -59,7 +59,6 @@ public class UserDAOImpl implements UserDAO{
             if (resultSet.next())
             {
                 User user = new User(resultSet.getString(3),resultSet.getString(4),resultSet.getString(1),resultSet.getString(2),resultSet.getString(5));
-                System.out.println(user.toString());
                 return user;
             }
         }
@@ -79,7 +78,6 @@ public class UserDAOImpl implements UserDAO{
         if (resultSet.next())
         {
           User user = new User(resultSet.getString(3),resultSet.getString(4),resultSet.getString(1),resultSet.getString(2),resultSet.getString(5));
-          System.out.println(user.toString());
           return user;
         }
       }

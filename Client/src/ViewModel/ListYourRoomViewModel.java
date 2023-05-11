@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.ModelClient;
 import Model.Room;
+import Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -47,7 +48,8 @@ public class ListYourRoomViewModel extends ViewModel
   }
 
   public boolean postRoom(){
-    Room room = new Room(announcement.get(), price.get(),roomAddress.get(),roomSize.get(),numberOfRooms.get(),false);
+    User user = model.getUserByUsername(viewState.getUsername());
+    Room room = new Room(user,announcement.get(), price.get(),roomAddress.get(),roomSize.get(),numberOfRooms.get(),false);
     model.addRoom(room);
     return true;
   }

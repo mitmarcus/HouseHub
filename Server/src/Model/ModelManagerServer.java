@@ -6,6 +6,7 @@ import Database.reservation.ReservationDAOImpl;
 
 import Database.room.RoomDAO;
 
+import Database.room.RoomDAOImpl;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 
@@ -33,6 +34,7 @@ public class ModelManagerServer implements ModelServer
         {
             this.reservationDAO = ReservationDAOImpl.getInstance();
             this.userDB = UserDAOImpl.getInstance();
+            this.roomDB = RoomDAOImpl.getInstance();
         }
         catch (SQLException e)
         {
@@ -41,11 +43,9 @@ public class ModelManagerServer implements ModelServer
         this.users = new UserList();
         this.rooms = new RoomList();
         this.reservations = new ReservationList();
-        this.rooms.addRoom(new Room("Room next Lovbjerg.","300", "123 Main St", "200", "3",false));
-        this.rooms.addRoom(new Room("Apartment for 2, next to VIA","$500,000", "456 Elm St", "300", "2",false));
-        this.rooms.addRoom(new Room("Available room close to city center","$700,000", "789 Oak St", "120", "1",false));
         User user = new User("Nuri", "Hasan", "nuriSexyBoy", "nuriSexyBoy", "00000007");
         users.addUser(user);
+
 
 
     }
@@ -62,22 +62,44 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void removeRoom(Room room) {
-        rooms.removeRoom(room);
+        try
+        {
+            roomDB.getAllRooms();
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
     }
 
     @Override
     public Room getRoomByAnnouncement(String announcement) {
-        return rooms.getRoomByAnnouncement(announcement);
+        try
+        {
+            return roomDB.getRoomByAnnouncement(announcement);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
     }
 
     @Override
     public ArrayList<Room> getAllRooms() {
-        return rooms.getAllRooms();
+        try
+        {
+            return roomDB.getAllRooms();
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
     }
     @Override
     public void addReservation(Reservation reservation) {
         try {
-            reservation.getRoom().incrementID();
             reservation.incrementID();
             reservationDAO.addReservation(reservation);
         } catch (SQLException e) {
@@ -138,7 +160,15 @@ public class ModelManagerServer implements ModelServer
 
     @Override public boolean setRoomReserved(Room room) throws RemoteException
     {
-        rooms.setRoomReserved(room);
+
+        try
+        {
+            return roomDB.setRoomReserved(room);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
         return true;
     }
 
