@@ -110,6 +110,12 @@ public class RmiServer implements RemoteModel
         return true;
     }
 
+    @Override public boolean setUserInfo(User user) throws RemoteException
+    {
+        model.setUserInfo(user);
+        return true;
+    }
+
     @Override
     public User getUser(String username, String password) {
         return model.getUser(username,password);

@@ -21,4 +21,6 @@ public interface ModelServer
   boolean setRoomReserved(Room room) throws RemoteException;
   boolean setRoomFree(Room room);
 
+  boolean setUserInfo(User user) ;
+
 }

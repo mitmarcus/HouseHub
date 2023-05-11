@@ -141,6 +141,19 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return  true;
     }
 
+    @Override public boolean setUserInfo(User user)
+    {
+        try
+        {
+            server.setUserInfo(user);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
     @Override
     public User getUser(String username, String password) {
         try {

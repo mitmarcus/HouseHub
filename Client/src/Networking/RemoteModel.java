@@ -22,6 +22,7 @@ public interface RemoteModel extends RemoteSubject
     User getUserByUsername(String username) throws RemoteException;
     boolean setRoomReserved(Room room) throws RemoteException;
     boolean setRoomFree(Room room) throws  RemoteException;
+    boolean setUserInfo(User user) throws RemoteException;
 
     User getUser(String username, String password) throws RemoteException;
 }

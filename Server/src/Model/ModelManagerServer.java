@@ -118,6 +118,12 @@ public class ModelManagerServer implements ModelServer
         return true;
     }
 
+    @Override public boolean setUserInfo(User user)
+    {
+        users.setUserInfo(user);
+        return true;
+    }
+
     public User getUser(String username, String password) {
         try
         {
