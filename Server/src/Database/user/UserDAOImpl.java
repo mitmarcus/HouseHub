@@ -11,13 +11,14 @@ import java.sql.SQLException;
 public class UserDAOImpl implements UserDAO{
     private DBconnection dbConnection;
 
-    private UserDAOImpl() throws SQLException {
+    public  UserDAOImpl() throws SQLException {
         this.dbConnection = DBconnection.getInstance();
     }
 
     @Override
     public void addUser(User user) throws SQLException {
         Connection connection = dbConnection.getConnection();
+
         try {
             String query = "INSERT INTO users (first_name, last_name, username, password, phone_number) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
@@ -28,7 +29,9 @@ public class UserDAOImpl implements UserDAO{
             statement.setString(5, user.getPhoneNumber());
 
             statement.executeUpdate();
+
         } finally {
+
             dbConnection.disconnect();
         }
     }
