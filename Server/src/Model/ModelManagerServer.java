@@ -78,6 +78,7 @@ public class ModelManagerServer implements ModelServer
         try
         {
             userDB.addUser(user);
+
         }
         catch (SQLException e)
         {
@@ -118,6 +119,14 @@ public class ModelManagerServer implements ModelServer
     }
 
     public User getUser(String username, String password) {
-        return users.getUser(username,password);
+        try
+        {
+            return userDB.getUser(username,password);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return  null;
     }
 }
