@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Room implements Serializable
 {
+    private int id;
     private String announcement;
     private String price;
     private String address;
@@ -13,6 +14,7 @@ public class Room implements Serializable
     private boolean isReserved;
 
     public Room(String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
+       this.id = -1;
         this.announcement = announcement;
         this.price = price;
         this.address = address;
@@ -27,6 +29,14 @@ public class Room implements Serializable
     }
     public String getPrice() {
        return price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void incrementID() {
+        this.id++;
     }
 
     public void setPrice(String price) {

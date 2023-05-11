@@ -1,6 +1,7 @@
 package Model;
 
 import Database.reservation.ReservationDAO;
+import Database.reservation.ReservationDAOImpl;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 
@@ -16,11 +17,13 @@ public class ModelManagerServer implements ModelServer
     private ReservationList reservations;
     private UserList users;
     private UserDAO userDB;
+    private ReservationDAO reservationDAO;
 
     public ModelManagerServer()
     {
         try
         {
+            this.reservationDAO = ReservationDAOImpl.getInstance();
             this.userDB = UserDAOImpl.getInstance();
         }
         catch (SQLException e)
@@ -60,7 +63,14 @@ public class ModelManagerServer implements ModelServer
     }
     @Override
     public void addReservation(Reservation reservation) {
-        reservations.addReservation(reservation);
+        try {
+            reservation.getRoom().incrementID();
+            reservation.incrementID();
+            reservationDAO.addReservation(reservation);
+        } catch (SQLException e) {
+            System.out.println("Model manager error in add reservation");
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public class Room implements Serializable
 {
+    private int id;
     private String announcement;
     private String price;
     private String address;
@@ -12,22 +13,30 @@ public class Room implements Serializable
     private String bedrooms;
     private boolean isReserved;
 
-
-    public Room(String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
+    public Room(String announcement, String price, String address, String size, String bedrooms, boolean isReserved) {
+       this.id = -1;
         this.announcement = announcement;
         this.price = price;
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
         this.isReserved = isReserved;
-        if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
-            throw new NullPointerException();
+       // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
+         //   throw new NullPointerException();
     }
     public String getAnnouncement(){
         return announcement;
     }
     public String getPrice() {
        return price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void incrementID() {
+        this.id++;
     }
 
     public void setPrice(String price) {
@@ -89,12 +98,12 @@ public class Room implements Serializable
 
     @Override
     public String toString() {
-        return "Room{" +
-                "price='" + price + '\'' +
-                ", address='" + address + '\'' +
-                ", size='" + size + '\'' +
-                ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
-                '}';
+       return  "Room{" +
+            "price='" + price + '\'' +
+            ", address='" + address + '\'' +
+            ", size='" + size + '\'' +
+            ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
+            '}';
     }
 }
 

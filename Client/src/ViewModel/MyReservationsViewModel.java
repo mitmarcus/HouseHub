@@ -36,7 +36,8 @@ public class MyReservationsViewModel extends ViewModel implements
     {
         list.clear();
         try{
-        for (Reservation reservation : model.getAllReservations()) {
+        for (
+                Reservation reservation : model.getAllReservations()) {
             list.add(reservation.toString());
         }
     }
