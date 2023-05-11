@@ -2,8 +2,10 @@ package Database.reservation;
 
 import Database.DBconnection;
 import Model.Reservation;
+import Model.User;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ReservationDAOImpl implements ReservationDAO {
@@ -46,7 +48,26 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public ArrayList<Reservation> getAllReservations() throws SQLException {
-        return null;
+        ArrayList<Reservation> reservations = new ArrayList<>();
+        Connection connection = dBconnection.getConnection();
+        String query = "SELECT * FROM reservation";
+        try (PreparedStatement statement = connection.prepareStatement(query))
+        {
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next())
+            {
+                String username = resultSet.getString("username");
+                int roomId = resultSet.getInt("room_id");
+                LocalDate startDate = resultSet.getDate("start_date").toLocalDate();
+                LocalDate endDate = resultSet.getDate("end_date").toLocalDate();
+                Reservation reservation = new Reservation()
+            }
+        }
+        finally {
+            dBconnection.disconnect();
+        }
+        return reservations;
     }
 
     @Override

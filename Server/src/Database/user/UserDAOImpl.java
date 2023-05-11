@@ -88,7 +88,6 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public void removeUserByUsername(String username) {
-
     }
 
     @Override
