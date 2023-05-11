@@ -1,6 +1,7 @@
 package Model;
 
 import Database.reservation.ReservationDAO;
+import Database.room.RoomDAO;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 
@@ -16,6 +17,7 @@ public class ModelManagerServer implements ModelServer
     private ReservationList reservations;
     private UserList users;
     private UserDAO userDB;
+    private RoomDAO roomDB;
 
     public ModelManagerServer()
     {
@@ -41,6 +43,11 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void addRoom(Room room) {
+        try {
+            roomDB.addRoom(room);
+        } catch (SQLException e) {
+            e.getMessage();
+        }
         rooms.addRoom(room);
     }
 
