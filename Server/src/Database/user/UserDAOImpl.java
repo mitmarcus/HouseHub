@@ -23,25 +23,14 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void addUser(User user) throws SQLException {
         Connection connection = dbConnection.getConnection();
-<<<<<<< Updated upstream
-        try {
-
-            String query = "INSERT INTO users (first_name, last_name, username, password, phone_number) VALUES (?, ?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-=======
         String query = "INSERT INTO users (first_name, last_name, username, password, phone_number) VALUES (? , ?, ?, ?, ?)";
         try(PreparedStatement statement = connection.prepareStatement(query)) {
->>>>>>> Stashed changes
+
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
             statement.setString(3, user.getUsername());
             statement.setString(4, user.getPassword());
             statement.setString(5, user.getPhoneNumber());
-<<<<<<< Updated upstream
-            System.out.println(user.getUsername());
-            System.out.println(query);
-            statement.executeUpdate(query);
-=======
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -49,7 +38,7 @@ public class UserDAOImpl implements UserDAO{
             } else {
                 System.out.println("Failed to insert user.");
             }
->>>>>>> Stashed changes
+
 
         } finally {
             dbConnection.disconnect();
@@ -78,8 +67,23 @@ public class UserDAOImpl implements UserDAO{
     }
 
     @Override
-    public User getUserByUsername(String username) {
-        return null;
+    public User getUserByUsername(String username) throws SQLException
+    {
+      Connection connection = dbConnection.getConnection();
+      String query = "SELECT * FROM users WHERE username = ?";
+      try (PreparedStatement statement = connection.prepareStatement(query))
+      {
+        statement.setString(1, username);
+        ResultSet resultSet = statement.executeQuery();
+
+        if (resultSet.next())
+        {
+          User user = new User(resultSet.getString(3),resultSet.getString(4),resultSet.getString(1),resultSet.getString(2),resultSet.getString(5));
+          System.out.println(user.toString());
+          return user;
+        }
+      }
+      return null;
     }
 
     @Override

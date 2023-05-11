@@ -88,7 +88,14 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public User getUserByUsername(String username) {
-        return users.getUserByUsername(username);
+        try
+        {
+            return userDB.getUserByUsername(username);
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
