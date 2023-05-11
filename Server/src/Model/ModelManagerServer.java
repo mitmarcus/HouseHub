@@ -1,7 +1,12 @@
 package Model;
 
+import Database.reservation.ReservationDAO;
+import Database.user.UserDAO;
+import Database.user.UserDAOImpl;
+
 import java.nio.file.attribute.UserPrincipal;
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -10,9 +15,18 @@ public class ModelManagerServer implements ModelServer
     private RoomList rooms;
     private ReservationList reservations;
     private UserList users;
+    private UserDAO userDB;
 
     public ModelManagerServer()
     {
+        try
+        {
+            this.userDB = UserDAOImpl.getInstance();
+        }
+        catch (SQLException e)
+        {
+            throw new RuntimeException(e);
+        }
         this.users = new UserList();
         this.rooms = new RoomList();
         this.reservations = new ReservationList();
@@ -61,7 +75,15 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void addUser(User user) {
-        users.addUser(user);
+        try
+        {
+            userDB.addUser(user);
+
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
     }
 
     @Override
@@ -96,7 +118,21 @@ public class ModelManagerServer implements ModelServer
         return true;
     }
 
+    @Override public boolean setUserInfo(User user)
+    {
+        users.setUserInfo(user);
+        return true;
+    }
+
     public User getUser(String username, String password) {
-        return users.getUser(username,password);
+        try
+        {
+            return userDB.getUser(username,password);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return  null;
     }
 }

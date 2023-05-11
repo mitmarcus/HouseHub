@@ -101,6 +101,12 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return true;
     }
 
+    @Override public boolean setUserInfo(User user)
+    {
+        client.setUserInfo(user);
+        return true;
+    }
+
     @Override
     public User getUser(String username, String password) {
         return client.getUser(username,password);

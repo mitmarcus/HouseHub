@@ -41,6 +41,10 @@ public class ListYourRoomViewController extends ViewController
   @FXML public void goBack(){
     viewHandler.openView("main");
   }
+
+  @FXML public void browseForFile(){
+
+  }
   @FXML public void postButtonPressed(){
     viewModel.postRoom();
     viewHandler.openView("main"

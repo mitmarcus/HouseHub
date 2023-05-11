@@ -68,6 +68,18 @@ public class UserList implements Serializable {
         }
         return users.get(index);
     }
+    public void setUserInfo(User user){
+        for (int i = 0 ; i < users.size(); i++)
+        {
+            if (users.get(i).getUsername().equals(user.getUsername()))
+            {
+                users.get(i).setPhoneNumber(user.getPhoneNumber());
+                users.get(i).setPassword(user.getPassword());
+                users.get(i).setFirstName(user.getFirstName());
+                users.get(i).setLastName(user.getLastName());
+            }
+        }
+    }
 
     public User getUser(String username, String password){
         for (int i = 0; i < users.size(); i++){
