@@ -21,7 +21,7 @@ public class ModelManagerServer implements ModelServer
     {
         try
         {
-            this.userDB = new UserDAOImpl();
+            this.userDB = UserDAOImpl.getInstance();
         }
         catch (SQLException e)
         {

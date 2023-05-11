@@ -10,16 +10,24 @@ import java.sql.SQLException;
 
 public class UserDAOImpl implements UserDAO{
     private DBconnection dbConnection;
+    private static UserDAOImpl instance;
 
-    public  UserDAOImpl() throws SQLException {
+    private UserDAOImpl() throws SQLException {
         this.dbConnection = DBconnection.getInstance();
+    }
+
+    public static synchronized UserDAOImpl getInstance() throws SQLException {
+        if (instance == null) {
+            instance = new UserDAOImpl();
+        }
+        return instance;
     }
 
     @Override
     public void addUser(User user) throws SQLException {
         Connection connection = dbConnection.getConnection();
-
         try {
+
             String query = "INSERT INTO users (first_name, last_name, username, password, phone_number) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, user.getFirstName());
@@ -27,11 +35,11 @@ public class UserDAOImpl implements UserDAO{
             statement.setString(3, user.getUsername());
             statement.setString(4, user.getPassword());
             statement.setString(5, user.getPhoneNumber());
-
-            statement.executeUpdate();
+            System.out.println(user.getUsername());
+            System.out.println(query);
+            statement.executeUpdate(query);
 
         } finally {
-
             dbConnection.disconnect();
         }
     }
