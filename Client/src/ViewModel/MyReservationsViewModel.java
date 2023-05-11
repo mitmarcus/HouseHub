@@ -84,8 +84,8 @@ public class MyReservationsViewModel extends ViewModel implements
 
         if (evt.getPropertyName().equals("removeReservation"))
         Platform.runLater(()->{
-            System.out.println("hello");
                 clear();
+            System.out.println("removed reservation");
         });
 
 
