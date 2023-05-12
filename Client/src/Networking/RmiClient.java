@@ -163,6 +163,18 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
+    @Override public void sendFile(String name, byte[] img)
+    {
+        try
+        {
+            server.sendFile(name,img);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+    }
+
     @Override public void removeReservation(Reservation reservation)
     {
         try

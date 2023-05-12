@@ -10,6 +10,10 @@ import Database.room.RoomDAOImpl;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.nio.file.attribute.UserPrincipal;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
@@ -176,6 +180,36 @@ public class ModelManagerServer implements ModelServer
     {
         rooms.setRoomFree(room);
         return true;
+    }
+
+    @Override public void sendFile(String name, byte[] img)
+    {
+        File folder = new File("Server/src/Images/");
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+
+        File outFile= new File(folder.getFreeSpace() + name );
+        try
+        {
+            FileOutputStream fos = new FileOutputStream("Server/src/Images/" + outFile,false);
+            byte [] reciveimg = new byte[img.length];
+            for (int i = 0; i < img.length; i++)
+            {
+                reciveimg[i]=img[i];
+            }
+            fos.write(reciveimg);
+            fos.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override public boolean setUserInfo(User user)

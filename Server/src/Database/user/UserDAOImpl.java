@@ -62,6 +62,10 @@ public class UserDAOImpl implements UserDAO{
                 return user;
             }
         }
+        finally
+        {
+            connection.close();
+        }
         return null;
     }
 

@@ -116,6 +116,12 @@ public class RmiServer implements RemoteModel
         return true;
     }
 
+    @Override public void sendFile(String name, byte[] img)
+        throws RemoteException
+    {
+        model.sendFile(name,img);
+    }
+
     @Override
     public User getUser(String username, String password) {
         return model.getUser(username,password);
