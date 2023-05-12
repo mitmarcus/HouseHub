@@ -71,11 +71,11 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public Room getRoomById(int id) throws SQLException {
+    public Room getRoomById(String id) throws SQLException {
         Connection connection = dbConnection.getConnection();
         String query = "SELECT * FROM room WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setInt(1, id);
+            statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 String owner = resultSet.getString("owner");
@@ -88,7 +88,6 @@ public class RoomDAOImpl implements RoomDAO {
                 boolean reserved = resultSet.getBoolean("reserved");
 
                 Room room = new Room(announcement,price,address,size,numberBedrooms,reserved);
-                room.setId(id); // Set the ID of the room
 
                 return room;
             }

@@ -67,12 +67,13 @@ public class ReservationDAOImpl implements ReservationDAO {
             while (resultSet.next())
             {
                 String username = resultSet.getString("username");
-                int roomId = resultSet.getInt("room_id");
+                String roomId = resultSet.getString("room_id");
                 LocalDate startDate = resultSet.getDate("start_date").toLocalDate();
                 LocalDate endDate = resultSet.getDate("end_date").toLocalDate();
                 User user = userDAO.getUserByUsername(username);
                 Room room = roomDAO.getRoomById(roomId);
                 Reservation reservation = new Reservation(user,startDate,endDate,room);
+                reservations.add(reservation);
             }
         }
         finally {

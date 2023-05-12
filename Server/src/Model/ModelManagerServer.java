@@ -88,7 +88,13 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public ArrayList<Reservation> getAllReservations() {
-        return reservations.getAllReservations();
+        try {
+            return reservationDAO.getAllReservations();
+        } catch (SQLException e) {
+            System.out.println("Error in getAllReservations() in Model Manager. ");
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
