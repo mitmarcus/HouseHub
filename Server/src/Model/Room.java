@@ -2,25 +2,29 @@ package Model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Room implements Serializable
 {
-    private int id;
+
+    private String roomId;
     private String announcement;
     private String price;
     private String address;
     private String size;
     private String bedrooms;
     private boolean isReserved;
+    private User owner;
 
-    public Room(String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
-       this.id = -1;
+    public Room(User owner,String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;
         this.address = address;
         this.size = size;
         this.bedrooms = bedrooms;
         this.isReserved = isReserved;
+        this.owner = owner;
+        this.roomId = generateID();
        // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
          //   throw new NullPointerException();
     }
@@ -30,17 +34,24 @@ public class Room implements Serializable
     public String getPrice() {
        return price;
     }
-
-    public int getId() {
-        return id;
+    public User getOwner(){
+        return owner;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
-    public void incrementID() {
-        this.id++;
+    private String generateID(){
+        if (announcement == null || address == null)
+        {
+            return null;
+        }
+        else {
+            String an = announcement.substring(0, Math.min(announcement.length(), 5));
+            String f = address.substring(0, Math.min(address.length(), 3));
+            return an+f;
+        }
+    }
+    public String getRoomId(){
+        return roomId;
     }
 
     public void setPrice(String price) {

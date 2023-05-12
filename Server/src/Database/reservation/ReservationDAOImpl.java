@@ -35,12 +35,13 @@ public class ReservationDAOImpl implements ReservationDAO {
     @Override
     public void addReservation(Reservation reservation) throws SQLException {
         Connection connection = dBconnection.getConnection();
-        String query = "INSERT INTO reservation ( username, start_date, end_date) VALUES ( ?, ?, ?)";
+        String query = "INSERT INTO reservation ( username, start_date, end_date,room_id) VALUES ( ?, ?, ?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, reservation.getUser().getUsername());
             statement.setDate(2, Date.valueOf(reservation.getStartDate()));
             statement.setDate(3, Date.valueOf(reservation.getEndDate()));
+            statement.setString(4,reservation.getRoom().getRoomId());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
