@@ -40,7 +40,6 @@ public class Room implements Serializable
     private String generateID(){
         if (announcement == null || address == null)
         {
-            System.out.println(announcement);
             return null;
         }
         else {
