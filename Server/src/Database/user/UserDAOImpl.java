@@ -9,7 +9,7 @@ public class UserDAOImpl implements UserDAO{
     private DBconnection dbConnection;
     private static UserDAOImpl instance;
 
-    private UserDAOImpl() throws SQLException {
+    public UserDAOImpl() throws SQLException {
         this.dbConnection = DBconnection.getInstance();
     }
 

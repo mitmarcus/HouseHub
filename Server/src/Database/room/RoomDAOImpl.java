@@ -3,11 +3,9 @@ package Database.room;
 import Database.DBconnection;
 import Model.Room;
 import Model.RoomList;
+import Model.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class RoomDAOImpl implements RoomDAO {
@@ -15,7 +13,7 @@ public class RoomDAOImpl implements RoomDAO {
     private final DBconnection dbConnection;
     RoomList list;
 
-    private RoomDAOImpl() throws  SQLException{
+    public RoomDAOImpl() throws  SQLException{
         this.dbConnection = DBconnection.getInstance();
     }
 
@@ -69,6 +67,34 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public Room getRoomByAnnouncement(String announcement) {
+        return null;
+    }
+
+    @Override
+    public Room getRoomById(int id) throws SQLException {
+        Connection connection = dbConnection.getConnection();
+        String query = "SELECT * FROM room WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String owner = resultSet.getString("owner");
+                String announcement = resultSet.getString("announcement");
+                String price = resultSet.getString("price");
+                String roomName = resultSet.getString("name");
+                String address = resultSet.getString("address");
+                String size = resultSet.getString("size");
+                String numberBedrooms = resultSet.getString("number_bedrooms");
+                boolean reserved = resultSet.getBoolean("reserved");
+
+                Room room = new Room(announcement,price,address,size,numberBedrooms,reserved);
+                room.setId(id); // Set the ID of the room
+
+                return room;
+            }
+        } finally {
+            dbConnection.disconnect();
+        }
         return null;
     }
 

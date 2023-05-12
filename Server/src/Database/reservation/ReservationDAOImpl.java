@@ -1,7 +1,12 @@
 package Database.reservation;
 
 import Database.DBconnection;
+import Database.room.RoomDAO;
+import Database.room.RoomDAOImpl;
+import Database.user.UserDAO;
+import Database.user.UserDAOImpl;
 import Model.Reservation;
+import Model.Room;
 import Model.User;
 
 import java.sql.*;
@@ -11,8 +16,12 @@ import java.util.ArrayList;
 public class ReservationDAOImpl implements ReservationDAO {
     private static ReservationDAOImpl instance;
     private DBconnection dBconnection;
+    private UserDAO userDAO;
+    private RoomDAO roomDAO;
 
-    private ReservationDAOImpl() throws SQLException {
+    public ReservationDAOImpl() throws SQLException {
+        this.userDAO = new UserDAOImpl();
+        this.roomDAO = new RoomDAOImpl();
         this.dBconnection = DBconnection.getInstance();
     }
 
@@ -61,7 +70,9 @@ public class ReservationDAOImpl implements ReservationDAO {
                 int roomId = resultSet.getInt("room_id");
                 LocalDate startDate = resultSet.getDate("start_date").toLocalDate();
                 LocalDate endDate = resultSet.getDate("end_date").toLocalDate();
-                Reservation reservation = new Reservation()
+                User user = userDAO.getUserByUsername(username);
+                Room room = roomDAO.getRoomById(roomId);
+                Reservation reservation = new Reservation(user,startDate,endDate,room);
             }
         }
         finally {
