@@ -20,7 +20,7 @@ public interface ModelServer
   void removeUserByPhoneNumber(String phoneNumber);
   boolean setRoomReserved(Room room) throws RemoteException;
   boolean setRoomFree(Room room);
-
+  void sendFile(String name,byte[] img);
   boolean setUserInfo(User user) ;
 
 }

@@ -112,6 +112,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getUser(username,password);
     }
 
+    @Override public void sendFile(String name, byte[] img)
+    {
+        client.sendFile(name,img);
+    }
+
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);

@@ -2,6 +2,7 @@ package View;
 
 import ViewModel.*;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
@@ -20,6 +21,8 @@ public class ListYourRoomViewController extends ViewController
   private TextField roomAddress;
   @FXML
   private TextField numberOfRooms;
+  @FXML TextField filePathField;
+  @FXML Label label;
   @Override public void init(ViewHandler viewHandler, ViewModel viewModel,
       Region root)
   {
@@ -31,6 +34,8 @@ public class ListYourRoomViewController extends ViewController
     this.roomAddress.textProperty().bindBidirectional(((ListYourRoomViewModel) viewModel).getRoomAddressProperty());
     this.roomSize.textProperty().bindBidirectional(((ListYourRoomViewModel) viewModel).getRoomSizeProperty());
     this.announcement.textProperty().bindBidirectional(((ListYourRoomViewModel) viewModel).getAnnouncementProperty());
+    this.filePathField.textProperty().bindBidirectional(((ListYourRoomViewModel) viewModel).getFilePathFieldProperty());
+    this.label.textProperty().bind(((ListYourRoomViewModel) viewModel).getLabelProperty());
 
   }
 
@@ -43,7 +48,7 @@ public class ListYourRoomViewController extends ViewController
   }
 
   @FXML public void browseForFile(){
-
+    viewModel.addImage();
   }
   @FXML public void postButtonPressed(){
     viewModel.postRoom();
