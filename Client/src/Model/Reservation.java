@@ -3,9 +3,10 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.Random;
 
 public class Reservation implements Serializable {
-    private int id;
+    private String id;
     private LocalDate startDate;
     private LocalDate endDate;
     private Room room;
@@ -18,16 +19,27 @@ public class Reservation implements Serializable {
         this.endDate = (LocalDate) endDate;
         this.room = room;
         this.user = user;
-        this.id = -1;
+        this.id = generateId();
     }
 
-    public int getId() {
+    private String generateId() {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        StringBuilder idBuilder = new StringBuilder();
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            int index = random.nextInt(characters.length());
+            char randomChar = characters.charAt(index);
+            idBuilder.append(randomChar);
+        }
+
+        return idBuilder.toString();
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void incrementID() {
-        this.id++;
-    }
 
     public User getUser() {
         return user;

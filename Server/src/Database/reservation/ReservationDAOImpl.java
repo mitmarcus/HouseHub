@@ -41,7 +41,7 @@ public class ReservationDAOImpl implements ReservationDAO {
             statement.setString(1, reservation.getUser().getUsername());
             statement.setDate(2, Date.valueOf(reservation.getStartDate()));
             statement.setDate(3, Date.valueOf(reservation.getEndDate()));
-            statement.setString(4,reservation.getRoom().getRoomId());
+            statement.setString(4, reservation.getRoom().getRoomId());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -61,23 +61,20 @@ public class ReservationDAOImpl implements ReservationDAO {
         ArrayList<Reservation> reservations = new ArrayList<>();
         Connection connection = dBconnection.getConnection();
         String query = "SELECT * FROM reservation where username = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query))
-        {
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             ResultSet resultSet = statement.executeQuery();
 
-            while (resultSet.next())
-            {
-                String username = resultSet.getString("username");
+            while (resultSet.next()) {
+                String username1 = resultSet.getString("username");
                 String roomId = resultSet.getString("room_id");
                 LocalDate startDate = resultSet.getDate("start_date").toLocalDate();
                 LocalDate endDate = resultSet.getDate("end_date").toLocalDate();
-                User user = userDAO.getUserByUsername(username);
+                User user = userDAO.getUserByUsername(username1);
                 Room room = roomDAO.getRoomById(roomId);
-                Reservation reservation = new Reservation(user,startDate,endDate,room);
+                Reservation reservation = new Reservation(user, startDate, endDate, room);
                 reservations.add(reservation);
             }
-        }
-        finally {
+        } finally {
             dBconnection.disconnect();
         }
         return reservations;
@@ -85,11 +82,41 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public void removeReservation(Reservation reservation) throws SQLException {
+        Connection connection = dBconnection.getConnection();
+        String query = "DELETE FROM reservation WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, reservation.getId());
+            statement.executeUpdate();
+
+        } finally {
+            dBconnection.disconnect();
+        }
 
     }
 
     @Override
     public Reservation getReservationById(String id) throws SQLException {
-        return null;
+        Reservation reservation = null;
+        Connection connection = dBconnection.getConnection();
+        String query = "SELECT * FROM reservation where id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, reservation.getId());
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String username1 = resultSet.getString("username");
+                String roomId = resultSet.getString("room_id");
+                LocalDate startDate = resultSet.getDate("start_date").toLocalDate();
+                LocalDate endDate = resultSet.getDate("end_date").toLocalDate();
+                User user = userDAO.getUserByUsername(username1);
+                Room room = roomDAO.getRoomById(roomId);
+                Reservation other = new Reservation(user, startDate, endDate, room);
+                reservation = other;
+            }
+        } finally {
+            dBconnection.disconnect();
+        }
+        return reservation;
     }
 }

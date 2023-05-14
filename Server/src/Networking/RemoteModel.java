@@ -13,7 +13,7 @@ public interface RemoteModel extends RemoteSubject {
     void addRoom(Room room) throws RemoteException;
     void removeRoom(Room room) throws RemoteException;
     ArrayList<Room> getAllRooms() throws RemoteException;
-    public ArrayList<Reservation> getAllReservations() throws RemoteException;
+    public ArrayList<Reservation> getAllReservationsByUsername(String username) throws RemoteException;
     void addReservation(Reservation reservation) throws  RemoteException;
     Reservation getReservationById(String id) throws  RemoteException;
     void removedReservation(Reservation reservation) throws RemoteException;

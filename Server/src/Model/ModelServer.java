@@ -10,7 +10,7 @@ public interface ModelServer
   Room getRoomByAnnouncement(String announcement);
   ArrayList<Room> getAllRooms();
   void addReservation(Reservation reservation);
-  ArrayList<Reservation> getAllReservations();
+  ArrayList<Reservation> getAllReservationsByUsername(String username);
   Reservation getReservationById(String id);
   void removeReservation(Reservation reservation);
   void addUser(User user);

@@ -63,8 +63,8 @@ public class RmiServer implements RemoteModel
     }
 
     @Override
-    public ArrayList<Reservation> getAllReservations() throws RemoteException {
-        return model.getAllReservations();
+    public ArrayList<Reservation> getAllReservationsByUsername(String username) throws RemoteException {
+        return model.getAllReservationsByUsername(username);
     }
 
     @Override

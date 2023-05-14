@@ -104,7 +104,6 @@ public class ModelManagerServer implements ModelServer
     @Override
     public void addReservation(Reservation reservation) {
         try {
-            reservation.incrementID();
             reservationDAO.addReservation(reservation);
         } catch (SQLException e) {
             System.out.println("Model manager error in add reservation");
@@ -113,9 +112,9 @@ public class ModelManagerServer implements ModelServer
     }
 
     @Override
-    public ArrayList<Reservation> getAllReservations() {
+    public ArrayList<Reservation> getAllReservationsByUsername(String username) {
         try {
-            return reservationDAO.getAllReservations();
+            return reservationDAO.getAllReservationsByUsername(username);
         } catch (SQLException e) {
             System.out.println("Error in getAllReservations() in Model Manager. ");
             e.printStackTrace();
@@ -125,7 +124,12 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void removeReservation(Reservation reservation) {
-        reservations.removeReservation(reservation);
+        try {
+            reservationDAO.removeReservation(reservation);
+        } catch (SQLException e) {
+            System.out.println("Error in removeReservation() in Model Manager Server");
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -165,7 +169,13 @@ public class ModelManagerServer implements ModelServer
 
     @Override public Reservation getReservationById(String id)
     {
-        return reservations.getReservationById(id);
+        try {
+            return reservationDAO.getReservationById(id);
+        } catch (SQLException e) {
+            System.out.println("Error in getReservationById() in Model Manager Server");
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override public boolean setRoomReserved(Room room) throws RemoteException
