@@ -57,10 +57,10 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public ArrayList<Reservation> getAllReservations() throws SQLException {
+    public ArrayList<Reservation> getAllReservationsByUsername(String username) throws SQLException {
         ArrayList<Reservation> reservations = new ArrayList<>();
         Connection connection = dBconnection.getConnection();
-        String query = "SELECT * FROM reservation";
+        String query = "SELECT * FROM reservation where username = ?";
         try (PreparedStatement statement = connection.prepareStatement(query))
         {
             ResultSet resultSet = statement.executeQuery();
