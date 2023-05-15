@@ -87,13 +87,4 @@ public class UserDAOImpl implements UserDAO{
       }
       return null;
     }
-
-    @Override
-    public void removeUserByUsername(String username) {
-    }
-
-    @Override
-    public void removeUserByPhoneNumber(String phoneNumber) {
-
-    }
 }
