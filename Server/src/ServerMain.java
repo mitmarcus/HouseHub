@@ -9,7 +9,5 @@ public class ServerMain
     {
         ModelServer model = new ModelManagerServer();
         RemoteModel server = new RmiServer(model);
-
-
     }
 }

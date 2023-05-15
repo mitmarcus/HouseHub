@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="100.0" prefWidth="158.0" spacing="10.0" xmlns="http://javafx.com/javafx/19"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="RatingController">
+    <ChoiceBox fx:id="ratingChoiceBox" prefWidth="100.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="1"/>
+                <String fx:value="2"/>
+                <String fx:value="3"/>
+                <String fx:value="4"/>
+                <String fx:value="5"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <HBox alignment="CENTER" prefHeight="29.0" prefWidth="300.0" spacing="20.0">
+        <Button onAction="#onOKClicked" text="OK"/>
+        <Button onAction="#onCancelClicked" text="Cancel"/>
+    </HBox>
+</VBox>
