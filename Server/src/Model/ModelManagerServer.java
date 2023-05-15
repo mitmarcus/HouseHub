@@ -22,9 +22,6 @@ import java.util.ArrayList;
 
 public class ModelManagerServer implements ModelServer
 {
-    private RoomList rooms;
-    private ReservationList reservations;
-    private UserList users;
     private UserDAO userDB;
 
     private ReservationDAO reservationDAO;
@@ -44,13 +41,6 @@ public class ModelManagerServer implements ModelServer
         {
             throw new RuntimeException(e);
         }
-        this.users = new UserList();
-        this.rooms = new RoomList();
-        this.reservations = new ReservationList();
-        User user = new User("Nuri", "Hasan", "nuriSexyBoy", "nuriSexyBoy", "00000007");
-        users.addUser(user);
-
-
 
     }
 
@@ -61,7 +51,6 @@ public class ModelManagerServer implements ModelServer
         } catch (SQLException e) {
             e.getMessage();
         }
-        rooms.addRoom(room);
     }
 
     @Override
@@ -116,7 +105,7 @@ public class ModelManagerServer implements ModelServer
         try {
             return reservationDAO.getAllReservationsByUsername(username);
         } catch (SQLException e) {
-            System.out.println("Error in getAllReservations() in Model Manager. ");
+            System.out.println("Error in getAllReservationsByUsername() in Model Manager. ");
             e.printStackTrace();
         }
         return null;
@@ -194,8 +183,12 @@ public class ModelManagerServer implements ModelServer
 
     @Override public boolean setRoomFree(Room room)
     {
-        rooms.setRoomFree(room);
-        return true;
+        try {
+            return roomDB.setRoomFree(room);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     @Override public void sendFile(String name, byte[] img)

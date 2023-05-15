@@ -118,7 +118,6 @@ public class RoomDAOImpl implements RoomDAO {
                 String owner = resultSet.getString("owner");
                 String announcement = resultSet.getString("announcement");
                 String price = resultSet.getString("price");
-                String roomName = resultSet.getString("name");
                 String address = resultSet.getString("address");
                 String size = resultSet.getString("size");
                 String numberBedrooms = resultSet.getString("number_bedrooms");

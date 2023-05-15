@@ -62,6 +62,7 @@ public class ReservationDAOImpl implements ReservationDAO {
         Connection connection = dBconnection.getConnection();
         String query = "SELECT * FROM reservation where username = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
