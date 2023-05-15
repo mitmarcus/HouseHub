@@ -69,7 +69,7 @@ public class DetailsViewModel extends ViewModel {
         numberOfRooms.setValue("");
         roomSize.setValue("");
         Room room = model.getRoomByAnnouncement(viewState.getId());
-        System.out.println(room.getRoomId());
+
 
         this.price.setValue(room.getPrice());
         this.roomSize.setValue(room.getSize());

@@ -148,12 +148,12 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void removeUserByUsername(String username) {
-        users.removeUserByUsername(username);
+       // users.removeUserByUsername(username);
     }
 
     @Override
     public void removeUserByPhoneNumber(String phoneNumber) {
-        users.removeUserByPhoneNumber(phoneNumber);
+       // users.removeUserByPhoneNumber(phoneNumber);
     }
 
     @Override public Reservation getReservationById(String id)
@@ -223,7 +223,7 @@ public class ModelManagerServer implements ModelServer
 
     @Override public boolean setUserInfo(User user)
     {
-        users.setUserInfo(user);
+        //users.setUserInfo(user);
         return true;
     }
 
