@@ -14,6 +14,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RmiServer implements RemoteModel
@@ -110,8 +111,7 @@ public class RmiServer implements RemoteModel
         return true;
     }
 
-    @Override public boolean setUserInfo(User user) throws RemoteException
-    {
+    @Override public boolean setUserInfo(User user) throws RemoteException {
         model.setUserInfo(user);
         return true;
     }

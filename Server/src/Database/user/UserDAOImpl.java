@@ -87,4 +87,26 @@ public class UserDAOImpl implements UserDAO{
       }
       return null;
     }
+
+    public void setUserInfo(User user) throws SQLException {
+        Connection connection = dbConnection.getConnection();
+        String query = "UPDATE users SET first_name = ?, last_name = ?, password = ?, phone_number = ? WHERE username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, user.getFirstName());
+            statement.setString(2, user.getLastName());
+            statement.setString(3, user.getPassword());
+            statement.setString(4, user.getPhoneNumber());
+            statement.setString(5, user.getUsername());
+
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("User information updated successfully!");
+            } else {
+                System.out.println("Failed to update user information.");
+            }
+        } finally {
+            dbConnection.disconnect();
+        }
+    }
+
 }
