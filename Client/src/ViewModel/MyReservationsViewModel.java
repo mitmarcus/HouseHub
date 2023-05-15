@@ -37,7 +37,7 @@ public class MyReservationsViewModel extends ViewModel implements
         list.clear();
         try{
         for (
-                Reservation reservation : model.getAllReservations()) {
+                Reservation reservation : model.getAllReservationsByUsername(viewState.getUsername())) {
             list.add(reservation.toString());
         }
     }

@@ -12,7 +12,7 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   ArrayList<Room> getAllRooms();
   void addReservation(Reservation reservation);
 
-  ArrayList<Reservation> getAllReservations();
+  ArrayList<Reservation> getAllReservationsByUsername(String username);
 
   Reservation getReservationAtIndex();
   Reservation getReservationAtIndex(int index);

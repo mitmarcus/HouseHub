@@ -12,7 +12,7 @@ public interface RemoteModel extends RemoteSubject
     void addRoom(Room room) throws RemoteException;
     void removeRoom(Room room) throws RemoteException;
     ArrayList<Room> getAllRooms() throws RemoteException;
-    public ArrayList<Reservation> getAllReservations() throws RemoteException;
+    ArrayList<Reservation> getAllReservationsByUsername(String username) throws RemoteException;
     void addReservation(Reservation reservation) throws RemoteException;
 
     void addUser(String firstName, String lastName, String username, String password, String phoneNumber) throws RemoteException;
@@ -26,4 +26,5 @@ public interface RemoteModel extends RemoteSubject
     void sendFile(String name,byte[] img) throws RemoteException;
 
     User getUser(String username, String password) throws RemoteException;
-}
+
+    }
