@@ -74,16 +74,6 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getUserByUsername(username);
     }
 
-    @Override
-    public void removeUserByUsername(String username) {
-        client.removeUserByUsername(username);
-    }
-
-    @Override
-    public void removeUserByPhoneNumber(String phoneNumber) {
-        client.removeUserByPhoneNumber(phoneNumber);
-    }
-
     @Override public Reservation getReservationById(String id)
     {
         return client.getReservationById(id);

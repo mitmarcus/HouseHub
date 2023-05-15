@@ -1,5 +1,6 @@
 package ViewModel;
 
+import Model.Reservation;
 import Model.Room;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
