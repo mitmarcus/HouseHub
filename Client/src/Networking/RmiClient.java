@@ -92,16 +92,6 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
-    @Override public void removeUserByUsername(String username)
-    {
-
-    }
-
-    @Override public void removeUserByPhoneNumber(String phoneNumber)
-    {
-
-    }
-
     @Override public Reservation getReservationById(String id)
     {
         try

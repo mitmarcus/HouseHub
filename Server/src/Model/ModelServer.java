@@ -1,6 +1,7 @@
 package Model;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface ModelServer
@@ -16,11 +17,9 @@ public interface ModelServer
   void addUser(User user);
   User getUserByUsername(String username);
   User getUser(String username, String password);
-  void removeUserByUsername(String username);
-  void removeUserByPhoneNumber(String phoneNumber);
   boolean setRoomReserved(Room room) throws RemoteException;
   boolean setRoomFree(Room room);
   void sendFile(String name,byte[] img);
-  boolean setUserInfo(User user) ;
+  boolean setUserInfo(User user);
 
 }

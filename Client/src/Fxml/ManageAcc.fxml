@@ -35,7 +35,7 @@
                         <HBox alignment="CENTER" styleClass="row">
                            <children>
                               <Text fx:id="roomPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="CENTER" wrappingWidth="135.21722984313965" />
-                              <TextField fx:id="username" />
+                              <TextField fx:id="username" disable="true" />
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -80,7 +80,7 @@
             </VBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="160.0" prefWidth="559.0">
                <children>
-                  <Button onAction="#update" mnemonicParsing="false" styleClass="action-button" text="Update" />
+                  <Button mnemonicParsing="false" onAction="#update" styleClass="action-button" text="Update" />
                </children>
             </HBox>
          </children>

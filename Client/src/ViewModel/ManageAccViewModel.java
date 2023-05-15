@@ -22,7 +22,6 @@ public class ManageAccViewModel extends ViewModel{
         this.firstname = new SimpleStringProperty();
         this.password = new SimpleStringProperty();
         this.phonenumber = new SimpleStringProperty();
-
     }
 
     public StringProperty getUsernameProperty(){
@@ -48,10 +47,10 @@ public class ManageAccViewModel extends ViewModel{
         firstname.set(user.getFirstName());
         lastname.set(user.getLastName());
         phonenumber.set(user.getPhoneNumber());
-
     }
     public boolean update(){
         User user = model.getUserByUsername(viewState.getUsername());
+        user.setUsername(username.get());
         user.setFirstName(firstname.get());
         user.setPassword(password.get());
         user.setLastName(lastname.get());

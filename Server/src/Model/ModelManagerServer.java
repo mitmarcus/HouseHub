@@ -14,10 +14,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.attribute.UserPrincipal;
 import java.rmi.RemoteException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ModelManagerServer implements ModelServer
@@ -146,15 +144,6 @@ public class ModelManagerServer implements ModelServer
         }
     }
 
-    @Override
-    public void removeUserByUsername(String username) {
-       // users.removeUserByUsername(username);
-    }
-
-    @Override
-    public void removeUserByPhoneNumber(String phoneNumber) {
-       // users.removeUserByPhoneNumber(phoneNumber);
-    }
 
     @Override public Reservation getReservationById(String id)
     {
@@ -221,10 +210,13 @@ public class ModelManagerServer implements ModelServer
 
     }
 
-    @Override public boolean setUserInfo(User user)
-    {
-        //users.setUserInfo(user);
-        return true;
+    @Override public boolean setUserInfo(User user){
+        try {
+            userDB.setUserInfo(user);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public User getUser(String username, String password) {
@@ -236,6 +228,6 @@ public class ModelManagerServer implements ModelServer
         {
             e.getMessage();
         }
-        return  null;
+        return null;
     }
 }

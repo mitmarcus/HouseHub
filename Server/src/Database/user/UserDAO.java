@@ -8,4 +8,5 @@ public interface UserDAO {
     void addUser(User user) throws SQLException;
     User getUser(String username, String password) throws SQLException;
     User getUserByUsername(String username) throws SQLException;
+    void setUserInfo(User user) throws SQLException;
 }
