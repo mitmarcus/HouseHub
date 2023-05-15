@@ -1,5 +1,6 @@
 package ViewModel;
 
+import Model.Reservation;
 import Model.Room;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -36,7 +37,7 @@ public class MyReservationsViewModel extends ViewModel implements
         list.clear();
         try{
         for (
-                Reservation reservation : model.getAllReservations()) {
+                Reservation reservation : model.getAllReservationsByUsername(viewState.getUsername())) {
             list.add(reservation.toString());
         }
     }
