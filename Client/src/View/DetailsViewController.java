@@ -75,6 +75,15 @@ public class DetailsViewController extends ViewController {
             return;
         }
 
+        LocalDate threeMonthsAhead = today.plusMonths(3);
+        if (fromDateValue.isAfter(threeMonthsAhead)) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("Reservations can only be made up to 3 months in advance.");
+            errorAlert.showAndWait();
+            return;
+        }
+
         if (toDateValue.isBefore(fromDateValue)) {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setTitle("Error");
@@ -98,6 +107,7 @@ public class DetailsViewController extends ViewController {
 
         viewHandler.openView("showRooms");
     }
+
 
     @Override
     public void reset() {
