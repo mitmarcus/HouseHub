@@ -23,17 +23,17 @@ public class Reservation implements Serializable {
     }
 
     private String generateId() {
-        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        StringBuilder idBuilder = new StringBuilder();
-        Random random = new Random();
+        String username = user.getUsername();
+        String roomId = room.getRoomId();
 
-        for (int i = 0; i < 5; i++) {
-            int index = random.nextInt(characters.length());
-            char randomChar = characters.charAt(index);
-            idBuilder.append(randomChar);
-        }
+        // Extract the first 3 letters of the username
+        String usernamePrefix = username.substring(0, Math.min(username.length(), 3));
+        String roomIdPrefix = roomId.substring(0,Math.min(roomId.length(),3));
 
-        return idBuilder.toString();
+        // Combine the username prefix and room ID
+        String id = usernamePrefix + roomIdPrefix;
+
+        return id;
     }
 
     public String getId() {
@@ -71,6 +71,6 @@ public class Reservation implements Serializable {
     }
 
     public String toString() {
-        return "Reservation: " + "\n From: " + startDate + ", Until: " + endDate;
+        return "Reservation: " +"\n ID: " + id+ "\n From: " + startDate + ", Until: " + endDate;
     }
 }

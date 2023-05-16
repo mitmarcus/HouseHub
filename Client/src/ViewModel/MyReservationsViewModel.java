@@ -13,16 +13,14 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class MyReservationsViewModel extends ViewModel implements
-    PropertyChangeListener
-{
+        PropertyChangeListener {
     private ViewState viewState;
     private ModelClient model;
     private ObservableList<String> list;
 
     private StringProperty selectedObject;
 
-    public MyReservationsViewModel(ModelClient model, ViewState viewState)
-    {
+    public MyReservationsViewModel(ModelClient model, ViewState viewState) {
         this.model = model;
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
@@ -32,31 +30,28 @@ public class MyReservationsViewModel extends ViewModel implements
 
     }
 
-    @Override public void clear()
-    {
+    @Override
+    public void clear() {
         list.clear();
-        try{
-        for (
-                Reservation reservation : model.getAllReservationsByUsername(viewState.getUsername())) {
-            list.add(reservation.toString());
+        try {
+            for (
+                    Reservation reservation : model.getAllReservationsByUsername(viewState.getUsername())) {
+                list.add(reservation.toString());
+            }
+        } catch (NullPointerException e) {
+            e.getMessage();
         }
     }
-    catch (NullPointerException e)
-    {
-        e.getMessage();
-    }
-    }
-    public ObservableList<String> getList()
-    {
+
+    public ObservableList<String> getList() {
         return list;
     }
 
-    public void setSelectedObject(String id){
+    public void setSelectedObject(String id) {
         this.selectedObject.set(id);
     }
 
-    public void setId(String id)
-    {
+    public void setId(String id) {
         viewState.setId(id);
     }
 
@@ -64,31 +59,31 @@ public class MyReservationsViewModel extends ViewModel implements
         viewState.setId(selectedObject.get());
     }
 
-    public void removeReservation(String id)
-    {
-        Reservation reservation = model.getReservationById(id);
+    public void removeReservation(String id) {
+        String id2 = id.substring(19, 25);
+        Reservation reservation = model.getReservationById(id2);
+
         Room room = reservation.getRoom();
         model.setRoomFree(room);
         model.removeReservation(reservation);
-        System.out.println(reservation);
+        clear();
+        System.out.println(list.toString());
     }
 
-    @Override public void propertyChange(PropertyChangeEvent evt)
-    {
-        Platform.runLater(()->{
-            if (evt.getPropertyName().equals("reserve"))
-            {
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        Platform.runLater(() -> {
+            if (evt.getPropertyName().equals("reserve")) {
                 Reservation reservation = (Reservation) evt.getNewValue();
                 list.add(reservation.toString());
             }
         });
 
         if (evt.getPropertyName().equals("removeReservation"))
-        Platform.runLater(()->{
+            Platform.runLater(() -> {
                 clear();
-            System.out.println("removed reservation");
-        });
-
+                System.out.println("removed reservation");
+            });
 
 
     }

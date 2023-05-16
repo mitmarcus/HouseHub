@@ -99,11 +99,12 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public Reservation getReservationById(String id) throws SQLException {
+        System.out.println(id);
         Reservation reservation = null;
         Connection connection = dBconnection.getConnection();
-        String query = "SELECT * FROM reservation where id = ?";
+        String query = "SELECT * FROM reservation WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, reservation.getId());
+            statement.setString(1, id);
             ResultSet resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
