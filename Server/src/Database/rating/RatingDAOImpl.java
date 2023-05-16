@@ -28,7 +28,7 @@ public class RatingDAOImpl implements RatingDAO
 
     public void addRating(Rating rating) throws SQLException {
         Connection connection = dbConnection.getConnection();
-        String query = "INSERT INTO rating (rating, room_id, user) VALUES (?,?,?) ";
+        String query = "INSERT INTO rating rating, room_id, user) VALUES (?,?,?) ";
         try(PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setFloat(1, rating.getRating());
             statement.setString(2, rating.getUser().getUsername());

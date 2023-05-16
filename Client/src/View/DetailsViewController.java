@@ -1,6 +1,7 @@
 package View;
 
 import ViewModel.ViewModel;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -108,6 +109,10 @@ public class DetailsViewController extends ViewController {
         viewHandler.openView("showRooms");
     }
 
+    @FXML private  void rate(ActionEvent event)
+    {
+        viewHandler.openView("rating");
+    }
 
     @Override
     public void reset() {

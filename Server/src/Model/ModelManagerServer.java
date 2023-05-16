@@ -1,5 +1,6 @@
 package Model;
 
+import Database.rating.RatingDAO;
 import Database.reservation.ReservationDAO;
 
 import Database.reservation.ReservationDAOImpl;
@@ -24,6 +25,8 @@ public class ModelManagerServer implements ModelServer {
     private ReservationDAO reservationDAO;
 
     private RoomDAO roomDB;
+
+    private RatingDAO ratingDB;
 
 
     public ModelManagerServer() {
@@ -222,6 +225,30 @@ public class ModelManagerServer implements ModelServer {
         }
         return null;
     }
+
+    @Override public void addRating(Rating rating)
+    {
+        try {
+            ratingDB.addRating(rating);
+        }
+        catch (SQLException e) {
+            e.getMessage();
+        }
+    }
+
+    @Override public float getRating()
+    {
+        try
+        {
+            return ratingDB.getRating();
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return 0;
+    }
+
     @Override
     public User getUser(String username, String password) {
         try
@@ -233,6 +260,5 @@ public class ModelManagerServer implements ModelServer {
             e.getMessage();
         }
         return null;
-
     }
 }

@@ -117,6 +117,16 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getRoomById(Id);
     }
 
+    @Override public void addRating(Rating rating)
+    {
+        client.addRating(rating);
+    }
+
+    @Override public float getRating()
+    {
+        return client.getRating();
+    }
+
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);

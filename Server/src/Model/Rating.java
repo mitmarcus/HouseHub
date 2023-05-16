@@ -6,7 +6,7 @@ public class Rating {
     private User user;
     private Room room;
 
-    public Rating(float rating, int nrOfRaters, User user, Room room)
+    public Rating(float rating, User user, Room room)
     {
         this.rating = rating;
         this.user = user;

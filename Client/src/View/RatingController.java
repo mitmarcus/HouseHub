@@ -49,4 +49,8 @@ public class RatingController extends ViewController{
     private void onCancelClicked(ActionEvent event) {
         // Close the dialog ?
     }
+
+    @FXML private  void rate(ActionEvent event)
+    {
+    }
 }

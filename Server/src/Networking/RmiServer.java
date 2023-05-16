@@ -1,9 +1,6 @@
 package Networking;
 
-import Model.ModelServer;
-import Model.Reservation;
-import Model.Room;
-import Model.User;
+import Model.*;
 import utility.observer.listener.GeneralListener;
 import utility.observer.subject.PropertyChangeHandler;
 
@@ -14,7 +11,6 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RmiServer implements RemoteModel
@@ -138,6 +134,16 @@ public class RmiServer implements RemoteModel
         return model.getRoomById(Id);
     }
 
+    @Override public void addRating(Rating rating) throws RemoteException
+    {
+        model.addRating(rating);
+    }
+
+    @Override public float getRating() throws RemoteException
+    {
+        return model.getRating();
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {
@@ -149,4 +155,5 @@ public class RmiServer implements RemoteModel
         model.removeReservation(reservation);
         property.firePropertyChange("removeReservation", null ,reservation.toString());
     }
+
 }

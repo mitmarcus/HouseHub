@@ -66,7 +66,7 @@
                         <children>
                            <Text fx:id="roomPrice1" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Stars:" textAlignment="CENTER" wrappingWidth="131.21722221374512" />
                            <TextField fx:id="price1" disable="true" editable="false" prefHeight="26.0" prefWidth="80.0" />
-                           <Button mnemonicParsing="false" text="Rate" />
+                           <Button onAction="rate" mnemonicParsing="false" text="Rate" />
                         </children>
                      </HBox>
                   </children></VBox>
