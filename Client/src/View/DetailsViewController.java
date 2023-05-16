@@ -57,13 +57,7 @@ public class DetailsViewController extends ViewController {
     }
 
     @FXML private void nextImage(){
-        if (viewModel.nextImage()!=null)
-        image.setImage(viewModel.nextImage());
-    }
-    @FXML private void previousImage(){
-        if (viewModel.previousImage()!=null)
-        image.setImage(viewModel.previousImage());
-
+      image.setImage ( viewModel.getImage());
     }
 
     @FXML
@@ -124,8 +118,8 @@ public class DetailsViewController extends ViewController {
 
     @Override
     public void reset() {
-        image.setImage(new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString()));
         viewModel.clear();
+        image.setImage(viewModel.mainImage());
     }
 }
 

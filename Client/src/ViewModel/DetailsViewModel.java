@@ -19,6 +19,8 @@ public class DetailsViewModel extends ViewModel {
     private ObjectProperty<LocalDate> startDate;
     private ObjectProperty<LocalDate> endDate;
     private ArrayList<String> imagesPath = new ArrayList<>();
+    private ArrayList<Image> images = new ArrayList<>() ;
+    private int index=0;
 
 
     public DetailsViewModel(ModelClient model, ViewState viewState) {
@@ -69,7 +71,10 @@ public class DetailsViewModel extends ViewModel {
     @Override
     public void clear() {
         imagesPath.clear();
+        images.clear();
         getImagesPath();
+        loadImageList();
+
         price.setValue("");
         roomAddress.setValue("");
         numberOfRooms.setValue("");
@@ -85,32 +90,30 @@ public class DetailsViewModel extends ViewModel {
         this.endDate.setValue(null);
     }
 
-
-    private Image getImageFromServer(int index){
-
-        if (index>=0&& index<imagesPath.size())
-        {
-            String imagepath = imagesPath.get(index);
-
-            Image image = new Image(new File(imagepath).toURI().toString());
-            return image;
+    private void loadImageList(){
+        images.clear();
+        for (int i= 0 ; i < imagesPath.size();i++){
+            images.add(new Image(new File(imagesPath.get(i)).toURI().toString()));
         }
+    }
 
-        return null;
+    public Image getImage(){
+        Image image = null;
+        if (index >= images.size())
+            this.index = 0;
+        image = images.get(index);
+        index++;
+
+        return image;
     }
-    public Image previousImage(){
-        int currentImageIndex = 0;
-        currentImageIndex =  (currentImageIndex - 1 + imagesPath.size()) % imagesPath.size();
-      return  getImageFromServer(currentImageIndex);
-    }
-    public Image nextImage(){
-        for (String path : imagesPath)
+
+    public Image mainImage(){
+        if (imagesPath.size()==0)
         {
-            return new Image(new File(path).toURI().toString());
+            return new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString());
         }
-        return null;
+        return new Image(new File(imagesPath.get(0)).toURI().toString());
     }
-
 
     private void getImagesPath()
     {
