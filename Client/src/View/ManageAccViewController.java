@@ -39,8 +39,20 @@ public class ManageAccViewController extends ViewController{
         viewHandler.openView("main");
   }
 
+  @FXML public void myRooms(){
+      if (viewModel.info())
+      {
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle(" Error");
+        successAlert.setHeaderText("You have no rooms" );
+        successAlert.showAndWait();
+      }
+      else
+      viewHandler.openView("myRooms");
+  }
+
   @FXML public void update(){
-      if(viewModel.update()==true){
+      if(viewModel.update()){
         Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
         successAlert.setTitle(" Successful");
         successAlert.setHeaderText("Your updated your account" );

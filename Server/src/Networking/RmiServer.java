@@ -127,6 +127,17 @@ public class RmiServer implements RemoteModel
         return model.getUser(username,password);
     }
 
+    @Override public ArrayList<Room> getRoomsByUsername(String username)
+        throws RemoteException
+    {
+        return model.getRoomsByUsername(username);
+    }
+
+    @Override public Room getRoomById(String Id) throws RemoteException
+    {
+        return model.getRoomById(Id);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {

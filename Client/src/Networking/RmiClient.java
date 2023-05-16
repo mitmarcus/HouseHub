@@ -165,6 +165,32 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
+    @Override public ArrayList<Room> getRoomsByUsername(String username)
+    {
+        try
+        {
+            return server.getRoomsByUsername(username);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+        return null;
+    }
+
+    @Override public Room getRoomById(String Id)
+    {
+        try
+        {
+            return server.getRoomById(Id);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+        return null;
+    }
+
     @Override public void removeReservation(Reservation reservation)
     {
         try

@@ -24,4 +24,6 @@ public interface RemoteModel extends RemoteSubject {
     boolean setUserInfo(User user) throws RemoteException;
     void sendFile(String name,byte[] img) throws RemoteException;
     User getUser(String username, String password) throws RemoteException;
+    ArrayList<Room> getRoomsByUsername(String username) throws RemoteException;
+    Room getRoomById(String Id) throws RemoteException;
 }

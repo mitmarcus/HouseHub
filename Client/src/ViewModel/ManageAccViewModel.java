@@ -4,7 +4,6 @@ import Model.ModelClient;
 import Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.Alert;
 
 public class ManageAccViewModel extends ViewModel{
     private ModelClient model;
@@ -68,5 +67,9 @@ public class ManageAccViewModel extends ViewModel{
         }
 
         return done;
+    }
+    public boolean info(){
+
+       return model.getRoomsByUsername(viewState.getUsername()).isEmpty();
     }
 }

@@ -55,7 +55,7 @@ public class ModelManagerServer implements ModelServer
     public void removeRoom(Room room) {
         try
         {
-            roomDB.getAllRooms();
+            roomDB.removeRoom(room);
         }
         catch (SQLException e)
         {
@@ -217,6 +217,32 @@ public class ModelManagerServer implements ModelServer
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override public ArrayList<Room> getRoomsByUsername(String username)
+    {
+        try
+        {
+            return  roomDB.getRoomsByUsername(username);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
+    }
+
+    @Override public Room getRoomById(String Id)
+    {
+        try
+        {
+            return roomDB.getRoomById(Id);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
     }
 
     public User getUser(String username, String password) {

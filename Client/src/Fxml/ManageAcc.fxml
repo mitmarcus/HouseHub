@@ -81,6 +81,11 @@
             <HBox alignment="BOTTOM_CENTER" prefHeight="160.0" prefWidth="559.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#update" styleClass="action-button" text="Update" />
+                  <Button mnemonicParsing="false" onAction="#myRooms" styleClass="action-button" text="My Rooms">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
          </children>

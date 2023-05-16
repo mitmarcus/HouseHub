@@ -55,20 +55,20 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public void removeRoom(Room room) throws SQLException {
-//        Connection connection = dbConnection.getConnection();
-//        String query = "DELETE FROM house_hub.room WHERE id = ?";
-//        try (PreparedStatement statement = connection.prepareStatement(query)) {
-//            statement.setInt(1, room.getId());
-//
-//            int rowsDeleted = statement.executeUpdate();
-//            if (rowsDeleted > 0) {
-//                System.out.println("Room removed successfully!");
-//            } else {
-//                System.out.println("Failed to remove room.");
-//            }
-//        } finally {
-//            dbConnection.disconnect();
-//        }
+       Connection connection = dbConnection.getConnection();
+       String query = "DELETE FROM room WHERE id = ?";
+       try (PreparedStatement statement = connection.prepareStatement(query)) {
+           statement.setString(1, room.getRoomId());
+
+          int rowsDeleted = statement.executeUpdate();
+           if (rowsDeleted > 0) {
+                System.out.println("Room removed successfully!");
+            } else {
+               System.out.println("Failed to remove room.");
+           }
+        } finally {
+            dbConnection.disconnect();
+        }
 
     }
 
@@ -136,7 +136,6 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
 
-
     public ArrayList<Room> getAllRooms() throws SQLException
     {
         ArrayList<Room> list = new ArrayList<>();
@@ -180,7 +179,6 @@ public class RoomDAOImpl implements RoomDAO {
             statement.setBoolean(1,true);
             statement.setString(2,id);
             statement.executeUpdate();
-            System.out.println("hello1");
             setRoomReserved=true;
 
         }
@@ -194,5 +192,37 @@ public class RoomDAOImpl implements RoomDAO {
     @Override
     public boolean setRoomFree(Room room) throws SQLException {
         return false;
+    }
+
+    @Override public ArrayList<Room> getRoomsByUsername(String username)
+        throws SQLException
+    {
+        ArrayList<Room> list = new ArrayList<>();
+        Connection connection = dbConnection.getConnection();
+        String query ="SELECT * FROM room WHERE owner = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1,username);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String announcement = resultSet.getString("announcement");
+                String price = resultSet.getString("price");
+                String address = resultSet.getString("address");
+                String size = resultSet.getString("size");
+                String bedrooms = resultSet.getString("number_bedrooms");
+                Boolean isReserved = resultSet.getBoolean("reserved");
+                User user = UserDAOImpl.getInstance().getUserByUsername(resultSet.getString("owner"));
+                Room room = new Room(user, announcement, price, address, size,
+                    bedrooms, isReserved);
+                list.add(room);
+            }
+        }
+        finally
+        {
+            connection.close();
+        }
+
+        return list;
     }
 }

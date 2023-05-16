@@ -21,5 +21,7 @@ public interface ModelServer
   boolean setRoomFree(Room room);
   void sendFile(String name,byte[] img);
   boolean setUserInfo(User user);
+  ArrayList<Room> getRoomsByUsername(String username);
+  Room getRoomById(String Id);
 
 }

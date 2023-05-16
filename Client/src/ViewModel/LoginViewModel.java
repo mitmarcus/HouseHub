@@ -63,6 +63,7 @@ public class LoginViewModel extends ViewModel{
 
     public boolean addUser(){
         User user  = new User(firstName.get(),lastName.get(), username.get(), password.get(), phoneNumber.get());
+        viewState.setUsername(username.get());
         model.addUser(user);
         return true;
     }
@@ -88,7 +89,5 @@ public class LoginViewModel extends ViewModel{
 
     @Override
     public void clear() {
-
-
     }
 }

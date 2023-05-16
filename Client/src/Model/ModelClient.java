@@ -26,4 +26,6 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   boolean setUserInfo(User user);
   User getUser(String username, String password);
   void sendFile(String name,byte[] img);
+  ArrayList<Room> getRoomsByUsername(String username);
+  Room getRoomById(String Id);
 }

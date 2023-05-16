@@ -107,6 +107,16 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         client.sendFile(name,img);
     }
 
+    @Override public ArrayList<Room> getRoomsByUsername(String username)
+    {
+        return client.getRoomsByUsername(username);
+    }
+
+    @Override public Room getRoomById(String Id)
+    {
+        return client.getRoomById(Id);
+    }
+
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);

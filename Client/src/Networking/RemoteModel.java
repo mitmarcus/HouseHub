@@ -27,4 +27,7 @@ public interface RemoteModel extends RemoteSubject
 
     User getUser(String username, String password) throws RemoteException;
 
+    ArrayList<Room> getRoomsByUsername(String username) throws RemoteException;
+    Room getRoomById(String Id) throws  RemoteException;
+
     }

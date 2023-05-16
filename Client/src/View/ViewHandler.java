@@ -21,6 +21,7 @@ public class ViewHandler {
     private ViewController manageAccViewController;
     private ViewController myReservationsViewController;
     private ViewController listYourRoomViewController;
+    private ViewController myRoomsViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -58,6 +59,10 @@ public class ViewHandler {
                 break;
             case "listYourRoom" :
                 listYourRoomViewController = loadViewController("/Fxml/ListYourRoom.fxml", listYourRoomViewController,viewModelFactory.getListYourRoomViewModel());
+                break;
+            case "myRooms" :
+                myRoomsViewController = loadViewController("/Fxml/myRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
+
 
         }
         currentScene.setRoot(root);

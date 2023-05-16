@@ -28,7 +28,6 @@ public class DBconnection {
     public Connection getConnection() throws SQLException {
         if (conn == null || conn.isClosed()) {
             conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
         }
         return conn;
     }
@@ -36,7 +35,6 @@ public class DBconnection {
     public void disconnect() throws SQLException {
         if (conn != null && !conn.isClosed()) {
             conn.close();
-            System.out.println("Disconnected from the PostgreSQL server successfully.");
         }
     }
 }

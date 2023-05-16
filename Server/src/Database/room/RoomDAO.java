@@ -2,6 +2,7 @@ package Database.room;
 
 import Model.Room;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -13,4 +14,5 @@ public interface RoomDAO {
     ArrayList<Room> getAllRooms() throws SQLException;
     boolean setRoomReserved(Room room) throws SQLException;
     boolean setRoomFree(Room room) throws SQLException;
+    ArrayList<Room> getRoomsByUsername(String username) throws SQLException;
 }
