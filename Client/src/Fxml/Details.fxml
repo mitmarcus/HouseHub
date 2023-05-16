@@ -60,7 +60,16 @@
                   </children>
                </VBox>
                <VBox prefHeight="23.0" prefWidth="271.0" />
-               <VBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0" />
+               <VBox alignment="CENTER" prefHeight="34.0" prefWidth="271.0">
+                  <children>
+                     <HBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="271.0" styleClass="details">
+                        <children>
+                           <Text fx:id="roomPrice1" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Stars:" textAlignment="CENTER" wrappingWidth="131.21722221374512" />
+                           <TextField fx:id="price1" disable="true" editable="false" prefHeight="26.0" prefWidth="80.0" />
+                           <Button mnemonicParsing="false" text="Rate" />
+                        </children>
+                     </HBox>
+                  </children></VBox>
                <VBox alignment="CENTER" prefHeight="68.0" prefWidth="266.0">
                   <children>
                      <Line endX="150.0" startX="-100.0">
