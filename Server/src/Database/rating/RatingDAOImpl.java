@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.SQLWarning;
 
-public class RatingDAOImpl implements RatingDAO
+public class RatingDAOImpl
 {
     private static RatingDAOImpl instance;
     private final DBconnection dbConnection;

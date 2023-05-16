@@ -53,6 +53,13 @@ public class DetailsViewController extends ViewController {
         viewHandler.openView("showRooms");
     }
 
+    @FXML private void nextImage(){
+
+    }
+    @FXML private void previousImage(){
+
+    }
+
     @FXML
     private void reserveButtonPressed() {
         LocalDate fromDateValue = fromDate.getValue();

@@ -5,6 +5,7 @@ import Model.ModelClient;
 import javafx.beans.property.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class DetailsViewModel extends ViewModel {
     private ViewState viewState;
@@ -15,6 +16,7 @@ public class DetailsViewModel extends ViewModel {
     private StringProperty numberOfRooms;
     private ObjectProperty<LocalDate> startDate;
     private ObjectProperty<LocalDate> endDate;
+    private ArrayList<String> imagesPath = new ArrayList<>();
 
 
     public DetailsViewModel(ModelClient model, ViewState viewState) {
@@ -64,6 +66,7 @@ public class DetailsViewModel extends ViewModel {
 
     @Override
     public void clear() {
+        getImagesPath();
         price.setValue("");
         roomAddress.setValue("");
         numberOfRooms.setValue("");
@@ -77,6 +80,16 @@ public class DetailsViewModel extends ViewModel {
         this.roomAddress.setValue(room.getAddress());
         this.startDate.setValue(null);
         this.endDate.setValue(null);
+    }
+
+    private void getImagesPath()
+    {
+        Room room = model.getRoomByAnnouncement(viewState.getId());
+       String roomId = room.getRoomId();
+        for (String path : model.getRoomImagesPaths(roomId))
+        {
+            imagesPath.add(path);
+        }
     }
 
 }

@@ -225,4 +225,46 @@ public class RoomDAOImpl implements RoomDAO {
 
         return list;
     }
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+        throws SQLException
+    {
+        ArrayList<String> list = new ArrayList<>();
+        Connection connection = dbConnection.getConnection();
+        String query ="SELECT * FROM images WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query))
+        {
+            statement.setString(1,roomId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next())
+            {
+                String path = resultSet.getString("path");
+                list.add(path);
+            }
+        }
+         finally
+            {
+                connection.close();
+            }
+            return list;
+
+    }
+
+    @Override public void addImagePath(String roomId, String path)
+        throws SQLException
+    {
+        Connection connection = dbConnection.getConnection();
+        String query ="INSERT INTO images (id, path) VALUES (?, ?)";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, roomId);
+            statement.setString(2,path);
+            statement.executeUpdate();
+        }
+        finally
+        {
+            connection.close();
+        }
+    }
 }

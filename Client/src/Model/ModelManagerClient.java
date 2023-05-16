@@ -102,9 +102,9 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getUser(username,password);
     }
 
-    @Override public void sendFile(String name, byte[] img)
+    @Override public void sendFile(String roomId,String name, byte[] img)
     {
-        client.sendFile(name,img);
+        client.sendFile(roomId,name,img);
     }
 
     @Override public ArrayList<Room> getRoomsByUsername(String username)
@@ -115,6 +115,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     @Override public Room getRoomById(String Id)
     {
         return client.getRoomById(Id);
+    }
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+    {
+        return client.getRoomImagesPaths(roomId);
     }
 
     @Override

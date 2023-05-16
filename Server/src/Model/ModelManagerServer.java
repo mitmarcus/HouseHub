@@ -165,7 +165,7 @@ public class ModelManagerServer implements ModelServer {
     }
 
     @Override
-    public void sendFile(String name, byte[] img) {
+    public void sendFile(String roomId,String name, byte[] img) {
         File folder = new File("Server/src/Images/");
         if (!folder.exists()) {
             folder.mkdirs();
@@ -173,16 +173,18 @@ public class ModelManagerServer implements ModelServer {
 
         File outFile = new File(folder.getFreeSpace() + name);
         try {
-            FileOutputStream fos = new FileOutputStream("Server/src/Images/" + outFile, false);
+            String imagePath = "Server/src/Images/" + outFile;
+            FileOutputStream fos = new FileOutputStream(imagePath, false);
             byte[] reciveimg = new byte[img.length];
             for (int i = 0; i < img.length; i++) {
                 reciveimg[i] = img[i];
             }
             fos.write(reciveimg);
             fos.close();
+            roomDB.addImagePath(roomId, imagePath);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
         }
 
@@ -222,6 +224,20 @@ public class ModelManagerServer implements ModelServer {
         }
         return null;
     }
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+    {
+        try
+        {
+            return roomDB.getRoomImagesPaths(roomId);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
+    }
+
     @Override
     public User getUser(String username, String password) {
         try

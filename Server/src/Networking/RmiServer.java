@@ -116,10 +116,10 @@ public class RmiServer implements RemoteModel
         return true;
     }
 
-    @Override public void sendFile(String name, byte[] img)
+    @Override public void sendFile(String roomId,String name, byte[] img)
         throws RemoteException
     {
-        model.sendFile(name,img);
+        model.sendFile(roomId,name,img);
     }
 
     @Override
@@ -136,6 +136,12 @@ public class RmiServer implements RemoteModel
     @Override public Room getRoomById(String Id) throws RemoteException
     {
         return model.getRoomById(Id);
+    }
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+        throws RemoteException
+    {
+        return model.getRoomImagesPaths(roomId);
     }
 
     @Override public Reservation getReservationById(String id)
