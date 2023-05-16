@@ -16,7 +16,6 @@ public class Room implements Serializable
     private boolean isReserved;
     private User owner;
 
-    private float rating;
 
     public Room(User owner,String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
@@ -27,7 +26,6 @@ public class Room implements Serializable
         this.isReserved = isReserved;
         this.owner = owner;
         this.roomId = generateID();
-        this.rating = 0;
        // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
          //   throw new NullPointerException();
     }
@@ -111,16 +109,6 @@ public class Room implements Serializable
     public void setReserved(boolean reserved) //true or false
     {
         isReserved = reserved;
-    }
-
-    public float getRating()
-    {
-        return rating;
-    }
-
-    public void setRating(float rating)
-    {
-        this.rating = rating;
     }
 
 
