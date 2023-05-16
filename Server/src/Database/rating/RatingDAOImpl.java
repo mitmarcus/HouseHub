@@ -1,13 +1,11 @@
 package Database.rating;
 
 import Database.DBconnection;
-import Database.room.RoomDAOImpl;
 import Model.Rating;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.SQLWarning;
 
 public class RatingDAOImpl implements RatingDAO
 {
@@ -28,11 +26,11 @@ public class RatingDAOImpl implements RatingDAO
 
     public void addRating(Rating rating) throws SQLException {
         Connection connection = dbConnection.getConnection();
-        String query = "INSERT INTO rating rating, room_id, user) VALUES (?,?,?) ";
+        String query = "INSERT INTO rating (rating, room_id, username) VALUES (?,?,?) ";
         try(PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setFloat(1, rating.getRating());
-            statement.setString(2, rating.getUser().getUsername());
-            statement.setString(3, rating.getRoom().getRoomId());
+            statement.setString(2, rating.getUser());
+            statement.setString(3, rating.getRoom());
 
             int rowsInserted = statement.executeUpdate();
 
@@ -47,7 +45,7 @@ public class RatingDAOImpl implements RatingDAO
         }
 
 
-    public float getRating() throws SQLException
+    public int getRating() throws SQLException
     {
         // i know i have to make some weird ass thing from dbs which i dont know yet <3
         return 0;

@@ -236,7 +236,7 @@ public class ModelManagerServer implements ModelServer {
         }
     }
 
-    @Override public float getRating()
+    @Override public int getRating()
     {
         try
         {

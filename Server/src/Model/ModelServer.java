@@ -26,7 +26,7 @@ public interface ModelServer
 
   void addRating(Rating rating);
 
-  float getRating();
+  int getRating();
 
 
 
