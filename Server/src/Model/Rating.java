@@ -1,39 +1,41 @@
 package Model;
 
 public class Rating {
-    private float rating;
+    private int rating;
 
-    private User user;
-    private Room room;
+    private String username;
+    private String room_id;
 
-    public Rating(float rating, int nrOfRaters, User user, Room room)
+    public Rating(int rating, String username, String room_id)
     {
         this.rating = rating;
-        this.user = user;
-        this.room = room;
+        this.username = username;
+        this.room_id = room_id;
     }
 
-    public float getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
-    public User getUser() {
-        return user;
+    public String getUser() {
+        return username;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.username = username;
     }
 
-    public Room getRoom() {
-        return room;
+    public String getRoom() {
+        return room_id;
     }
 
     public void setRoom(Room room) {
-        this.room = room;
+        this.room_id = room_id;
     }
+
+
 }

@@ -24,4 +24,13 @@ public interface ModelServer
   ArrayList<Room> getRoomsByUsername(String username);
   Room getRoomById(String Id);
 
+  void addRating(Rating rating);
+
+  int getRating();
+
+  double getAvgRatingById(String id);
+
+
+
+
 }

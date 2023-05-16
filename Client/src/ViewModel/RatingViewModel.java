@@ -1,6 +1,7 @@
 package ViewModel;
 
 import Model.ModelClient;
+import Model.Rating;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -24,6 +25,16 @@ public class RatingViewModel extends ViewModel {
     public StringProperty getRating()
     {
         return rating;
+    }
+
+    public boolean addRating(int rating)
+    {
+        String room = model.getRoomById(viewState.getId()).getRoomId();
+        String user = model.getUserByUsername(viewState.getUsername()).getUsername();
+        Rating rating1 = new Rating(rating,user,room);
+
+        model.addRating(rating1);
+        return true;
     }
 
     public void clear() {

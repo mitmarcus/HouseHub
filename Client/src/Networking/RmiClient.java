@@ -249,6 +249,47 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 
     }
 
+    @Override public void addRating(Rating rating)
+    {
+        try
+        {
+            server.addRating(rating);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    @Override public int getRating()
+    {
+        try
+        {
+            server.getRating();
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    @Override
+    public double getAvgRatingById(String id) {
+        try
+        {
+            return server.getAvgRatingById(id);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+        return 0;
+    }
+
+
+
+
 }
 
 
