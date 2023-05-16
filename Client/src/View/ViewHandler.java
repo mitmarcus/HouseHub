@@ -23,6 +23,8 @@ public class ViewHandler {
     private ViewController listYourRoomViewController;
     private ViewController myRoomsViewController;
 
+    private ViewController ratingController;
+
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
         currentScene = new Scene(new Region());
@@ -62,6 +64,9 @@ public class ViewHandler {
                 break;
             case "myRooms" :
                 myRoomsViewController = loadViewController("/Fxml/myRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
+                break;
+            case "rating" :
+                ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
 
 
         }
@@ -84,7 +89,7 @@ public class ViewHandler {
     }
 
     private ViewController loadViewController(String fxmlFile, ViewController viewController, ViewModel viewModel) {
-        if (viewController==null)
+        if (viewController == null)
         {
             try
             {

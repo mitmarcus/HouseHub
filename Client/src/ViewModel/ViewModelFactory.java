@@ -15,6 +15,8 @@ public class ViewModelFactory
   private ListYourRoomViewModel listYourRoomViewModel;
   private MyRoomsViewModel myRoomsViewModel;
 
+  private RatingViewModel ratingViewModel;
+
 
   public ViewModelFactory (ModelClient model)
   {
@@ -27,6 +29,7 @@ public class ViewModelFactory
     this.manageAccViewModel = new ManageAccViewModel(model, viewState);
     this.myReservationsViewModel = new MyReservationsViewModel(model, viewState);
     this.myRoomsViewModel = new MyRoomsViewModel(model,viewState);
+    this.ratingViewModel = new RatingViewModel(model, viewState);
   }
 
   public ShowRoomsViewModel getShowRoomsViewModel()
@@ -52,5 +55,10 @@ public class ViewModelFactory
   }
   public MyRoomsViewModel getMyRoomsViewModel(){
     return  myRoomsViewModel;
+  }
+
+  public RatingViewModel getRatingViewModel()
+  {
+    return ratingViewModel;
   }
 }
