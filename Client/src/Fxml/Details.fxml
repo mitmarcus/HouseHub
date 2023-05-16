@@ -126,7 +126,7 @@
                      </ImageView>
                   </graphic>
                </Button>
-               <ImageView fitHeight="246.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView   fx:id="image" fitHeight="246.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@../Resources/placeholder.jpg" />
                   </image>

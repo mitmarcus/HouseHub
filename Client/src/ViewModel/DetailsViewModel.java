@@ -3,7 +3,9 @@ package ViewModel;
 import Model.*;
 import Model.ModelClient;
 import javafx.beans.property.*;
+import javafx.scene.image.Image;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -66,6 +68,7 @@ public class DetailsViewModel extends ViewModel {
 
     @Override
     public void clear() {
+        imagesPath.clear();
         getImagesPath();
         price.setValue("");
         roomAddress.setValue("");
@@ -81,6 +84,33 @@ public class DetailsViewModel extends ViewModel {
         this.startDate.setValue(null);
         this.endDate.setValue(null);
     }
+
+
+    private Image getImageFromServer(int index){
+
+        if (index>=0&& index<imagesPath.size())
+        {
+            String imagepath = imagesPath.get(index);
+
+            Image image = new Image(new File(imagepath).toURI().toString());
+            return image;
+        }
+
+        return null;
+    }
+    public Image previousImage(){
+        int currentImageIndex = 0;
+        currentImageIndex =  (currentImageIndex - 1 + imagesPath.size()) % imagesPath.size();
+      return  getImageFromServer(currentImageIndex);
+    }
+    public Image nextImage(){
+        for (String path : imagesPath)
+        {
+            return new Image(new File(path).toURI().toString());
+        }
+        return null;
+    }
+
 
     private void getImagesPath()
     {

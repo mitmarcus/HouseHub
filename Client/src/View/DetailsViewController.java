@@ -3,10 +3,12 @@ package View;
 import ViewModel.ViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -17,6 +19,7 @@ public class DetailsViewController extends ViewController {
 
     @FXML
     private DatePicker toDate = new DatePicker();
+    @FXML private ImageView image;
 
     @FXML
     private ImageView cancelButton;
@@ -54,9 +57,12 @@ public class DetailsViewController extends ViewController {
     }
 
     @FXML private void nextImage(){
-
+        if (viewModel.nextImage()!=null)
+        image.setImage(viewModel.nextImage());
     }
     @FXML private void previousImage(){
+        if (viewModel.previousImage()!=null)
+        image.setImage(viewModel.previousImage());
 
     }
 
@@ -118,6 +124,7 @@ public class DetailsViewController extends ViewController {
 
     @Override
     public void reset() {
+        image.setImage(new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString()));
         viewModel.clear();
     }
 }
