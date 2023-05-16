@@ -36,4 +36,6 @@ public class Rating {
     public void setRoom(Room room) {
         this.room_id = room_id;
     }
+
+
 }

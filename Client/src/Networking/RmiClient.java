@@ -261,7 +261,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
-    @Override public float getRating()
+    @Override public int getRating()
     {
         try
         {
@@ -273,6 +273,20 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
         return 0;
     }
+
+    @Override
+    public double getAvgRatingById(String id) {
+        try
+        {
+            return server.getAvgRatingById(id);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+        return 0;
+    }
+
 
 
 

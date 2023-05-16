@@ -32,6 +32,9 @@ public interface RemoteModel extends RemoteSubject
 
     void addRating(Rating rating) throws RemoteException;
 
-    float getRating() throws RemoteException;
+    int getRating() throws RemoteException;
+
+    double getAvgRatingById(String id) throws RemoteException;
+
 
     }

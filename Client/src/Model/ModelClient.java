@@ -29,5 +29,7 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   ArrayList<Room> getRoomsByUsername(String username);
   Room getRoomById(String Id);
   void addRating(Rating rating);
-  float getRating();
+  int getRating();
+
+  double getAvgRatingById(String id);
 }

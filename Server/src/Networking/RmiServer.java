@@ -11,6 +11,7 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RmiServer implements RemoteModel
@@ -139,10 +140,17 @@ public class RmiServer implements RemoteModel
         model.addRating(rating);
     }
 
-    @Override public float getRating() throws RemoteException
+    @Override public int getRating() throws RemoteException
     {
         return model.getRating();
     }
+
+    @Override
+    public double getAvgRatingById(String id) throws RemoteException {
+        return model.getAvgRatingById(id);
+    }
+
+
 
     @Override public Reservation getReservationById(String id)
         throws RemoteException

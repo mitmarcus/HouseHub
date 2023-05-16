@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
+import org.w3c.dom.Text;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -33,6 +34,8 @@ public class DetailsViewController extends ViewController {
     @FXML
     private TextField numberOfRooms;
 
+    @FXML private TextField avgRating;
+
     @FXML
     private Button reserveButton;
 
@@ -47,6 +50,7 @@ public class DetailsViewController extends ViewController {
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
         this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
         this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
+
     }
 
     @FXML

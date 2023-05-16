@@ -28,6 +28,8 @@ public interface ModelServer
 
   int getRating();
 
+  double getAvgRatingById(String id);
+
 
 
 

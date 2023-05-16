@@ -1,6 +1,7 @@
 package Model;
 
 import Database.rating.RatingDAO;
+import Database.rating.RatingDAOImpl;
 import Database.reservation.ReservationDAO;
 
 import Database.reservation.ReservationDAOImpl;
@@ -34,6 +35,7 @@ public class ModelManagerServer implements ModelServer {
             this.reservationDAO = ReservationDAOImpl.getInstance();
             this.userDB = UserDAOImpl.getInstance();
             this.roomDB = RoomDAOImpl.getInstance();
+            this.ratingDB = RatingDAOImpl.getInstance();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -238,9 +240,19 @@ public class ModelManagerServer implements ModelServer {
 
     @Override public int getRating()
     {
+        try {
+            return ratingDB.getRating();
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        return 0;
+    }
+
+    @Override
+    public double getAvgRatingById(String id) {
         try
         {
-            return ratingDB.getRating();
+            return ratingDB.getAvgRatingById(id);
         }
         catch (SQLException e)
         {
@@ -248,6 +260,7 @@ public class ModelManagerServer implements ModelServer {
         }
         return 0;
     }
+
 
     @Override
     public User getUser(String username, String password) {
