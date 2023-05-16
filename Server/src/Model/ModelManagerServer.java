@@ -18,8 +18,7 @@ import java.rmi.RemoteException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ModelManagerServer implements ModelServer
-{
+public class ModelManagerServer implements ModelServer {
     private UserDAO userDB;
 
     private ReservationDAO reservationDAO;
@@ -27,16 +26,12 @@ public class ModelManagerServer implements ModelServer
     private RoomDAO roomDB;
 
 
-    public ModelManagerServer()
-    {
-        try
-        {
+    public ModelManagerServer() {
+        try {
             this.reservationDAO = ReservationDAOImpl.getInstance();
             this.userDB = UserDAOImpl.getInstance();
             this.roomDB = RoomDAOImpl.getInstance();
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
@@ -53,6 +48,7 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void removeRoom(Room room) {
+
         try
         {
             roomDB.removeRoom(room);
@@ -61,16 +57,14 @@ public class ModelManagerServer implements ModelServer
         {
             e.getMessage();
         }
+
     }
 
     @Override
     public Room getRoomByAnnouncement(String announcement) {
-        try
-        {
+        try {
             return roomDB.getRoomByAnnouncement(announcement);
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.getMessage();
         }
         return null;
@@ -78,16 +72,14 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public ArrayList<Room> getAllRooms() {
-        try
-        {
+        try {
             return roomDB.getAllRooms();
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.getMessage();
         }
         return null;
     }
+
     @Override
     public void addReservation(Reservation reservation) {
         try {
@@ -121,32 +113,27 @@ public class ModelManagerServer implements ModelServer
 
     @Override
     public void addUser(User user) {
-        try
-        {
+        try {
             userDB.addUser(user);
 
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.getMessage();
         }
     }
 
     @Override
     public User getUserByUsername(String username) {
-        try
-        {
+        try {
             return userDB.getUserByUsername(username);
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
 
-    @Override public Reservation getReservationById(String id)
-    {
+    @Override
+    public Reservation getReservationById(String id) {
+
         try {
             return reservationDAO.getReservationById(id);
         } catch (SQLException e) {
@@ -156,22 +143,19 @@ public class ModelManagerServer implements ModelServer
         return null;
     }
 
-    @Override public boolean setRoomReserved(Room room) throws RemoteException
-    {
+    @Override
+    public boolean setRoomReserved(Room room) throws RemoteException {
 
-        try
-        {
+        try {
             return roomDB.setRoomReserved(room);
-        }
-        catch (SQLException e)
-        {
+        } catch (SQLException e) {
             e.getMessage();
         }
         return true;
     }
 
-    @Override public boolean setRoomFree(Room room)
-    {
+    @Override
+    public boolean setRoomFree(Room room) {
         try {
             return roomDB.setRoomFree(room);
         } catch (SQLException e) {
@@ -180,31 +164,25 @@ public class ModelManagerServer implements ModelServer
         return false;
     }
 
-    @Override public void sendFile(String name, byte[] img)
-    {
+    @Override
+    public void sendFile(String name, byte[] img) {
         File folder = new File("Server/src/Images/");
         if (!folder.exists()) {
             folder.mkdirs();
         }
 
-        File outFile= new File(folder.getFreeSpace() + name );
-        try
-        {
-            FileOutputStream fos = new FileOutputStream("Server/src/Images/" + outFile,false);
-            byte [] reciveimg = new byte[img.length];
-            for (int i = 0; i < img.length; i++)
-            {
-                reciveimg[i]=img[i];
+        File outFile = new File(folder.getFreeSpace() + name);
+        try {
+            FileOutputStream fos = new FileOutputStream("Server/src/Images/" + outFile, false);
+            byte[] reciveimg = new byte[img.length];
+            for (int i = 0; i < img.length; i++) {
+                reciveimg[i] = img[i];
             }
             fos.write(reciveimg);
             fos.close();
-        }
-        catch (FileNotFoundException e)
-        {
+        } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -244,7 +222,7 @@ public class ModelManagerServer implements ModelServer
         }
         return null;
     }
-
+    @Override
     public User getUser(String username, String password) {
         try
         {
@@ -255,5 +233,6 @@ public class ModelManagerServer implements ModelServer
             e.getMessage();
         }
         return null;
+
     }
 }
