@@ -64,8 +64,13 @@
                   <children>
                      <HBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="271.0" styleClass="details">
                         <children>
-                           <Text fx:id="roomPrice1" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Stars:" textAlignment="CENTER" wrappingWidth="131.21722221374512" />
-                           <TextField fx:id="price1" disable="true" editable="false" prefHeight="26.0" prefWidth="80.0" />
+                           <ImageView fitHeight="32.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../Resources/star.png" />
+                              </image>
+                           </ImageView>
+                           <Text fx:id="roomPrice1" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Stars:" textAlignment="CENTER" wrappingWidth="105.61724853515625" />
+                           <TextField fx:id="price1" disable="true" prefHeight="26.0" prefWidth="77.0" />
                            <Button mnemonicParsing="false" text="Rate" />
                         </children>
                      </HBox>
