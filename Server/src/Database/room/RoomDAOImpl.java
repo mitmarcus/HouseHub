@@ -30,7 +30,7 @@ public class RoomDAOImpl implements RoomDAO {
     @Override
     public void addRoom(Room room) throws SQLException {
         Connection connection = dbConnection.getConnection();
-        String query = "INSERT INTO room (owner, announcement, price, address, number_bedrooms, reserved, id,size) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
+        String query = "INSERT INTO room (owner, announcement, price, address, number_bedrooms, reserved, id,size, rating) VALUES (?, ?, ?, ?, ?, ?, ?,?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1,room.getOwner().getUsername());
             statement.setString(2, room.getAnnouncement());
