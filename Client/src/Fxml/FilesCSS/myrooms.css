@@ -1,0 +1,23 @@
+/*@font-face {*/
+/*    -fx-font-family: 'Montserrat';*/
+/*    src: url('/Design/FontMontserrat/Montserrat-SemiBold.ttf');*/
+/*}*/
+
+.root {
+    -fx-background-color: #f2f2f2;
+    -fx-padding: 10px;
+}
+
+.button.removebtn {
+    -fx-background-color: red;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Montserrat";
+}
+
+.header{
+    -fx-font-size: 24px;
+    -fx-font-family: 'Montserrat SemiBold';
+}
