@@ -23,7 +23,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label text="List your Room" />
+            <Label styleClass="header" text="List your Room" />
          </children>
       </HBox>
       <HBox prefHeight="353.0" prefWidth="579.0">
