@@ -46,6 +46,19 @@ public class LoginViewController extends ViewController {
         this.phoneNumber.textProperty().bindBidirectional(((LoginViewModel) viewModel).getPhoneNumberProperty());
         this.loginUsername.textProperty().bindBidirectional(((LoginViewModel) viewModel).getLogInUsernameProperty());
         this.loginPassword.textProperty().bindBidirectional(((LoginViewModel) viewModel).getLogInPasswordProperty());
+
+        initializeInputFields();
+    }
+
+    private void initializeInputFields() {
+        // Set event handler for pressing Enter in the input fields
+        loginUsername.setOnAction(event -> loginPassword.requestFocus());
+        loginPassword.setOnAction(event -> logInPressed(new ActionEvent()));
+        username.setOnAction(event -> password.requestFocus());
+        password.setOnAction(event -> firstName.requestFocus());
+        firstName.setOnAction(event -> lastName.requestFocus());
+        lastName.setOnAction(event -> phoneNumber.requestFocus());
+        phoneNumber.setOnAction(event -> signUpPressed(new ActionEvent())); // Perform sign up action
     }
 
     @Override
