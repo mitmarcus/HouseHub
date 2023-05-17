@@ -16,7 +16,7 @@ public class DetailsViewModel extends ViewModel {
     private ObjectProperty<LocalDate> startDate;
     private ObjectProperty<LocalDate> endDate;
 
-    private DoubleProperty avgRating;
+    private StringProperty avgRating;
 
 
     public DetailsViewModel(ModelClient model, ViewState viewState) {
@@ -28,7 +28,7 @@ public class DetailsViewModel extends ViewModel {
         this.numberOfRooms = new SimpleStringProperty();
         this.startDate = new SimpleObjectProperty<>();
         this.endDate = new SimpleObjectProperty<>();
-        this.avgRating = new SimpleDoubleProperty();
+        this.avgRating = new SimpleStringProperty();
 
     }
 
@@ -55,7 +55,7 @@ public class DetailsViewModel extends ViewModel {
     public ObjectProperty<LocalDate> getEndDate() {
         return endDate;
     }
-    public DoubleProperty getAvgRating()
+    public StringProperty getAvgRating()
     {
         return avgRating;
     }
@@ -76,7 +76,7 @@ public class DetailsViewModel extends ViewModel {
         roomAddress.setValue("");
         numberOfRooms.setValue("");
         roomSize.setValue("");
-        avgRating.setValue(0);
+        avgRating.setValue(null);
         Room room = model.getRoomByAnnouncement(viewState.getId());
 
 
@@ -84,7 +84,8 @@ public class DetailsViewModel extends ViewModel {
         this.roomSize.setValue(room.getSize());
         this.numberOfRooms.setValue(room.getBedrooms());
         this.roomAddress.setValue(room.getAddress());
-        this.avgRating.setValue(model.getAvgRatingById(room.getRoomId()));
+        this.avgRating.setValue(
+            String.valueOf(model.getAvgRatingById(room.getRoomId())));
 
         this.startDate.setValue(null);
         this.endDate.setValue(null);
