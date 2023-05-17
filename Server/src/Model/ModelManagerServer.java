@@ -90,7 +90,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             reservationDAO.addReservation(reservation);
         } catch (SQLException e) {
-            System.out.println("Model manager error in add reservation");
             e.printStackTrace();
         }
     }
@@ -100,7 +99,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             return reservationDAO.getAllReservationsByUsername(username);
         } catch (SQLException e) {
-            System.out.println("Error in getAllReservationsByUsername() in Model Manager. ");
             e.printStackTrace();
         }
         return null;
@@ -111,7 +109,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             reservationDAO.removeReservation(reservation);
         } catch (SQLException e) {
-            System.out.println("Error in removeReservation() in Model Manager Server");
             e.printStackTrace();
         }
     }
@@ -142,7 +139,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             return reservationDAO.getReservationById(id);
         } catch (SQLException e) {
-            System.out.println("Error in getReservationById() in Model Manager Server");
             e.printStackTrace();
         }
         return null;

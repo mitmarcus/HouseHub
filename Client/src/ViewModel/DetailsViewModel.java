@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -23,7 +24,7 @@ public class DetailsViewModel extends ViewModel {
     private ArrayList<Image> images = new ArrayList<>() ;
     private int index=0;
 
-    private IntegerProperty avgRating;
+    private DoubleProperty avgRating;
 
 
     public DetailsViewModel(ModelClient model, ViewState viewState) {
@@ -35,7 +36,7 @@ public class DetailsViewModel extends ViewModel {
         this.numberOfRooms = new SimpleStringProperty();
         this.startDate = new SimpleObjectProperty<>();
         this.endDate = new SimpleObjectProperty<>();
-        this.avgRating = new SimpleIntegerProperty();
+        this.avgRating = new SimpleDoubleProperty();
 
     }
 
@@ -62,7 +63,7 @@ public class DetailsViewModel extends ViewModel {
     public ObjectProperty<LocalDate> getEndDate() {
         return endDate;
     }
-    public IntegerProperty getAvgRating()
+    public DoubleProperty getAvgRating()
     {
         return avgRating;
     }
@@ -71,7 +72,6 @@ public class DetailsViewModel extends ViewModel {
     public boolean addReservation(LocalDate startDate, LocalDate endDate) {
         Room room = model.getRoomByAnnouncement(viewState.getId());
         User user = model.getUserByUsername(viewState.getUsername());
-        System.out.println(user.toString());
         Reservation reservation = new Reservation(user,startDate,endDate,room);
         model.addReservation(reservation);
         model.setRoomReserved(room);
@@ -97,9 +97,11 @@ public class DetailsViewModel extends ViewModel {
         this.roomSize.setValue(room.getSize());
         this.numberOfRooms.setValue(room.getBedrooms());
         this.roomAddress.setValue(room.getAddress());
+        BigDecimal decimal = BigDecimal.valueOf(model.getAvgRatingById(room.getRoomId()));
+        BigDecimal firstTwoDigits = decimal.setScale(1, BigDecimal.ROUND_DOWN);
         this.avgRating.setValue(
-            (model.getAvgRatingById(room.getRoomId())));
-        System.out.println(model.getAvgRatingById(room.getRoomId()));
+            (firstTwoDigits));
+
 
         this.startDate.setValue(null);
         this.endDate.setValue(null);

@@ -93,7 +93,6 @@ public class RoomDAOImpl implements RoomDAO {
                 Boolean isReserved = resultSet.getBoolean("reserved");
                 User user = UserDAOImpl.getInstance().getUserByUsername(resultSet.getString("owner"));
 
-                System.out.println(user.toString());
 
                 room = new Room(user, announcement1, price, address, size,
                     bedrooms, isReserved);
