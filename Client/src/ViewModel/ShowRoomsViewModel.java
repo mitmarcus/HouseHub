@@ -34,7 +34,7 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
     list.clear();
     for (Room room : model.getAllRooms()){
       if (!room.isReserved()){
-        list.add(room.getAnnouncement());
+        list.add(room.getRoomId());
       }
     }
   }
