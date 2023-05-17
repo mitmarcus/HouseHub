@@ -45,7 +45,7 @@ public class RatingController extends ViewController{
 
    @FXML
     private void onOKClicked(ActionEvent event) {
-        int rating = ratingChoiceBox.getValue();
+       int rating = ratingChoiceBox.getValue();
        if (rating == 0) {
            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
            errorAlert.setTitle("Error");
@@ -53,6 +53,11 @@ public class RatingController extends ViewController{
            errorAlert.showAndWait();
            return;
        }
+
+       // Set the rating value in the viewModel
+       viewModel.addRating(rating);
+
+       // Navigate back to the "details" view
        viewHandler.openView("details");
     }
 

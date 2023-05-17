@@ -49,17 +49,18 @@ public class RatingDAOImpl implements RatingDAO {
 
         double avgRating = 0;
         Connection connection = dbConnection.getConnection();
-        String query = "SELECT AVG(rating) AS average_value FROM rating WHERE id = room_id;";
+        String query = "SELECT AVG(rating) AS average_value FROM rating WHERE id = ?";
 
-        try (PreparedStatement statement = connection.prepareStatement(query)){
-        ResultSet   resultSet = statement.executeQuery();
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, id);
+            ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
                 avgRating = resultSet.getDouble("average_value");
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } finally {
+            dbConnection.disconnect();
         }
         return avgRating;
 
