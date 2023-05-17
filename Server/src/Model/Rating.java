@@ -1,23 +1,25 @@
 package Model;
 
-public class Rating {
-    private float rating;
+import java.io.Serializable;
+
+public class Rating implements Serializable {
+    private int rating;
 
     private User user;
     private Room room;
 
-    public Rating(float rating, int nrOfRaters, User user, Room room)
+    public Rating(int rating, User user, Room room)
     {
         this.rating = rating;
         this.user = user;
         this.room = room;
     }
 
-    public float getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
@@ -25,15 +27,8 @@ public class Rating {
         return user;
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public Room getRoom() {
         return room;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
-    }
 }

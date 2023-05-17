@@ -28,5 +28,11 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   void sendFile(String roomId,String name,byte[] img);
   ArrayList<Room> getRoomsByUsername(String username);
   Room getRoomById(String Id);
+
   ArrayList<String> getRoomImagesPaths(String roomId);
+
+  void addRating(Rating rating);
+
+  double getAvgRatingById(String id);
+
 }

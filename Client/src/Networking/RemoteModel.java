@@ -31,4 +31,11 @@ public interface RemoteModel extends RemoteSubject
     Room getRoomById(String Id) throws  RemoteException;
     ArrayList<String> getRoomImagesPaths(String roomId) throws RemoteException;
 
+    void addRating(Rating rating) throws RemoteException;
+
+    int getRating() throws RemoteException;
+
+    double getAvgRatingById(String id) throws RemoteException;
+
+
     }

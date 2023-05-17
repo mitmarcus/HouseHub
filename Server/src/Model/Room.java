@@ -16,6 +16,7 @@ public class Room implements Serializable
     private boolean isReserved;
     private User owner;
 
+
     public Room(User owner,String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;

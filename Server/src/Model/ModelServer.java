@@ -25,4 +25,11 @@ public interface ModelServer
   Room getRoomById(String Id);
   ArrayList<String> getRoomImagesPaths(String roomId);
 
+  void addRating(Rating rating);
+
+  double getAvgRatingById(String id);
+
+
+
+
 }

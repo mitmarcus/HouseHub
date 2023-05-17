@@ -1,5 +1,6 @@
 package Networking;
 
+import Model.Rating;
 import Model.Reservation;
 import Model.Room;
 import Model.User;
@@ -26,5 +27,12 @@ public interface RemoteModel extends RemoteSubject {
     User getUser(String username, String password) throws RemoteException;
     ArrayList<Room> getRoomsByUsername(String username) throws RemoteException;
     Room getRoomById(String Id) throws RemoteException;
+
     ArrayList<String> getRoomImagesPaths(String roomId) throws RemoteException;
+
+
+    void addRating(Rating rating) throws RemoteException;
+
+    double getAvgRatingById(String id) throws RemoteException;
+
 }

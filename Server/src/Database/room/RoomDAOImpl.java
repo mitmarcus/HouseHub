@@ -59,7 +59,6 @@ public class RoomDAOImpl implements RoomDAO {
        String query = "DELETE FROM room WHERE id = ?";
        try (PreparedStatement statement = connection.prepareStatement(query)) {
            statement.setString(1, room.getRoomId());
-
           int rowsDeleted = statement.executeUpdate();
            if (rowsDeleted > 0) {
                 System.out.println("Room removed successfully!");
@@ -191,7 +190,24 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean setRoomFree(Room room) throws SQLException {
-        return false;
+        boolean setRoomFree;
+        String id = room.getRoomId();
+        Connection connection = dbConnection.getConnection();
+        String query ="UPDATE room SET reserved = ? WHERE id = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setBoolean(1,false);
+            statement.setString(2,id);
+            statement.executeUpdate();
+            setRoomFree=true;
+
+        }
+        finally
+        {
+            connection.close();
+        }
+        return setRoomFree;
     }
 
     @Override public ArrayList<Room> getRoomsByUsername(String username)

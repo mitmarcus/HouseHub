@@ -63,7 +63,7 @@ public class ViewHandler {
                 listYourRoomViewController = loadViewController("/Fxml/ListYourRoom.fxml", listYourRoomViewController,viewModelFactory.getListYourRoomViewModel());
                 break;
             case "myRooms" :
-                myRoomsViewController = loadViewController("/Fxml/MyRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
+                myRoomsViewController = loadViewController("/Fxml/myRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
                 break;
             case "rating" :
                 ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());

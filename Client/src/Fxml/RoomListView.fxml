@@ -17,7 +17,7 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Label styleClass="header" text="Announcements" />
+        <Label text="Announcements" />
     </HBox>
     <ListView fx:id="roomListView" prefHeight="364.0" prefWidth="579.0" />
     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
