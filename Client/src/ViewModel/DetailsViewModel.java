@@ -89,7 +89,7 @@ public class DetailsViewModel extends ViewModel {
         numberOfRooms.setValue("");
         roomSize.setValue("");
         avgRating.setValue(null);
-        Room room = model.getRoomByAnnouncement(viewState.getId());
+        Room room = model.getRoomById(viewState.getId());
 
 
         this.price.setValue(room.getPrice());
@@ -140,7 +140,7 @@ public class DetailsViewModel extends ViewModel {
 
     private void getImagesPath()
     {
-        Room room = model.getRoomByAnnouncement(viewState.getId());
+        Room room = model.getRoomById(viewState.getId());
        String roomId = room.getRoomId();
         for (String path : model.getRoomImagesPaths(roomId))
         {
