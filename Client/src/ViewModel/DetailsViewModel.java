@@ -3,6 +3,7 @@ package ViewModel;
 import Model.*;
 import Model.ModelClient;
 import javafx.beans.property.*;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 
 import java.io.File;
@@ -111,10 +112,20 @@ public class DetailsViewModel extends ViewModel {
 
     public Image getImage(){
         Image image = null;
-        if (index >= images.size())
-            this.index = 0;
-        image = images.get(index);
-        index++;
+        if (images.size()!=0) {
+            if (index >= images.size())
+                this.index = 0;
+            image = images.get(index);
+            index++;
+        }
+        else
+        {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("No Pictures at this room");
+            errorAlert.showAndWait();
+            return new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString());
+        }
 
         return image;
     }

@@ -134,7 +134,7 @@ public class RmiServer implements RemoteModel
     {
         return model.getRoomById(Id);
     }
-    
+
     @Override public ArrayList<String> getRoomImagesPaths(String roomId)
         throws RemoteException
     {
