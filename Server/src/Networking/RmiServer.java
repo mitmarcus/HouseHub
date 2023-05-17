@@ -140,11 +140,6 @@ public class RmiServer implements RemoteModel
         model.addRating(rating);
     }
 
-    @Override public int getRating() throws RemoteException
-    {
-        return model.getRating();
-    }
-
     @Override
     public double getAvgRatingById(String id) throws RemoteException {
         return model.getAvgRatingById(id);

@@ -238,15 +238,6 @@ public class ModelManagerServer implements ModelServer {
         }
     }
 
-    @Override public int getRating()
-    {
-        try {
-            return ratingDB.getRating();
-        } catch (SQLException e) {
-            e.getMessage();
-        }
-        return 0;
-    }
 
     @Override
     public double getAvgRatingById(String id) {

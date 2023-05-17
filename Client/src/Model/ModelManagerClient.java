@@ -122,11 +122,6 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         client.addRating(rating);
     }
 
-    @Override public int getRating()
-    {
-        return client.getRating();
-    }
-
     @Override
     public double getAvgRatingById(String id) {
         return client.getAvgRatingById(id);

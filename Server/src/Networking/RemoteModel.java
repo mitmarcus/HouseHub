@@ -29,7 +29,6 @@ public interface RemoteModel extends RemoteSubject {
     Room getRoomById(String Id) throws RemoteException;
 
     void addRating(Rating rating) throws RemoteException;
-    int getRating() throws RemoteException;
 
     double getAvgRatingById(String id) throws RemoteException;
 

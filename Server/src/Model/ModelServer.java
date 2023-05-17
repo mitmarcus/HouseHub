@@ -26,8 +26,6 @@ public interface ModelServer
 
   void addRating(Rating rating);
 
-  int getRating();
-
   double getAvgRatingById(String id);
 
 
