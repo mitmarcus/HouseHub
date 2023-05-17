@@ -50,8 +50,7 @@ public class DetailsViewController extends ViewController {
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
         this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
         this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
-       // this.avgRating.textProperty().bindBidirectional(((DetailsViewModel) viewModel).getAvgRating());
-
+        this.avgRating.textProperty().bindBidirectional(((DetailsViewModel) viewModel).getAvgRating());
 
     }
 
