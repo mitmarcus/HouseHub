@@ -153,11 +153,11 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
-    @Override public void sendFile(String name, byte[] img)
+    @Override public void sendFile(String roomId,String name, byte[] img)
     {
         try
         {
-            server.sendFile(name,img);
+            server.sendFile(roomId,name,img);
         }
         catch (RemoteException e)
         {
@@ -187,6 +187,19 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         catch (RemoteException e)
         {
             e.getMessage();
+        }
+        return null;
+    }
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+    {
+        try
+        {
+            return  server.getRoomImagesPaths(roomId);
+        }
+        catch (RemoteException e)
+        {
+            e.printStackTrace();
         }
         return null;
     }
@@ -260,18 +273,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
-    @Override public int getRating()
-    {
-        try
-        {
-            server.getRating();
-        }
-        catch (RemoteException e)
-        {
-            e.printStackTrace();
-        }
-        return 0;
-    }
+
 
     @Override
     public double getAvgRatingById(String id) {

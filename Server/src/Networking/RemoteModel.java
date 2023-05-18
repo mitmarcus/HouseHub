@@ -23,13 +23,15 @@ public interface RemoteModel extends RemoteSubject {
     boolean setRoomReserved(Room room) throws RemoteException;
     boolean setRoomFree(Room room) throws RemoteException;
     boolean setUserInfo(User user) throws RemoteException;
-    void sendFile(String name,byte[] img) throws RemoteException;
+    void sendFile(String roomId,String name,byte[] img) throws RemoteException;
     User getUser(String username, String password) throws RemoteException;
     ArrayList<Room> getRoomsByUsername(String username) throws RemoteException;
     Room getRoomById(String Id) throws RemoteException;
 
+    ArrayList<String> getRoomImagesPaths(String roomId) throws RemoteException;
+
+
     void addRating(Rating rating) throws RemoteException;
-    int getRating() throws RemoteException;
 
     double getAvgRatingById(String id) throws RemoteException;
 

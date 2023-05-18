@@ -4,11 +4,13 @@ import ViewModel.ViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import ViewModel.DetailsViewModel;
-import org.w3c.dom.Text;
+import javafx.scene.text.Text;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -19,6 +21,7 @@ public class DetailsViewController extends ViewController {
 
     @FXML
     private DatePicker toDate = new DatePicker();
+    @FXML private ImageView image;
 
     @FXML
     private ImageView cancelButton;
@@ -34,7 +37,7 @@ public class DetailsViewController extends ViewController {
     @FXML
     private TextField numberOfRooms;
 
-    @FXML private TextField avgRating;
+    @FXML private Text avgRating;
 
     @FXML
     private Button reserveButton;
@@ -50,13 +53,17 @@ public class DetailsViewController extends ViewController {
         this.roomSize.textProperty().bind(((DetailsViewModel) viewModel).getRoomSizeProperty());
         this.toDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getEndDate());
         this.fromDate.valueProperty().bindBidirectional(((DetailsViewModel) viewModel).getStartDate());
-        this.avgRating.textProperty().bindBidirectional(((DetailsViewModel) viewModel).getAvgRating());
+        this.avgRating.textProperty().bind(((DetailsViewModel) viewModel).getAvgRating().asString());
 
     }
 
     @FXML
     private void goBack() {
         viewHandler.openView("showRooms");
+    }
+
+    @FXML private void nextImage(){
+      image.setImage ( viewModel.getImage());
     }
 
     @FXML
@@ -122,6 +129,7 @@ public class DetailsViewController extends ViewController {
     @Override
     public void reset() {
         viewModel.clear();
+        image.setImage(viewModel.mainImage());
     }
 }
 

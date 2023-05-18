@@ -73,7 +73,7 @@ public class ListYourRoomViewModel extends ViewModel
     Room room = new Room(user,announcement.get(), price.get(),roomAddress.get(),roomSize.get(),numberOfRooms.get(),false);
     model.addRoom(room);
     for (int i = 0 ; i < images.size();i++){
-      model.sendFile(viewState.getUsername()+".png", images.get(i));
+      model.sendFile(room.getRoomId(),viewState.getUsername()+".png", images.get(i));
     }
     images.clear();
     return true;

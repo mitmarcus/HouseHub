@@ -3,6 +3,7 @@ package ViewModel;
 import Model.ModelClient;
 import Model.Rating;
 import Model.Room;
+import Model.User;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -30,10 +31,9 @@ public class RatingViewModel extends ViewModel {
 
     public void addRating(int rating)
     {
-        String room = model.getRoomByAnnouncement(viewState.getId()).getRoomId();
-        String username = viewState.getUsername();
-        System.out.println("Room check in rating view model " + room);
-        Rating rating1 = new Rating(rating, username, room);
+        User user = model.getUserByUsername(viewState.getUsername());
+        Room room = model.getRoomById(viewState.getId());
+        Rating rating1 = new Rating(rating, user, room);
 
         model.addRating(rating1);
     }

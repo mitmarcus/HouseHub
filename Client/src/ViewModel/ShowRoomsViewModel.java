@@ -53,7 +53,9 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
   }
 
   public void roomDetails() {
-    viewState.setId(selectedObject.get());
+    Room room = model.getRoomByAnnouncement(selectedObject.get());
+
+    viewState.setId(room.getRoomId());
   }
 
   @Override public void propertyChange(PropertyChangeEvent evt)

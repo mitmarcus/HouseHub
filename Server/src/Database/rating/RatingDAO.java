@@ -1,3 +1,4 @@
+
 package Database.rating;
 
 import Model.Rating;
@@ -10,3 +11,4 @@ public interface RatingDAO {
 
     int getRating() throws SQLException;
 }
+
