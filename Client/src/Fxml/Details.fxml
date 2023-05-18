@@ -65,8 +65,8 @@
                      <HBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="271.0" styleClass="details">
                         <children>
                            <Text fx:id="rating" strokeType="OUTSIDE" strokeWidth="0.0" text="Avg Stars:" textAlignment="CENTER" wrappingWidth="131.21722221374512" />
-                           <Text fx:id="avgRating" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.93670582771301" />
-                           <Button mnemonicParsing="false" onAction="#rate" text="Rate" />
+                           <Text fx:id="avgRating" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="66.93670582771301" />
+                           <Button mnemonicParsing="false" onAction="#rate" prefHeight="26.0" prefWidth="56.0" text="Rate" />
                         </children>
                      </HBox>
                   </children></VBox>

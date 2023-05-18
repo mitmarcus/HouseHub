@@ -17,7 +17,7 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Label text="My reservations" />
+        <Label styleClass="header" text="My reservations" />
     </HBox>
     <ListView fx:id="reservedRoomListView" orientation="HORIZONTAL" prefHeight="364.0" prefWidth="579.0" />
     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
