@@ -140,7 +140,7 @@ public class DetailsViewModel extends ViewModel {
         {
             return new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString());
         }
-        else 
+        else
         return new Image(new File(imagesPath.get(0)).toURI().toString());
     }
 
