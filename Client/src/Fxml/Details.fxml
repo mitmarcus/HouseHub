@@ -24,7 +24,7 @@
                </ImageView>
             </graphic>
          </Button>
-         <Label text="Room Details" />
+         <Label styleClass="header" text="Room Details" />
       </children>
    </HBox>
    <HBox prefHeight="353.0" prefWidth="579.0">
