@@ -23,7 +23,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label text="List your Room" />
+            <Label styleClass="header" text="List your Room" />
          </children>
       </HBox>
       <HBox prefHeight="353.0" prefWidth="579.0">
@@ -94,7 +94,7 @@
                      <TextField fx:id="filePathField" prefWidth="150.0" />
                      <Button fx:id="button" onAction="#browseForFile" text="Browse" />
                   </HBox>
-                  <Label fx:id="label" prefHeight="35.0" prefWidth="156.0" textAlignment="CENTER" />
+                  <Label fx:id="label" prefHeight="22.0" prefWidth="70.0" text=".PNG ONLY" textAlignment="CENTER" />
                </children>
             </VBox>
          </children>
