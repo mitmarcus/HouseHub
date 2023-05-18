@@ -34,17 +34,13 @@ public class RatingDAOImpl implements RatingDAO {
         PreparedStatement statement = null;
         try {
             connection = dbConnection.getConnection();
-            System.out.println("Connection check on rating");
             String query = "INSERT INTO ratings (rating, room_id, username) VALUES (?,?,?)";
             statement = connection.prepareStatement(query);
 
             statement.setInt(1, rating.getRating());
             statement.setString(2, rating.getRoom().getRoomId());
             statement.setString(3, rating.getUser().getUsername());
-            System.out.println("rating 1.." + rating);
             int rowsInserted = statement.executeUpdate();
-
-            System.out.println("rating 2..." + rating);
             if (rowsInserted > 0) {
                 System.out.println("Rating added successfully!");
             } else {

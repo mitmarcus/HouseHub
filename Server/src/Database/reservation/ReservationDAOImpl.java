@@ -99,7 +99,6 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public Reservation getReservationById(String id) throws SQLException {
-        System.out.println(id);
         Reservation reservation = null;
         Connection connection = dBconnection.getConnection();
         String query = "SELECT * FROM reservation WHERE id = ?";
@@ -121,5 +120,27 @@ public class ReservationDAOImpl implements ReservationDAO {
             dBconnection.disconnect();
         }
         return reservation;
+    }
+
+    @Override public void sendNotification(String owner, String tenant,
+        String roomId) throws SQLException
+    {
+        Connection connection = dBconnection.getConnection();
+        String query = "INSERT INTO notifications (username,notification) VALUES ( ?, ?)";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+
+            statement.setString(1, owner);
+            statement.setString(2, "This user : " + tenant + " reserved room with id : " + roomId);
+
+            int rowsInserted = statement.executeUpdate();
+            if (rowsInserted > 0) {
+                System.out.println("Reservation inserted successfully!");
+            } else {
+                System.out.println("Failed to insert reservation.");
+            }
+
+        } finally {
+            dBconnection.disconnect();
+        }
     }
 }

@@ -134,6 +134,12 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         return client.getAvgRatingById(id);
     }
 
+    @Override public void sendNotification(String owner, String tenant,
+        String roomId)
+    {
+        client.sendNotification(owner,tenant,roomId);
+    }
+
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);

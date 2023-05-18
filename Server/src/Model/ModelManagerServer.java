@@ -265,6 +265,19 @@ public class ModelManagerServer implements ModelServer {
         return 0;
     }
 
+    @Override public void sendNotification(String owner, String tenant,
+        String roomId)
+    {
+        try
+        {
+            reservationDAO.sendNotification(owner,tenant,roomId);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+    }
+
     @Override
     public User getUser(String username, String password) {
         try

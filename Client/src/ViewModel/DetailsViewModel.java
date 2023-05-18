@@ -70,11 +70,12 @@ public class DetailsViewModel extends ViewModel {
 
 
     public boolean addReservation(LocalDate startDate, LocalDate endDate) {
-        Room room = model.getRoomByAnnouncement(viewState.getId());
+        Room room = model.getRoomById(viewState.getId());
         User user = model.getUserByUsername(viewState.getUsername());
         Reservation reservation = new Reservation(user,startDate,endDate,room);
         model.addReservation(reservation);
         model.setRoomReserved(room);
+        model.sendNotification(room.getOwner().getUsername(),user.getUsername(),room.getRoomId());
             return true;
     }
 
@@ -139,6 +140,7 @@ public class DetailsViewModel extends ViewModel {
         {
             return new Image(new File("Client/src/Resources/placeholder.jpg").toURI().toString());
         }
+        else
         return new Image(new File(imagesPath.get(0)).toURI().toString());
     }
 

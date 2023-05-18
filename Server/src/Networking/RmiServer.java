@@ -152,6 +152,12 @@ public class RmiServer implements RemoteModel
         return model.getAvgRatingById(id);
     }
 
+    @Override public void sendNotification(String owner, String tenant,
+        String roomId) throws RemoteException
+    {
+        model.sendNotification(owner,tenant,roomId);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {
