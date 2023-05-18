@@ -15,4 +15,7 @@ public interface RoomDAO {
     boolean setRoomReserved(Room room) throws SQLException;
     boolean setRoomFree(Room room) throws SQLException;
     ArrayList<Room> getRoomsByUsername(String username) throws SQLException;
+    ArrayList<String> getRoomImagesPaths(String roomId) throws SQLException;
+    void addImagePath(String roomId,String path) throws SQLException;
+
 }

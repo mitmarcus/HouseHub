@@ -31,11 +31,8 @@ public class RatingViewModel extends ViewModel {
 
     public void addRating(int rating)
     {
-        System.out.println("hello " +viewState.getId());
         User user = model.getUserByUsername(viewState.getUsername());
-
         Room room = model.getRoomById(viewState.getId());
-
         Rating rating1 = new Rating(rating, user, room);
 
         model.addRating(rating1);

@@ -90,7 +90,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             reservationDAO.addReservation(reservation);
         } catch (SQLException e) {
-            System.out.println("Model manager error in add reservation");
             e.printStackTrace();
         }
     }
@@ -100,7 +99,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             return reservationDAO.getAllReservationsByUsername(username);
         } catch (SQLException e) {
-            System.out.println("Error in getAllReservationsByUsername() in Model Manager. ");
             e.printStackTrace();
         }
         return null;
@@ -111,7 +109,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             reservationDAO.removeReservation(reservation);
         } catch (SQLException e) {
-            System.out.println("Error in removeReservation() in Model Manager Server");
             e.printStackTrace();
         }
     }
@@ -142,7 +139,6 @@ public class ModelManagerServer implements ModelServer {
         try {
             return reservationDAO.getReservationById(id);
         } catch (SQLException e) {
-            System.out.println("Error in getReservationById() in Model Manager Server");
             e.printStackTrace();
         }
         return null;
@@ -170,7 +166,7 @@ public class ModelManagerServer implements ModelServer {
     }
 
     @Override
-    public void sendFile(String name, byte[] img) {
+    public void sendFile(String roomId,String name, byte[] img) {
         File folder = new File("Server/src/Images/");
         if (!folder.exists()) {
             folder.mkdirs();
@@ -178,16 +174,18 @@ public class ModelManagerServer implements ModelServer {
 
         File outFile = new File(folder.getFreeSpace() + name);
         try {
-            FileOutputStream fos = new FileOutputStream("Server/src/Images/" + outFile, false);
+            String imagePath = "Server/src/Images/" + outFile;
+            FileOutputStream fos = new FileOutputStream(imagePath, false);
             byte[] reciveimg = new byte[img.length];
             for (int i = 0; i < img.length; i++) {
                 reciveimg[i] = img[i];
             }
             fos.write(reciveimg);
             fos.close();
+            roomDB.addImagePath(roomId, imagePath);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (IOException | SQLException e) {
             throw new RuntimeException(e);
         }
 
@@ -228,7 +226,21 @@ public class ModelManagerServer implements ModelServer {
         return null;
     }
 
-    @Override public void addRating(Rating rating)
+
+    @Override public ArrayList<String> getRoomImagesPaths(String roomId)
+    {
+        try
+        {
+            return roomDB.getRoomImagesPaths(roomId);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+        return null;
+    }
+
+        @Override public void addRating(Rating rating)
     {
         try {
             ratingDB.addRating(rating);
@@ -249,9 +261,9 @@ public class ModelManagerServer implements ModelServer {
         {
             e.getMessage();
         }
+
         return 0;
     }
-
 
     @Override
     public User getUser(String username, String password) {

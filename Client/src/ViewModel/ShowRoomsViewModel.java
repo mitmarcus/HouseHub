@@ -34,7 +34,7 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
     list.clear();
     for (Room room : model.getAllRooms()){
       if (!room.isReserved()){
-        list.add(room.getRoomId());
+        list.add(room.getAnnouncement());
       }
     }
   }
@@ -53,7 +53,9 @@ public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListe
   }
 
   public void roomDetails() {
-    viewState.setId(selectedObject.get());
+    Room room = model.getRoomByAnnouncement(selectedObject.get());
+
+    viewState.setId(room.getRoomId());
   }
 
   @Override public void propertyChange(PropertyChangeEvent evt)

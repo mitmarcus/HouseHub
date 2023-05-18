@@ -19,13 +19,17 @@ public interface ModelServer
   User getUser(String username, String password);
   boolean setRoomReserved(Room room) throws RemoteException;
   boolean setRoomFree(Room room);
-  void sendFile(String name,byte[] img);
+  void sendFile(String roomId,String name,byte[] img);
   boolean setUserInfo(User user);
   ArrayList<Room> getRoomsByUsername(String username);
   Room getRoomById(String Id);
+  ArrayList<String> getRoomImagesPaths(String roomId);
 
   void addRating(Rating rating);
 
   double getAvgRatingById(String id);
+
+
+
 
 }
