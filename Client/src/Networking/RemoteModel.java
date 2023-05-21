@@ -38,6 +38,7 @@ public interface RemoteModel extends RemoteSubject
     double getAvgRatingById(String id) throws RemoteException;
 
     void sendNotification(String owner,String tenant,String roomId) throws  RemoteException;
+    void deletePictures(String roomId) throws  RemoteException;
 
 
     }

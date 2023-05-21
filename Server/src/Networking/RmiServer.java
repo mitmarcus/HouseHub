@@ -158,6 +158,11 @@ public class RmiServer implements RemoteModel
         model.sendNotification(owner,tenant,roomId);
     }
 
+    @Override public void deletePictures(String roomId) throws RemoteException
+    {
+        model.deletePictures(roomId);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {

@@ -17,5 +17,6 @@ public interface RoomDAO {
     ArrayList<Room> getRoomsByUsername(String username) throws SQLException;
     ArrayList<String> getRoomImagesPaths(String roomId) throws SQLException;
     void addImagePath(String roomId,String path) throws SQLException;
+    void deleteImagePath(String roomId) throws SQLException;
 
 }

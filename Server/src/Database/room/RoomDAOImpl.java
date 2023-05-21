@@ -59,12 +59,8 @@ public class RoomDAOImpl implements RoomDAO {
        String query = "DELETE FROM room WHERE id = ?";
        try (PreparedStatement statement = connection.prepareStatement(query)) {
            statement.setString(1, room.getRoomId());
-          int rowsDeleted = statement.executeUpdate();
-           if (rowsDeleted > 0) {
-                System.out.println("Room removed successfully!");
-            } else {
-               System.out.println("Failed to remove room.");
-           }
+           statement.execute();
+
         } finally {
             dbConnection.disconnect();
         }
@@ -281,5 +277,21 @@ public class RoomDAOImpl implements RoomDAO {
         {
             connection.close();
         }
+    }
+
+    @Override public void deleteImagePath(String roomId) throws SQLException
+    {
+        Connection connection = dbConnection.getConnection();
+        String query = "DELETE FROM images WHERE id = ?";
+
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, roomId);
+            statement.executeUpdate();
+        }
+        finally
+        {
+            connection.close();
+        }
+
     }
 }

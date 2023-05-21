@@ -54,8 +54,16 @@ public class ModelManagerServer implements ModelServer {
     @Override
     public void removeRoom(Room room) {
 
+        for (String path : getRoomImagesPaths(room.getRoomId()))
+        {
+            System.out.println(path);
+            File file = new File(path);
+            file.delete();
+        }
+
         try
         {
+
             roomDB.removeRoom(room);
         }
         catch (SQLException e)
@@ -276,6 +284,15 @@ public class ModelManagerServer implements ModelServer {
         {
             e.getMessage();
         }
+    }
+
+    @Override public void deletePictures(String roomId)
+    {
+        System.out.println(roomId);
+        System.out.println(getRoomImagesPaths(roomId));
+
+
+
     }
 
     @Override

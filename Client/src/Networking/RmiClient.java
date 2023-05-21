@@ -302,6 +302,18 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
+    @Override public void deletePictures(String roomId)
+    {
+        try
+        {
+            server.deletePictures(roomId);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+    }
+
 }
 
 

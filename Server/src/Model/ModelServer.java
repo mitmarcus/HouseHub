@@ -29,6 +29,7 @@ public interface ModelServer
 
   double getAvgRatingById(String id);
   void sendNotification(String owner,String tenant,String roomId);
+  void deletePictures(String roomId) ;
 
 
 
