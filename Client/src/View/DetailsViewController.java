@@ -18,11 +18,9 @@ public class DetailsViewController extends ViewController {
     private DetailsViewModel viewModel;
     @FXML
     private DatePicker fromDate = new DatePicker();
-
     @FXML
     private DatePicker toDate = new DatePicker();
     @FXML private ImageView image;
-
     @FXML
     private ImageView cancelButton;
 

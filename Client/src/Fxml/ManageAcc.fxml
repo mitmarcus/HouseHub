@@ -23,7 +23,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label text="Manage Profile" />
+            <Label styleClass="header" text="Manage Profile" />
          </children>
       </HBox>
       <VBox alignment="CENTER" prefHeight="356.0" prefWidth="579.0">

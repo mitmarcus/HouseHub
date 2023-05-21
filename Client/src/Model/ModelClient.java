@@ -35,4 +35,5 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
 
   double getAvgRatingById(String id);
 
+  void sendNotification(String owner,String tenant,String roomId);
 }

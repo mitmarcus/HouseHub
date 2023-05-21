@@ -3,16 +3,21 @@ package View;
 import ViewModel.ViewModel;
 import ViewModel.ViewModelFactory;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 public class ViewHandler {
     private Region root;
     private Stage primaryStage;
     private Scene currentScene;
+    private Stage ratingStage;
     private ViewModelFactory viewModelFactory;
     private ViewController showRoomsViewController;
     private ViewController mainMenuViewController;
@@ -22,7 +27,6 @@ public class ViewHandler {
     private ViewController myReservationsViewController;
     private ViewController listYourRoomViewController;
     private ViewController myRoomsViewController;
-
     private ViewController ratingController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
@@ -63,12 +67,11 @@ public class ViewHandler {
                 listYourRoomViewController = loadViewController("/Fxml/ListYourRoom.fxml", listYourRoomViewController,viewModelFactory.getListYourRoomViewModel());
                 break;
             case "myRooms" :
-                myRoomsViewController = loadViewController("/Fxml/myRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
+                myRoomsViewController = loadViewController("/Fxml/MyRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
                 break;
             case "rating" :
-                ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
-
-
+                //ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
+                openRatingWindow();
         }
         currentScene.setRoot(root);
         String title = "HouseHub";
@@ -98,8 +101,7 @@ public class ViewHandler {
                 this.root = loader.load();
                 viewController = loader.getController();
                 viewController.init(this, viewModel, this.root);
-                 viewController.reset();
-
+                viewController.reset();
 
             }
             catch (Exception e)
@@ -111,6 +113,42 @@ public class ViewHandler {
         viewController.reset();
         return viewController;
         }
+
+    private void openRatingWindow() {
+        if (ratingStage == null) {
+            ratingStage = new Stage();
+            ratingStage.initModality(Modality.APPLICATION_MODAL);
+            ratingStage.setTitle("Rate Room");
+            ratingStage.getIcons().add(new Image("/Resources/Logo.png"));
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/Fxml/Rating.fxml"));
+            Parent ratingRoot;
+            try {
+                ratingRoot = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+
+            ratingController = loader.getController();
+            ratingController.init(this, viewModelFactory.getRatingViewModel(), root);
+
+            Scene ratingScene = new Scene(ratingRoot);
+            ratingStage.setScene(ratingScene);
+        }
+
+        ratingStage.showAndWait();
     }
+
+    public void closeRatingWindow() {
+        if (ratingStage != null) {
+            ratingStage.close();
+            ratingStage = null;
+            ratingController = null;
+        }
+    }
+}
+
 
 

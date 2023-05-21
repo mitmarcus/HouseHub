@@ -28,6 +28,7 @@ public interface ModelServer
   void addRating(Rating rating);
 
   double getAvgRatingById(String id);
+  void sendNotification(String owner,String tenant,String roomId);
 
 
 

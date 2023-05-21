@@ -58,7 +58,8 @@ public class RatingController extends ViewController{
        viewModel.addRating(rating);
 
        // Navigate back to the "details" view
-       viewHandler.openView("details");
+       viewHandler.openView("details"); //needed for the realtime update
+       viewHandler.closeRatingWindow();
     }
 
     @FXML
@@ -69,7 +70,8 @@ public class RatingController extends ViewController{
         confirmationAlert.setHeaderText("Are you sure you do not want to rate this room?");
         Optional<ButtonType> result = confirmationAlert.showAndWait();
 
-        viewHandler.openView("details");
+        viewHandler.openView("details"); //needed for the realtime update
+        viewHandler.closeRatingWindow();
     }
 
 }

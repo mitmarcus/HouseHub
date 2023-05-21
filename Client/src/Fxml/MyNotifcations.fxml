@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="600.0" spacing="10.0" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ShowRoomsViewController">
+<VBox prefHeight="400.0" prefWidth="600.0" spacing="10" stylesheets="@FilesCSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyReservationsViewController">
     <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="482.0" spacing="10.0">
         <Button graphicTextGap="10" onAction="#goBack" prefHeight="26.0" prefWidth="22.0">
             <graphic>
@@ -17,12 +17,10 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Label styleClass="header" text="Announcements" />
+        <Label styleClass="header" text="My Notifications" />
     </HBox>
-    <ListView fx:id="roomListView" prefHeight="364.0" prefWidth="579.0" />
+    <ListView fx:id="NotificationListView" orientation="HORIZONTAL" prefHeight="364.0" prefWidth="579.0" />
     <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
-        <Button fx:id="detailsButtonPressed" mnemonicParsing="false" onAction="#detailsButtonPressed" styleClass="detailsbtn" text="Details" HBox.hgrow="NEVER" />
-        <HBox prefHeight="26.0" prefWidth="140.0" HBox.hgrow="ALWAYS" />
-        <Button mnemonicParsing="false" onAction="#reservationsButtonPressed" styleClass="myreservationsbtn" text="My reservations" HBox.hgrow="NEVER" />
+        <Button mnemonicParsing="false" onAction="#removeButtonPressed" styleClass="removebtn" text="Remove" HBox.hgrow="NEVER" />
     </HBox>
 </VBox>

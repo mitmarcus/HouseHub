@@ -288,8 +288,18 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return 0;
     }
 
-
-
+    @Override public void sendNotification(String owner, String tenant,
+        String roomId)
+    {
+        try
+        {
+            server.sendNotification(owner,tenant,roomId);
+        }
+        catch (RemoteException e)
+        {
+            e.getMessage();
+        }
+    }
 
 }
 
