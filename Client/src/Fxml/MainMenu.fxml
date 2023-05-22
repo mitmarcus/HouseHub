@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
+<VBox maxHeight="400.0" maxWidth="500.0" minHeight="400.0" minWidth="500.0" prefHeight="400.0" prefWidth="500.0" stylesheets="@FilesCSS/mainMenu.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainMenuViewController">
    <HBox stylesheets="@FilesCSS/mainMenu.css">
       <HBox id="title-box" alignment="CENTER" prefHeight="172.0" prefWidth="417.0">
          <VBox alignment="CENTER">
@@ -16,13 +21,43 @@
             <Image url="@../Resources/Logo.png" />
          </ImageView>
       </HBox>
+      <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#notifications" prefHeight="30.0" prefWidth="42.0">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Resources/bell.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets right="10.0" top="10.0" />
+         </padding>
+      </VBox>
    </HBox>
-
-   <VBox prefHeight="262.0" prefWidth="500.0" styleClass="buttonBox">
-      <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
-      <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
-      <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
-      <Button onAction="#notifications" mnemonicParsing="false" text="Notifications" />
-      <Button onAction="#handleLogout" styleClass="menu-button" text="Log Out" />
-   </VBox>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+      
+         <VBox prefHeight="186.0" prefWidth="360.0" styleClass="buttonBox">
+            <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
+            <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
+            <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
+         </VBox>
+         <VBox alignment="BOTTOM_RIGHT" prefHeight="186.0" prefWidth="140.0" styleClass="buttonBox">
+            <children>
+               <Button onAction="#handleLogout" opacity="0.5" prefHeight="28.0" prefWidth="110.0" styleClass="menu-button" text="Log Out" textAlignment="CENTER">
+                  <font>
+                     <Font size="9.0" />
+                  </font>
+               </Button>
+            </children>
+         </VBox>
+      </children>
+   </HBox>
 </VBox>
