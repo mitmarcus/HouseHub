@@ -28,6 +28,7 @@ public class RatingDAOImpl implements RatingDAO {
         }
         return instance;
     }
+
     @Override
     public void addRating(Rating rating) throws SQLException {
         Connection connection = null;
@@ -35,7 +36,6 @@ public class RatingDAOImpl implements RatingDAO {
         try {
             connection = dbConnection.getConnection();
 
-            // Check if the user has already rated the room
             if (hasUserRated(rating.getUser().getUsername(), rating.getRoom().getRoomId())) {
                 System.out.println("User has already rated the room");
                 return;
@@ -69,17 +69,16 @@ public class RatingDAOImpl implements RatingDAO {
         double avgRating = 0;
         Connection connection = dbConnection.getConnection();
         String query = "SELECT AVG(rating) AS average_rating FROM ratings WHERE room_id = ?";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, id);
+                ResultSet resultSet = statement.executeQuery();
+                if (resultSet.next()) {
+                    avgRating = resultSet.getDouble("average_rating");
+                }
 
-        try (PreparedStatement statement = connection.prepareStatement(query)) {
-            statement.setString(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                avgRating = resultSet.getDouble("average_rating");
+            } finally {
+                dbConnection.disconnect();
             }
-
-        } finally {
-            dbConnection.disconnect();
-        }
         return avgRating;
 
     }
@@ -91,17 +90,17 @@ public class RatingDAOImpl implements RatingDAO {
     }
 
     @Override
-    public boolean hasUserRated(String username, String roomId) throws SQLException{
+    public boolean hasUserRated(String username, String roomId) throws SQLException {
         Connection connection = dbConnection.getConnection();
         String query = "SELECT COUNT(*) FROM ratings WHERE username = ? AND room_id = ?";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
             statement.setString(2, roomId);
-
+            System.out.println(username + roomId);
             ResultSet resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 int count = resultSet.getInt(1);
-                return count > 0;
+                if (count > 0) return true;
             }
         } finally {
             dbConnection.disconnect();

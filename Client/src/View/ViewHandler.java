@@ -75,6 +75,7 @@ public class ViewHandler {
             case "rating" :
                 //ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
                 openRatingWindow();
+                break;
             case "notifications" :
                 openNotificationsWindow();
                 break;

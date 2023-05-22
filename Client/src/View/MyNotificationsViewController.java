@@ -26,7 +26,7 @@ public class MyNotificationsViewController extends ViewController {
 
     @Override
     public void reset() {
-
+        viewModel.clear();
     }
 
     @FXML
