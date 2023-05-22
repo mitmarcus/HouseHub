@@ -23,5 +23,6 @@
       <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
       <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
       <Button onAction="#notifications" mnemonicParsing="false" text="Notifications" />
+      <Button onAction="#handleLogout" styleClass="menu-button" text="Log Out" />
    </VBox>
 </VBox>
