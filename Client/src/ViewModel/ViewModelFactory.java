@@ -17,6 +17,8 @@ public class ViewModelFactory
 
   private RatingViewModel ratingViewModel;
 
+  private MyNotificationsViewModel myNotificationsViewModel;
+
 
   public ViewModelFactory (ModelClient model)
   {
@@ -30,6 +32,7 @@ public class ViewModelFactory
     this.myReservationsViewModel = new MyReservationsViewModel(model, viewState);
     this.myRoomsViewModel = new MyRoomsViewModel(model,viewState);
     this.ratingViewModel = new RatingViewModel(model, viewState);
+    this.myNotificationsViewModel = new MyNotificationsViewModel(model,viewState);
   }
 
   public ShowRoomsViewModel getShowRoomsViewModel()
@@ -60,5 +63,9 @@ public class ViewModelFactory
   public RatingViewModel getRatingViewModel()
   {
     return ratingViewModel;
+  }
+
+  public MyNotificationsViewModel getMyNotificationsViewModel() {
+    return myNotificationsViewModel;
   }
 }

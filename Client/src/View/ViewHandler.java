@@ -3,16 +3,22 @@ package View;
 import ViewModel.ViewModel;
 import ViewModel.ViewModelFactory;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 
 public class ViewHandler {
     private Region root;
     private Stage primaryStage;
     private Scene currentScene;
+    private Stage ratingStage;
+    private Stage notificationsStage;
     private ViewModelFactory viewModelFactory;
     private ViewController showRoomsViewController;
     private ViewController mainMenuViewController;
@@ -22,8 +28,9 @@ public class ViewHandler {
     private ViewController myReservationsViewController;
     private ViewController listYourRoomViewController;
     private ViewController myRoomsViewController;
-
     private ViewController ratingController;
+
+    private ViewController myNotificationsViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -66,9 +73,11 @@ public class ViewHandler {
                 myRoomsViewController = loadViewController("/Fxml/MyRooms.fxml",myRoomsViewController,viewModelFactory.getMyRoomsViewModel());
                 break;
             case "rating" :
-                ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
-
-
+                //ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
+                openRatingWindow();
+            case "notifications" :
+                openNotificationsWindow();
+                break;
         }
         currentScene.setRoot(root);
         String title = "HouseHub";
@@ -98,8 +107,7 @@ public class ViewHandler {
                 this.root = loader.load();
                 viewController = loader.getController();
                 viewController.init(this, viewModel, this.root);
-                 viewController.reset();
-
+                viewController.reset();
 
             }
             catch (Exception e)
@@ -111,6 +119,70 @@ public class ViewHandler {
         viewController.reset();
         return viewController;
         }
+
+    private void openRatingWindow() {
+        if (ratingStage == null) {
+            ratingStage = new Stage();
+            ratingStage.initModality(Modality.APPLICATION_MODAL);
+            ratingStage.setTitle("Rate Room");
+            ratingStage.getIcons().add(new Image("/Resources/Logo.png"));
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/Fxml/Rating.fxml"));
+            Parent ratingRoot;
+            try {
+                ratingRoot = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+
+            ratingController = loader.getController();
+            ratingController.init(this, viewModelFactory.getRatingViewModel(), root);
+
+            Scene ratingScene = new Scene(ratingRoot);
+            ratingStage.setScene(ratingScene);
+        }
+
+        ratingStage.showAndWait();
     }
+
+
+    private void openNotificationsWindow() {
+        if (notificationsStage == null) {
+            notificationsStage = new Stage();
+            notificationsStage.initModality(Modality.APPLICATION_MODAL);
+            notificationsStage.setTitle("Notifications");
+            notificationsStage.getIcons().add(new Image("/Resources/Logo.png"));
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/Fxml/MyNotifications.fxml"));
+            Parent notificationRoot;
+            try {
+                notificationRoot = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+
+            myNotificationsViewController = loader.getController();
+            myNotificationsViewController.init(this, viewModelFactory.getMyNotificationsViewModel(), root);
+
+            Scene notificationScene = new Scene(notificationRoot);
+            notificationsStage.setScene(notificationScene);
+        }
+
+        notificationsStage.showAndWait();
+    }
+
+    public void closeRatingWindow() {
+        if (ratingStage != null) {
+            ratingStage.close();
+            ratingStage = null;
+            ratingController = null;
+        }
+    }
+}
+
 
 

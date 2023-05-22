@@ -143,4 +143,30 @@ public class ReservationDAOImpl implements ReservationDAO {
             dBconnection.disconnect();
         }
     }
+
+   @Override public ArrayList<String> getAllNotificationsByUsername(String username) throws SQLException {
+        ArrayList<String> notifications = new ArrayList<>();
+        Connection connection = dBconnection.getConnection();
+        String query = "SELECT notification FROM notifications where username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String username1 = resultSet.getString("username");
+                String notification1 = resultSet.getString("notification");
+                notifications.add(notification1);
+            }
+        } finally {
+            dBconnection.disconnect();
+        }
+        return notifications;
+    }
+
+    @Override
+    public void removeNotification(String notification) throws SQLException {
+
+    }
+
+
 }

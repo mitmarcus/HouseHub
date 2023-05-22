@@ -31,6 +31,8 @@ public interface ModelServer
   void sendNotification(String owner,String tenant,String roomId);
   void deletePictures(String roomId) ;
 
+  ArrayList<String> getAllNotificationsByUsername(String username);
+
 
 
 

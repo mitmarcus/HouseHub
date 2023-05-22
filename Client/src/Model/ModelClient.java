@@ -2,6 +2,7 @@ package Model;
 
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public interface ModelClient extends UnnamedPropertyChangeSubject
@@ -36,5 +37,9 @@ public interface ModelClient extends UnnamedPropertyChangeSubject
   double getAvgRatingById(String id);
 
   void sendNotification(String owner,String tenant,String roomId);
+
   void deletePictures(String roomId);
+
+  ArrayList<String> getAllNotificationsByUsername(String username);
+
 }
