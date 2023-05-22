@@ -76,7 +76,7 @@ public class DetailsViewModel extends ViewModel {
         model.addReservation(reservation);
         model.setRoomReserved(room);
         model.sendNotification(room.getOwner().getUsername(),user.getUsername(),room.getRoomId());
-            return true;
+            return true;//kyfkhfkhfk
     }
 
     @Override
