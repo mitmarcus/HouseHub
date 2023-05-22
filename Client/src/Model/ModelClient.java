@@ -3,6 +3,7 @@ package Model;
 import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface ModelClient extends UnnamedPropertyChangeSubject {
@@ -55,4 +56,5 @@ public interface ModelClient extends UnnamedPropertyChangeSubject {
     void sendNotification(String owner, String tenant, String roomId);
 
     ArrayList<String> getAllNotificationsByUsername(String username);
+    void removeNotification(String notification);
 }

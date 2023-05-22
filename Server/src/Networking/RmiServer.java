@@ -175,6 +175,12 @@ public class RmiServer implements RemoteModel
 
     }
 
+    @Override public void removeNotification(String notification)
+        throws RemoteException
+    {
+        model.removeNotification(notification);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {

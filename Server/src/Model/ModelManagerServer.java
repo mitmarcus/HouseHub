@@ -315,6 +315,18 @@ public class ModelManagerServer implements ModelServer {
         return null;
     }
 
+    @Override public void removeNotification(String notification)
+    {
+        try
+        {
+            reservationDAO.removeNotification(notification);
+        }
+        catch (SQLException e)
+        {
+            e.getMessage();
+        }
+    }
+
     @Override
     public User getUser(String username, String password) {
         try
