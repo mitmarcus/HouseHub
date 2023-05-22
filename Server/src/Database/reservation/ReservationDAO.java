@@ -16,4 +16,5 @@ public interface ReservationDAO {
     ArrayList<String> getAllNotificationsByUsername(String username) throws SQLException;
 
     void removeNotification(String notification) throws SQLException;
+
 }

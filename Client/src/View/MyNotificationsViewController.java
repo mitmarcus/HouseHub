@@ -31,12 +31,12 @@ public class MyNotificationsViewController extends ViewController {
 
     @FXML
     private void goBack() {
-        viewHandler.openView("");
+        viewHandler.openView("main");
     }
 
     @FXML
     public void removeButtonPressed() {
-       /* int numberOfSelectedRows = notificationListView.getSelectionModel().getSelectedItems().size();
+        int numberOfSelectedRows = notificationListView.getSelectionModel().getSelectedItems().size();
         if (numberOfSelectedRows == 1) {
             Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
             confirmationAlert.setTitle("Confirmation");
@@ -57,7 +57,7 @@ public class MyNotificationsViewController extends ViewController {
             alert.setTitle("ERROR");
             alert.setHeaderText("Please select a Notification");
             Optional<ButtonType> result = alert.showAndWait();
-        }*/
+        }
     }
 
 

@@ -7,6 +7,7 @@ import java.beans.PropertyChangeSupport;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class RmiClient implements ModelClient, RemoteListener // with Callback
@@ -330,8 +331,19 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
             e.getMessage();
         }
         return  null;
-
     }
+
+   public void removeNotification(String notification)
+   {
+       try
+       {
+           server.removeNotification(notification);
+       }
+       catch (RemoteException e)
+       {
+           e.getMessage();
+       }
+   }
 
 }
 

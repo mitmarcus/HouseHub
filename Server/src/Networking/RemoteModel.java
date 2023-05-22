@@ -7,6 +7,7 @@ import Model.User;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface RemoteModel extends RemoteSubject {
@@ -41,4 +42,5 @@ public interface RemoteModel extends RemoteSubject {
 
     ArrayList<String> getAllNotificationsByUsername(String username) throws RemoteException;
 
+    void removeNotification(String notification) throws RemoteException;
 }

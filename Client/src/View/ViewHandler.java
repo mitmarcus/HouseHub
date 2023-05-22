@@ -77,7 +77,7 @@ public class ViewHandler {
                 openRatingWindow();
                 break;
             case "notifications" :
-                openNotificationsWindow();
+                myNotificationsViewController = loadViewController("/Fxml/MyNotifications.fxml",myNotificationsViewController,viewModelFactory.getMyNotificationsViewModel());
                 break;
         }
         currentScene.setRoot(root);

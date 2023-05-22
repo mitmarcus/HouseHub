@@ -13,6 +13,11 @@
     -fx-font-family: 'Montserrat SemiBold';
 }
 
+.button{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
 .button.removebtn {
     -fx-background-color: red;
     -fx-background-radius: 10px;
