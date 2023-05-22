@@ -311,7 +311,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
     }
 
 
-    @Override public void deletePictures(String roomId)
+    /*@Override public void deletePictures(String roomId)
     {
         try
         {
@@ -321,7 +321,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         {
             e.getMessage();
         }
-    }
+    }*/
 
     public ArrayList<String> getAllNotificationsByUsername(String username){
         try {

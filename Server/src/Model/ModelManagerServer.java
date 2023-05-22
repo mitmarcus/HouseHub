@@ -260,7 +260,12 @@ public class ModelManagerServer implements ModelServer {
 
     @Override
     public boolean hasUserRated(String username, String roomId) {
-        return ratingDB.hasUserRated(username, roomId);
+        try {
+            return ratingDB.hasUserRated(username, roomId);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

@@ -3,7 +3,6 @@ package Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import lib.postgresql.*;
 
 public class DBconnection {
     private final static String url = "jdbc:postgresql://dumbo.db.elephantsql.com/jkmijtst";
