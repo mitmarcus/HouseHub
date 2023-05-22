@@ -37,7 +37,6 @@ public class MyNotificationsViewModel extends ViewModel{
     }
 
     public void removeNotification(String notification) {
-
         model.removeNotification(notification);
         clear();
         System.out.println(list.toString());
@@ -49,5 +48,4 @@ public class MyNotificationsViewModel extends ViewModel{
     public void setId(String id) {
         viewState.setId(id);
     }
-
 }

@@ -36,6 +36,7 @@ public class MyNotificationsViewController extends ViewController {
 
     @FXML
     public void removeButtonPressed() {
+        String remove =  notificationListView.getSelectionModel().getSelectedItem().toString();
         int numberOfSelectedRows = notificationListView.getSelectionModel().getSelectedItems().size();
         if (numberOfSelectedRows == 1) {
             Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -44,7 +45,7 @@ public class MyNotificationsViewController extends ViewController {
             Optional<ButtonType> result = confirmationAlert.showAndWait();
 
             if (result.isPresent() && result.get() == ButtonType.OK) {
-                viewModel.removeNotification(notificationListView.getSelectionModel().getSelectedItem());
+                viewModel.removeNotification(remove);
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle(" Successful");
                 successAlert.setHeaderText("Notification deleted!" );
