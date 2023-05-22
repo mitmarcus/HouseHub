@@ -276,7 +276,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
     @Override
     public boolean hasUserRated(String username, String roomId) {
         try {
-            server.hasUserRated(username,roomId);
+            return server.hasUserRated(username,roomId);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
