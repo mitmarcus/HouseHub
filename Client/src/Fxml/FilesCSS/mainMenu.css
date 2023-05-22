@@ -5,6 +5,15 @@
 
 .root{
     -fx-background-color: #F6F7FB;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.focus-indicator {
+    -fx-border-width: 0;
+    -fx-border-color: none;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 #title-box {
@@ -48,10 +57,7 @@
 }
 
 .logOut:hover {
-    -fx-background-color: #f7931e;
-}
-
-.logOut:pressed {
     -fx-background-color: red;
 }
+
 

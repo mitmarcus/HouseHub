@@ -17,6 +17,11 @@
     -fx-font-size: 18px;
 }
 
+.button{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
 .button.detailsbtn {
     -fx-background-color: #5aa2dd;
     -fx-background-radius: 10px;

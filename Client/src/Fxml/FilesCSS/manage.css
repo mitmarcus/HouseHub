@@ -13,6 +13,11 @@
     -fx-font-family: 'Montserrat SemiBold';
 }
 
+.button{
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
 .details {
     -fx-border-color: grey;
     -fx-border-insets: 5;
