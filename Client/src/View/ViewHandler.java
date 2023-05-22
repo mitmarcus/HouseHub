@@ -18,6 +18,7 @@ public class ViewHandler {
     private Stage primaryStage;
     private Scene currentScene;
     private Stage ratingStage;
+    private Stage notificationsStage;
     private ViewModelFactory viewModelFactory;
     private ViewController showRoomsViewController;
     private ViewController mainMenuViewController;
@@ -28,6 +29,8 @@ public class ViewHandler {
     private ViewController listYourRoomViewController;
     private ViewController myRoomsViewController;
     private ViewController ratingController;
+
+    private ViewController myNotificationsViewController;
 
     public ViewHandler(ViewModelFactory viewModelFactory) {
         this.viewModelFactory = viewModelFactory;
@@ -72,6 +75,9 @@ public class ViewHandler {
             case "rating" :
                 //ratingController = loadViewController("/Fxml/Rating.fxml", ratingController, viewModelFactory.getRatingViewModel());
                 openRatingWindow();
+            case "notifications" :
+                openNotificationsWindow();
+                break;
         }
         currentScene.setRoot(root);
         String title = "HouseHub";
@@ -139,6 +145,34 @@ public class ViewHandler {
         }
 
         ratingStage.showAndWait();
+    }
+
+
+    private void openNotificationsWindow() {
+        if (notificationsStage == null) {
+            notificationsStage = new Stage();
+            notificationsStage.initModality(Modality.APPLICATION_MODAL);
+            notificationsStage.setTitle("Notifications");
+            notificationsStage.getIcons().add(new Image("/Resources/Logo.png"));
+
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/Fxml/MyNotifications.fxml"));
+            Parent notificationRoot;
+            try {
+                notificationRoot = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+
+            myNotificationsViewController = loader.getController();
+            myNotificationsViewController.init(this, viewModelFactory.getMyNotificationsViewModel(), root);
+
+            Scene notificationScene = new Scene(notificationRoot);
+            notificationsStage.setScene(notificationScene);
+        }
+
+        notificationsStage.showAndWait();
     }
 
     public void closeRatingWindow() {

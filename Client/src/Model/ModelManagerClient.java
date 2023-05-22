@@ -141,6 +141,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     }
 
     @Override
+    public ArrayList<String> getAllNotificationsByUsername(String username) {
+        return client.getAllNotificationsByUsername(username);
+    }
+
+    @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);
     }

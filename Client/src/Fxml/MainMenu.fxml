@@ -22,5 +22,6 @@
       <Button onAction="#handleListYourRoom" styleClass="menu-button" text="List Your Room" />
       <Button onAction="#handleSearchRooms" styleClass="menu-button" text="Search Rooms" />
       <Button onAction="#handleManageProfile" styleClass="menu-button" text="Manage Profile" />
+      <Button onAction="#notifications" mnemonicParsing="false" text="Notifications" />
    </VBox>
 </VBox>

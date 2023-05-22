@@ -301,6 +301,15 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         }
     }
 
+    public ArrayList<String> getAllNotificationsByUsername(String username){
+        try {
+            return server.getAllNotificationsByUsername(username);
+        } catch (RemoteException e) {
+            e.getMessage();
+        }
+        return  null;
+    }
+
 }
 
 
