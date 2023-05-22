@@ -7,6 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< Updated upstream
     <orderEntry type="library" name="postgresql-42.6.0" level="application" />
+=======
+    <orderEntry type="library" name="postgresql-42.6.01" level="application" />
+>>>>>>> Stashed changes
   </component>
 </module>

@@ -37,3 +37,21 @@
     -fx-padding: 10px 10px 10px 10px;
     -fx-spacing: 10px;
 }
+
+.logOut {
+    -fx-background-color: #5D5D5D;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Montserrat";
+}
+
+.logOut:hover {
+    -fx-background-color: #f7931e;
+}
+
+.logOut:pressed {
+    -fx-background-color: red;
+}
+

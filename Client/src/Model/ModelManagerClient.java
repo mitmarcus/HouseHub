@@ -145,6 +145,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
         client.sendNotification(owner,tenant,roomId);
     }
 
+    @Override public void deletePictures(String roomId)
+    {
+        client.deletePictures(roomId);
+    }
+
     @Override
     public ArrayList<String> getAllNotificationsByUsername(String username) {
         return client.getAllNotificationsByUsername(username);

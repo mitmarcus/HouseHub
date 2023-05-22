@@ -29,6 +29,7 @@ public interface ModelServer
   boolean hasUserRated(String username, String roomId);
   double getAvgRatingById(String id);
   void sendNotification(String owner,String tenant,String roomId);
+  void deletePictures(String roomId) ;
 
   ArrayList<String> getAllNotificationsByUsername(String username);
 
