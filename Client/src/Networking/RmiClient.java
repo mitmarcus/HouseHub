@@ -265,8 +265,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
     @Override public void addRating(Rating rating)
     {
         try
-        {
-            server.addRating(rating);
+        {server.addRating(rating);
         }
         catch (RemoteException e)
         {
@@ -300,6 +299,15 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         {
             e.getMessage();
         }
+    }
+
+    public ArrayList<String> getAllNotificationsByUsername(String username){
+        try {
+            return server.getAllNotificationsByUsername(username);
+        } catch (RemoteException e) {
+            e.getMessage();
+        }
+        return  null;
     }
 
 }

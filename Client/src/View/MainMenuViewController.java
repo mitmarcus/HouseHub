@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
 
+import javax.swing.*;
+
 public class MainMenuViewController extends ViewController {
     private MainMenuViewModel viewModel;
     private ViewHandler viewHandler;
@@ -39,6 +41,11 @@ public class MainMenuViewController extends ViewController {
     @FXML
     public void handleManageProfile(ActionEvent actionEvent) {
         viewHandler.openView("manageAcc");
+    }
+
+    @FXML public void notifications(ActionEvent event)
+    {
+        viewHandler.openView("notifications");
     }
 
 }

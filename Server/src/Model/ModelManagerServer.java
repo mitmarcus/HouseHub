@@ -279,6 +279,16 @@ public class ModelManagerServer implements ModelServer {
     }
 
     @Override
+    public ArrayList<String> getAllNotificationsByUsername(String username) {
+        try {
+            return reservationDAO.getAllNotificationsByUsername(username);
+        } catch (SQLException e) {
+            e.getMessage();
+        }
+        return null;
+    }
+
+    @Override
     public User getUser(String username, String password) {
         try
         {

@@ -158,6 +158,11 @@ public class RmiServer implements RemoteModel
         model.sendNotification(owner,tenant,roomId);
     }
 
+    @Override
+    public ArrayList<String> getAllNotificationsByUsername(String username) throws RemoteException {
+        return model.getAllNotificationsByUsername(username);
+    }
+
     @Override public Reservation getReservationById(String id)
         throws RemoteException
     {

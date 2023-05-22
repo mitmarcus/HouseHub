@@ -36,5 +36,6 @@ public interface RemoteModel extends RemoteSubject {
     double getAvgRatingById(String id) throws RemoteException;
 
     void sendNotification(String owner,String tenant,String roomId) throws  RemoteException;
+    ArrayList<String> getAllNotificationsByUsername(String username) throws RemoteException;
 
 }
