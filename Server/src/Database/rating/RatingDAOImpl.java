@@ -35,11 +35,10 @@ public class RatingDAOImpl implements RatingDAO {
         try {
             connection = dbConnection.getConnection();
 
-            // Check if the user has already rated the room
-            if (hasUserRated(rating.getUser().getUsername(), rating.getRoom().getRoomId())) {
+            /*if (hasUserRated(rating.getUser().getUsername(), rating.getRoom().getRoomId())) {
                 System.out.println("User has already rated the room");
                 return;
-            }
+            }*/
 
             String query = "INSERT INTO ratings (rating, room_id, username) VALUES (?,?,?)";
             statement = connection.prepareStatement(query);
