@@ -32,6 +32,7 @@ public interface ModelServer
   void deletePictures(String roomId) ;
 
   ArrayList<String> getAllNotificationsByUsername(String username);
+  void removeNotification(String notification);
 
 
 

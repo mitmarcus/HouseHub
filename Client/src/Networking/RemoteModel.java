@@ -4,6 +4,7 @@ import Model.*;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public interface RemoteModel extends RemoteSubject
@@ -41,5 +42,6 @@ public interface RemoteModel extends RemoteSubject
     void deletePictures(String roomId) throws  RemoteException;
 
     ArrayList<String> getAllNotificationsByUsername(String username) throws RemoteException;
+    void removeNotification(String notification) throws RemoteException;
 
     }
