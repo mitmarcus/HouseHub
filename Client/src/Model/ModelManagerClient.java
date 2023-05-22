@@ -130,6 +130,11 @@ public class ModelManagerClient implements ModelClient,PropertyChangeListener
     }
 
     @Override
+    public boolean hasUserRated(String username, String roomId) {
+       return client.hasUserRated(username, roomId);
+    }
+
+    @Override
     public double getAvgRatingById(String id) {
         return client.getAvgRatingById(id);
     }

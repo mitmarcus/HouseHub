@@ -148,6 +148,11 @@ public class RmiServer implements RemoteModel
     }
 
     @Override
+    public boolean hasUserRated(String username, String roomId) throws RemoteException {
+       return model.hasUserRated(username,roomId);
+    }
+
+    @Override
     public double getAvgRatingById(String id) throws RemoteException {
         return model.getAvgRatingById(id);
     }

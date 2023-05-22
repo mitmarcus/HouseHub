@@ -82,5 +82,24 @@ public class RatingDAOImpl implements RatingDAO {
     public int getRating() {
         return 0;
     }
+
+    @Override
+    public boolean hasUserRated(String username, String roomId) throws SQLException{
+        Connection connection = dbConnection.getConnection();
+        String query = "SELECT COUNT(*) FROM ratings WHERE username = ? AND room_id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            statement.setString(2, roomId);
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int count = resultSet.getInt(1);
+                return count > 0;
+            }
+        } finally {
+            dbConnection.disconnect();
+        }
+        return false;
+    }
 }
 

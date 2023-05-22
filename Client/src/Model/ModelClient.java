@@ -5,37 +5,54 @@ import utility.observer.javaobserver.UnnamedPropertyChangeSubject;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-public interface ModelClient extends UnnamedPropertyChangeSubject
-{
-  void addRoom(Room room);
-  void removeRoom(Room room);
-  Room getRoomByAnnouncement(String announcement);
-  ArrayList<Room> getAllRooms();
-  void addReservation(Reservation reservation);
+public interface ModelClient extends UnnamedPropertyChangeSubject {
+    void addRoom(Room room);
 
-  ArrayList<Reservation> getAllReservationsByUsername(String username);
+    void removeRoom(Room room);
 
-  Reservation getReservationAtIndex();
-  Reservation getReservationAtIndex(int index);
-  void removeReservation(Reservation reservation);
-  void addUser(User user);
-  User getUserByUsername(String username);
+    Room getRoomByAnnouncement(String announcement);
 
-  Reservation getReservationById(String id);
-  boolean setRoomReserved(Room room);
-  boolean setRoomFree(Room room);
-  boolean setUserInfo(User user);
-  User getUser(String username, String password);
-  void sendFile(String roomId,String name,byte[] img);
-  ArrayList<Room> getRoomsByUsername(String username);
-  Room getRoomById(String Id);
+    ArrayList<Room> getAllRooms();
 
-  ArrayList<String> getRoomImagesPaths(String roomId);
+    void addReservation(Reservation reservation);
 
-  void addRating(Rating rating);
+    ArrayList<Reservation> getAllReservationsByUsername(String username);
 
-  double getAvgRatingById(String id);
+    Reservation getReservationAtIndex();
 
-  void sendNotification(String owner,String tenant,String roomId);
-  ArrayList<String> getAllNotificationsByUsername(String username);
+    Reservation getReservationAtIndex(int index);
+
+    void removeReservation(Reservation reservation);
+
+    void addUser(User user);
+
+    User getUserByUsername(String username);
+
+    Reservation getReservationById(String id);
+
+    boolean setRoomReserved(Room room);
+
+    boolean setRoomFree(Room room);
+
+    boolean setUserInfo(User user);
+
+    User getUser(String username, String password);
+
+    void sendFile(String roomId, String name, byte[] img);
+
+    ArrayList<Room> getRoomsByUsername(String username);
+
+    Room getRoomById(String Id);
+
+    ArrayList<String> getRoomImagesPaths(String roomId);
+
+    void addRating(Rating rating);
+
+    boolean hasUserRated(String username, String roomId);
+
+    double getAvgRatingById(String id);
+
+    void sendNotification(String owner, String tenant, String roomId);
+
+    ArrayList<String> getAllNotificationsByUsername(String username);
 }

@@ -10,5 +10,7 @@ public interface RatingDAO {
      double getAvgRatingById(String id) throws SQLException;
 
     int getRating() throws SQLException;
+
+    boolean hasUserRated(String username, String roomId) throws SQLException;
 }
 

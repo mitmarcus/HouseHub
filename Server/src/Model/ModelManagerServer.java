@@ -250,6 +250,11 @@ public class ModelManagerServer implements ModelServer {
         }
     }
 
+    @Override
+    public boolean hasUserRated(String username, String roomId) {
+        return ratingDB.hasUserRated(username, roomId);
+    }
+
 
     @Override
     public double getAvgRatingById(String id) {

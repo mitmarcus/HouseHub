@@ -32,7 +32,7 @@ public interface RemoteModel extends RemoteSubject {
 
 
     void addRating(Rating rating) throws RemoteException;
-
+    boolean hasUserRated(String username, String roomId) throws RemoteException;
     double getAvgRatingById(String id) throws RemoteException;
 
     void sendNotification(String owner,String tenant,String roomId) throws  RemoteException;

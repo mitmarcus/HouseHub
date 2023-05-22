@@ -26,7 +26,7 @@ public interface ModelServer
   ArrayList<String> getRoomImagesPaths(String roomId);
 
   void addRating(Rating rating);
-
+  boolean hasUserRated(String username, String roomId);
   double getAvgRatingById(String id);
   void sendNotification(String owner,String tenant,String roomId);
 
