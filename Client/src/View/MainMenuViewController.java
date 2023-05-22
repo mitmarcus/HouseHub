@@ -64,7 +64,7 @@ public class MainMenuViewController extends ViewController {
             // Perform the necessary logout operations here
 
             // Open the main view
-            viewHandler.openView("main");
+            viewHandler.openView("login");
         }
     }
 }
