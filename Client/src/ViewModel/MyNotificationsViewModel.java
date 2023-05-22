@@ -21,7 +21,6 @@ public class MyNotificationsViewModel extends ViewModel{
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
         this.selectedObject = new SimpleStringProperty();
-        this.selectedObject = new SimpleStringProperty();
         clear();
     }
     @Override
