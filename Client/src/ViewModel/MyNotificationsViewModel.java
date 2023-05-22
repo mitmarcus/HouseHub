@@ -2,6 +2,7 @@ package ViewModel;
 
 import Model.ModelClient;
 import Model.Reservation;
+import Model.Room;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -11,7 +12,6 @@ public class MyNotificationsViewModel extends ViewModel{
 
     private ViewState viewState;
     private ModelClient model;
-
     private ObservableList<String> list;
     private StringProperty selectedObject;
 
@@ -20,7 +20,6 @@ public class MyNotificationsViewModel extends ViewModel{
         this.model = model;
         this.viewState = viewState;
         this.list = FXCollections.observableArrayList();
-        this.selectedObject = new SimpleStringProperty();
         this.selectedObject = new SimpleStringProperty();
         clear();
     }
@@ -35,6 +34,13 @@ public class MyNotificationsViewModel extends ViewModel{
         } catch (NullPointerException e) {
             e.getMessage();
         }
+    }
+
+    public void removeNotification(String notification) {
+
+        model.removeNotification(notification);
+        clear();
+        System.out.println(list.toString());
     }
 
     public ObservableList<String> getList() {
