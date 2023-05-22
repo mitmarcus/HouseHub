@@ -84,7 +84,5 @@ public class MyReservationsViewModel extends ViewModel implements
                 clear();
                 System.out.println("removed reservation");
             });
-
-
     }
 }
