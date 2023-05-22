@@ -165,7 +165,14 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public void removeNotification(String notification) throws SQLException {
-
+        Connection connection = dBconnection.getConnection();
+        String query = "DELETE FROM notifications WHERE notification = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, notification);
+            statement.executeUpdate();
+        } finally {
+            dBconnection.disconnect();
+        }
     }
 
 
