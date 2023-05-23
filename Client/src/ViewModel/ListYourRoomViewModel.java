@@ -70,13 +70,27 @@ public class ListYourRoomViewModel extends ViewModel
 
   public boolean postRoom(){
     User user = model.getUserByUsername(viewState.getUsername());
-    Room room = new Room(user,announcement.get(), price.get(),roomAddress.get(),roomSize.get(),numberOfRooms.get(),false);
-    model.addRoom(room);
-    for (int i = 0 ; i < images.size();i++){
-      model.sendFile(room.getRoomId(),viewState.getUsername()+".png", images.get(i));
+    if (announcement.get().equals("")|| price.get().equals("")||roomAddress.get().equals("")||roomSize.equals("")||numberOfRooms.get().equals(""))
+    {
+      Alert alert = new Alert(Alert.AlertType.INFORMATION);
+      alert.setTitle("ERROR");
+      alert.setHeaderText("Missing information please try again");
+      Optional<ButtonType> result = alert.showAndWait();
+      return false;
     }
-    images.clear();
-    return true;
+    else
+    {
+      Room room = new Room(user, announcement.get(), price.get(), roomAddress.get(),
+          roomSize.get(), numberOfRooms.get(), false);
+      model.addRoom(room);
+      for (int i = 0; i < images.size(); i++)
+      {
+        model.sendFile(room.getRoomId(), viewState.getUsername() + ".png",
+            images.get(i));
+      }
+      images.clear();
+      return true;
+    }
   }
   public void addImage(){
 

@@ -51,7 +51,7 @@ public class ListYourRoomViewController extends ViewController
     viewModel.addImage();
   }
   @FXML public void postButtonPressed(){
-    viewModel.postRoom();
+    if(viewModel.postRoom())
     viewHandler.openView("main"
     );
   }
