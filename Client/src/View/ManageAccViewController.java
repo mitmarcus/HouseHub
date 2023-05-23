@@ -8,15 +8,18 @@ import javafx.scene.layout.Region;
 import ViewModel.ManageAccViewModel;
 
 
-
-public class ManageAccViewController extends ViewController{
+public class ManageAccViewController extends ViewController {
     private ManageAccViewModel viewModel;
-
-    @FXML private TextField username;
-  @FXML private TextField password;
-  @FXML private TextField firstname;
-  @FXML private TextField lastname;
-  @FXML private TextField phonenumber;
+    @FXML
+    private TextField username;
+    @FXML
+    private TextField password;
+    @FXML
+    private TextField firstname;
+    @FXML
+    private TextField lastname;
+    @FXML
+    private TextField phonenumber;
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel, Region root) {
@@ -35,34 +38,34 @@ public class ManageAccViewController extends ViewController{
         viewModel.clear();
     }
 
-  @FXML public void goBack(){
+    @FXML
+    public void goBack() {
         viewHandler.openView("main");
-  }
+    }
 
-  @FXML public void myRooms(){
-      if (viewModel.info())
-      {
-        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle(" Error");
-        successAlert.setHeaderText("You have no rooms" );
-        successAlert.showAndWait();
-      }
-      else
-      viewHandler.openView("myRooms");
-  }
+    @FXML
+    public void myRooms() {
+        if (viewModel.info()) {
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle(" Error");
+            successAlert.setHeaderText("You have no rooms");
+            successAlert.showAndWait();
+        } else
+            viewHandler.openView("myRooms");
+    }
 
-  @FXML public void update(){
-      if(viewModel.update()){
-        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle(" Successful");
-        successAlert.setHeaderText("Your updated your account" );
-        successAlert.showAndWait();
-      }
-      else {
-        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle(" ERROR");
-        successAlert.setHeaderText("Can not have null fields or less than 3 characters");
-        successAlert.showAndWait();
-      }
-  }
+    @FXML
+    public void update() {
+        if (viewModel.update()) {
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle(" Successful");
+            successAlert.setHeaderText("Your updated your account");
+            successAlert.showAndWait();
+        } else {
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle(" ERROR");
+            successAlert.setHeaderText("Can not have null fields or less than 8 characters");
+            successAlert.showAndWait();
+        }
+    }
 }

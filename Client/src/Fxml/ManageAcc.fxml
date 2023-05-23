@@ -44,7 +44,7 @@
                         <HBox alignment="CENTER" styleClass="row">
                            <children>
                               <Text fx:id="roomPrice1" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="135.21722984313965" />
-                              <TextField fx:id="password" />
+                              <TextField fx:id="password" promptText="at least 6 characters" />
                            </children>
                            <padding>
                               <Insets bottom="3.0" />
@@ -71,7 +71,7 @@
                         <HBox alignment="CENTER">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" textAlignment="CENTER" wrappingWidth="135.3824520111084" />
-                              <TextField fx:id="phonenumber" />
+                              <TextField fx:id="phonenumber" promptText="8 characters" />
                            </children>
                         </HBox>
                      </children>
