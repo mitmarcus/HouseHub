@@ -4,7 +4,6 @@ import Database.DBconnection;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 import Model.Room;
-import Model.RoomList;
 import Model.User;
 
 import javax.print.MultiDocPrintService;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 public class RoomDAOImpl implements RoomDAO {
     private static RoomDAOImpl instance;
     private final DBconnection dbConnection;
-    RoomList list;
 
     public RoomDAOImpl() throws  SQLException{
         this.dbConnection = DBconnection.getInstance();
