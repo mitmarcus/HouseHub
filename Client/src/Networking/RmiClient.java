@@ -149,7 +149,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 
     /**
      * This method is used to set the room free
-     * @param room
+     * @param room the room
      * @return true if the room is free
      */
     @Override
@@ -162,6 +162,11 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return true;
     }
 
+    /**
+     * This method is used to set the User info
+     * @param user the user
+     * @return true if the user info is set
+     */
     @Override
     public boolean setUserInfo(User user) {
         try {
@@ -172,6 +177,13 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return true;
     }
 
+    /**
+     * This method is used to get the user by username and password
+     *
+     * @param username the username of the user
+     * @param password the password of the user
+     * @return the user with the given username and password
+     */
     @Override
     public User getUser(String username, String password) {
         try {
@@ -184,9 +196,9 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
     /**
      * This method is used to sed the image to the server
      *
-     * @param roomId
-     * @param name
-     * @param img
+     * @param roomId the room id
+     * @param name the name of the image
+     * @param img the image
      */
     @Override
     public void sendFile(String roomId, String name, byte[] img) {
@@ -215,7 +227,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 /**
      * This method is used to get the room by id
      *
-     * @param Id
+     * @param Id the room id
      * @return the room with the given id
  */
     @Override
@@ -230,7 +242,7 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
 /**
      * This method is used to get the room images paths
      *
-     * @param roomId
+     * @param roomId the room id
      * @return ArrayList of room images paths
  */
     @Override
@@ -243,7 +255,11 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
-    
+    /**
+     * This method is used to remove a reservation
+     *
+     * @param reservation the reservation
+     */
     @Override
     public void removeReservation(Reservation reservation) {
         try {
@@ -292,18 +308,33 @@ public class RmiClient implements ModelClient, RemoteListener // with Callback
         return null;
     }
 
-    /
+    /**
+     * Add a listener to the model
+     *
+     * @param listener the listener to be added
+     */
     @Override
     public void addListener(PropertyChangeListener listener) {
         property.addPropertyChangeListener(listener);
     }
 
+    /**
+     * Remove a listener from the model
+     *
+     * @param listener the listener to be removed
+     */
     @Override
     public void removeListener(PropertyChangeListener listener) {
         property.removePropertyChangeListener(listener);
     }
 
 
+    /**
+     * This method is used to fire a property change event
+     *
+     * @param event the event fired
+     * @throws RemoteException if the remote method call fails
+     */
     @Override
     public void propertyChange(ObserverEvent event)
             throws RemoteException {
