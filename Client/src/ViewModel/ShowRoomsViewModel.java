@@ -11,64 +11,61 @@ import javafx.collections.ObservableList;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListener
-{
-  private ViewState viewState;
-  private ModelClient model;
-  private ObservableList<String> list;
-  private StringProperty selectedObject;
+public class ShowRoomsViewModel extends ViewModel implements PropertyChangeListener {
+    private ViewState viewState;
+    private ModelClient model;
+    private ObservableList<String> list;
+    private StringProperty selectedObject;
 
-  public ShowRoomsViewModel(ModelClient model,ViewState viewState)
-  {
-    this.model = model;
-    this.viewState = viewState;
-    this.list = FXCollections.observableArrayList();
-    this.selectedObject = new SimpleStringProperty();
-    this.model.addListener(this);
-    clear();
+    public ShowRoomsViewModel(ModelClient model, ViewState viewState) {
+        this.model = model;
+        this.viewState = viewState;
+        this.list = FXCollections.observableArrayList();
+        this.selectedObject = new SimpleStringProperty();
+        this.model.addListener(this);
+        clear();
 
-  }
-
-  @Override public void clear()
-  {
-    list.clear();
-    for (Room room : model.getAllRooms()){
-      if (!room.isReserved()){
-        list.add(room.getAnnouncement());
-      }
     }
-  }
-  public ObservableList<String> getList()
-  {
-    return list;
-  }
 
-  public void setSelectedObject(String id){
-    this.selectedObject.set(id);
-  }
+    @Override
+    public void clear() {
+        list.clear();
+        for (Room room : model.getAllRooms()) {
+            if (!room.isReserved()) {
+                list.add(room.getAnnouncement());
+            }
+        }
+    }
 
-  public void setId(String id)
-  {
-    viewState.setId(id);
-  }
+    public ObservableList<String> getList() {
+        return list;
+    }
 
-  public void roomDetails() {
-    Room room = model.getRoomByAnnouncement(selectedObject.get());
+    public void setSelectedObject(String id) {
+        this.selectedObject.set(id);
+    }
 
-    viewState.setId(room.getRoomId());
-  }
+    public void setId(String id) {
+        viewState.setId(id);
+    }
 
-  @Override public void propertyChange(PropertyChangeEvent evt)
-  {
-    if (evt.getPropertyName().equals("RemoveRoom"))
-      Platform.runLater(()->{
-        clear();
-      });
-    if (evt.getPropertyName().equals("roomReserved"))
-      Platform.runLater(()->{
-        clear();
-      });
+    public void roomDetails() {
+        Room room = model.getRoomByAnnouncement(selectedObject.get());
+
+        viewState.setId(room.getRoomId());
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropertyName().equals("RemoveRoom"))
+            Platform.runLater(() -> {
+                clear();
+            });
+        if (evt.getPropertyName().equals("roomReserved"))
+            Platform.runLater(() -> {
+                clear();
+            });
 
 
-  }
+    }
 }

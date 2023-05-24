@@ -5,14 +5,25 @@ import Model.User;
 
 import java.sql.*;
 
-public class UserDAOImpl implements UserDAO{
+public class UserDAOImpl implements UserDAO {
     private DBconnection dbConnection;
     private static UserDAOImpl instance;
 
+    /**
+     * This constructor is used to create a user DAO
+     *
+     * @throws SQLException if the connection cannot be established
+     */
     public UserDAOImpl() throws SQLException {
         this.dbConnection = DBconnection.getInstance();
     }
 
+    /**
+     * This method is used to get the instance of the user DAO
+     *
+     * @return the instance
+     * @throws SQLException if the connection cannot be established
+     */
     public static synchronized UserDAOImpl getInstance() throws SQLException {
         if (instance == null) {
             instance = new UserDAOImpl();
@@ -20,11 +31,17 @@ public class UserDAOImpl implements UserDAO{
         return instance;
     }
 
+    /**
+     * This method is used to add a user to the database
+     *
+     * @param user the user
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void addUser(User user) throws SQLException {
         Connection connection = dbConnection.getConnection();
         String query = "INSERT INTO users (first_name, last_name, username, password, phone_number) VALUES (? , ?, ?, ?, ?)";
-        try(PreparedStatement statement = connection.prepareStatement(query)) {
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, user.getFirstName());
             statement.setString(2, user.getLastName());
@@ -45,49 +62,62 @@ public class UserDAOImpl implements UserDAO{
         }
     }
 
+    /**
+     * This method is used to get a user from the database
+     *
+     * @param username the username
+     * @param password the password
+     * @return the user
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
-    public User getUser(String username, String password) throws SQLException
-    {
+    public User getUser(String username, String password) throws SQLException {
         Connection connection = dbConnection.getConnection();
         String query = "SELECT * FROM users WHERE username = ? AND password = ?";
-        try (PreparedStatement statement = connection.prepareStatement(query))
-        {
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, username);
             statement.setString(2, password);
             ResultSet resultSet = statement.executeQuery();
 
-            if (resultSet.next())
-            {
-                User user = new User(resultSet.getString(3),resultSet.getString(4),resultSet.getString(1),resultSet.getString(2),resultSet.getString(5));
+            if (resultSet.next()) {
+                User user = new User(resultSet.getString(3), resultSet.getString(4), resultSet.getString(1), resultSet.getString(2), resultSet.getString(5));
                 return user;
             }
-        }
-        finally
-        {
+        } finally {
             connection.close();
         }
         return null;
     }
 
+    /**
+     * This method is used to get a user from the database
+     *
+     * @param username the username
+     * @return the user
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
-    public User getUserByUsername(String username) throws SQLException
-    {
-      Connection connection = dbConnection.getConnection();
-      String query = "SELECT * FROM users WHERE username = ?";
-      try (PreparedStatement statement = connection.prepareStatement(query))
-      {
-        statement.setString(1, username);
-        ResultSet resultSet = statement.executeQuery();
+    public User getUserByUsername(String username) throws SQLException {
+        Connection connection = dbConnection.getConnection();
+        String query = "SELECT * FROM users WHERE username = ?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
 
-        if (resultSet.next())
-        {
-          User user = new User(resultSet.getString(3),resultSet.getString(4),resultSet.getString(1),resultSet.getString(2),resultSet.getString(5));
-          return user;
+            if (resultSet.next()) {
+                User user = new User(resultSet.getString(3), resultSet.getString(4), resultSet.getString(1), resultSet.getString(2), resultSet.getString(5));
+                return user;
+            }
         }
-      }
-      return null;
+        return null;
     }
 
+    /**
+     * This method is used to update a user's information in the database
+     *
+     * @param user the user
+     * @throws SQLException if the connection cannot be established
+     */
     public void setUserInfo(User user) throws SQLException {
         Connection connection = dbConnection.getConnection();
         String query = "UPDATE users SET first_name = ?, last_name = ?, password = ?, phone_number = ? WHERE username = ?";

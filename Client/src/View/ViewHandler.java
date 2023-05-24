@@ -46,6 +46,11 @@ public class ViewHandler {
         primaryStage.close();
     }
 
+    /**
+     * Loads the view with the given id.
+     *
+     * @param id the id of the view to be loaded.
+     */
     public void openView(String id) {
         switch (id) {
             case "showRooms":

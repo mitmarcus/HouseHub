@@ -13,7 +13,7 @@ import ViewModel.RatingViewModel;
 
 import java.util.Optional;
 
-public class RatingController extends ViewController{
+public class RatingController extends ViewController {
     @FXML
     private VBox rootVBox;
 
@@ -23,15 +23,14 @@ public class RatingController extends ViewController{
     private Button okButton;
 
     @FXML
-   private Button cancelButton;
+    private Button cancelButton;
 
     private RatingViewModel viewModel;
 
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel,
-                     Region root)
-    {
+                     Region root) {
         this.viewHandler = viewHandler;
         this.viewModel = (RatingViewModel) viewModel;
         this.root = root;
@@ -43,23 +42,23 @@ public class RatingController extends ViewController{
         viewModel.clear();
     }
 
-   @FXML
+    @FXML
     private void onOKClicked(ActionEvent event) {
-       int rating = ratingChoiceBox.getValue();
-       if (rating == 0) {
-           Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-           errorAlert.setTitle("Error");
-           errorAlert.setHeaderText("Please select a value to rate the room!");
-           errorAlert.showAndWait();
-           return;
-       }
+        int rating = ratingChoiceBox.getValue();
+        if (rating == 0) {
+            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+            errorAlert.setTitle("Error");
+            errorAlert.setHeaderText("Please select a value to rate the room!");
+            errorAlert.showAndWait();
+            return;
+        }
 
-       // Set the rating value in the viewModel
-       viewModel.addRating(rating);
+        // Set the rating value in the viewModel
+        viewModel.addRating(rating);
 
-       // Navigate back to the "details" view
-       viewHandler.openView("details"); //needed for the realtime update
-       viewHandler.closeRatingWindow();
+        // Navigate back to the "details" view
+        viewHandler.openView("details"); //needed for the realtime update
+        viewHandler.closeRatingWindow();
     }
 
     @FXML

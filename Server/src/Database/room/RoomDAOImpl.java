@@ -5,6 +5,7 @@ import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
 import Model.Room;
 import Model.User;
+import lib.postgresql.*;
 
 import javax.print.MultiDocPrintService;
 import java.sql.*;
@@ -14,10 +15,21 @@ public class RoomDAOImpl implements RoomDAO {
     private static RoomDAOImpl instance;
     private final DBconnection dbConnection;
 
+    /**
+     * This constructor is used to create a room DAO
+     *
+     * @throws SQLException if the connection cannot be established
+     */
     public RoomDAOImpl() throws  SQLException{
         this.dbConnection = DBconnection.getInstance();
     }
 
+    /**
+     * This method is used to get the instance of the room DAO
+     *
+     * @return the instance
+     * @throws SQLException if the connection cannot be established
+     */
     public static RoomDAOImpl getInstance() throws SQLException {
         if (instance == null){
             instance = new RoomDAOImpl();
@@ -25,6 +37,12 @@ public class RoomDAOImpl implements RoomDAO {
         return instance;
     }
 
+    /**
+     * This method is used to add a room to the database
+     *
+     * @param room the room
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void addRoom(Room room) throws SQLException {
         Connection connection = dbConnection.getConnection();
@@ -51,6 +69,12 @@ public class RoomDAOImpl implements RoomDAO {
         }
     }
 
+    /**
+     * This method is used to remove a room from the database
+     *
+     * @param room the room
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void removeRoom(Room room) throws SQLException {
        Connection connection = dbConnection.getConnection();
@@ -65,6 +89,13 @@ public class RoomDAOImpl implements RoomDAO {
 
     }
 
+    /**
+     * This method is used to get the room by announcement
+     *
+     * @param announcement the announcement
+     * @throws SQLException if the connection cannot be established
+     * @return the room
+     */
     @Override
     public Room getRoomByAnnouncement(String announcement) throws SQLException
     {
@@ -99,6 +130,13 @@ public class RoomDAOImpl implements RoomDAO {
         return room;
     }
 
+    /**
+     * This method is used to get the room by id
+     *
+     * @param id the id
+     * @throws SQLException if the connection cannot be established
+     * @return the room
+     */
     @Override
     public Room getRoomById(String id) throws SQLException {
         Connection connection = dbConnection.getConnection();
@@ -126,8 +164,13 @@ public class RoomDAOImpl implements RoomDAO {
         return null;
     }
 
+    /**
+     * This method is used to get all the rooms
+     *
+     * @throws SQLException if the connection cannot be established
+     * @return the list of rooms
+     */
     @Override
-
     public ArrayList<Room> getAllRooms() throws SQLException
     {
         ArrayList<Room> list = new ArrayList<>();
@@ -159,6 +202,13 @@ public class RoomDAOImpl implements RoomDAO {
         return list;
     }
 
+    /**
+     * This method is used to set the room reserved
+     *
+     * @param room the room
+     * @throws SQLException if the connection cannot be established
+     * @return true if the room is set to reserved, false otherwise
+     */
     @Override
     public boolean setRoomReserved(Room room) throws SQLException {
         boolean setRoomReserved = false;
@@ -181,6 +231,13 @@ public class RoomDAOImpl implements RoomDAO {
         return setRoomReserved;
     }
 
+    /**
+     * This method is used to set the room free
+     *
+     * @param room the room
+     * @throws SQLException if the connection cannot be established
+     * @return true if the room is set to free, false otherwise
+     */
     @Override
     public boolean setRoomFree(Room room) throws SQLException {
         boolean setRoomFree;
@@ -203,6 +260,13 @@ public class RoomDAOImpl implements RoomDAO {
         return setRoomFree;
     }
 
+    /**
+     * This method is used to get the rooms by username
+     *
+     * @param username the username
+     * @throws SQLException if the connection cannot be established
+     * @return an array list of rooms
+     */
     @Override public ArrayList<Room> getRoomsByUsername(String username)
         throws SQLException
     {
@@ -235,6 +299,13 @@ public class RoomDAOImpl implements RoomDAO {
         return list;
     }
 
+    /**
+     * This method is used to get the room images paths
+     *
+     * @param roomId the room id
+     * @throws SQLException if the connection cannot be established
+     * @return an array list of strings
+     */
     @Override public ArrayList<String> getRoomImagesPaths(String roomId)
         throws SQLException
     {
@@ -259,6 +330,13 @@ public class RoomDAOImpl implements RoomDAO {
 
     }
 
+    /**
+     * This method is used to add the room image path
+     *
+     * @param roomId the room id
+     * @param path the path
+     * @throws SQLException if the connection cannot be established
+     */
     @Override public void addImagePath(String roomId, String path)
         throws SQLException
     {
@@ -277,6 +355,12 @@ public class RoomDAOImpl implements RoomDAO {
         }
     }
 
+    /**
+     * This method is used to delete the room image path
+     *
+     * @param roomId the room id
+     * @throws SQLException if the connection cannot be established
+     */
     @Override public void deleteImagePath(String roomId) throws SQLException
     {
         Connection connection = dbConnection.getConnection();

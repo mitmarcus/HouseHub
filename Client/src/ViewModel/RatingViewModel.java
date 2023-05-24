@@ -19,33 +19,26 @@ public class RatingViewModel extends ViewModel {
     private ModelClient model;
     private StringProperty rating;
 
-    public RatingViewModel(ModelClient model, ViewState viewState)
-    {
+    public RatingViewModel(ModelClient model, ViewState viewState) {
         this.model = model;
         this.viewState = viewState;
         this.rating = new SimpleStringProperty();
     }
 
-
-    public StringProperty getRating()
-    {
+    public StringProperty getRating() {
         return rating;
     }
 
-    public void addRating(int rating)
-    {
+    public void addRating(int rating) {
         User user = model.getUserByUsername(viewState.getUsername());
         Room room = model.getRoomById(viewState.getId());
         Rating rating1 = new Rating(rating, user, room);
-        boolean hasUserRated = model.hasUserRated(user.getUsername(),room.getRoomId());
+        boolean hasUserRated = model.hasUserRated(user.getUsername(), room.getRoomId());
 
 
-        if (hasUserRated==false)
-        {
+        if (hasUserRated == false) {
             model.addRating(rating1);
-        }
-        else
-        {
+        } else {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("ERROR");
             alert.setHeaderText("You already rated this room");

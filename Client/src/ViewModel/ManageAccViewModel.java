@@ -5,7 +5,7 @@ import Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class ManageAccViewModel extends ViewModel{
+public class ManageAccViewModel extends ViewModel {
     private ModelClient model;
     private ViewState viewState;
     private SimpleStringProperty username;
@@ -13,7 +13,8 @@ public class ManageAccViewModel extends ViewModel{
     private SimpleStringProperty firstname;
     private SimpleStringProperty lastname;
     private SimpleStringProperty phonenumber;
-    public ManageAccViewModel(ModelClient model, ViewState viewState){
+
+    public ManageAccViewModel(ModelClient model, ViewState viewState) {
         this.model = model;
         this.viewState = viewState;
         this.username = new SimpleStringProperty();
@@ -23,21 +24,26 @@ public class ManageAccViewModel extends ViewModel{
         this.phonenumber = new SimpleStringProperty();
     }
 
-    public StringProperty getUsernameProperty(){
+    public StringProperty getUsernameProperty() {
         return username;
     }
-    public StringProperty getLastnameProperty(){
+
+    public StringProperty getLastnameProperty() {
         return lastname;
     }
-    public StringProperty getFirstnameProperty(){
+
+    public StringProperty getFirstnameProperty() {
         return firstname;
     }
-    public StringProperty getPhoneNumberProperty(){
+
+    public StringProperty getPhoneNumberProperty() {
         return phonenumber;
     }
-    public StringProperty getPasswordProperty(){
+
+    public StringProperty getPasswordProperty() {
         return password;
     }
+
     @Override
     public void clear() {
         User user = model.getUserByUsername(viewState.getUsername());
@@ -47,7 +53,8 @@ public class ManageAccViewModel extends ViewModel{
         lastname.set(user.getLastName());
         phonenumber.set(user.getPhoneNumber());
     }
-    public boolean update(){
+
+    public boolean update() {
         User user = model.getUserByUsername(viewState.getUsername());
         user.setUsername(username.get());
         user.setFirstName(firstname.get());
@@ -56,19 +63,18 @@ public class ManageAccViewModel extends ViewModel{
         user.setPhoneNumber(phonenumber.get());
         boolean done = false;
 
-        try{
+        try {
             model.setUserInfo(user);
             done = true;
             clear();
-        }
-        catch (IllegalArgumentException exception)
-        {
+        } catch (IllegalArgumentException exception) {
             clear();
         }
 
         return done;
     }
-    public boolean info(){
-       return model.getRoomsByUsername(viewState.getUsername()).isEmpty();
+
+    public boolean info() {
+        return model.getRoomsByUsername(viewState.getUsername()).isEmpty();
     }
 }

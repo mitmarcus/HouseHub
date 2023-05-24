@@ -8,8 +8,7 @@ public class Rating implements Serializable {
     private User user;
     private Room room;
 
-    public Rating(int rating, User user, Room room)
-    {
+    public Rating(int rating, User user, Room room) {
         this.rating = rating;
         this.user = user;
         this.room = room;

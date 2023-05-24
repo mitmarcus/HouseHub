@@ -20,7 +20,8 @@ public class DetailsViewController extends ViewController {
     private DatePicker fromDate = new DatePicker();
     @FXML
     private DatePicker toDate = new DatePicker();
-    @FXML private ImageView image;
+    @FXML
+    private ImageView image;
     @FXML
     private ImageView cancelButton;
 
@@ -35,7 +36,8 @@ public class DetailsViewController extends ViewController {
     @FXML
     private TextField numberOfRooms;
 
-    @FXML private Text avgRating;
+    @FXML
+    private Text avgRating;
 
     @FXML
     private Button reserveButton;
@@ -60,8 +62,9 @@ public class DetailsViewController extends ViewController {
         viewHandler.openView("showRooms");
     }
 
-    @FXML private void nextImage(){
-      image.setImage ( viewModel.getImage());
+    @FXML
+    private void nextImage() {
+        image.setImage(viewModel.getImage());
     }
 
     @FXML
@@ -119,8 +122,8 @@ public class DetailsViewController extends ViewController {
         viewHandler.openView("showRooms");
     }
 
-    @FXML private  void rate(ActionEvent event)
-    {
+    @FXML
+    private void rate(ActionEvent event) {
         viewHandler.openView("rating");
     }
 

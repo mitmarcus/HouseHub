@@ -19,12 +19,23 @@ public class ReservationDAOImpl implements ReservationDAO {
     private UserDAO userDAO;
     private RoomDAO roomDAO;
 
+    /**
+     * This constructor is used to create a reservation DAO
+     *
+     * @throws SQLException if the connection cannot be established
+     */
     public ReservationDAOImpl() throws SQLException {
         this.userDAO = new UserDAOImpl();
         this.roomDAO = new RoomDAOImpl();
         this.dBconnection = DBconnection.getInstance();
     }
 
+    /**
+     * This method is used to get the instance of the reservation DAO
+     *
+     * @return the instance
+     * @throws SQLException if the connection cannot be established
+     */
     public static synchronized ReservationDAOImpl getInstance() throws SQLException {
         if (instance == null) {
             instance = new ReservationDAOImpl();
@@ -32,6 +43,12 @@ public class ReservationDAOImpl implements ReservationDAO {
         return instance;
     }
 
+    /**
+     * This method is used to add a reservation to the database
+     *
+     * @param reservation the reservation
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void addReservation(Reservation reservation) throws SQLException {
         Connection connection = dBconnection.getConnection();
@@ -42,7 +59,7 @@ public class ReservationDAOImpl implements ReservationDAO {
             statement.setDate(2, Date.valueOf(reservation.getStartDate()));
             statement.setDate(3, Date.valueOf(reservation.getEndDate()));
             statement.setString(4, reservation.getRoom().getRoomId());
-            statement.setString(5,reservation.getId());
+            statement.setString(5, reservation.getId());
 
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
@@ -57,6 +74,13 @@ public class ReservationDAOImpl implements ReservationDAO {
         }
     }
 
+    /**
+     * This method is used to get all the reservations by the username
+     *
+     * @param username the username
+     * @return array list of the reservations
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public ArrayList<Reservation> getAllReservationsByUsername(String username) throws SQLException {
         ArrayList<Reservation> reservations = new ArrayList<>();
@@ -82,6 +106,12 @@ public class ReservationDAOImpl implements ReservationDAO {
         return reservations;
     }
 
+    /**
+     * This method is used to remove a reservation from the database
+     *
+     * @param reservation the reservation
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void removeReservation(Reservation reservation) throws SQLException {
         Connection connection = dBconnection.getConnection();
@@ -97,6 +127,13 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     }
 
+    /**
+     * This method is used to get a reservation by the id
+     *
+     * @param id the id
+     * @return the reservation
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public Reservation getReservationById(String id) throws SQLException {
         Reservation reservation = null;
@@ -122,9 +159,17 @@ public class ReservationDAOImpl implements ReservationDAO {
         return reservation;
     }
 
-    @Override public void sendNotification(String owner, String tenant,
-        String roomId) throws SQLException
-    {
+    /**
+     * This method is used to send notification to the owner of the room
+     *
+     * @param owner  the owner
+     * @param tenant the tenant
+     * @param roomId the room id
+     * @throws SQLException if the connection cannot be established
+     */
+    @Override
+    public void sendNotification(String owner, String tenant,
+                                 String roomId) throws SQLException {
         Connection connection = dBconnection.getConnection();
         String query = "INSERT INTO notifications (username,notification) VALUES ( ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(query)) {
@@ -144,7 +189,15 @@ public class ReservationDAOImpl implements ReservationDAO {
         }
     }
 
-   @Override public ArrayList<String> getAllNotificationsByUsername(String username) throws SQLException {
+    /**
+     * This method is used to get all the notifications by the username
+     *
+     * @param username the username
+     * @return array list of the notifications
+     * @throws SQLException if the connection cannot be established
+     */
+    @Override
+    public ArrayList<String> getAllNotificationsByUsername(String username) throws SQLException {
         ArrayList<String> notifications = new ArrayList<>();
         Connection connection = dBconnection.getConnection();
         String query = "SELECT * FROM notifications where username = ?";
@@ -163,6 +216,12 @@ public class ReservationDAOImpl implements ReservationDAO {
         return notifications;
     }
 
+    /**
+     * This method is used to remove a notification from the database
+     *
+     * @param notification the notification
+     * @throws SQLException if the connection cannot be established
+     */
     @Override
     public void removeNotification(String notification) throws SQLException {
         Connection connection = dBconnection.getConnection();
@@ -174,6 +233,4 @@ public class ReservationDAOImpl implements ReservationDAO {
             dBconnection.disconnect();
         }
     }
-
-
 }

@@ -28,7 +28,7 @@ public class Reservation implements Serializable {
 
         // Extract the first 3 letters of the username
         String usernamePrefix = username.substring(0, Math.min(username.length(), 3));
-        String roomIdPrefix = roomId.substring(0,Math.min(roomId.length(),3));
+        String roomIdPrefix = roomId.substring(0, Math.min(roomId.length(), 3));
 
         // Combine the username prefix and room ID
         String id = usernamePrefix + roomIdPrefix;
@@ -71,6 +71,6 @@ public class Reservation implements Serializable {
     }
 
     public String toString() {
-        return "Reservation: " +"\n ID: " + id+ "\n From: " + startDate + ", Until: " + endDate;
+        return "Reservation: " + "\n ID: " + id + "\n From: " + startDate + ", Until: " + endDate;
     }
 }

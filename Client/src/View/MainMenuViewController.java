@@ -45,8 +45,8 @@ public class MainMenuViewController extends ViewController {
         viewHandler.openView("manageAcc");
     }
 
-    @FXML public void notifications(ActionEvent event)
-    {
+    @FXML
+    public void notifications(ActionEvent event) {
         viewHandler.openView("notifications");
     }
 
