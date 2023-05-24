@@ -69,7 +69,6 @@ public class ManageAccViewModel extends ViewModel{
         return done;
     }
     public boolean info(){
-
        return model.getRoomsByUsername(viewState.getUsername()).isEmpty();
     }
 }

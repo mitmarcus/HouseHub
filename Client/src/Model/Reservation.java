@@ -3,7 +3,6 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Random;
 
 public class Reservation implements Serializable {
     private String id;
@@ -12,6 +11,14 @@ public class Reservation implements Serializable {
     private Room room;
     private User user;
 
+    /**
+     * This constructor is used to create a reservation
+     *
+     * @param user      the user
+     * @param startDate the start date
+     * @param endDate   the end date
+     * @param room      the room
+     */
     public Reservation(User user, Object startDate, Object endDate, Room room) {
         if (startDate == null || endDate == null || room == null)
             throw new IllegalArgumentException();
@@ -22,6 +29,11 @@ public class Reservation implements Serializable {
         this.id = generateId();
     }
 
+    /**
+     * This method is used to generate an ID for the reservation
+     *
+     * @return the ID
+     */
     private String generateId() {
         String username = user.getUsername();
         String roomId = room.getRoomId();
@@ -36,27 +48,58 @@ public class Reservation implements Serializable {
         return id;
     }
 
+    /**
+     * This method is used to get the ID
+     *
+     * @return the ID
+     */
     public String getId() {
         return id;
     }
 
-
+    /**
+     * This method is used to get the user
+     *
+     * @return the user
+     */
     public User getUser() {
         return user;
     }
 
+    /**
+     * This method is used to get the start date
+     *
+     * @return the start date
+     */
     public LocalDate getStartDate() {
+        // not safe to delete, used on the serer side
         return startDate;
     }
 
+    /**
+     * This method is used to get the end date
+     *
+     * @return the end date
+     */
     public LocalDate getEndDate() {
+        // not safe to delete, used on the serer side
         return endDate;
     }
 
+    /**
+     * This method is used to get the room
+     *
+     * @return the room
+     */
     public Room getRoom() {
         return room;
     }
 
+    /**
+     * This method is used to compare two reservations
+     *
+     * @param o the other reservation
+     */
     @Override
     public boolean equals(Object o) {
         if (o == null) {
@@ -70,6 +113,11 @@ public class Reservation implements Serializable {
                 Objects.equals(endDate, reservation.endDate) && Objects.equals(room, (reservation.room));
     }
 
+    /**
+     * This method is used to get the reservation in a string format
+     *
+     * @return the reservation in a string format
+     */
     public String toString() {
         return "Reservation: " +"\n ID: " + id+ "\n From: " + startDate + ", Until: " + endDate;
     }

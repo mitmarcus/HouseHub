@@ -14,6 +14,15 @@ public class User implements Serializable {
     private String password;
     private String phoneNumber;
 
+    /**
+     * This constructor is used to create a user
+     *
+     * @param firstName   the first name
+     * @param lastName    the last name
+     * @param username    the username
+     * @param password    the password
+     * @param phoneNumber the phone number
+     */
     public User(String firstName, String lastName, String username, String password,String phoneNumber){
         setFirstName(firstName);
         setLastName(lastName);
