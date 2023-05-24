@@ -24,15 +24,16 @@ class RoomTest
   @Test void createWithZero(){
 
     assertThrows(
-        NullPointerException.class,()->new Room(null, null ,null,null,null, false));
+        NullPointerException.class,()->new Room(null, null ,null,null,null, null,false));
   }
   @Test void createWithOne(){
     assertThrows(
-        NullPointerException.class,()->new Room(null, "300" ,null,null,null, false));
+        NullPointerException.class,()->new Room(null, "300" ,null,null,null, null,false));
   }
   @Test void createWithMany(){
     assertDoesNotThrow(
-        ()->new Room("bb","6.66","Horsens", "143", "3",false));
+        ()->new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+            "12345678"),"bb","6.66","Horsens", "143", "3",false));
   }
 
   /*
@@ -52,22 +53,26 @@ class RoomTest
   this method should throw an exception if the parameter for the method is null or "";
    */
   @Test void setAddress(){
-    Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+    Room room = new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+        "12345678"),"bb","6.66","Horsens", "143", "3",false);
     assertThrows(IllegalArgumentException.class,()->room.setAddress(""));
     assertThrows(IllegalArgumentException.class,()->room.setAddress(null));
   }
   @Test void setSize(){
-    Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+    Room room = new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+        "12345678"),"bb","6.66","Horsens", "143", "3",false);
     assertThrows(IllegalArgumentException.class,()->room.setSize(""));
     assertThrows(IllegalArgumentException.class,()->room.setSize(null));
   }
   @Test void setBedrooms(){
-    Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+    Room room = new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+        "12345678"),"bb","6.66","Horsens", "143", "3",false);
     assertThrows(IllegalArgumentException.class,()->room.setBedrooms(""));
     assertThrows(IllegalArgumentException.class,()->room.setBedrooms(null));
   }
   @Test void setPrice(){
-    Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+    Room room = new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+        "12345678"),"bb","6.66","Horsens", "143", "3",false);
     assertThrows(IllegalArgumentException.class,()->room.setPrice(""));
     assertThrows(IllegalArgumentException.class,()->room.setPrice(null));
   }
@@ -77,7 +82,8 @@ class RoomTest
   this method should throw an exception if the object in parameter is null
    */
   @Test void equals(){
-    Room room = new Room("bb","6.66","Horsens", "143", "3",false);
+    Room room = new Room(new User("Ricardo","Fernandes","rfernandes","1233212",
+        "12345678"),"bb","6.66","Horsens", "143", "3",false);
     assertThrows(NullPointerException.class,()-> room.equals(null));
   }
 }

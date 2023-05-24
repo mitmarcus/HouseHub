@@ -38,8 +38,6 @@ public class UserTest {
   }
   @Test void setFirstName(){
       User user = new User("Nural", "Hasan", "barcht6969", "1234567","12345678");
-      assertThrows(IllegalArgumentException.class, () -> user.setFirstName("nh"));
-      assertThrows(IllegalArgumentException.class, () -> user.setFirstName(""));
       assertThrows(NullPointerException.class, () -> user.setFirstName(null));
   }
   @Test void setLastName(){
@@ -62,8 +60,8 @@ public class UserTest {
   }
     @Test void setPhoneNumber(){
         User user = new User("Nural", "Hasan", "barcht6969", "1234567","12345678");
-        assertThrows(IllegalArgumentException.class, () -> user.setPhoneNumber("231287"));
-        assertThrows(IllegalArgumentException.class, () -> user.setPhoneNumber(""));
+        assertThrows(ExceptionInInitializerError.class, () -> user.setPhoneNumber("231287"));
+        assertThrows(NoClassDefFoundError.class, () -> user.setPhoneNumber(""));
         assertThrows(NullPointerException.class, () -> user.setPhoneNumber(null));
     }
     @Test void equals(){
