@@ -1,7 +1,11 @@
 package Model;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Optional;
 
 public class User implements Serializable {
     private String firstName;
@@ -76,9 +80,14 @@ public class User implements Serializable {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        if (phoneNumber.length() < 8) {
+        if (phoneNumber.length() != 8) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Error ,phone number must have 8 characters");
+            Optional<ButtonType> result = alert.showAndWait();
             throw new IllegalArgumentException();
         }
+        else
         this.phoneNumber = phoneNumber;
     }
 

@@ -4,10 +4,13 @@ import Model.ModelClient;
 import Model.User;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.net.URL;
+import java.util.Optional;
 
 public class LoginViewModel extends ViewModel{
     private ModelClient model;
@@ -62,10 +65,49 @@ public class LoginViewModel extends ViewModel{
     }
 
     public boolean addUser(){
-        User user  = new User(firstName.get(),lastName.get(), username.get(), password.get(), phoneNumber.get());
-        viewState.setUsername(username.get());
-        model.addUser(user);
-        return true;
+        try{
+            User userTest = model.getUserByUsername(username.get());
+            if (username.get().equals(userTest.getUsername())) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("ERROR");
+                alert.setHeaderText("This username already exist");
+                Optional<ButtonType> result = alert.showAndWait();
+                return false;
+        }
+        }
+        catch (Exception e)
+        {
+            e.getCause();
+        }
+
+        if (firstName.get()==(null)||lastName.get()==(null)||username.get()==(null)||password.get()==(null)||phoneNumber.get()==(null)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Error ,the is still information missing");
+            Optional<ButtonType> result = alert.showAndWait();
+            return false;
+        }
+        else if (password.get().length()<6 || password.get()==(null)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Password must be more than 5 characters");
+            Optional<ButtonType> result = alert.showAndWait();
+            return false;
+        }
+        else if(phoneNumber.get().length()!=8){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("ERROR");
+            alert.setHeaderText("Error ,phone number must have 8 characters");
+            Optional<ButtonType> result = alert.showAndWait();
+            return false;
+        }
+        else
+        {
+            User user = new User(firstName.get(), lastName.get(), username.get(), password.get(), phoneNumber.get());
+            viewState.setUsername(username.get());
+            model.addUser(user);
+            return true;
+        }
     }
 
     public boolean logIn(){
@@ -75,6 +117,7 @@ public class LoginViewModel extends ViewModel{
             Media sound = new Media(url.toString());
             MediaPlayer mediaPlayer = new MediaPlayer(sound);
             mediaPlayer.play();
+
             return false;
         }
 
@@ -89,5 +132,7 @@ public class LoginViewModel extends ViewModel{
 
     @Override
     public void clear() {
+        username.set("");
+        password.set("");
     }
 }
