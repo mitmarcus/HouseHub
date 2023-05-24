@@ -20,8 +20,7 @@ public class Reservation implements Serializable {
      * @param room      the room
      */
     public Reservation(User user, Object startDate, Object endDate, Room room) {
-        if (startDate == null || endDate == null || room == null)
-            throw new IllegalArgumentException();
+        if (startDate == null || endDate == null || room == null) throw new IllegalArgumentException();
         this.startDate = (LocalDate) startDate;
         this.endDate = (LocalDate) endDate;
         this.room = room;
@@ -40,7 +39,7 @@ public class Reservation implements Serializable {
 
         // Extract the first 3 letters of the username
         String usernamePrefix = username.substring(0, Math.min(username.length(), 3));
-        String roomIdPrefix = roomId.substring(0,Math.min(roomId.length(),3));
+        String roomIdPrefix = roomId.substring(0, Math.min(roomId.length(), 3));
 
         // Combine the username prefix and room ID
         String id = usernamePrefix + roomIdPrefix;
@@ -109,8 +108,7 @@ public class Reservation implements Serializable {
             return true;
         }
         if (!(o instanceof Reservation reservation)) return false;
-        return Objects.equals(user, reservation.user) && Objects.equals(startDate, reservation.startDate) &&
-                Objects.equals(endDate, reservation.endDate) && Objects.equals(room, (reservation.room));
+        return Objects.equals(user, reservation.user) && Objects.equals(startDate, reservation.startDate) && Objects.equals(endDate, reservation.endDate) && Objects.equals(room, (reservation.room));
     }
 
     /**
@@ -119,6 +117,6 @@ public class Reservation implements Serializable {
      * @return the reservation in a string format
      */
     public String toString() {
-        return "Reservation: " +"\n ID: " + id+ "\n From: " + startDate + ", Until: " + endDate;
+        return "Reservation: " + "\n ID: " + id + "\n From: " + startDate + ", Until: " + endDate;
     }
 }

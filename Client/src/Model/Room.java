@@ -3,8 +3,7 @@ package Model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Room implements Serializable
-{
+public class Room implements Serializable {
     private String roomId;
     private String announcement;
     private String price;
@@ -17,7 +16,7 @@ public class Room implements Serializable
     /**
      * This constructor is used to create a room
      *
-     * @param owner       the owner
+     * @param owner        the owner
      * @param announcement the announcement
      * @param price        the price
      * @param address      the address
@@ -25,7 +24,7 @@ public class Room implements Serializable
      * @param bedrooms     the bedrooms
      * @param isReserved   the isReserved
      */
-    public Room(User owner,String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
+    public Room(User owner, String announcement, String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;
         this.address = address;
@@ -41,7 +40,7 @@ public class Room implements Serializable
      *
      * @return the announcement
      */
-    public String getAnnouncement(){
+    public String getAnnouncement() {
         return announcement;
     }
 
@@ -51,7 +50,7 @@ public class Room implements Serializable
      * @return the price
      */
     public String getPrice() {
-       return price;
+        return price;
     }
 
     /**
@@ -59,24 +58,22 @@ public class Room implements Serializable
      *
      * @return the address
      */
-    public User getOwner(){
+    public User getOwner() {
         return owner;
     }
 
     /**
-     * This method is used to generate the room ID
+     * This method is used to generate the room ID by combining the first 5 letters of the announcement and the first 3 letters of the address
      *
      * @return the ID
      */
-    private String generateID(){
-        if (announcement == null || address == null)
-        {
+    private String generateID() {
+        if (announcement == null || address == null) {
             return null;
-        }
-        else {
+        } else {
             String an = announcement.substring(0, Math.min(announcement.length(), 5));
             String f = address.substring(0, Math.min(address.length(), 3));
-            return an+f;
+            return an + f;
         }
     }
 
@@ -85,7 +82,7 @@ public class Room implements Serializable
      *
      * @return the room ID
      */
-    public String getRoomId(){
+    public String getRoomId() {
         System.out.println(announcement);
         return roomId;
     }
@@ -96,8 +93,8 @@ public class Room implements Serializable
      * @param price
      */
     public void setPrice(String price) {
-        if (price == null| price == "")
-            throw  new IllegalArgumentException();
+        if (price == null | price == "")
+            throw new IllegalArgumentException();
         this.price = price;
     }
 
@@ -136,7 +133,7 @@ public class Room implements Serializable
      * @param size the size
      */
     public void setSize(String size) {
-        if (size==null|| size =="")
+        if (size == null || size == "")
             throw new IllegalArgumentException();
         this.size = size;
     }
@@ -156,20 +153,25 @@ public class Room implements Serializable
      * @param bedrooms the bedrooms
      */
     public void setBedrooms(String bedrooms) {
-        if (bedrooms == null|| bedrooms == "")
+        if (bedrooms == null || bedrooms == "")
             throw new IllegalArgumentException();
         this.bedrooms = bedrooms;
     }
 
-
-    @Override public boolean equals(Object o)
-    {
-        if (o==(null))
+    /**
+     * This method is used to check if two users are equal
+     *
+     * @param o the object to compare with
+     * @return true if the given object is equal to this user
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o == (null))
             throw new NullPointerException();
         if (this == o) return true;
         if (!(o instanceof Room room)) return false;
         return Objects.equals(announcement, room.announcement) && Objects.equals(price, room.price) &&
-            Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
+                Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
     }
 
     /**
@@ -177,8 +179,7 @@ public class Room implements Serializable
      *
      * @return the isReserved
      */
-    public boolean isReserved()
-    {
+    public boolean isReserved() {
         return isReserved;
     }
 
@@ -200,12 +201,12 @@ public class Room implements Serializable
      */
     @Override
     public String toString() {
-       return  "Room{" +
-            "price='" + price + '\'' +
-            ", address='" + address + '\'' +
-            ", size='" + size + '\'' +
-            ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
-            '}';
+        return "Room{" +
+                "price='" + price + '\'' +
+                ", address='" + address + '\'' +
+                ", size='" + size + '\'' +
+                ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
+                '}';
     }
 }
 
