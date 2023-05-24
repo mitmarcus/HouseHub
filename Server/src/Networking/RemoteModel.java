@@ -28,19 +28,12 @@ public interface RemoteModel extends RemoteSubject {
     User getUser(String username, String password) throws RemoteException;
     ArrayList<Room> getRoomsByUsername(String username) throws RemoteException;
     Room getRoomById(String Id) throws RemoteException;
-
     ArrayList<String> getRoomImagesPaths(String roomId) throws RemoteException;
-
-
     void addRating(Rating rating) throws RemoteException;
     boolean hasUserRated(String username, String roomId) throws RemoteException;
     double getAvgRatingById(String id) throws RemoteException;
-
     void sendNotification(String owner,String tenant,String roomId) throws  RemoteException;
-
     void deletePictures(String roomId) throws  RemoteException;
-
     ArrayList<String> getAllNotificationsByUsername(String username) throws RemoteException;
-
     void removeNotification(String notification) throws RemoteException;
 }

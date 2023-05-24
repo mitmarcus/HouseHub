@@ -1,42 +1,41 @@
 package ViewModel;
 
-public class ViewState
-{
+public class ViewState {
     private String id;
     private String username;
     private boolean remove;
 
-    public ViewState()
-    {
+    public ViewState() {
         this.id = "";
         this.remove = false;
         this.username = "";
     }
-    public String getId()
-    {
+
+    public String getId() {
         return id;
     }
-    public void setId(String id)
-    {
+
+    public void setId(String id) {
         this.id = id;
     }
-    public String getUsername(){
+
+    public String getUsername() {
         return username;
     }
-    public void setUsername(String username)
-    {
+
+    public void setUsername(String username) {
         this.username = username;
     }
-    public void removeId()
-    {
+
+    public void removeId() {
         this.id = null;
     }
-    public boolean isRemove()
-    {
-        return  remove;
+
+    public boolean isRemove() {
+        return remove;
     }
-    public void setRemove(boolean remove)
-    {
+
+    public void setRemove(boolean remove) {
         this.remove = remove;
     }
 }

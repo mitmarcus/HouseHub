@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
-public class Room implements Serializable
-{
+public class Room implements Serializable {
 
     private String roomId;
     private String announcement;
@@ -17,7 +16,7 @@ public class Room implements Serializable
     private User owner;
 
 
-    public Room(User owner,String announcement,String price, String address, String size, String bedrooms, boolean isReserved) {
+    public Room(User owner, String announcement, String price, String address, String size, String bedrooms, boolean isReserved) {
         this.announcement = announcement;
         this.price = price;
         this.address = address;
@@ -26,38 +25,40 @@ public class Room implements Serializable
         this.isReserved = isReserved;
         this.owner = owner;
         this.roomId = generateID();
-       // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
-         //   throw new NullPointerException();
+        // if (announcement==null || price==(null) || address==(null) || size==(null) || bedrooms==(null))
+        //   throw new NullPointerException();
     }
-    public String getAnnouncement(){
+
+    public String getAnnouncement() {
         return announcement;
     }
+
     public String getPrice() {
-       return price;
+        return price;
     }
-    public User getOwner(){
+
+    public User getOwner() {
         return owner;
     }
 
 
-    private String generateID(){
-        if (announcement == null || address == null)
-        {
+    private String generateID() {
+        if (announcement == null || address == null) {
             return null;
-        }
-        else {
+        } else {
             String an = announcement.substring(0, Math.min(announcement.length(), 5));
             String f = address.substring(0, Math.min(address.length(), 3));
-            return an+f;
+            return an + f;
         }
     }
-    public String getRoomId(){
+
+    public String getRoomId() {
         return roomId;
     }
 
     public void setPrice(String price) {
-        if (price == null| price == "")
-            throw  new IllegalArgumentException();
+        if (price == null | price == "")
+            throw new IllegalArgumentException();
         this.price = price;
     }
 
@@ -76,7 +77,7 @@ public class Room implements Serializable
     }
 
     public void setSize(String size) {
-        if (size==null|| size =="")
+        if (size == null || size == "")
             throw new IllegalArgumentException();
         this.size = size;
     }
@@ -86,23 +87,22 @@ public class Room implements Serializable
     }
 
     public void setBedrooms(String bedrooms) {
-        if (bedrooms == null|| bedrooms == "")
+        if (bedrooms == null || bedrooms == "")
             throw new IllegalArgumentException();
         this.bedrooms = bedrooms;
     }
 
-    @Override public boolean equals(Object o)
-    {
-        if (o==(null))
+    @Override
+    public boolean equals(Object o) {
+        if (o == (null))
             throw new NullPointerException();
         if (this == o) return true;
         if (!(o instanceof Room room)) return false;
         return Objects.equals(announcement, room.announcement) && Objects.equals(price, room.price) &&
-            Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
+                Objects.equals(address, room.address) && Objects.equals(size, room.size) && Objects.equals(bedrooms, room.bedrooms);
     }
 
-    public boolean isReserved()
-    {
+    public boolean isReserved() {
         return isReserved;
     }
 
@@ -114,12 +114,12 @@ public class Room implements Serializable
 
     @Override
     public String toString() {
-       return  "Room{" +
-            "price='" + price + '\'' +
-            ", address='" + address + '\'' +
-            ", size='" + size + '\'' +
-            ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
-            '}';
+        return "Room{" +
+                "price='" + price + '\'' +
+                ", address='" + address + '\'' +
+                ", size='" + size + '\'' +
+                ", bedrooms='" + bedrooms + '\'' + "isReserved" + isReserved +
+                '}';
     }
 }
 

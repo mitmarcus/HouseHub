@@ -12,12 +12,22 @@ public class DBconnection {
     private static DBconnection instance;
     private static Connection conn;
 
-
+    /**
+     * This constructor is used to create a connection to the database
+     *
+     * @throws SQLException if the connection cannot be established
+     */
     public DBconnection() throws SQLException {
         DriverManager.registerDriver(new org.postgresql.Driver());
-        conn =null;
+        conn = null;
     }
 
+    /**
+     * This method is used to get the instance of the connection
+     *
+     * @return the instance
+     * @throws SQLException if the connection cannot be established
+     */
     public static synchronized DBconnection getInstance() throws SQLException {
         if (instance == null) {
             instance = new DBconnection();
@@ -25,6 +35,12 @@ public class DBconnection {
         return instance;
     }
 
+    /**
+     * This method is used to get the connection
+     *
+     * @return the connection
+     * @throws SQLException if the connection cannot be established
+     */
     public Connection getConnection() throws SQLException {
         if (conn == null || conn.isClosed()) {
             conn = DriverManager.getConnection(url, username, password);
@@ -32,6 +48,11 @@ public class DBconnection {
         return conn;
     }
 
+    /**
+     * This method is used to disconnect from the database
+     *
+     * @throws SQLException if the connection cannot be established
+     */
     public void disconnect() throws SQLException {
         if (conn != null && !conn.isClosed()) {
             conn.close();

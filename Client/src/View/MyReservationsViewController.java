@@ -11,13 +11,13 @@ import javafx.scene.layout.Region;
 import java.util.Optional;
 
 public class MyReservationsViewController extends ViewController {
-    @FXML private ListView<String> reservedRoomListView;
+    @FXML
+    private ListView<String> reservedRoomListView;
     private MyReservationsViewModel viewModel;
 
     @Override
     public void init(ViewHandler viewHandler, ViewModel viewModel,
-                     Region root)
-    {
+                     Region root) {
         this.viewHandler = viewHandler;
         this.viewModel = (MyReservationsViewModel) viewModel;
         this.reservedRoomListView.setItems(((MyReservationsViewModel) viewModel).getList());
@@ -25,8 +25,8 @@ public class MyReservationsViewController extends ViewController {
 
     }
 
-    @Override public void reset()
-    {
+    @Override
+    public void reset() {
         viewModel.clear();
     }
 
@@ -34,6 +34,7 @@ public class MyReservationsViewController extends ViewController {
     public void goBack() {
         viewHandler.openView("showRooms");
     }
+
     @FXML
     public void removeButtonPressed() {
         int numberOfSelectedRows = reservedRoomListView.getSelectionModel().getSelectedItems().size();
@@ -47,7 +48,7 @@ public class MyReservationsViewController extends ViewController {
                 viewModel.removeReservation(reservedRoomListView.getSelectionModel().getSelectedItem());
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle(" Successful");
-                successAlert.setHeaderText("Your reservation from as been removed" );
+                successAlert.setHeaderText("Your reservation from as been removed");
                 successAlert.showAndWait();
             }
 
@@ -59,8 +60,6 @@ public class MyReservationsViewController extends ViewController {
             Optional<ButtonType> result = alert.showAndWait();
         }
     }
-
-
 
 
 }

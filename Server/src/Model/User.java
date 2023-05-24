@@ -10,7 +10,7 @@ public class User implements Serializable {
     private String password;
     private String phoneNumber;
 
-    public User(String firstName, String lastName, String username, String password,String phoneNumber){
+    public User(String firstName, String lastName, String username, String password, String phoneNumber) {
         setFirstName(firstName);
         setLastName(lastName);
         setUsername(username);
@@ -37,21 +37,20 @@ public class User implements Serializable {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
     @Override
-    public String toString(){
-        return "User: " + firstName + " " + lastName + "\n Username: " + username +"\n Password: "+ password + "\n Phone Number: " + phoneNumber;
+    public String toString() {
+        return "User: " + firstName + " " + lastName + "\n Username: " + username + "\n Password: " + password + "\n Phone Number: " + phoneNumber;
     }
 
     public void setFirstName(String firstName) {
-        try
-        {
+        try {
             if (firstName.length() < 3) {
                 throw new IllegalArgumentException();
             }
             this.firstName = firstName;
+        } catch (IllegalArgumentException e) {
         }
-        catch (IllegalArgumentException e)
-        {}
     }
 
     public void setLastName(String lastName) {
@@ -82,11 +81,12 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override public boolean equals(Object o){
-        if (o==null){
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
             throw new NullPointerException();
         }
-        if (this == o){
+        if (this == o) {
             return true;
         }
         if (!(o instanceof User user)) return false;

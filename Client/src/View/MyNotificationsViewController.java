@@ -13,7 +13,8 @@ import java.util.Optional;
 
 public class MyNotificationsViewController extends ViewController {
 
-    @FXML private ListView<String> notificationListView;
+    @FXML
+    private ListView<String> notificationListView;
     private MyNotificationsViewModel viewModel;
 
     @Override
@@ -36,7 +37,7 @@ public class MyNotificationsViewController extends ViewController {
 
     @FXML
     public void removeButtonPressed() {
-        String remove =  notificationListView.getSelectionModel().getSelectedItem().toString();
+        String remove = notificationListView.getSelectionModel().getSelectedItem().toString();
         int numberOfSelectedRows = notificationListView.getSelectionModel().getSelectedItems().size();
         if (numberOfSelectedRows == 1) {
             Alert confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -48,7 +49,7 @@ public class MyNotificationsViewController extends ViewController {
                 viewModel.removeNotification(remove);
                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                 successAlert.setTitle(" Successful");
-                successAlert.setHeaderText("Notification deleted!" );
+                successAlert.setHeaderText("Notification deleted!");
                 successAlert.showAndWait();
             }
 
