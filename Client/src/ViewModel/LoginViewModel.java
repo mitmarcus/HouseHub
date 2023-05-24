@@ -132,5 +132,7 @@ public class LoginViewModel extends ViewModel{
 
     @Override
     public void clear() {
+        username.set("");
+        password.set("");
     }
 }
