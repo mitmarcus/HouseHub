@@ -71,6 +71,7 @@ public class LoginViewController extends ViewController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Successful Sign up");
             alert.setHeaderText("You're automatically signed in");
+            alert.initOwner(username.getScene().getWindow());
             Optional<ButtonType> result = alert.showAndWait();
             viewHandler.openView("main");
         } else {

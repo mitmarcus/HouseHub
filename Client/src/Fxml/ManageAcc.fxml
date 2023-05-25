@@ -71,7 +71,7 @@
                         <HBox alignment="CENTER">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" textAlignment="CENTER" wrappingWidth="135.3824520111084" />
-                              <TextField fx:id="phonenumber" promptText="8 characters" />
+                              <TextField fx:id="phonenumber" promptText="8 characters only" />
                            </children>
                         </HBox>
                      </children>

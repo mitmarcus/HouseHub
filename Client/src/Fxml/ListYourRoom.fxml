@@ -38,7 +38,7 @@
                         <VBox prefHeight="40.0" prefWidth="271.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-                              <TextField fx:id="roomAddress" alignment="CENTER" prefHeight="26.0" prefWidth="223.0" />
+                              <TextField fx:id="roomAddress" alignment="CENTER" prefHeight="26.0" prefWidth="223.0" promptText="street name" />
                            </children>
                         </VBox>
                         <HBox alignment="CENTER" prefHeight="19.0" prefWidth="287.0" styleClass="details">
@@ -50,13 +50,13 @@
                         <HBox alignment="CENTER" prefHeight="17.0" prefWidth="287.0" styleClass="details">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Size" textAlignment="CENTER" wrappingWidth="135.3824520111084" />
-                              <TextField fx:id="roomSize" />
+                              <TextField fx:id="roomSize" promptText="m2" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="18.0" prefWidth="271.0" styleClass="details">
                            <children>
                               <Text fx:id="roomPrice" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" textAlignment="CENTER" wrappingWidth="135.21722984313965" />
-                              <TextField fx:id="price" prefHeight="26.0" prefWidth="127.0" />
+                              <TextField fx:id="price" prefHeight="26.0" prefWidth="127.0" promptText="dkk per day" />
                            </children>
                         </HBox>
                      </children>

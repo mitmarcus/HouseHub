@@ -47,8 +47,8 @@
                         <children>
                            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                           <TextField fx:id="loginUsername" promptText="just press" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                           <PasswordField fx:id="loginPassword" promptText="login" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           <TextField fx:id="loginUsername" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                           <PasswordField fx:id="loginPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         </children>
                         <VBox.margin>
                            <Insets left="20.0" right="20.0" />
