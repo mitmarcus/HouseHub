@@ -20,6 +20,7 @@ public class RmiServer implements RemoteModel {
 
     /**
      * Constructor for the RmiServer
+     *
      * @param model the model that the server will use
      * @throws Exception if the registry is already started
      */
@@ -32,8 +33,9 @@ public class RmiServer implements RemoteModel {
 
     /**
      * Starts the server
+     *
      * @throws MalformedURLException if the URL is not correct
-     * @throws RemoteException if the remote object is not exported
+     * @throws RemoteException       if the remote object is not exported
      */
     private void startServer() throws MalformedURLException, RemoteException {
         UnicastRemoteObject.exportObject(this, 0);
@@ -43,6 +45,7 @@ public class RmiServer implements RemoteModel {
 
     /**
      * Starts the registry
+     *
      * @throws Exception if the registry is already started
      */
     private void startRegistry() throws Exception {
