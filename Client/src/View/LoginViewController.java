@@ -16,7 +16,6 @@ import java.util.Optional;
 
 public class LoginViewController extends ViewController {
     private LoginViewModel viewModel;
-    private ViewHandler viewHandler;
 
     @FXML
     private TextField loginUsername;
