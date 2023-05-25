@@ -1,6 +1,7 @@
 package Database.user;
 
 import Database.DBconnection;
+import Model.Log.Log;
 import Model.User;
 
 import java.sql.*;
@@ -52,6 +53,7 @@ public class UserDAOImpl implements UserDAO {
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("User inserted successfully!");
+                Log.getInstance("User").addLog("User added successfully");
             } else {
                 System.out.println("Failed to insert user.");
             }
@@ -81,7 +83,9 @@ public class UserDAOImpl implements UserDAO {
 
             if (resultSet.next()) {
                 User user = new User(resultSet.getString(3), resultSet.getString(4), resultSet.getString(1), resultSet.getString(2), resultSet.getString(5));
+                Log.getInstance("User").addLog("User retrieved successfully : " + user.getUsername());
                 return user;
+
             }
         } finally {
             connection.close();
@@ -106,6 +110,7 @@ public class UserDAOImpl implements UserDAO {
 
             if (resultSet.next()) {
                 User user = new User(resultSet.getString(3), resultSet.getString(4), resultSet.getString(1), resultSet.getString(2), resultSet.getString(5));
+                Log.getInstance("User").addLog("User retrieved successfully : "+ user.getUsername());
                 return user;
             }
         }
@@ -131,6 +136,7 @@ public class UserDAOImpl implements UserDAO {
             int rowsUpdated = statement.executeUpdate();
             if (rowsUpdated > 0) {
                 System.out.println("User information updated successfully!");
+                Log.getInstance("User").addLog("User information updated successfully : " + user.getUsername());
             } else {
                 System.out.println("Failed to update user information.");
             }

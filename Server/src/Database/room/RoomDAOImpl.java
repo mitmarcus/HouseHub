@@ -3,13 +3,15 @@ package Database.room;
 import Database.DBconnection;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
+import Model.Log.Log;
 import Model.Room;
 import Model.User;
-import lib.postgresql.*;
+
 
 import javax.print.MultiDocPrintService;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 public class RoomDAOImpl implements RoomDAO {
     private static RoomDAOImpl instance;
@@ -61,6 +63,7 @@ public class RoomDAOImpl implements RoomDAO {
 
             if (rowsInserted > 0) {
                 System.out.println("Room added successfully!");
+                Log.getInstance("Room").addLog("Room added successfully!");
             } else {
                 System.out.println("Failed to add room.");
             }
@@ -82,6 +85,7 @@ public class RoomDAOImpl implements RoomDAO {
        try (PreparedStatement statement = connection.prepareStatement(query)) {
            statement.setString(1, room.getRoomId());
            statement.execute();
+           Log.getInstance("Room").addLog("Room removed successfully");
 
         } finally {
             dbConnection.disconnect();
@@ -121,6 +125,7 @@ public class RoomDAOImpl implements RoomDAO {
 
                 room = new Room(user, announcement1, price, address, size,
                     bedrooms, isReserved);
+                Log.getInstance("Room").addLog("Room retrieved from database");
             }
         }
         finally
@@ -155,6 +160,7 @@ public class RoomDAOImpl implements RoomDAO {
 
                 User user = UserDAOImpl.getInstance().getUserByUsername(owner);
                 Room room = new Room(user,announcement,price,address,size,numberBedrooms,reserved);
+                Log.getInstance("Room").addLog("Room retrieved from database");
 
                return room;
             }
@@ -193,6 +199,7 @@ public class RoomDAOImpl implements RoomDAO {
                 Room room = new Room(user, announcement, price, address, size,
                     bedrooms, isReserved);
                 list.add(room);
+                Log.getInstance("Room").addLog("All rooms retrieved from database");
             }
         }
         finally
@@ -222,6 +229,7 @@ public class RoomDAOImpl implements RoomDAO {
             statement.setString(2,id);
             statement.executeUpdate();
             setRoomReserved=true;
+            Log.getInstance("Room").addLog("Room set reserved : " + room.getRoomId());
 
         }
         finally
@@ -251,6 +259,8 @@ public class RoomDAOImpl implements RoomDAO {
             statement.setString(2,id);
             statement.executeUpdate();
             setRoomFree=true;
+
+            Log.getInstance("Room").addLog("Room is free : " + room.getRoomId());
 
         }
         finally
@@ -289,6 +299,8 @@ public class RoomDAOImpl implements RoomDAO {
                 Room room = new Room(user, announcement, price, address, size,
                     bedrooms, isReserved);
                 list.add(room);
+
+                Log.getInstance("Room").addLog("Room retrieved from database by this user : " + username);
             }
         }
         finally
@@ -321,6 +333,7 @@ public class RoomDAOImpl implements RoomDAO {
                 String path = resultSet.getString("path");
                 list.add(path);
             }
+            Log.getInstance("Room").addLog("Images paths retrieved from database");
         }
          finally
             {
@@ -348,6 +361,8 @@ public class RoomDAOImpl implements RoomDAO {
             statement.setString(1, roomId);
             statement.setString(2,path);
             statement.executeUpdate();
+
+            Log.getInstance("Room").addLog("Images path added to database");
         }
         finally
         {

@@ -5,6 +5,7 @@ import Database.room.RoomDAO;
 import Database.room.RoomDAOImpl;
 import Database.user.UserDAO;
 import Database.user.UserDAOImpl;
+import Model.Log.Log;
 import Model.Reservation;
 import Model.Room;
 import Model.User;
@@ -64,6 +65,7 @@ public class ReservationDAOImpl implements ReservationDAO {
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Reservation inserted successfully!");
+                Log.getInstance("Reservation").addLog("Reservation added successfully");
             } else {
                 System.out.println("Failed to insert reservation.");
             }
@@ -99,6 +101,7 @@ public class ReservationDAOImpl implements ReservationDAO {
                 Room room = roomDAO.getRoomById(roomId);
                 Reservation reservation = new Reservation(user, startDate, endDate, room);
                 reservations.add(reservation);
+                Log.getInstance("Reservation").addLog("Reservations retrieved successfully");
             }
         } finally {
             dBconnection.disconnect();
@@ -120,6 +123,7 @@ public class ReservationDAOImpl implements ReservationDAO {
 
             statement.setString(1, reservation.getId());
             statement.executeUpdate();
+            Log.getInstance("Reservation").addLog("Reservation removed successfully : " + reservation.getId());
 
         } finally {
             dBconnection.disconnect();
@@ -152,6 +156,7 @@ public class ReservationDAOImpl implements ReservationDAO {
                 Room room = roomDAO.getRoomById(roomId);
                 Reservation other = new Reservation(user, startDate, endDate, room);
                 reservation = other;
+                Log.getInstance("Reservation").addLog("Reservation retrieved successfully" + id);
             }
         } finally {
             dBconnection.disconnect();
@@ -180,6 +185,7 @@ public class ReservationDAOImpl implements ReservationDAO {
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Reservation inserted successfully!");
+                Log.getInstance("Reservation").addLog("Reservation notification send successfully");
             } else {
                 System.out.println("Failed to insert reservation.");
             }
@@ -209,6 +215,7 @@ public class ReservationDAOImpl implements ReservationDAO {
                 String username1 = resultSet.getString("username");
                 String notification1 = resultSet.getString("notification");
                 notifications.add(notification1);
+                Log.getInstance("Reservation").addLog("Reservation notifications retrieved successfully for this user" + username);
             }
         } finally {
             dBconnection.disconnect();
@@ -229,6 +236,7 @@ public class ReservationDAOImpl implements ReservationDAO {
         try (PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, notification);
             statement.executeUpdate();
+            Log.getInstance("Reservation").addLog("Notification removed successfully : " + notification);
         } finally {
             dBconnection.disconnect();
         }
