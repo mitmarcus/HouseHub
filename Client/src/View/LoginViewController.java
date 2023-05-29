@@ -82,6 +82,11 @@ public class LoginViewController extends ViewController {
         }
     }
 
+    /**
+     * Called when the user presses the "Log in" button
+     *
+     * @param actionEvent The event created by the system
+     */
     public void logInPressed(ActionEvent actionEvent) {
         if (viewModel.logIn()) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

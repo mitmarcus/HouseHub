@@ -154,32 +154,32 @@ public class ViewHandler {
     }
 
 
-    private void openNotificationsWindow() {
-        if (notificationsStage == null) {
-            notificationsStage = new Stage();
-            notificationsStage.initModality(Modality.APPLICATION_MODAL);
-            notificationsStage.setTitle("Notifications");
-            notificationsStage.getIcons().add(new Image("/Resources/Logo.png"));
-
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/Fxml/MyNotifications.fxml"));
-            Parent notificationRoot;
-            try {
-                notificationRoot = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-                return;
-            }
-
-            myNotificationsViewController = loader.getController();
-            myNotificationsViewController.init(this, viewModelFactory.getMyNotificationsViewModel(), root);
-
-            Scene notificationScene = new Scene(notificationRoot);
-            notificationsStage.setScene(notificationScene);
-        }
-
-        notificationsStage.showAndWait();
-    }
+//    private void openNotificationsWindow() {
+//        if (notificationsStage == null) {
+//            notificationsStage = new Stage();
+//            notificationsStage.initModality(Modality.APPLICATION_MODAL);
+//            notificationsStage.setTitle("Notifications");
+//            notificationsStage.getIcons().add(new Image("/Resources/Logo.png"));
+//
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(getClass().getResource("/Fxml/MyNotifications.fxml"));
+//            Parent notificationRoot;
+//            try {
+//                notificationRoot = loader.load();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//                return;
+//            }
+//
+//            myNotificationsViewController = loader.getController();
+//            myNotificationsViewController.init(this, viewModelFactory.getMyNotificationsViewModel(), root);
+//
+//            Scene notificationScene = new Scene(notificationRoot);
+//            notificationsStage.setScene(notificationScene);
+//        }
+//
+//        notificationsStage.showAndWait();
+//    }
 
     public void closeRatingWindow() {
         if (ratingStage != null) {

@@ -28,6 +28,12 @@ public class Log {
         }
         return instance;
     }*/
+
+    /**
+     * This method is used to get an instance of the log
+     * @param key the key
+     * @return the instance of the log
+     */
     public static Log getInstance(String key){
         Log instance = map.get(key);
         if (instance == null) {
@@ -42,6 +48,10 @@ public class Log {
         return instance;
     }
 
+    /**
+     * This method is used to add a log line
+     * @param text the text
+     */
     public void addLog(String text) {
         LogLine logLine = new LogLine(text);
         list.add(logLine);

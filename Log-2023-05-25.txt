@@ -1,0 +1,64 @@
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 17:36:56
+Text: All rooms retrieved from database
+ Time: 25/05/2023 17:36:56
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 17:36:56
+Text: All rooms retrieved from database
+ Time: 25/05/2023 17:36:56
+Text: User retrieved successfully : assadsasad
+ Time: 25/05/2023 17:36:56
+Text: All rooms retrieved from database
+ Time: 25/05/2023 17:36:56
+Text: User retrieved successfully : fancy
+ Time: 25/05/2023 17:36:56
+Text: All rooms retrieved from database
+ Time: 25/05/2023 17:36:56
+Text: User retrieved successfully : admin
+ Time: 25/05/2023 17:36:56
+Text: All rooms retrieved from database
+ Time: 25/05/2023 17:36:56
+Text: User retrieved successfully : admin
+ Time: 25/05/2023 18:40:05
+Text: User retrieved successfully : admin
+ Time: 25/05/2023 18:41:00
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 18:41:19
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:19
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 18:41:19
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:19
+Text: User retrieved successfully : assadsasad
+ Time: 25/05/2023 18:41:19
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:19
+Text: User retrieved successfully : fancy
+ Time: 25/05/2023 18:41:19
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:19
+Text: User retrieved successfully : admin
+ Time: 25/05/2023 18:41:19
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:19
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 18:41:20
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:20
+Text: User retrieved successfully : batman
+ Time: 25/05/2023 18:41:20
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:20
+Text: User retrieved successfully : assadsasad
+ Time: 25/05/2023 18:41:20
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:20
+Text: User retrieved successfully : fancy
+ Time: 25/05/2023 18:41:20
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:20
+Text: User retrieved successfully : admin
+ Time: 25/05/2023 18:41:20
+Text: All rooms retrieved from database
+ Time: 25/05/2023 18:41:20
