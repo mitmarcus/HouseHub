@@ -10,8 +10,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 import javax.swing.*;
+import java.net.URL;
 
 public class MainMenuViewController extends ViewController {
     private MainMenuViewModel viewModel;
@@ -60,7 +63,10 @@ public class MainMenuViewController extends ViewController {
 
         // If the user clicked OK, proceed with the logout
         if (response == ButtonType.OK) {
-            // Perform the necessary logout operations here
+            URL url = getClass().getResource("/utility/shut.mp3");
+            Media sound = new Media(url.toString());
+            MediaPlayer mediaPlayer = new MediaPlayer(sound);
+            mediaPlayer.play();
 
             // Open the main view
             viewHandler.openView("login");
