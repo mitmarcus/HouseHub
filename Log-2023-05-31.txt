@@ -1,0 +1,78 @@
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:29:22
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:36
+Text: Room added successfully!
+ Time: 31/05/2023 10:41:36
+Text: Images path added to database
+ Time: 31/05/2023 10:41:37
+Text: Images path added to database
+ Time: 31/05/2023 10:41:37
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:39
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:41:39
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:40
+Text: Room retrieved from database
+ Time: 31/05/2023 10:41:40
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:41
+Text: Room retrieved from database
+ Time: 31/05/2023 10:41:41
+Text: Images paths retrieved from database
+ Time: 31/05/2023 10:41:41
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:41
+Text: Room retrieved from database
+ Time: 31/05/2023 10:41:41
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:42
+Text: Room retrieved from database
+ Time: 31/05/2023 10:41:42
+Text: Images paths retrieved from database
+ Time: 31/05/2023 10:41:43
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:41:43
+Text: Room retrieved from database
+ Time: 31/05/2023 10:41:43
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:42:29
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:42:29
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:42:54
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:42:54
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:42:56
+Text: Room retrieved from database
+ Time: 31/05/2023 10:42:56
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:42:56
+Text: Room retrieved from database
+ Time: 31/05/2023 10:42:56
+Text: Images paths retrieved from database
+ Time: 31/05/2023 10:42:56
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:42:57
+Text: Room retrieved from database
+ Time: 31/05/2023 10:42:57
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:43:01
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:43:01
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:50:07
+Text: Room added successfully!
+ Time: 31/05/2023 10:50:07
+Text: Images path added to database
+ Time: 31/05/2023 10:50:07
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:50:12
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:50:12
+Text: User retrieved successfully : admin
+ Time: 31/05/2023 10:50:12
+Text: All rooms retrieved from database
+ Time: 31/05/2023 10:50:12
